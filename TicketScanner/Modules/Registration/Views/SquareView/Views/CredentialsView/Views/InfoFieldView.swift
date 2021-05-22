@@ -12,15 +12,23 @@ struct InfoFieldView: View {
     var fieldType : FieldType
     
     @State private var text : String = ""
+    @State private var isEditting : Bool = false
+    
+    @Binding var isError : Bool
+    @State private var isValid : Bool = true
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 6) {
             field
+            if !isValid || isError {
+                errorText
+            }
         }
+        .background(Color.black)
     }
     
     private var field: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 6) {
             HStack {
                 Text(fieldType.description)
                     .font(.main(size: 14))
@@ -30,21 +38,40 @@ struct InfoFieldView: View {
                 Spacer()
             }
             
+            
             CustomTextField(
                 placeholder: Text(fieldType.placeholder).foregroundColor(.white.opacity(0.5)),
-                text: $text
+                text: $text,
+                editingChanged: { isEditting in
+                    self.isEditting = isEditting
+                },
+                commit: {
+                    withAnimation {
+                        self.isValid = text.count < 5
+                    }
+                },
+                isSecured: fieldType == .password
             )
+            .foregroundColor(.white)
             .font(.main(size: 20))
             .padding(.leading, 16)
             .padding(.trailing, 8)
-            .padding(.top, 6)
-            .padding(.bottom, 16)
         }
+        .padding(.bottom, 16)
         .overlay(
             RoundedRectangle(cornerRadius: 19)
-                .stroke(Color.altoSuperLight)
+                .stroke(
+                    isError || !isValid ? Color.radicalRedLight : isEditting
+                            ? Color.altoLight : Color.altoSuperLight
+                )
         )
-        .background(Color.black)
+    }
+
+    private var errorText: some View {
+        Text("Будь ласка, введіть справжній email або id")
+            .foregroundColor(.radicalRed)
+            .font(.main(size: 12))
+            .animation(.easeInOut(duration: 0.1))
     }
 }
 
@@ -77,6 +104,6 @@ extension InfoFieldView {
 
 struct InfoFieldView_Previews: PreviewProvider {
     static var previews: some View {
-        InfoFieldView(fieldType: .password)
+        InfoFieldView(fieldType: .email, isError: .constant(false))
     }
 }

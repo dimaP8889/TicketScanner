@@ -14,11 +14,19 @@ struct CustomTextField: View {
     @Binding var text: String
     var editingChanged: (Bool)->() = { _ in }
     var commit: ()->() = { }
+    var isSecured : Bool
 
     var body: some View {
         ZStack(alignment: .leading) {
             if text.isEmpty { placeholder }
-            TextField("", text: $text, onEditingChanged: editingChanged, onCommit: commit)
+            if isSecured {
+                SecureField("", text: $text)
+                    .onChange(of: text) { value in
+                        editingChanged(text != "")
+                    }
+            } else {
+                TextField("", text: $text, onEditingChanged: editingChanged, onCommit: commit)
+            }
         }
     }
 }

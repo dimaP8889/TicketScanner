@@ -10,7 +10,7 @@ import SwiftUI
 struct CredentialsView: View {
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 12) {
             HStack {
                 Text("Вхід")
                     .font(Font.main(size: 14))
@@ -20,8 +20,10 @@ struct CredentialsView: View {
                 Spacer()
             }
             Spacer()
+            InfoFieldView(fieldType: .email, isError: .constant(false))
+            InfoFieldView(fieldType: .password, isError: .constant(false))
         }
-        .background(Color.clear)
+        .background(Color.black)
     }
 }
 
