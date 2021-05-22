@@ -16,9 +16,10 @@
 		F16985E92653101600B26671 /* TicketScannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16985D62653101400B26671 /* TicketScannerApp.swift */; };
 		F16985EB2653101600B26671 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16985D72653101400B26671 /* RegistrationView.swift */; };
 		F16985ED2653101600B26671 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16985D82653101500B26671 /* Assets.xcassets */; };
-		F1698605265315B600B26671 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1698604265315B600B26671 /* SquareView.swift */; };
 		F1698607265321A000B26671 /* EKRepro-2204.otf in Resources */ = {isa = PBXBuildFile; fileRef = F1698606265321A000B26671 /* EKRepro-2204.otf */; };
 		F169860B265322C400B26671 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F169860A265322C400B26671 /* Action.swift */; };
+		F1A1C24A2659BF7C006F4922 /* LogInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A1C2492659BF7C006F4922 /* LogInButton.swift */; };
+		F1FEC09C2659B862003B9235 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1698604265315B600B26671 /* SquareView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		F1698604265315B600B26671 /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		F1698606265321A000B26671 /* EKRepro-2204.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EKRepro-2204.otf"; sourceTree = "<group>"; };
 		F169860A265322C400B26671 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		F1A1C2492659BF7C006F4922 /* LogInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 		F16986022653156600B26671 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F1A1C2482659BF41006F4922 /* LogInButton */,
 				F16986032653157E00B26671 /* SquareView */,
 			);
 			path = Views;
@@ -203,6 +206,14 @@
 				F169860A265322C400B26671 /* Action.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		F1A1C2482659BF41006F4922 /* LogInButton */ = {
+			isa = PBXGroup;
+			children = (
+				F1A1C2492659BF7C006F4922 /* LogInButton.swift */,
+			);
+			path = LogInButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,11 +285,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1698605265315B600B26671 /* SquareView.swift in Sources */,
 				F10A0D302655C76600487FD5 /* InfoFieldView.swift in Sources */,
+				F1FEC09C2659B862003B9235 /* SquareView.swift in Sources */,
 				F10A0D2A2655C44900487FD5 /* CredentialsView.swift in Sources */,
 				F10A0D392655CCE700487FD5 /* Color.swift in Sources */,
 				F10A0D3D2655D0BF00487FD5 /* CustomTextField.swift in Sources */,
+				F1A1C24A2659BF7C006F4922 /* LogInButton.swift in Sources */,
 				F10A0D2D2655C4D400487FD5 /* CheckInView.swift in Sources */,
 				F169860B265322C400B26671 /* Action.swift in Sources */,
 				F10A0D372655CB7900487FD5 /* Font.swift in Sources */,

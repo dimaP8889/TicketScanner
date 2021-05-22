@@ -11,14 +11,21 @@ struct RegistrationView: View {
     
     @State private var topInset : CGFloat = UIScreen.main.bounds.height
     @State private var squareButtonAlpha : CGFloat = 0
+    @State private var isAccountButtonPressed : Bool = false
     
     var body: some View {
         HStack {
             VStack {
                 Spacer()
                     .frame(width: 0, height: topInset)
-                SquareView(buttonAlpha: squareButtonAlpha)
-                    .frame(width: 243, height: 262)
+                SquareView(
+                    buttonAlpha: squareButtonAlpha,
+                    isAccountButtonPressed: $isAccountButtonPressed
+                )
+                    .frame(
+                        width: isAccountButtonPressed ? UIScreen.main.bounds.width - 24 : 243,
+                        height: 262
+                    )
                 Spacer()
             }
             Spacer()

@@ -10,24 +10,34 @@ import SwiftUI
 struct SquareView: View {
     
     var buttonAlpha : CGFloat
-    
-    init(buttonAlpha : CGFloat) {
-        self.buttonAlpha = buttonAlpha
-    }
+    @Binding var isAccountButtonPressed : Bool
     
     var body: some View {
         
-        CheckInView(buttonAlpha: buttonAlpha)
+        content
             .background(
                 RoundedRectangle(cornerRadius: 18)
                     .foregroundColor(.black)
             )
             .background(Color.clear)
     }
+    
+    var content: some View {
+        
+        if isAccountButtonPressed {
+            return AnyView(CredentialsView())
+        } else {
+            return AnyView(CheckInView(buttonAlpha: buttonAlpha) {
+                withAnimation(.spring()) {
+                    isAccountButtonPressed = true
+                }
+            })
+        }
+    }
 }
 
 struct SquareView_Previews: PreviewProvider {
     static var previews: some View {
-        SquareView(buttonAlpha: 1)
+        SquareView(buttonAlpha: 1, isAccountButtonPressed: .constant(true))
     }
 }

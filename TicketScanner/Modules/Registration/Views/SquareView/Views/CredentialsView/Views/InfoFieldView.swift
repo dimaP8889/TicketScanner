@@ -24,7 +24,7 @@ struct InfoFieldView: View {
                 errorText
             }
         }
-        .background(Color.black)
+        .background(Color.clear)
     }
     
     private var field: some View {
@@ -105,5 +105,6 @@ extension InfoFieldView {
 struct InfoFieldView_Previews: PreviewProvider {
     static var previews: some View {
         InfoFieldView(fieldType: .email, isError: .constant(false))
+            .background(Color.black)
     }
 }

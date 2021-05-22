@@ -21,14 +21,19 @@ struct CredentialsView: View {
             }
             Spacer()
             InfoFieldView(fieldType: .email, isError: .constant(false))
+                .padding(.leading, 12)
+                .padding(.trailing, 12)
             InfoFieldView(fieldType: .password, isError: .constant(false))
+                .padding(.leading, 12)
+                .padding(.trailing, 12)
         }
-        .background(Color.black)
+        .padding(.bottom, 16)
     }
 }
 
 struct CredentialsView_Previews: PreviewProvider {
     static var previews: some View {
         CredentialsView()
+            .background(Color.black)
     }
 }
