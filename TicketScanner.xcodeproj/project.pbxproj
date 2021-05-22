@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F10A0D2A2655C44900487FD5 /* CredentialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A0D292655C44900487FD5 /* CredentialsView.swift */; };
+		F10A0D2D2655C4D400487FD5 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A0D2C2655C4D400487FD5 /* CheckInView.swift */; };
+		F10A0D302655C76600487FD5 /* InfoFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A0D2F2655C76600487FD5 /* InfoFieldView.swift */; };
+		F10A0D372655CB7900487FD5 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A0D362655CB7900487FD5 /* Font.swift */; };
+		F10A0D392655CCE700487FD5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A0D382655CCE700487FD5 /* Color.swift */; };
+		F10A0D3D2655D0BF00487FD5 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A0D3C2655D0BF00487FD5 /* CustomTextField.swift */; };
 		F16985E92653101600B26671 /* TicketScannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16985D62653101400B26671 /* TicketScannerApp.swift */; };
 		F16985EB2653101600B26671 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16985D72653101400B26671 /* RegistrationView.swift */; };
 		F16985ED2653101600B26671 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16985D82653101500B26671 /* Assets.xcassets */; };
@@ -16,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F10A0D292655C44900487FD5 /* CredentialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsView.swift; sourceTree = "<group>"; };
+		F10A0D2C2655C4D400487FD5 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
+		F10A0D2F2655C76600487FD5 /* InfoFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoFieldView.swift; sourceTree = "<group>"; };
+		F10A0D362655CB7900487FD5 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		F10A0D382655CCE700487FD5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		F10A0D3C2655D0BF00487FD5 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		F16985D62653101400B26671 /* TicketScannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketScannerApp.swift; sourceTree = "<group>"; };
 		F16985D72653101400B26671 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		F16985D82653101500B26671 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -37,6 +49,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F10A0D272655C3FE00487FD5 /* CredentialsView */ = {
+			isa = PBXGroup;
+			children = (
+				F10A0D2E2655C71800487FD5 /* Views */,
+				F10A0D292655C44900487FD5 /* CredentialsView.swift */,
+			);
+			path = CredentialsView;
+			sourceTree = "<group>";
+		};
+		F10A0D282655C42A00487FD5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F10A0D2B2655C49900487FD5 /* CheckInView */,
+				F10A0D272655C3FE00487FD5 /* CredentialsView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F10A0D2B2655C49900487FD5 /* CheckInView */ = {
+			isa = PBXGroup;
+			children = (
+				F10A0D2C2655C4D400487FD5 /* CheckInView.swift */,
+			);
+			path = CheckInView;
+			sourceTree = "<group>";
+		};
+		F10A0D2E2655C71800487FD5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F10A0D2F2655C76600487FD5 /* InfoFieldView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F10A0D352655CB6B00487FD5 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				F10A0D362655CB7900487FD5 /* Font.swift */,
+				F10A0D382655CCE700487FD5 /* Color.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		F10A0D3A2655D0A300487FD5 /* Universal */ = {
+			isa = PBXGroup;
+			children = (
+				F10A0D3B2655D0AD00487FD5 /* View */,
+			);
+			path = Universal;
+			sourceTree = "<group>";
+		};
+		F10A0D3B2655D0AD00487FD5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F10A0D3C2655D0BF00487FD5 /* CustomTextField.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F16985D02653101400B26671 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				F16985FC2653127B00B26671 /* Registration */,
+				F10A0D3A2655D0A300487FD5 /* Universal */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -110,6 +182,7 @@
 		F16986032653157E00B26671 /* SquareView */ = {
 			isa = PBXGroup;
 			children = (
+				F10A0D282655C42A00487FD5 /* Views */,
 				F1698604265315B600B26671 /* SquareView.swift */,
 			);
 			path = SquareView;
@@ -126,6 +199,7 @@
 		F1698609265322B600B26671 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F10A0D352655CB6B00487FD5 /* SwiftUI */,
 				F169860A265322C400B26671 /* Action.swift */,
 			);
 			path = Utils;
@@ -201,7 +275,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1698605265315B600B26671 /* SquareView.swift in Sources */,
+				F10A0D302655C76600487FD5 /* InfoFieldView.swift in Sources */,
+				F10A0D2A2655C44900487FD5 /* CredentialsView.swift in Sources */,
+				F10A0D392655CCE700487FD5 /* Color.swift in Sources */,
+				F10A0D3D2655D0BF00487FD5 /* CustomTextField.swift in Sources */,
+				F10A0D2D2655C4D400487FD5 /* CheckInView.swift in Sources */,
 				F169860B265322C400B26671 /* Action.swift in Sources */,
+				F10A0D372655CB7900487FD5 /* Font.swift in Sources */,
 				F16985EB2653101600B26671 /* RegistrationView.swift in Sources */,
 				F16985E92653101600B26671 /* TicketScannerApp.swift in Sources */,
 			);
