@@ -10,12 +10,7 @@ import SwiftUI
 struct CheckInView: View {
     
     var buttonAlpha : CGFloat
-    var pressAction : Action?
-    
-    init(buttonAlpha : CGFloat, pressAction : Action?) {
-        self.buttonAlpha = buttonAlpha
-        self.pressAction = pressAction
-    }
+    @Binding var isAccountButtonPressed : Bool
     
     var body: some View {
         VStack {
@@ -33,7 +28,7 @@ struct CheckInView: View {
         VStack {
             Button(
                 action: {
-                    pressAction?()
+                    isAccountButtonPressed.toggle()
                 },
                 label: {
                     Text("2204\nCheck in")
@@ -50,7 +45,7 @@ struct CheckInView: View {
 
 struct CheckInView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckInView(buttonAlpha: 100, pressAction: nil)
+        CheckInView(buttonAlpha: 100, isAccountButtonPressed: .constant(false))
             .background(Color.black)
     }
 }

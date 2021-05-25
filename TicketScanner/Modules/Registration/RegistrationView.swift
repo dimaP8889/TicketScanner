@@ -20,12 +20,12 @@ struct RegistrationView: View {
                     .frame(width: 0, height: topInset)
                 SquareView(
                     buttonAlpha: squareButtonAlpha,
-                    isAccountButtonPressed: $isAccountButtonPressed
+                    isAccountButtonPressed: $isAccountButtonPressed.animation(.easeOut(duration: 1))
                 )
-                    .frame(
-                        width: isAccountButtonPressed ? UIScreen.main.bounds.width - 24 : 243,
-                        height: 262
-                    )
+                .frame(
+                    width: isAccountButtonPressed ? UIScreen.main.bounds.width - 24 : 243,
+                    height: 262
+                )
                 Spacer()
             }
             Spacer()

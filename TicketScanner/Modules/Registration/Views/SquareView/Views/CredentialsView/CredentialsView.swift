@@ -23,9 +23,11 @@ struct CredentialsView: View {
             InfoFieldView(fieldType: .email, isError: .constant(false))
                 .padding(.leading, 12)
                 .padding(.trailing, 12)
+                .frame(height: 73)
             InfoFieldView(fieldType: .password, isError: .constant(false))
                 .padding(.leading, 12)
                 .padding(.trailing, 12)
+                .frame(height: 73)
         }
         .padding(.bottom, 16)
     }

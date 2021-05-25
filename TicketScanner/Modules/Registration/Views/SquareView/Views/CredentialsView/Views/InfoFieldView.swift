@@ -38,21 +38,14 @@ struct InfoFieldView: View {
                 Spacer()
             }
             
-            
             CustomTextField(
-                placeholder: Text(fieldType.placeholder).foregroundColor(.white.opacity(0.5)),
+                placeholder: fieldType.placeholder,
                 text: $text,
                 editingChanged: { isEditting in
                     self.isEditting = isEditting
                 },
-                commit: {
-                    withAnimation {
-                        self.isValid = text.count < 5
-                    }
-                },
                 isSecured: fieldType == .password
             )
-            .foregroundColor(.white)
             .font(.main(size: 20))
             .padding(.leading, 16)
             .padding(.trailing, 8)
