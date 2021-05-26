@@ -9,19 +9,31 @@ import SwiftUI
 
 struct LogInButton: View {
     
-    // Create Enviromental oblect for button state
-    
+    @Binding var isButtonActive : Bool
     var buttonPressAction : Action
     
     var body: some View {
-        Button("Увійти") {
-            
-        }
+        Button(action: {
+            buttonPressAction()
+        },
+        label: {
+            Text("Увійти")
+                .font(.main(size: 20))
+                .foregroundColor(.white)
+                .padding([.top, .bottom], 20)
+        })
+        .disabled(!isButtonActive)
+        .frame(width: UIScreen.main.bounds.width - 24, height: 62)
+        .background(
+            RoundedRectangle(cornerRadius: 18)
+                .foregroundColor(isButtonActive ? .codGray : .codGrayTransparent)
+        )
     }
 }
 
 struct LogInButton_Previews: PreviewProvider {
+    
     static var previews: some View {
-        LogInButton(buttonPressAction: {})
+        LogInButton(isButtonActive: .constant(true), buttonPressAction: {})
     }
 }

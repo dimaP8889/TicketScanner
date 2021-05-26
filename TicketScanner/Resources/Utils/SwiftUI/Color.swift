@@ -16,5 +16,8 @@ extension Color {
     
     static var radicalRed               = Color(.sRGB, red: 0.983, green: 0.164, blue: 0.361, opacity: 1)
     static var radicalRedLight          = Color(.sRGB, red: 0.983, green: 0.164, blue: 0.361, opacity: 0.75)
+    
+    static var codGray                  = Color(.sRGB, red: 0.075, green: 0.075, blue: 0.075, opacity: 1)
+    static var codGrayTransparent       = Color(.sRGB, red: 0.075, green: 0.075, blue: 0.075, opacity: 0.15)
 }
 

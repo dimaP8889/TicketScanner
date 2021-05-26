@@ -13,6 +13,8 @@ struct RegistrationView: View {
     @State private var squareButtonAlpha : CGFloat = 0
     @State private var isAccountButtonPressed : Bool = false
     
+    @State private var buttonOpacity : Double = 0
+    
     var body: some View {
         HStack {
             VStack {
@@ -26,6 +28,19 @@ struct RegistrationView: View {
                     width: isAccountButtonPressed ? UIScreen.main.bounds.width - 24 : 243,
                     height: 262
                 )
+                if isAccountButtonPressed {
+                    LogInButton(
+                        isButtonActive: .constant(false)
+                    ) {
+                        
+                    }
+                    .onAppear {
+                        withAnimation {
+                            buttonOpacity = 1
+                        }
+                    }
+                    .opacity(buttonOpacity)
+                }
                 Spacer()
             }
             Spacer()

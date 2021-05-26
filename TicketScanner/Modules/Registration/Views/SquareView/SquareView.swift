@@ -24,19 +24,11 @@ struct SquareView: View {
                 )
             }
         }
-        .modifier(ShapeModifier())
-    }
-}
-
-fileprivate struct ShapeModifier: ViewModifier {
-    
-    func body(content: Content) -> some View {
-        content
-            .background(
-                RoundedRectangle(cornerRadius: 18)
-                    .foregroundColor(.black)
-            )
-            .background(Color.clear)
+        .background(
+            RoundedRectangle(cornerRadius: 18)
+                .foregroundColor(.black)
+        )
+        .background(Color.clear)
     }
 }
 
