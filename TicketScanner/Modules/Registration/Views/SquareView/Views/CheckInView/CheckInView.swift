@@ -31,7 +31,7 @@ struct CheckInView: View {
                     isAccountButtonPressed.toggle()
                 },
                 label: {
-                    Text("2204\nCheck in")
+                    Text(localStr("registration.button.check-in"))
                         .font(.main(size: 24))
                 }
             )

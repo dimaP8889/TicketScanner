@@ -20,6 +20,9 @@
 		F1698607265321A000B26671 /* EKRepro-2204.otf in Resources */ = {isa = PBXBuildFile; fileRef = F1698606265321A000B26671 /* EKRepro-2204.otf */; };
 		F169860B265322C400B26671 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F169860A265322C400B26671 /* Action.swift */; };
 		F1A1C24A2659BF7C006F4922 /* LogInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A1C2492659BF7C006F4922 /* LogInButton.swift */; };
+		F1FCC331265EF6EB00951F8B /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FCC330265EF6EB00951F8B /* Defaults.swift */; };
+		F1FCC333265EF79C00951F8B /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FCC332265EF79C00951F8B /* Global.swift */; };
+		F1FCC337265EF7DB00951F8B /* ua.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1FCC339265EF7DB00951F8B /* ua.strings */; };
 		F1FEC09C2659B862003B9235 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1698604265315B600B26671 /* SquareView.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +43,9 @@
 		F1698606265321A000B26671 /* EKRepro-2204.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EKRepro-2204.otf"; sourceTree = "<group>"; };
 		F169860A265322C400B26671 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		F1A1C2492659BF7C006F4922 /* LogInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInButton.swift; sourceTree = "<group>"; };
+		F1FCC330265EF6EB00951F8B /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		F1FCC332265EF79C00951F8B /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		F1FCC338265EF7DB00951F8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ua.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +175,7 @@
 				F1698608265321A600B26671 /* Fonts */,
 				F16985D82653101500B26671 /* Assets.xcassets */,
 				F16985E02653101600B26671 /* Info.plist */,
+				F1FCC334265EF7BD00951F8B /* String */,
 				F1698609265322B600B26671 /* Utils */,
 			);
 			path = Resources;
@@ -223,6 +230,8 @@
 			children = (
 				F10A0D352655CB6B00487FD5 /* SwiftUI */,
 				F169860A265322C400B26671 /* Action.swift */,
+				F1FCC330265EF6EB00951F8B /* Defaults.swift */,
+				F1FCC332265EF79C00951F8B /* Global.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -233,6 +242,14 @@
 				F1A1C2492659BF7C006F4922 /* LogInButton.swift */,
 			);
 			path = LogInButton;
+			sourceTree = "<group>";
+		};
+		F1FCC334265EF7BD00951F8B /* String */ = {
+			isa = PBXGroup;
+			children = (
+				F1FCC339265EF7DB00951F8B /* ua.strings */,
+			);
+			path = String;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1FCC337265EF7DB00951F8B /* ua.strings in Resources */,
 				F1698607265321A000B26671 /* EKRepro-2204.otf in Resources */,
 				F16985ED2653101600B26671 /* Assets.xcassets in Resources */,
 			);
@@ -305,10 +323,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F10A0D302655C76600487FD5 /* InfoFieldView.swift in Sources */,
+				F1FCC331265EF6EB00951F8B /* Defaults.swift in Sources */,
 				F1FEC09C2659B862003B9235 /* SquareView.swift in Sources */,
 				F10A0D2A2655C44900487FD5 /* CredentialsView.swift in Sources */,
 				F10A0D392655CCE700487FD5 /* Color.swift in Sources */,
 				F10A0D3D2655D0BF00487FD5 /* CustomTextField.swift in Sources */,
+				F1FCC333265EF79C00951F8B /* Global.swift in Sources */,
 				F1A1C24A2659BF7C006F4922 /* LogInButton.swift in Sources */,
 				F10A0D2D2655C4D400487FD5 /* CheckInView.swift in Sources */,
 				F169860B265322C400B26671 /* Action.swift in Sources */,
@@ -320,6 +340,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F1FCC339265EF7DB00951F8B /* ua.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1FCC338265EF7DB00951F8B /* en */,
+			);
+			name = ua.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F16985EF2653101600B26671 /* Debug */ = {

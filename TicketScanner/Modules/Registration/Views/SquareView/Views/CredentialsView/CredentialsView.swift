@@ -12,7 +12,7 @@ struct CredentialsView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
-                Text("Вхід")
+                Text(localStr("registration.square.title"))
                     .font(Font.main(size: 14))
                     .foregroundColor(.alto)
                     .padding(.leading, 12)

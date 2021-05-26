@@ -17,7 +17,7 @@ struct LogInButton: View {
             buttonPressAction()
         },
         label: {
-            Text("Увійти")
+            Text(localStr("registration.button.title"))
                 .font(.main(size: 20))
                 .foregroundColor(.white)
                 .padding([.top, .bottom], 20)

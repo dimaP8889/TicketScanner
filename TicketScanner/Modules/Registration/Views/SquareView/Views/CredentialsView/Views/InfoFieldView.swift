@@ -61,7 +61,7 @@ struct InfoFieldView: View {
     }
 
     private var errorText: some View {
-        Text("Будь ласка, введіть справжній email або id")
+        Text(localStr("registration.error.title"))
             .foregroundColor(.radicalRed)
             .font(.main(size: 12))
             .animation(.easeInOut(duration: 0.1))
@@ -78,18 +78,18 @@ extension InfoFieldView {
         var description : String {
             switch self {
             case .email:
-                return "Email або id"
+                return localStr("registration.textfield.email.description")
             case .password:
-                return "Пароль"
+                return localStr("registration.textfield.password.description")
             }
         }
         
         var placeholder : String {
             switch self {
             case .email:
-                return "введіть свій email або id"
-            default:
-                return "введіть свій пароль"
+                return localStr("registration.textfield.email.placeholder")
+            case .password:
+                return localStr("registration.textfield.password.placeholder")
             }
         }
     }
