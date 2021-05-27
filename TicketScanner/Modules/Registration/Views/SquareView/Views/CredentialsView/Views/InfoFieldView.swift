@@ -11,11 +11,17 @@ struct InfoFieldView: View {
     
     var fieldType : FieldType
     
+    @State private var isHiden = true
+    
     @State private var text : String = ""
     @State private var isEditting : Bool = false
     
     @Binding var isError : Bool
     @State private var isValid : Bool = true
+    
+    private var trailingPadding : CGFloat {
+        UIScreen.main.bounds.width - 243
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
@@ -25,6 +31,15 @@ struct InfoFieldView: View {
             }
         }
         .background(Color.clear)
+        .padding(
+            .trailing,
+            isHiden ? trailingPadding : 0
+        )
+        .onAppear {
+            withAnimation(.easeOut(duration: 1)) {
+                isHiden = false
+            }
+        }
     }
     
     private var field: some View {

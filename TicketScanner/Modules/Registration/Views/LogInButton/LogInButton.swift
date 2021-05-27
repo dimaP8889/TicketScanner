@@ -20,10 +20,9 @@ struct LogInButton: View {
             Text(localStr("registration.button.title"))
                 .font(.main(size: 20))
                 .foregroundColor(.white)
-                .padding([.top, .bottom], 20)
+                .frame(width: UIScreen.main.bounds.width - 24, height: 62)
         })
         .disabled(!isButtonActive)
-        .frame(width: UIScreen.main.bounds.width - 24, height: 62)
         .background(
             RoundedRectangle(cornerRadius: 18)
                 .foregroundColor(isButtonActive ? .codGray : .codGrayTransparent)

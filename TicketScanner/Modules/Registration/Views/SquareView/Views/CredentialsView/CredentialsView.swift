@@ -13,7 +13,7 @@ struct CredentialsView: View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
                 Text(localStr("registration.square.title"))
-                    .font(Font.main(size: 14))
+                    .font(Font.main(size: 24))
                     .foregroundColor(.alto)
                     .padding(.leading, 12)
                     .padding(.top, 8)

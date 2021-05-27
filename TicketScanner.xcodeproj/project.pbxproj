@@ -23,6 +23,7 @@
 		F1FCC331265EF6EB00951F8B /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FCC330265EF6EB00951F8B /* Defaults.swift */; };
 		F1FCC333265EF79C00951F8B /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FCC332265EF79C00951F8B /* Global.swift */; };
 		F1FCC337265EF7DB00951F8B /* ua.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1FCC339265EF7DB00951F8B /* ua.strings */; };
+		F1FCC35F2660272E00951F8B /* KeyboardHeightHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FCC35E2660272E00951F8B /* KeyboardHeightHelper.swift */; };
 		F1FEC09C2659B862003B9235 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1698604265315B600B26671 /* SquareView.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		F1FCC330265EF6EB00951F8B /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		F1FCC332265EF79C00951F8B /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		F1FCC338265EF7DB00951F8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ua.strings; sourceTree = "<group>"; };
+		F1FCC35E2660272E00951F8B /* KeyboardHeightHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHeightHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 				F169860A265322C400B26671 /* Action.swift */,
 				F1FCC330265EF6EB00951F8B /* Defaults.swift */,
 				F1FCC332265EF79C00951F8B /* Global.swift */,
+				F1FCC35E2660272E00951F8B /* KeyboardHeightHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1FCC35F2660272E00951F8B /* KeyboardHeightHelper.swift in Sources */,
 				F10A0D302655C76600487FD5 /* InfoFieldView.swift in Sources */,
 				F1FCC331265EF6EB00951F8B /* Defaults.swift in Sources */,
 				F1FEC09C2659B862003B9235 /* SquareView.swift in Sources */,

@@ -9,8 +9,7 @@ import SwiftUI
 
 struct CheckInView: View {
     
-    var buttonAlpha : CGFloat
-    @Binding var isAccountButtonPressed : Bool
+    var alpha : CGFloat
     
     var body: some View {
         VStack {
@@ -26,26 +25,19 @@ struct CheckInView: View {
     var content: some View {
         
         VStack {
-            Button(
-                action: {
-                    isAccountButtonPressed.toggle()
-                },
-                label: {
-                    Text(localStr("registration.button.check-in"))
-                        .font(.main(size: 24))
-                }
-            )
+            Text(localStr("registration.button.check-in"))
+                .font(.main(size: 24))
             .padding([.leading], 12)
             .padding([.top], 8)
             .foregroundColor(.white)
-            .opacity(Double(buttonAlpha))
+            .opacity(Double(alpha))
         }
     }
 }
 
 struct CheckInView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckInView(buttonAlpha: 100, isAccountButtonPressed: .constant(false))
+        CheckInView(alpha: 100)
             .background(Color.black)
     }
 }

@@ -19,8 +19,7 @@ struct SquareView: View {
                 CredentialsView()
             } else {
                 CheckInView(
-                    buttonAlpha: buttonAlpha,
-                    isAccountButtonPressed: $isAccountButtonPressed
+                    alpha: buttonAlpha
                 )
             }
         }
@@ -29,6 +28,11 @@ struct SquareView: View {
                 .foregroundColor(.black)
         )
         .background(Color.clear)
+        .onTapGesture {
+            if !isAccountButtonPressed {
+                isAccountButtonPressed = true
+            }
+        }
     }
 }
 

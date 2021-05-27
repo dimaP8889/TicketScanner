@@ -24,8 +24,6 @@ struct CustomTextFieldContainer: UIViewRepresentable {
         self.text = text
         self.editingChanged = editingChanged
     }
-    
-    
 
     func makeCoordinator() -> CustomTextFieldContainer.Coordinator {
         Coordinator(self)
@@ -49,6 +47,9 @@ struct CustomTextFieldContainer: UIViewRepresentable {
             innertTextField.keyboardType = .emailAddress
             innertTextField.autocorrectionType = .no
             innertTextField.autocapitalizationType = .none
+            if !innertTextField.isFirstResponder {
+                innertTextField.becomeFirstResponder()
+            }
         }
         
         context.coordinator.setup(innertTextField)
