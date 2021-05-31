@@ -18,6 +18,8 @@ struct RegistrationView: View {
     
     @ObservedObject private var keyboardHelper = KeyboardHeightHelper()
     
+    @EnvironmentObject var store: LoginStore
+    
     private var startHeight : CGFloat = {
         262 > UIScreen.main.bounds.height * 0.4 ?
             UIScreen.main.bounds.height * 0.4 : 262
@@ -48,7 +50,7 @@ struct RegistrationView: View {
                     )
                     if isAccountButtonPressed {
                         LogInButton(
-                            isButtonActive: .constant(false)
+                            isButtonActive: store.state.isValid
                         ) {
                             
                         }

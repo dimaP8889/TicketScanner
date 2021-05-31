@@ -11,13 +11,14 @@ struct InfoFieldView: View {
     
     var fieldType : FieldType
     
+    @EnvironmentObject private var store: LoginStore
+    
     @State private var isHiden = true
     
     @State private var text : String = ""
     @State private var isEditting : Bool = false
     
     @Binding var isError : Bool
-    @State private var isValid : Bool = true
     
     private var trailingPadding : CGFloat {
         UIScreen.main.bounds.width - 243
@@ -26,7 +27,7 @@ struct InfoFieldView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             field
-            if !isValid || isError {
+            if isError {
                 errorText
             }
         }
@@ -41,8 +42,12 @@ struct InfoFieldView: View {
             }
         }
     }
+}
+
+// MARK: - Private Properties
+private extension InfoFieldView {
     
-    private var field: some View {
+    var field: some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack {
                 Text(fieldType.description)
@@ -59,6 +64,13 @@ struct InfoFieldView: View {
                 editingChanged: { isEditting in
                     self.isEditting = isEditting
                 },
+                textDidChange: {
+                    store.dispatch(
+                        action:
+                            fieldType == .password ?
+                            .changePassword(text) : .changeEmail(text)
+                    )
+                },
                 isSecured: fieldType == .password
             )
             .font(.main(size: 20))
@@ -69,13 +81,13 @@ struct InfoFieldView: View {
         .overlay(
             RoundedRectangle(cornerRadius: 19)
                 .stroke(
-                    isError || !isValid ? Color.radicalRedLight : isEditting
+                    isError ? Color.radicalRedLight : isEditting
                             ? Color.altoLight : Color.altoSuperLight
                 )
         )
     }
 
-    private var errorText: some View {
+    var errorText: some View {
         Text(localStr("registration.error.title"))
             .foregroundColor(.radicalRed)
             .font(.main(size: 12))
@@ -83,6 +95,7 @@ struct InfoFieldView: View {
     }
 }
 
+// MARK: - Model
 extension InfoFieldView {
     
     enum FieldType {

@@ -14,15 +14,18 @@ struct CustomTextFieldContainer: UIViewRepresentable {
     private var isSecure : Bool
     private var text : Binding<String>
     private var editingChanged: (Bool)->() = { _ in }
+    private var textDidChange: Action
     
     init(
         placeholder: String, isSecure: Bool,
-        text: Binding<String>, editingChanged: @escaping (Bool) -> ()
+        text: Binding<String>, editingChanged: @escaping (Bool) -> (),
+        textDidChange: @escaping Action
     ) {
         self.placeholder = placeholder
         self.isSecure = isSecure
         self.text = text
         self.editingChanged = editingChanged
+        self.textDidChange = textDidChange
     }
 
     func makeCoordinator() -> CustomTextFieldContainer.Coordinator {
@@ -76,6 +79,7 @@ struct CustomTextFieldContainer: UIViewRepresentable {
         
         @objc func textFieldDidChange(_ textField: UITextField) {
             self.parent.text.wrappedValue = textField.text ?? ""
+            self.parent.textDidChange()
         }
 
         func textFieldDidBeginEditing(_ textField: UITextField) {

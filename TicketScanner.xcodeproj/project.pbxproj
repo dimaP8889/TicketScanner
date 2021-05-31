@@ -13,12 +13,15 @@
 		F10A0D372655CB7900487FD5 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A0D362655CB7900487FD5 /* Font.swift */; };
 		F10A0D392655CCE700487FD5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A0D382655CCE700487FD5 /* Color.swift */; };
 		F10A0D3D2655D0BF00487FD5 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A0D3C2655D0BF00487FD5 /* CustomTextField.swift */; };
+		F158F45E266569F100AB8AE6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158F45D266569F100AB8AE6 /* String.swift */; };
 		F15BD055265DA27F0026B6DD /* CustomTextFieldSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BD054265DA27F0026B6DD /* CustomTextFieldSwift.swift */; };
 		F16985E92653101600B26671 /* TicketScannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16985D62653101400B26671 /* TicketScannerApp.swift */; };
 		F16985EB2653101600B26671 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16985D72653101400B26671 /* RegistrationView.swift */; };
 		F16985ED2653101600B26671 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16985D82653101500B26671 /* Assets.xcassets */; };
 		F1698607265321A000B26671 /* EKRepro-2204.otf in Resources */ = {isa = PBXBuildFile; fileRef = F1698606265321A000B26671 /* EKRepro-2204.otf */; };
 		F169860B265322C400B26671 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F169860A265322C400B26671 /* Action.swift */; };
+		F172FE8A26655EAC00FF9569 /* LoginCredentialsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F172FE8926655EAC00FF9569 /* LoginCredentialsModel.swift */; };
+		F172FE8D2665631A00FF9569 /* LoginCredentialsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F172FE8C2665631A00FF9569 /* LoginCredentialsStore.swift */; };
 		F1A1C24A2659BF7C006F4922 /* LogInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A1C2492659BF7C006F4922 /* LogInButton.swift */; };
 		F1FCC331265EF6EB00951F8B /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FCC330265EF6EB00951F8B /* Defaults.swift */; };
 		F1FCC333265EF79C00951F8B /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FCC332265EF79C00951F8B /* Global.swift */; };
@@ -34,6 +37,7 @@
 		F10A0D362655CB7900487FD5 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		F10A0D382655CCE700487FD5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		F10A0D3C2655D0BF00487FD5 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		F158F45D266569F100AB8AE6 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F15BD054265DA27F0026B6DD /* CustomTextFieldSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldSwift.swift; sourceTree = "<group>"; };
 		F16985D62653101400B26671 /* TicketScannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketScannerApp.swift; sourceTree = "<group>"; };
 		F16985D72653101400B26671 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
@@ -43,6 +47,8 @@
 		F1698604265315B600B26671 /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		F1698606265321A000B26671 /* EKRepro-2204.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EKRepro-2204.otf"; sourceTree = "<group>"; };
 		F169860A265322C400B26671 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		F172FE8926655EAC00FF9569 /* LoginCredentialsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCredentialsModel.swift; sourceTree = "<group>"; };
+		F172FE8C2665631A00FF9569 /* LoginCredentialsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCredentialsStore.swift; sourceTree = "<group>"; };
 		F1A1C2492659BF7C006F4922 /* LogInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInButton.swift; sourceTree = "<group>"; };
 		F1FCC330265EF6EB00951F8B /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		F1FCC332265EF79C00951F8B /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -120,6 +126,38 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F158F45A266566D000AB8AE6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F158F45B2665670400AB8AE6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F158F46026656A0500AB8AE6 /* Foundation */,
+				F158F45C266569E700AB8AE6 /* UIKit */,
+				F10A0D352655CB6B00487FD5 /* SwiftUI */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F158F45C266569E700AB8AE6 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		F158F46026656A0500AB8AE6 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				F158F45D266569F100AB8AE6 /* String.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
 		F15BD052265DA2440026B6DD /* CustomTextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +188,7 @@
 			children = (
 				F16985F82653122100B26671 /* App */,
 				F16985FA2653125200B26671 /* Resources */,
+				F172FE8826655E8900FF9569 /* Model */,
 				F16985FB2653127100B26671 /* Modules */,
 			);
 			path = TicketScanner;
@@ -174,11 +213,13 @@
 		F16985FA2653125200B26671 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F158F45B2665670400AB8AE6 /* Extensions */,
 				F1698608265321A600B26671 /* Fonts */,
 				F16985D82653101500B26671 /* Assets.xcassets */,
 				F16985E02653101600B26671 /* Info.plist */,
 				F1FCC334265EF7BD00951F8B /* String */,
 				F1698609265322B600B26671 /* Utils */,
+				F158F45A266566D000AB8AE6 /* Extension */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -230,13 +271,29 @@
 		F1698609265322B600B26671 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				F10A0D352655CB6B00487FD5 /* SwiftUI */,
 				F169860A265322C400B26671 /* Action.swift */,
 				F1FCC330265EF6EB00951F8B /* Defaults.swift */,
 				F1FCC332265EF79C00951F8B /* Global.swift */,
 				F1FCC35E2660272E00951F8B /* KeyboardHeightHelper.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		F172FE8826655E8900FF9569 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F172FE8B266562F800FF9569 /* Login */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F172FE8B266562F800FF9569 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F172FE8926655EAC00FF9569 /* LoginCredentialsModel.swift */,
+				F172FE8C2665631A00FF9569 /* LoginCredentialsStore.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		F1A1C2482659BF41006F4922 /* LogInButton */ = {
@@ -337,8 +394,11 @@
 				F10A0D2D2655C4D400487FD5 /* CheckInView.swift in Sources */,
 				F169860B265322C400B26671 /* Action.swift in Sources */,
 				F10A0D372655CB7900487FD5 /* Font.swift in Sources */,
+				F158F45E266569F100AB8AE6 /* String.swift in Sources */,
+				F172FE8D2665631A00FF9569 /* LoginCredentialsStore.swift in Sources */,
 				F16985EB2653101600B26671 /* RegistrationView.swift in Sources */,
 				F15BD055265DA27F0026B6DD /* CustomTextFieldSwift.swift in Sources */,
+				F172FE8A26655EAC00FF9569 /* LoginCredentialsModel.swift in Sources */,
 				F16985E92653101600B26671 /* TicketScannerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

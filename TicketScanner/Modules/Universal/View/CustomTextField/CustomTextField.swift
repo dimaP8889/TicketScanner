@@ -13,9 +13,10 @@ struct CustomTextField: View {
     var placeholder: String
     @Binding var text: String
     var editingChanged: (Bool)->() = { _ in }
+    var textDidChange: Action
     var isSecured : Bool
 
     var body: some View {
-        CustomTextFieldContainer(placeholder: placeholder, isSecure: isSecured, text: $text, editingChanged: editingChanged)
+        CustomTextFieldContainer(placeholder: placeholder, isSecure: isSecured, text: $text, editingChanged: editingChanged, textDidChange: textDidChange)
     }
 }

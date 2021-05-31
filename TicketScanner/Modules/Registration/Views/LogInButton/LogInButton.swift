@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LogInButton: View {
     
-    @Binding var isButtonActive : Bool
+    var isButtonActive : Bool
     var buttonPressAction : Action
     
     var body: some View {
@@ -33,6 +33,6 @@ struct LogInButton: View {
 struct LogInButton_Previews: PreviewProvider {
     
     static var previews: some View {
-        LogInButton(isButtonActive: .constant(true), buttonPressAction: {})
+        LogInButton(isButtonActive: true, buttonPressAction: {})
     }
 }
