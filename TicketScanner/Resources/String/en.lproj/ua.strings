@@ -6,6 +6,16 @@
   
 */
 
+//Common
+"months.0" = "місяць";
+"months.1" = "місяці";
+"months.2" = "місяців";
+"days.0" = "день";
+"days.1" = "дні";
+"days.2" = "днів";
+"hours" = "год";
+"min" = "хв";
+
 //Registration
 "registration.button.title" = "Увійти";
 "registration.square.title" = "Вхід";
@@ -18,3 +28,8 @@
 
 //Events
 "events.toolbar.leading" = "Події";
+"events.logout.title" = "Вийти";
+"events.active.title" = "Активна";
+"events.future.started" = "Розпочалася";
+"events.future.1" = "Стане активною за";
+"events.future.2" = "Розпочнеться за";

@@ -14,8 +14,9 @@ struct TicketScannerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            RegistrationView()
-                .environmentObject(loginStore)
+//            RegistrationView()
+//                .environmentObject(loginStore)
+            EventsView()
         }
     }
 }

@@ -13,9 +13,16 @@
 		F10A0D372655CB7900487FD5 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A0D362655CB7900487FD5 /* Font.swift */; };
 		F10A0D392655CCE700487FD5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A0D382655CCE700487FD5 /* Color.swift */; };
 		F10A0D3D2655D0BF00487FD5 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A0D3C2655D0BF00487FD5 /* CustomTextField.swift */; };
-		F13288E42669416C009F2C48 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13288E32669416C009F2C48 /* EventsView.swift */; };
+		F13986F0266D1E5F00AD3199 /* ActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13986EF266D1E5F00AD3199 /* ActiveView.swift */; };
+		F1572836266D014800F6BE64 /* LogoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1572834266CFFD300F6BE64 /* LogoutButton.swift */; };
+		F1572837266D026000F6BE64 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13288E32669416C009F2C48 /* EventsView.swift */; };
+		F157283B266D14AD00F6BE64 /* EventDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1572839266D122E00F6BE64 /* EventDataView.swift */; };
 		F158F45E266569F100AB8AE6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158F45D266569F100AB8AE6 /* String.swift */; };
 		F15BD055265DA27F0026B6DD /* CustomTextFieldSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BD054265DA27F0026B6DD /* CustomTextFieldSwift.swift */; };
+		F1648D5E266D2B6B00F1FDC1 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D5D266D2B6B00F1FDC1 /* EventModel.swift */; };
+		F1648D60266D2F2100F1FDC1 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D5F266D2F2100F1FDC1 /* Date.swift */; };
+		F1648D62266D4BC800F1FDC1 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D61266D4BC800F1FDC1 /* UINavigationBar.swift */; };
+		F1648D64266D55CA00F1FDC1 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D63266D55CA00F1FDC1 /* DateFormatter.swift */; };
 		F16985E92653101600B26671 /* TicketScannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16985D62653101400B26671 /* TicketScannerApp.swift */; };
 		F16985EB2653101600B26671 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16985D72653101400B26671 /* RegistrationView.swift */; };
 		F16985ED2653101600B26671 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16985D82653101500B26671 /* Assets.xcassets */; };
@@ -39,8 +46,15 @@
 		F10A0D382655CCE700487FD5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		F10A0D3C2655D0BF00487FD5 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		F13288E32669416C009F2C48 /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
+		F13986EF266D1E5F00AD3199 /* ActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveView.swift; sourceTree = "<group>"; };
+		F1572834266CFFD300F6BE64 /* LogoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutButton.swift; sourceTree = "<group>"; };
+		F1572839266D122E00F6BE64 /* EventDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataView.swift; sourceTree = "<group>"; };
 		F158F45D266569F100AB8AE6 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F15BD054265DA27F0026B6DD /* CustomTextFieldSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldSwift.swift; sourceTree = "<group>"; };
+		F1648D5D266D2B6B00F1FDC1 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		F1648D5F266D2F2100F1FDC1 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		F1648D61266D4BC800F1FDC1 /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
+		F1648D63266D55CA00F1FDC1 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		F16985D62653101400B26671 /* TicketScannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketScannerApp.swift; sourceTree = "<group>"; };
 		F16985D72653101400B26671 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		F16985D82653101500B26671 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,16 +145,44 @@
 		F13288E22669400E009F2C48 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				F1572832266CFFBC00F6BE64 /* Views */,
 				F13288E32669416C009F2C48 /* EventsView.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
 		};
-		F158F45A266566D000AB8AE6 /* Extension */ = {
+		F13986EE266D1CA900AD3199 /* ActiveView */ = {
 			isa = PBXGroup;
 			children = (
+				F13986EF266D1E5F00AD3199 /* ActiveView.swift */,
 			);
-			path = Extension;
+			path = ActiveView;
+			sourceTree = "<group>";
+		};
+		F1572832266CFFBC00F6BE64 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1572838266D121900F6BE64 /* EventDataView */,
+				F1572833266CFFC200F6BE64 /* LogoutButton */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F1572833266CFFC200F6BE64 /* LogoutButton */ = {
+			isa = PBXGroup;
+			children = (
+				F1572834266CFFD300F6BE64 /* LogoutButton.swift */,
+			);
+			path = LogoutButton;
+			sourceTree = "<group>";
+		};
+		F1572838266D121900F6BE64 /* EventDataView */ = {
+			isa = PBXGroup;
+			children = (
+				F13986EE266D1CA900AD3199 /* ActiveView */,
+				F1572839266D122E00F6BE64 /* EventDataView.swift */,
+			);
+			path = EventDataView;
 			sourceTree = "<group>";
 		};
 		F158F45B2665670400AB8AE6 /* Extensions */ = {
@@ -156,6 +198,7 @@
 		F158F45C266569E700AB8AE6 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				F1648D61266D4BC800F1FDC1 /* UINavigationBar.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -164,6 +207,8 @@
 			isa = PBXGroup;
 			children = (
 				F158F45D266569F100AB8AE6 /* String.swift */,
+				F1648D5F266D2F2100F1FDC1 /* Date.swift */,
+				F1648D63266D55CA00F1FDC1 /* DateFormatter.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -183,6 +228,14 @@
 				F15BD054265DA27F0026B6DD /* CustomTextFieldSwift.swift */,
 			);
 			path = Swift;
+			sourceTree = "<group>";
+		};
+		F1648D5C266D2B4100F1FDC1 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				F1648D5D266D2B6B00F1FDC1 /* EventModel.swift */,
+			);
+			path = Event;
 			sourceTree = "<group>";
 		};
 		F16985D02653101400B26671 = {
@@ -229,7 +282,6 @@
 				F16985E02653101600B26671 /* Info.plist */,
 				F1FCC334265EF7BD00951F8B /* String */,
 				F1698609265322B600B26671 /* Utils */,
-				F158F45A266566D000AB8AE6 /* Extension */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -294,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				F172FE8B266562F800FF9569 /* Login */,
+				F1648D5C266D2B4100F1FDC1 /* Event */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -397,21 +450,28 @@
 				F10A0D302655C76600487FD5 /* InfoFieldView.swift in Sources */,
 				F1FCC331265EF6EB00951F8B /* Defaults.swift in Sources */,
 				F1FEC09C2659B862003B9235 /* SquareView.swift in Sources */,
-				F13288E42669416C009F2C48 /* EventsView.swift in Sources */,
+				F1648D64266D55CA00F1FDC1 /* DateFormatter.swift in Sources */,
 				F10A0D2A2655C44900487FD5 /* CredentialsView.swift in Sources */,
 				F10A0D392655CCE700487FD5 /* Color.swift in Sources */,
 				F10A0D3D2655D0BF00487FD5 /* CustomTextField.swift in Sources */,
 				F1FCC333265EF79C00951F8B /* Global.swift in Sources */,
+				F13986F0266D1E5F00AD3199 /* ActiveView.swift in Sources */,
 				F1A1C24A2659BF7C006F4922 /* LogInButton.swift in Sources */,
 				F10A0D2D2655C4D400487FD5 /* CheckInView.swift in Sources */,
+				F1572836266D014800F6BE64 /* LogoutButton.swift in Sources */,
+				F1572837266D026000F6BE64 /* EventsView.swift in Sources */,
 				F169860B265322C400B26671 /* Action.swift in Sources */,
+				F157283B266D14AD00F6BE64 /* EventDataView.swift in Sources */,
+				F1648D5E266D2B6B00F1FDC1 /* EventModel.swift in Sources */,
 				F10A0D372655CB7900487FD5 /* Font.swift in Sources */,
 				F158F45E266569F100AB8AE6 /* String.swift in Sources */,
 				F172FE8D2665631A00FF9569 /* LoginCredentialsStore.swift in Sources */,
+				F1648D60266D2F2100F1FDC1 /* Date.swift in Sources */,
 				F16985EB2653101600B26671 /* RegistrationView.swift in Sources */,
 				F15BD055265DA27F0026B6DD /* CustomTextFieldSwift.swift in Sources */,
 				F172FE8A26655EAC00FF9569 /* LoginCredentialsModel.swift in Sources */,
 				F16985E92653101600B26671 /* TicketScannerApp.swift in Sources */,
+				F1648D62266D4BC800F1FDC1 /* UINavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
