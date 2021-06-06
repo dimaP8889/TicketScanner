@@ -15,6 +15,8 @@ struct LoginCredentials {
     
     var isValid : Bool
     
+    var isError : Bool = false
+    
     init(email: String, password: String) {
         
         self.email = email
@@ -29,6 +31,7 @@ enum LoginAction {
     
     case changeEmail(String)
     case changePassword(String)
+    case setError(Bool)
 }
 
 struct LoginReducer {
@@ -43,6 +46,10 @@ struct LoginReducer {
         case let .changePassword(password):
             guard !password.isEmpty else { return oldState }
             let newState = LoginCredentials(email: oldState.email, password: password)
+            return newState
+        case let .setError(state):
+            var newState = LoginCredentials(email: oldState.email, password: oldState.password)
+            newState.isError = state
             return newState
         }
     }

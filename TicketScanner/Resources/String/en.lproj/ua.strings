@@ -15,3 +15,6 @@
 "registration.textfield.password.description" = "Пароль";
 "registration.textfield.email.placeholder" = "введіть свій email або id";
 "registration.textfield.password.placeholder" = "введіть свій пароль";
+
+//Events
+"events.toolbar.leading" = "Події";

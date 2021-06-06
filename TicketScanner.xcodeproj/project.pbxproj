@@ -13,6 +13,7 @@
 		F10A0D372655CB7900487FD5 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A0D362655CB7900487FD5 /* Font.swift */; };
 		F10A0D392655CCE700487FD5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A0D382655CCE700487FD5 /* Color.swift */; };
 		F10A0D3D2655D0BF00487FD5 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A0D3C2655D0BF00487FD5 /* CustomTextField.swift */; };
+		F13288E42669416C009F2C48 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13288E32669416C009F2C48 /* EventsView.swift */; };
 		F158F45E266569F100AB8AE6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158F45D266569F100AB8AE6 /* String.swift */; };
 		F15BD055265DA27F0026B6DD /* CustomTextFieldSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BD054265DA27F0026B6DD /* CustomTextFieldSwift.swift */; };
 		F16985E92653101600B26671 /* TicketScannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16985D62653101400B26671 /* TicketScannerApp.swift */; };
@@ -37,6 +38,7 @@
 		F10A0D362655CB7900487FD5 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		F10A0D382655CCE700487FD5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		F10A0D3C2655D0BF00487FD5 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		F13288E32669416C009F2C48 /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
 		F158F45D266569F100AB8AE6 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F15BD054265DA27F0026B6DD /* CustomTextFieldSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldSwift.swift; sourceTree = "<group>"; };
 		F16985D62653101400B26671 /* TicketScannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketScannerApp.swift; sourceTree = "<group>"; };
@@ -124,6 +126,14 @@
 				F15BD052265DA2440026B6DD /* CustomTextField */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F13288E22669400E009F2C48 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				F13288E32669416C009F2C48 /* EventsView.swift */,
+			);
+			path = Events;
 			sourceTree = "<group>";
 		};
 		F158F45A266566D000AB8AE6 /* Extension */ = {
@@ -228,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				F16985FC2653127B00B26671 /* Registration */,
+				F13288E22669400E009F2C48 /* Events */,
 				F10A0D3A2655D0A300487FD5 /* Universal */,
 			);
 			path = Modules;
@@ -386,6 +397,7 @@
 				F10A0D302655C76600487FD5 /* InfoFieldView.swift in Sources */,
 				F1FCC331265EF6EB00951F8B /* Defaults.swift in Sources */,
 				F1FEC09C2659B862003B9235 /* SquareView.swift in Sources */,
+				F13288E42669416C009F2C48 /* EventsView.swift in Sources */,
 				F10A0D2A2655C44900487FD5 /* CredentialsView.swift in Sources */,
 				F10A0D392655CCE700487FD5 /* Color.swift in Sources */,
 				F10A0D3D2655D0BF00487FD5 /* CustomTextField.swift in Sources */,

@@ -20,11 +20,11 @@ struct CredentialsView: View {
                 Spacer()
             }
             Spacer()
-            InfoFieldView(fieldType: .email, isError: .constant(false))
+            InfoFieldView(fieldType: .email)
                 .padding(.leading, 12)
                 .padding(.trailing, 12)
                 .frame(height: 73)
-            InfoFieldView(fieldType: .password, isError: .constant(false))
+            InfoFieldView(fieldType: .password)
                 .padding(.leading, 12)
                 .padding(.trailing, 12)
                 .frame(height: 73)

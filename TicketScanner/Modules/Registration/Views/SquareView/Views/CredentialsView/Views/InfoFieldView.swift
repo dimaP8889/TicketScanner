@@ -18,8 +18,6 @@ struct InfoFieldView: View {
     @State private var text : String = ""
     @State private var isEditting : Bool = false
     
-    @Binding var isError : Bool
-    
     private var trailingPadding : CGFloat {
         UIScreen.main.bounds.width - 243
     }
@@ -27,7 +25,7 @@ struct InfoFieldView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             field
-            if isError {
+            if store.state.isError {
                 errorText
             }
         }
@@ -81,7 +79,7 @@ private extension InfoFieldView {
         .overlay(
             RoundedRectangle(cornerRadius: 19)
                 .stroke(
-                    isError ? Color.radicalRedLight : isEditting
+                    store.state.isError ? Color.radicalRedLight : isEditting
                             ? Color.altoLight : Color.altoSuperLight
                 )
         )
@@ -125,7 +123,7 @@ extension InfoFieldView {
 
 struct InfoFieldView_Previews: PreviewProvider {
     static var previews: some View {
-        InfoFieldView(fieldType: .email, isError: .constant(false))
+        InfoFieldView(fieldType: .email)
             .background(Color.black)
     }
 }
