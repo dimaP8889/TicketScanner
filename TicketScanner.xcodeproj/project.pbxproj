@@ -15,7 +15,7 @@
 		F10A0D3D2655D0BF00487FD5 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A0D3C2655D0BF00487FD5 /* CustomTextField.swift */; };
 		F13986F0266D1E5F00AD3199 /* ActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13986EF266D1E5F00AD3199 /* ActiveView.swift */; };
 		F1572836266D014800F6BE64 /* LogoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1572834266CFFD300F6BE64 /* LogoutButton.swift */; };
-		F1572837266D026000F6BE64 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13288E32669416C009F2C48 /* EventsView.swift */; };
+		F1572837266D026000F6BE64 /* EventsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13288E32669416C009F2C48 /* EventsListView.swift */; };
 		F157283B266D14AD00F6BE64 /* EventDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1572839266D122E00F6BE64 /* EventDataView.swift */; };
 		F158F45E266569F100AB8AE6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158F45D266569F100AB8AE6 /* String.swift */; };
 		F15BD055265DA27F0026B6DD /* CustomTextFieldSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BD054265DA27F0026B6DD /* CustomTextFieldSwift.swift */; };
@@ -23,6 +23,14 @@
 		F1648D60266D2F2100F1FDC1 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D5F266D2F2100F1FDC1 /* Date.swift */; };
 		F1648D62266D4BC800F1FDC1 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D61266D4BC800F1FDC1 /* UINavigationBar.swift */; };
 		F1648D64266D55CA00F1FDC1 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D63266D55CA00F1FDC1 /* DateFormatter.swift */; };
+		F1648D6C266EB49A00F1FDC1 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D6B266EB49A00F1FDC1 /* ScanView.swift */; };
+		F1648D6E266EB4A900F1FDC1 /* ParticipantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D6D266EB4A900F1FDC1 /* ParticipantsView.swift */; };
+		F1648D70266EB4BE00F1FDC1 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D6F266EB4BD00F1FDC1 /* ContactsView.swift */; };
+		F1648D72266EB4C700F1FDC1 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D71266EB4C700F1FDC1 /* ProfileView.swift */; };
+		F1648D75266EB4E400F1FDC1 /* EventTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D74266EB4E400F1FDC1 /* EventTabBarView.swift */; };
+		F1648D77266EBB4300F1FDC1 /* UITabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D76266EBB4300F1FDC1 /* UITabBar.swift */; };
+		F1648D7A266EBDFD00F1FDC1 /* EventsBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D79266EBDFD00F1FDC1 /* EventsBackButton.swift */; };
+		F1648D7D266EC50A00F1FDC1 /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D7C266EC50A00F1FDC1 /* TabBarModel.swift */; };
 		F16985E92653101600B26671 /* TicketScannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16985D62653101400B26671 /* TicketScannerApp.swift */; };
 		F16985EB2653101600B26671 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16985D72653101400B26671 /* RegistrationView.swift */; };
 		F16985ED2653101600B26671 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16985D82653101500B26671 /* Assets.xcassets */; };
@@ -45,7 +53,7 @@
 		F10A0D362655CB7900487FD5 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		F10A0D382655CCE700487FD5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		F10A0D3C2655D0BF00487FD5 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		F13288E32669416C009F2C48 /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
+		F13288E32669416C009F2C48 /* EventsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListView.swift; sourceTree = "<group>"; };
 		F13986EF266D1E5F00AD3199 /* ActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveView.swift; sourceTree = "<group>"; };
 		F1572834266CFFD300F6BE64 /* LogoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutButton.swift; sourceTree = "<group>"; };
 		F1572839266D122E00F6BE64 /* EventDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataView.swift; sourceTree = "<group>"; };
@@ -55,6 +63,14 @@
 		F1648D5F266D2F2100F1FDC1 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		F1648D61266D4BC800F1FDC1 /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
 		F1648D63266D55CA00F1FDC1 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		F1648D6B266EB49A00F1FDC1 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
+		F1648D6D266EB4A900F1FDC1 /* ParticipantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsView.swift; sourceTree = "<group>"; };
+		F1648D6F266EB4BD00F1FDC1 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
+		F1648D71266EB4C700F1FDC1 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		F1648D74266EB4E400F1FDC1 /* EventTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTabBarView.swift; sourceTree = "<group>"; };
+		F1648D76266EBB4300F1FDC1 /* UITabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBar.swift; sourceTree = "<group>"; };
+		F1648D79266EBDFD00F1FDC1 /* EventsBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsBackButton.swift; sourceTree = "<group>"; };
+		F1648D7C266EC50A00F1FDC1 /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
 		F16985D62653101400B26671 /* TicketScannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketScannerApp.swift; sourceTree = "<group>"; };
 		F16985D72653101400B26671 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		F16985D82653101500B26671 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -142,13 +158,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		F13288E22669400E009F2C48 /* Events */ = {
+		F13288E22669400E009F2C48 /* EventsList */ = {
 			isa = PBXGroup;
 			children = (
 				F1572832266CFFBC00F6BE64 /* Views */,
-				F13288E32669416C009F2C48 /* EventsView.swift */,
+				F13288E32669416C009F2C48 /* EventsListView.swift */,
 			);
-			path = Events;
+			path = EventsList;
 			sourceTree = "<group>";
 		};
 		F13986EE266D1CA900AD3199 /* ActiveView */ = {
@@ -199,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				F1648D61266D4BC800F1FDC1 /* UINavigationBar.swift */,
+				F1648D76266EBB4300F1FDC1 /* UITabBar.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -236,6 +253,75 @@
 				F1648D5D266D2B6B00F1FDC1 /* EventModel.swift */,
 			);
 			path = Event;
+			sourceTree = "<group>";
+		};
+		F1648D65266EB41E00F1FDC1 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				F1648D73266EB4D100F1FDC1 /* TabBar */,
+				F1648D67266EB45D00F1FDC1 /* Scan */,
+				F1648D68266EB46900F1FDC1 /* Participants */,
+				F1648D69266EB47700F1FDC1 /* Contacts */,
+				F1648D6A266EB48700F1FDC1 /* Profile */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		F1648D67266EB45D00F1FDC1 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				F1648D6B266EB49A00F1FDC1 /* ScanView.swift */,
+			);
+			path = Scan;
+			sourceTree = "<group>";
+		};
+		F1648D68266EB46900F1FDC1 /* Participants */ = {
+			isa = PBXGroup;
+			children = (
+				F1648D6D266EB4A900F1FDC1 /* ParticipantsView.swift */,
+			);
+			path = Participants;
+			sourceTree = "<group>";
+		};
+		F1648D69266EB47700F1FDC1 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				F1648D6F266EB4BD00F1FDC1 /* ContactsView.swift */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		F1648D6A266EB48700F1FDC1 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F1648D71266EB4C700F1FDC1 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		F1648D73266EB4D100F1FDC1 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F1648D78266EBDE200F1FDC1 /* BackButton */,
+				F1648D74266EB4E400F1FDC1 /* EventTabBarView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		F1648D78266EBDE200F1FDC1 /* BackButton */ = {
+			isa = PBXGroup;
+			children = (
+				F1648D79266EBDFD00F1FDC1 /* EventsBackButton.swift */,
+			);
+			path = BackButton;
+			sourceTree = "<group>";
+		};
+		F1648D7B266EC4F100F1FDC1 /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				F1648D7C266EC50A00F1FDC1 /* TabBarModel.swift */,
+			);
+			path = "Tab Bar";
 			sourceTree = "<group>";
 		};
 		F16985D02653101400B26671 = {
@@ -290,7 +376,8 @@
 			isa = PBXGroup;
 			children = (
 				F16985FC2653127B00B26671 /* Registration */,
-				F13288E22669400E009F2C48 /* Events */,
+				F13288E22669400E009F2C48 /* EventsList */,
+				F1648D65266EB41E00F1FDC1 /* Event */,
 				F10A0D3A2655D0A300487FD5 /* Universal */,
 			);
 			path = Modules;
@@ -345,6 +432,7 @@
 		F172FE8826655E8900FF9569 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F1648D7B266EC4F100F1FDC1 /* Tab Bar */,
 				F172FE8B266562F800FF9569 /* Login */,
 				F1648D5C266D2B4100F1FDC1 /* Event */,
 			);
@@ -451,26 +539,34 @@
 				F1FCC331265EF6EB00951F8B /* Defaults.swift in Sources */,
 				F1FEC09C2659B862003B9235 /* SquareView.swift in Sources */,
 				F1648D64266D55CA00F1FDC1 /* DateFormatter.swift in Sources */,
+				F1648D6C266EB49A00F1FDC1 /* ScanView.swift in Sources */,
 				F10A0D2A2655C44900487FD5 /* CredentialsView.swift in Sources */,
 				F10A0D392655CCE700487FD5 /* Color.swift in Sources */,
 				F10A0D3D2655D0BF00487FD5 /* CustomTextField.swift in Sources */,
 				F1FCC333265EF79C00951F8B /* Global.swift in Sources */,
 				F13986F0266D1E5F00AD3199 /* ActiveView.swift in Sources */,
+				F1648D70266EB4BE00F1FDC1 /* ContactsView.swift in Sources */,
 				F1A1C24A2659BF7C006F4922 /* LogInButton.swift in Sources */,
 				F10A0D2D2655C4D400487FD5 /* CheckInView.swift in Sources */,
 				F1572836266D014800F6BE64 /* LogoutButton.swift in Sources */,
-				F1572837266D026000F6BE64 /* EventsView.swift in Sources */,
+				F1648D6E266EB4A900F1FDC1 /* ParticipantsView.swift in Sources */,
+				F1572837266D026000F6BE64 /* EventsListView.swift in Sources */,
 				F169860B265322C400B26671 /* Action.swift in Sources */,
 				F157283B266D14AD00F6BE64 /* EventDataView.swift in Sources */,
+				F1648D77266EBB4300F1FDC1 /* UITabBar.swift in Sources */,
 				F1648D5E266D2B6B00F1FDC1 /* EventModel.swift in Sources */,
 				F10A0D372655CB7900487FD5 /* Font.swift in Sources */,
 				F158F45E266569F100AB8AE6 /* String.swift in Sources */,
+				F1648D72266EB4C700F1FDC1 /* ProfileView.swift in Sources */,
 				F172FE8D2665631A00FF9569 /* LoginCredentialsStore.swift in Sources */,
 				F1648D60266D2F2100F1FDC1 /* Date.swift in Sources */,
 				F16985EB2653101600B26671 /* RegistrationView.swift in Sources */,
+				F1648D7D266EC50A00F1FDC1 /* TabBarModel.swift in Sources */,
+				F1648D7A266EBDFD00F1FDC1 /* EventsBackButton.swift in Sources */,
 				F15BD055265DA27F0026B6DD /* CustomTextFieldSwift.swift in Sources */,
 				F172FE8A26655EAC00FF9569 /* LoginCredentialsModel.swift in Sources */,
 				F16985E92653101600B26671 /* TicketScannerApp.swift in Sources */,
+				F1648D75266EB4E400F1FDC1 /* EventTabBarView.swift in Sources */,
 				F1648D62266D4BC800F1FDC1 /* UINavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -604,7 +700,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 452NG5983H;
 				ENABLE_PREVIEWS = YES;
@@ -626,7 +722,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 452NG5983H;
 				ENABLE_PREVIEWS = YES;

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EventsView: View {
+struct EventsListView: View {
     
     var models : [EventModel]
     
@@ -26,9 +26,14 @@ struct EventsView: View {
                     Spacer()
                         .frame(height: 10)
                     ForEach(models) { data in
-                        EventDataView(model: data)
-                            .padding([.leading, .trailing], 12)
-                            .padding([.top, .bottom], 6)
+                        NavigationLink(
+                            destination: EventTabBarView(eventName: data.festivalName),
+                            label: {
+                                EventDataView(model: data)
+                                    .padding([.leading, .trailing], 12)
+                                    .padding([.top, .bottom], 6)
+                            }
+                        )
                     }
                 }
             }
@@ -51,7 +56,7 @@ struct EventsView: View {
     }
 }
 
-private extension EventsView {
+private extension EventsListView {
     
     func createModel() -> [EventModel] {
         
@@ -84,6 +89,6 @@ private extension EventsView {
 
 struct EventsView_Previews: PreviewProvider {
     static var previews: some View {
-        EventsView()
+        EventsListView()
     }
 }

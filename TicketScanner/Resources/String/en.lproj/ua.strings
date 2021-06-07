@@ -33,3 +33,10 @@
 "events.future.started" = "Розпочалася";
 "events.future.1" = "Стане активною за";
 "events.future.2" = "Розпочнеться за";
+
+//Tab Bar
+"events.item.scan" = "Сканувати";
+"events.item.participants" = "Відвідувачі";
+"events.item.contacts" = "Контакти";
+"events.item.profile" = "Профіль";
+

@@ -16,7 +16,7 @@ struct TicketScannerApp: App {
         WindowGroup {
 //            RegistrationView()
 //                .environmentObject(loginStore)
-            EventsView()
+            EventsListView()
         }
     }
 }
