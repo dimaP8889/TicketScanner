@@ -37,6 +37,7 @@ struct EventsListView: View {
                     }
                 }
             }
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Text(localStr("events.toolbar.leading"))
@@ -51,7 +52,6 @@ struct EventsListView: View {
                     }
                 }
             }
-            .navigationBarTitle(Text(""), displayMode: .inline)
         }
     }
 }

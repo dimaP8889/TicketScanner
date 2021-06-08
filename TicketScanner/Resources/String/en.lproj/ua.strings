@@ -40,3 +40,5 @@
 "events.item.contacts" = "Контакти";
 "events.item.profile" = "Профіль";
 
+//Scan
+"scan.enter.number.title" = "Ввести номер";

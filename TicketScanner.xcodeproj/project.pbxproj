@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,6 +31,10 @@
 		F1648D77266EBB4300F1FDC1 /* UITabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D76266EBB4300F1FDC1 /* UITabBar.swift */; };
 		F1648D7A266EBDFD00F1FDC1 /* EventsBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D79266EBDFD00F1FDC1 /* EventsBackButton.swift */; };
 		F1648D7D266EC50A00F1FDC1 /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D7C266EC50A00F1FDC1 /* TabBarModel.swift */; };
+		F1648D81266FE54700F1FDC1 /* ScanCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D80266FE54700F1FDC1 /* ScanCameraView.swift */; };
+		F1648D84266FE6B300F1FDC1 /* FlashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D83266FE6B300F1FDC1 /* FlashView.swift */; };
+		F1648D87266FEF9100F1FDC1 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = F1648D86266FEF9100F1FDC1 /* CodeScanner */; };
+		F1648D8B266FFC1A00F1FDC1 /* ShowNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D8A266FFC1A00F1FDC1 /* ShowNumberView.swift */; };
 		F16985E92653101600B26671 /* TicketScannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16985D62653101400B26671 /* TicketScannerApp.swift */; };
 		F16985EB2653101600B26671 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16985D72653101400B26671 /* RegistrationView.swift */; };
 		F16985ED2653101600B26671 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16985D82653101500B26671 /* Assets.xcassets */; };
@@ -71,6 +75,9 @@
 		F1648D76266EBB4300F1FDC1 /* UITabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBar.swift; sourceTree = "<group>"; };
 		F1648D79266EBDFD00F1FDC1 /* EventsBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsBackButton.swift; sourceTree = "<group>"; };
 		F1648D7C266EC50A00F1FDC1 /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
+		F1648D80266FE54700F1FDC1 /* ScanCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCameraView.swift; sourceTree = "<group>"; };
+		F1648D83266FE6B300F1FDC1 /* FlashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashView.swift; sourceTree = "<group>"; };
+		F1648D8A266FFC1A00F1FDC1 /* ShowNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowNumberView.swift; sourceTree = "<group>"; };
 		F16985D62653101400B26671 /* TicketScannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketScannerApp.swift; sourceTree = "<group>"; };
 		F16985D72653101400B26671 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		F16985D82653101500B26671 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1648D87266FEF9100F1FDC1 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +278,7 @@
 		F1648D67266EB45D00F1FDC1 /* Scan */ = {
 			isa = PBXGroup;
 			children = (
+				F1648D89266FFBB900F1FDC1 /* Views */,
 				F1648D6B266EB49A00F1FDC1 /* ScanView.swift */,
 			);
 			path = Scan;
@@ -322,6 +331,40 @@
 				F1648D7C266EC50A00F1FDC1 /* TabBarModel.swift */,
 			);
 			path = "Tab Bar";
+			sourceTree = "<group>";
+		};
+		F1648D7F266FE52B00F1FDC1 /* ScanCameraView */ = {
+			isa = PBXGroup;
+			children = (
+				F1648D82266FE65B00F1FDC1 /* FlashView */,
+				F1648D80266FE54700F1FDC1 /* ScanCameraView.swift */,
+			);
+			path = ScanCameraView;
+			sourceTree = "<group>";
+		};
+		F1648D82266FE65B00F1FDC1 /* FlashView */ = {
+			isa = PBXGroup;
+			children = (
+				F1648D83266FE6B300F1FDC1 /* FlashView.swift */,
+			);
+			path = FlashView;
+			sourceTree = "<group>";
+		};
+		F1648D88266FF9C300F1FDC1 /* ShowNumberView */ = {
+			isa = PBXGroup;
+			children = (
+				F1648D8A266FFC1A00F1FDC1 /* ShowNumberView.swift */,
+			);
+			path = ShowNumberView;
+			sourceTree = "<group>";
+		};
+		F1648D89266FFBB900F1FDC1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1648D7F266FE52B00F1FDC1 /* ScanCameraView */,
+				F1648D88266FF9C300F1FDC1 /* ShowNumberView */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		F16985D02653101400B26671 = {
@@ -480,6 +523,9 @@
 			dependencies = (
 			);
 			name = "TicketScanner (iOS)";
+			packageProductDependencies = (
+				F1648D86266FEF9100F1FDC1 /* CodeScanner */,
+			);
 			productName = "TicketScanner (iOS)";
 			productReference = F16985DD2653101600B26671 /* TicketScanner.app */;
 			productType = "com.apple.product-type.application";
@@ -507,6 +553,9 @@
 				Base,
 			);
 			mainGroup = F16985D02653101400B26671;
+			packageReferences = (
+				F1648D85266FEF9100F1FDC1 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			productRefGroup = F16985DE2653101600B26671 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -535,6 +584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1FCC35F2660272E00951F8B /* KeyboardHeightHelper.swift in Sources */,
+				F1648D81266FE54700F1FDC1 /* ScanCameraView.swift in Sources */,
 				F10A0D302655C76600487FD5 /* InfoFieldView.swift in Sources */,
 				F1FCC331265EF6EB00951F8B /* Defaults.swift in Sources */,
 				F1FEC09C2659B862003B9235 /* SquareView.swift in Sources */,
@@ -548,6 +598,7 @@
 				F1648D70266EB4BE00F1FDC1 /* ContactsView.swift in Sources */,
 				F1A1C24A2659BF7C006F4922 /* LogInButton.swift in Sources */,
 				F10A0D2D2655C4D400487FD5 /* CheckInView.swift in Sources */,
+				F1648D84266FE6B300F1FDC1 /* FlashView.swift in Sources */,
 				F1572836266D014800F6BE64 /* LogoutButton.swift in Sources */,
 				F1648D6E266EB4A900F1FDC1 /* ParticipantsView.swift in Sources */,
 				F1572837266D026000F6BE64 /* EventsListView.swift in Sources */,
@@ -557,6 +608,7 @@
 				F1648D5E266D2B6B00F1FDC1 /* EventModel.swift in Sources */,
 				F10A0D372655CB7900487FD5 /* Font.swift in Sources */,
 				F158F45E266569F100AB8AE6 /* String.swift in Sources */,
+				F1648D8B266FFC1A00F1FDC1 /* ShowNumberView.swift in Sources */,
 				F1648D72266EB4C700F1FDC1 /* ProfileView.swift in Sources */,
 				F172FE8D2665631A00FF9569 /* LoginCredentialsStore.swift in Sources */,
 				F1648D60266D2F2100F1FDC1 /* Date.swift in Sources */,
@@ -763,6 +815,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F1648D85266FEF9100F1FDC1 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F1648D86266FEF9100F1FDC1 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F1648D85266FEF9100F1FDC1 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F16985D12653101400B26671 /* Project object */;
 }

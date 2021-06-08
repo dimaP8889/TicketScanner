@@ -29,5 +29,7 @@ extension Color {
     static var apple                    = Color(.sRGB, red: 0.228, green: 0.558, blue: 0.222, opacity: 1)
     static var screaminGreen            = Color(.sRGB, red: 0.412, green: 1, blue: 0.4, opacity: 1)
     static var alabaster                = Color(.sRGB, red: 0.98, green: 0.98, blue: 0.98, opacity: 1)
+    static var doveGray                 = Color(.sRGB, red: 0.4, green: 0.4, blue: 0.4, opacity: 1)
+    static var mineShaft                = Color(.sRGB, red: 0.175, green: 0.175, blue: 0.175, opacity: 1)
 }
 
