@@ -9,6 +9,7 @@ import SwiftUI
 import CodeScanner
 
 struct ScanCameraView: View {
+    
     var body: some View {
         
         ZStack {
