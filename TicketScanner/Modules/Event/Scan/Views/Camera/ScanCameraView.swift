@@ -10,8 +10,9 @@ import CodeScanner
 
 struct ScanCameraView: View {
     
+    @EnvironmentObject private var alertObject : AlertObject
+    
     var body: some View {
-        
         ZStack {
             CodeScannerView(
                 codeTypes: [.qr],
@@ -28,6 +29,12 @@ struct ScanCameraView: View {
                 }
             }
         }
+        .onAppear {
+            Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { _ in
+                alertObject.alertModel = .test
+            }
+        }
+        .showPopup(alertObject: alertObject)
     }
 }
 
@@ -37,9 +44,9 @@ private extension ScanCameraView {
        
         switch result {
         case let .success(code):
-            print(code)
+            alertObject.alertModel = .test
         case .failure(let error):
-            print(error)
+            alertObject.alertModel = .test
         }
     }
 }

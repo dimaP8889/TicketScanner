@@ -31,5 +31,6 @@ extension Color {
     static var alabaster                = Color(.sRGB, red: 0.98, green: 0.98, blue: 0.98, opacity: 1)
     static var doveGray                 = Color(.sRGB, red: 0.4, green: 0.4, blue: 0.4, opacity: 1)
     static var mineShaft                = Color(.sRGB, red: 0.175, green: 0.175, blue: 0.175, opacity: 1)
+    static var monaLisa                 = Color(.sRGB, red: 1, green: 0.567, blue: 0.567, opacity: 1)
 }
 

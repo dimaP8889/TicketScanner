@@ -50,3 +50,15 @@
 "scan.ticket.type" = "Тип квитка";
 "scan.ticket.phone" = "Тел. покупця";
 "scan.ticket.email" = "Email";
+
+//Alert
+"alert.sucess" = "Success";
+"alert.fail" = "Failed";
+"alert.title.success" = "Checked-in sucessfully";
+"alert.title.invalidQR" = "Invalid QR code";
+"alert.title.checked" = "Already checked-in";
+"alert.title.refunded" = "This ticket has been refunded";
+"alert.title.wrong" = "Wrong event";
+"alert.subtitle.visited" = "Відвідувач зайшов о ";
+"alert.subtitle.enter_number" = "Спробуйте ввести номер квитка";
+"alert.ticket.name" = "Квиток︎︎︎ ↗︎︎";

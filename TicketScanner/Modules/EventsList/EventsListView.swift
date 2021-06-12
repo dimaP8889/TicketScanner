@@ -20,35 +20,37 @@ struct EventsListView: View {
     
     var body: some View {
         
-        NavigationView {
-            ScrollView {
-                VStack(spacing: 0) {
-                    Spacer()
-                        .frame(height: 10)
-                    ForEach(models) { data in
-                        NavigationLink(
-                            destination: EventTabBarView(eventName: data.festivalName),
-                            label: {
-                                EventDataView(model: data)
-                                    .padding([.leading, .trailing], 12)
-                                    .padding([.top, .bottom], 6)
-                            }
-                        )
+        GeometryReader { geometry in
+            NavigationView {
+                ScrollView {
+                    VStack(spacing: 0) {
+                        Spacer()
+                            .frame(height: 10)
+                        ForEach(models) { data in
+                            NavigationLink(
+                                destination: EventTabBarView(eventName: data.festivalName),
+                                label: {
+                                    EventDataView(model: data)
+                                        .padding([.leading, .trailing], 12)
+                                        .padding([.top, .bottom], 6)
+                                }
+                            )
+                        }
                     }
                 }
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Text(localStr("events.toolbar.leading"))
-                        .font(.main(size: 24))
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    HStack {
-                        LogoutButton {
-                            print("Logout")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Text(localStr("events.toolbar.leading"))
+                            .font(.main(size: 24))
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        HStack {
+                            LogoutButton {
+                                print(geometry.safeAreaInsets)
+                            }
+                            Spacer(minLength: 0)
                         }
-                        Spacer(minLength: 0)
                     }
                 }
             }
@@ -63,13 +65,13 @@ private extension EventsListView {
         var model = [EventModel]()
         let first = EventModel(startDate: Date(), endDate: Date(), festivalName: "Uncertain Festival 2021")
         model.append(first)
-
+        
         for _ in 0...3 {
             var dayComponent = DateComponents()
             dayComponent.day = Int.random(in: 0...1000)
             let theCalendar = Calendar.current
             let nextDate = theCalendar.date(byAdding: dayComponent, to: Date())
-
+            
             let ev = EventModel(startDate: nextDate!, endDate: nextDate!, festivalName: "Uncertain Festival 2021")
             model.append(ev)
         }
