@@ -45,7 +45,7 @@ extension TicketStatus {
         
         let statuses : [TicketStatus] = [
             .checkedIn(time: mainTimes.randomElement()!, date: dates.randomElement()!),
-            .refunded(time: mainTimes.randomElement()!),
+            .refunded(time: dates.randomElement()!),
             .wrongEvent(name: events.randomElement()!, time: dates.randomElement()!)
         ]
         return statuses.randomElement()!

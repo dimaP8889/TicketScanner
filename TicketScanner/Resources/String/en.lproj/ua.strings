@@ -15,6 +15,7 @@
 "days.2" = "днів";
 "hours" = "год";
 "min" = "хв";
+"ok" = "ОК";
 
 //Registration
 "registration.button.title" = "Увійти";
@@ -46,3 +47,6 @@
 "scan.error.wrong_event" = "Wrong event";
 "scan.error.wrong_event.secondary" = "This ticket is for event:";
 "scan.error.checked_in" = "Already checked-in";
+"scan.ticket.type" = "Тип квитка";
+"scan.ticket.phone" = "Тел. покупця";
+"scan.ticket.email" = "Email";

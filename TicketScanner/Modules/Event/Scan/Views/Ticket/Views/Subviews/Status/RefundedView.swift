@@ -1,5 +1,5 @@
 //
-//  CheckedInView.swift
+//  RefundedView.swift
 //  TicketScanner (iOS)
 //
 //  Created by Dmytro Pogrebniak on 12.06.2021.
@@ -9,27 +9,22 @@ import SwiftUI
 
 extension TicketStatusView {
     
-    struct CheckedInView: View {
+    struct RefundedView: View {
         
-        var time : String
         var date : String
         
         var body: some View {
             VStack(alignment: .leading, spacing: 6) {
                 HStack {
-                    Text(localStr("scan.error.checked_in"))
+                    Text(localStr("scan.error.refunded"))
                         .font(.main(size: 17))
                         .foregroundColor(Color.radicalRed)
                     Spacer()
                 }
                 HStack(spacing: 16) {
                     Image("ic_clock2")
-                    Text(time)
-                        .font(.main(size: 16))
-                        .foregroundColor(Color.doveGray)
                     Text(date)
-                        .font(.main(size: 16))
-                        .foregroundColor(Color.doveGray)
+                        .mainTicketStyle()
                 }
             }
             .padding([.leading, .trailing], 16)
@@ -39,8 +34,8 @@ extension TicketStatusView {
     }
 }
 
-struct CheckedInView_Previews: PreviewProvider {
+struct RefundedView_Previews: PreviewProvider {
     static var previews: some View {
-        TicketStatusView.CheckedInView(time: "23:46:19", date: "21 серпня, 2021")
+        TicketStatusView.RefundedView(date: "21 серпня, 2021")
     }
 }
