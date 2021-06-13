@@ -8,3 +8,5 @@
 import Foundation
 
 typealias Action = () -> ()
+
+typealias TypeAction<T> = (T) -> ()

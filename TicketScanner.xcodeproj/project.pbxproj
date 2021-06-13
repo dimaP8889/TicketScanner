@@ -39,7 +39,7 @@
 		F1648D81266FE54700F1FDC1 /* ScanCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D80266FE54700F1FDC1 /* ScanCameraView.swift */; };
 		F1648D84266FE6B300F1FDC1 /* FlashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D83266FE6B300F1FDC1 /* FlashView.swift */; };
 		F1648D87266FEF9100F1FDC1 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = F1648D86266FEF9100F1FDC1 /* CodeScanner */; };
-		F1648D8B266FFC1A00F1FDC1 /* ShowNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D8A266FFC1A00F1FDC1 /* ShowNumberView.swift */; };
+		F1648D8B266FFC1A00F1FDC1 /* ShowManualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D8A266FFC1A00F1FDC1 /* ShowManualView.swift */; };
 		F16985E92653101600B26671 /* TicketScannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16985D62653101400B26671 /* TicketScannerApp.swift */; };
 		F16985EB2653101600B26671 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16985D72653101400B26671 /* RegistrationView.swift */; };
 		F16985ED2653101600B26671 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16985D82653101500B26671 /* Assets.xcassets */; };
@@ -62,6 +62,10 @@
 		F198159126752FE800E9218F /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D6B266EB49A00F1FDC1 /* ScanView.swift */; };
 		F19815952675331900E9218F /* AlertObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19815942675331900E9218F /* AlertObject.swift */; };
 		F198159926754B7E00E9218F /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F198159826754B7E00E9218F /* View.swift */; };
+		F19815A1267653D300E9218F /* ManualEnterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19815A0267653D300E9218F /* ManualEnterView.swift */; };
+		F19815A426765FDF00E9218F /* ShowCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19815A326765FDF00E9218F /* ShowCameraView.swift */; };
+		F19815A62676658B00E9218F /* SelectorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19815A52676658B00E9218F /* SelectorHelper.swift */; };
+		F19815A92676698800E9218F /* ScanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19815A82676698800E9218F /* ScanModel.swift */; };
 		F1A1C24A2659BF7C006F4922 /* LogInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A1C2492659BF7C006F4922 /* LogInButton.swift */; };
 		F1FCC331265EF6EB00951F8B /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FCC330265EF6EB00951F8B /* Defaults.swift */; };
 		F1FCC333265EF79C00951F8B /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FCC332265EF79C00951F8B /* Global.swift */; };
@@ -103,7 +107,7 @@
 		F1648D7C266EC50A00F1FDC1 /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
 		F1648D80266FE54700F1FDC1 /* ScanCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCameraView.swift; sourceTree = "<group>"; };
 		F1648D83266FE6B300F1FDC1 /* FlashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashView.swift; sourceTree = "<group>"; };
-		F1648D8A266FFC1A00F1FDC1 /* ShowNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowNumberView.swift; sourceTree = "<group>"; };
+		F1648D8A266FFC1A00F1FDC1 /* ShowManualView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowManualView.swift; sourceTree = "<group>"; };
 		F16985D62653101400B26671 /* TicketScannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketScannerApp.swift; sourceTree = "<group>"; };
 		F16985D72653101400B26671 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		F16985D82653101500B26671 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,6 +132,10 @@
 		F198158F267520F900E9218F /* AlertSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSubview.swift; sourceTree = "<group>"; };
 		F19815942675331900E9218F /* AlertObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertObject.swift; sourceTree = "<group>"; };
 		F198159826754B7E00E9218F /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		F19815A0267653D300E9218F /* ManualEnterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualEnterView.swift; sourceTree = "<group>"; };
+		F19815A326765FDF00E9218F /* ShowCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCameraView.swift; sourceTree = "<group>"; };
+		F19815A52676658B00E9218F /* SelectorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorHelper.swift; sourceTree = "<group>"; };
+		F19815A82676698800E9218F /* ScanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanModel.swift; sourceTree = "<group>"; };
 		F1A1C2492659BF7C006F4922 /* LogInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInButton.swift; sourceTree = "<group>"; };
 		F1FCC330265EF6EB00951F8B /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		F1FCC332265EF79C00951F8B /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -420,6 +428,7 @@
 		F1648D7F266FE52B00F1FDC1 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				F19815A226765FCB00E9218F /* ShowCamera */,
 				F1648D82266FE65B00F1FDC1 /* FlashView */,
 				F1648D80266FE54700F1FDC1 /* ScanCameraView.swift */,
 			);
@@ -434,12 +443,12 @@
 			path = FlashView;
 			sourceTree = "<group>";
 		};
-		F1648D88266FF9C300F1FDC1 /* ShowNumber */ = {
+		F1648D88266FF9C300F1FDC1 /* ShowManual */ = {
 			isa = PBXGroup;
 			children = (
-				F1648D8A266FFC1A00F1FDC1 /* ShowNumberView.swift */,
+				F1648D8A266FFC1A00F1FDC1 /* ShowManualView.swift */,
 			);
-			path = ShowNumber;
+			path = ShowManual;
 			sourceTree = "<group>";
 		};
 		F1648D89266FFBB900F1FDC1 /* Views */ = {
@@ -448,7 +457,7 @@
 				F1981586267509BA00E9218F /* Alert */,
 				F19815712674E4E500E9218F /* Ticket */,
 				F1648D7F266FE52B00F1FDC1 /* Camera */,
-				F1648D88266FF9C300F1FDC1 /* ShowNumber */,
+				F198159F2676539800E9218F /* ManualEnter */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -556,6 +565,7 @@
 				F1FCC330265EF6EB00951F8B /* Defaults.swift */,
 				F1FCC332265EF79C00951F8B /* Global.swift */,
 				F1FCC35E2660272E00951F8B /* KeyboardHeightHelper.swift */,
+				F19815A52676658B00E9218F /* SelectorHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -563,11 +573,11 @@
 		F172FE8826655E8900FF9569 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F198159A26763C1A00E9218F /* Stores */,
 				F1981592267532EE00E9218F /* EnvironmentObjects */,
 				F198158C26750FAF00E9218F /* Alert */,
 				F11A19C2267401E9001AE455 /* Ticket */,
 				F1648D7B266EC4F100F1FDC1 /* Tab Bar */,
-				F172FE8B266562F800FF9569 /* Login */,
 				F1648D5C266D2B4100F1FDC1 /* Event */,
 			);
 			path = Model;
@@ -669,6 +679,40 @@
 				F19815942675331900E9218F /* AlertObject.swift */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		F198159A26763C1A00E9218F /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				F19815A72676692000E9218F /* Scan */,
+				F172FE8B266562F800FF9569 /* Login */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		F198159F2676539800E9218F /* ManualEnter */ = {
+			isa = PBXGroup;
+			children = (
+				F1648D88266FF9C300F1FDC1 /* ShowManual */,
+				F19815A0267653D300E9218F /* ManualEnterView.swift */,
+			);
+			path = ManualEnter;
+			sourceTree = "<group>";
+		};
+		F19815A226765FCB00E9218F /* ShowCamera */ = {
+			isa = PBXGroup;
+			children = (
+				F19815A326765FDF00E9218F /* ShowCameraView.swift */,
+			);
+			path = ShowCamera;
+			sourceTree = "<group>";
+		};
+		F19815A72676692000E9218F /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				F19815A82676698800E9218F /* ScanModel.swift */,
+			);
+			path = Scan;
 			sourceTree = "<group>";
 		};
 		F1A1C2482659BF41006F4922 /* LogInButton */ = {
@@ -779,6 +823,7 @@
 				F13986F0266D1E5F00AD3199 /* ActiveView.swift in Sources */,
 				F198157E2674E4E500E9218F /* FullTicketView.swift in Sources */,
 				F198158E26750FD100E9218F /* AlertModel.swift in Sources */,
+				F19815A426765FDF00E9218F /* ShowCameraView.swift in Sources */,
 				F1648D70266EB4BE00F1FDC1 /* ContactsView.swift in Sources */,
 				F19815852674E4E500E9218F /* TicketSecondaryInfoView.swift in Sources */,
 				F11A19C4267401FF001AE455 /* FullTicketModel.swift in Sources */,
@@ -791,6 +836,7 @@
 				F1572837266D026000F6BE64 /* EventsListView.swift in Sources */,
 				F169860B265322C400B26671 /* Action.swift in Sources */,
 				F19815952675331900E9218F /* AlertObject.swift in Sources */,
+				F19815A1267653D300E9218F /* ManualEnterView.swift in Sources */,
 				F198159126752FE800E9218F /* ScanView.swift in Sources */,
 				F11A19DE2674D44E001AE455 /* Text.swift in Sources */,
 				F157283B266D14AD00F6BE64 /* EventDataView.swift in Sources */,
@@ -802,10 +848,11 @@
 				F19815832674E4E500E9218F /* RefundedView.swift in Sources */,
 				F158F45E266569F100AB8AE6 /* String.swift in Sources */,
 				F1981590267520F900E9218F /* AlertSubview.swift in Sources */,
-				F1648D8B266FFC1A00F1FDC1 /* ShowNumberView.swift in Sources */,
+				F1648D8B266FFC1A00F1FDC1 /* ShowManualView.swift in Sources */,
 				F1648D72266EB4C700F1FDC1 /* ProfileView.swift in Sources */,
 				F172FE8D2665631A00FF9569 /* LoginCredentialsStore.swift in Sources */,
 				F1648D60266D2F2100F1FDC1 /* Date.swift in Sources */,
+				F19815A62676658B00E9218F /* SelectorHelper.swift in Sources */,
 				F16985EB2653101600B26671 /* RegistrationView.swift in Sources */,
 				F198159926754B7E00E9218F /* View.swift in Sources */,
 				F1648D7D266EC50A00F1FDC1 /* TabBarModel.swift in Sources */,
@@ -817,6 +864,7 @@
 				F198158B26750C4B00E9218F /* AlertContentView.swift in Sources */,
 				F16985E92653101600B26671 /* TicketScannerApp.swift in Sources */,
 				F11A19D626741715001AE455 /* LeadingText.swift in Sources */,
+				F19815A92676698800E9218F /* ScanModel.swift in Sources */,
 				F1648D75266EB4E400F1FDC1 /* EventTabBarView.swift in Sources */,
 				F1648D62266D4BC800F1FDC1 /* UINavigationBar.swift in Sources */,
 				F19815842674E4E500E9218F /* TicketMainInfoView.swift in Sources */,

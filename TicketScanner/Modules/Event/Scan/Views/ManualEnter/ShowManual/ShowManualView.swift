@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ShowNumberView: View {
+struct ShowManualView: View {
     
     private var width = UIScreen.main.bounds.width - 24
     
@@ -42,6 +42,6 @@ struct ShowNumberView: View {
 
 struct ShowNumberView_Previews: PreviewProvider {
     static var previews: some View {
-        ShowNumberView(tapAction: {})
+        ShowManualView(tapAction: {})
     }
 }

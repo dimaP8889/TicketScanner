@@ -16,7 +16,9 @@ struct ScanCameraView: View {
         ZStack {
             CodeScannerView(
                 codeTypes: [.qr],
-                completion: self.handleScan
+                scanMode: .oncePerCode,
+                scanInterval: 2,
+                completion: handleScan(result:)
             )
             .cornerRadius(20)
             VStack {
@@ -29,12 +31,11 @@ struct ScanCameraView: View {
                 }
             }
         }
-        .onAppear {
-            Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { _ in
-                alertObject.alertModel = .test
+        .showPopup(alertObject: alertObject) {
+            withAnimation {
+                alertObject.alertModel = nil
             }
         }
-        .showPopup(alertObject: alertObject)
     }
 }
 
@@ -44,9 +45,25 @@ private extension ScanCameraView {
        
         switch result {
         case let .success(code):
-            alertObject.alertModel = .test
+            showAlert(with: .test)
         case .failure(let error):
-            alertObject.alertModel = .test
+            showAlert(with: .test)
+        }
+    }
+    
+    //ahhhhh dont like this one
+    func showAlert(with model: AlertModel) {
+        
+        if alertObject.alertModel != nil {
+            withAnimation {
+                alertObject.alertModel = nil
+            }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            withAnimation {
+                alertObject.alertModel = model
+            }
         }
     }
 }

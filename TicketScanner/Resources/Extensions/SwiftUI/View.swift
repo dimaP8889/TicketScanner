@@ -9,11 +9,12 @@ import SwiftUI
 
 extension View {
     
-    func showPopup(alertObject: AlertObject) -> some View {
+    func showPopup(alertObject: AlertObject, swipeAction: @escaping Action) -> some View {
         ZStack {
             self
             if let model = alertObject.alertModel {
-                AlertView(model: model)
+                AlertView(model: model, swipeAction: swipeAction)
+                    .transition(.move(edge: .top))
             }
         }
         .clipShape(RoundedRectangle(cornerRadius: 19))

@@ -50,6 +50,8 @@
 "scan.ticket.type" = "Тип квитка";
 "scan.ticket.phone" = "Тел. покупця";
 "scan.ticket.email" = "Email";
+"scan.manual.enter.description" = "Введіть 12-значний номер квитка";
+"scan.camera.title" = "Сканер";
 
 //Alert
 "alert.sucess" = "Success";

@@ -16,7 +16,7 @@ struct ScanView: View {
                 ScanCameraView()
                     .padding([.leading, .trailing], 12)
                     .padding([.top, .bottom], 6)
-                ShowNumberView(tapAction: {})
+                ShowManualView(tapAction: {})
                     .padding(.top, 6)
                     .padding(.bottom, 12)
             }
