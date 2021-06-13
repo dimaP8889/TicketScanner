@@ -74,6 +74,8 @@ struct CustomTextFieldContainer: UIViewRepresentable {
         
         func setup(_ textField:UITextField) {
             textField.textColor = .white
+            textField.font = UIFont(name: "EKRepro-2204", size: 20)
+            textField.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
             textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         }
         

@@ -6,3 +6,38 @@
 //
 
 import Foundation
+
+struct ScanModel {
+    
+    var isManual : Bool = false
+    var alertModel : AlertModel? = nil
+}
+
+enum ScanAction {
+    
+    case showManual
+    case hideManual
+    case showAlert(AlertModel)
+    case hideAlert
+}
+
+struct ScanReducer {
+    
+    func reduce(oldState: ScanModel, action: ScanAction) -> ScanModel {
+        
+        switch action {
+        case .hideAlert:
+            let newState = ScanModel(isManual: oldState.isManual, alertModel: nil)
+            return newState
+        case let .showAlert(model):
+            let newState = ScanModel(isManual: oldState.isManual, alertModel: model)
+            return newState
+        case .showManual:
+            let newState = ScanModel(isManual: true, alertModel: nil)
+            return newState
+        case .hideManual:
+            let newState = ScanModel(isManual: false, alertModel: nil)
+            return newState
+        }
+    }
+}

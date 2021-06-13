@@ -15,6 +15,8 @@ struct EventTabBarView: View {
     var eventName : String
     @ObservedObject private var data : TabBarModel
     
+    private let scanStore = ScanStore(state: ScanModel())
+    
     init(eventName: String) {
         
         self.eventName = eventName
@@ -28,6 +30,7 @@ struct EventTabBarView: View {
         
         TabView(selection: $data.selection) {
             ScanView()
+                .environmentObject(scanStore)
                 .tabItem {
                     Image("ic_scan")
                         .renderingMode(.template)

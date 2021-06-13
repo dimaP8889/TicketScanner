@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ScanView: View {
     
+    @EnvironmentObject var scanStore : ScanStore
+    
     var body: some View {
         
         ZStack {
@@ -16,9 +18,15 @@ struct ScanView: View {
                 ScanCameraView()
                     .padding([.leading, .trailing], 12)
                     .padding([.top, .bottom], 6)
-                ShowManualView(tapAction: {})
+                if !scanStore.state.isManual {
+                    ShowManualView(tapAction: {
+                        withAnimation {
+                            scanStore.dispatch(action: .showManual)
+                        }
+                    })
                     .padding(.top, 6)
                     .padding(.bottom, 12)
+                }
             }
         }
     }

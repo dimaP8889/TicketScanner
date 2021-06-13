@@ -15,7 +15,7 @@ struct ShowCameraView: View {
         
         Button(
             action: {
-                
+                pressAction()
             },
             label: {
             HStack(spacing: 12) {

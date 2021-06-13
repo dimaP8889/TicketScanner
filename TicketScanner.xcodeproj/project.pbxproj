@@ -13,6 +13,9 @@
 		F10A0D372655CB7900487FD5 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A0D362655CB7900487FD5 /* Font.swift */; };
 		F10A0D392655CCE700487FD5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A0D382655CCE700487FD5 /* Color.swift */; };
 		F10A0D3D2655D0BF00487FD5 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A0D3C2655D0BF00487FD5 /* CustomTextField.swift */; };
+		F10FAE5C267677FA00B55A28 /* ScanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FAE5B267677FA00B55A28 /* ScanStore.swift */; };
+		F10FAE62267681C600B55A28 /* ManualEnterTextFieldContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FAE61267681C600B55A28 /* ManualEnterTextFieldContainer.swift */; };
+		F10FAE652676836700B55A28 /* ManualEnterTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FAE642676836700B55A28 /* ManualEnterTextField.swift */; };
 		F11A19C4267401FF001AE455 /* FullTicketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A19C3267401FF001AE455 /* FullTicketModel.swift */; };
 		F11A19D626741715001AE455 /* LeadingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A19D526741715001AE455 /* LeadingText.swift */; };
 		F11A19DE2674D44E001AE455 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A19DD2674D44E001AE455 /* Text.swift */; };
@@ -60,7 +63,6 @@
 		F198158E26750FD100E9218F /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F198158D26750FD100E9218F /* AlertModel.swift */; };
 		F1981590267520F900E9218F /* AlertSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F198158F267520F900E9218F /* AlertSubview.swift */; };
 		F198159126752FE800E9218F /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D6B266EB49A00F1FDC1 /* ScanView.swift */; };
-		F19815952675331900E9218F /* AlertObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19815942675331900E9218F /* AlertObject.swift */; };
 		F198159926754B7E00E9218F /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F198159826754B7E00E9218F /* View.swift */; };
 		F19815A1267653D300E9218F /* ManualEnterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19815A0267653D300E9218F /* ManualEnterView.swift */; };
 		F19815A426765FDF00E9218F /* ShowCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19815A326765FDF00E9218F /* ShowCameraView.swift */; };
@@ -81,6 +83,9 @@
 		F10A0D362655CB7900487FD5 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		F10A0D382655CCE700487FD5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		F10A0D3C2655D0BF00487FD5 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		F10FAE5B267677FA00B55A28 /* ScanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanStore.swift; sourceTree = "<group>"; };
+		F10FAE61267681C600B55A28 /* ManualEnterTextFieldContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualEnterTextFieldContainer.swift; sourceTree = "<group>"; };
+		F10FAE642676836700B55A28 /* ManualEnterTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualEnterTextField.swift; sourceTree = "<group>"; };
 		F11A19C3267401FF001AE455 /* FullTicketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullTicketModel.swift; sourceTree = "<group>"; };
 		F11A19D526741715001AE455 /* LeadingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadingText.swift; sourceTree = "<group>"; };
 		F11A19DD2674D44E001AE455 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
@@ -130,7 +135,6 @@
 		F198158A26750C4B00E9218F /* AlertContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertContentView.swift; sourceTree = "<group>"; };
 		F198158D26750FD100E9218F /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		F198158F267520F900E9218F /* AlertSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSubview.swift; sourceTree = "<group>"; };
-		F19815942675331900E9218F /* AlertObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertObject.swift; sourceTree = "<group>"; };
 		F198159826754B7E00E9218F /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		F19815A0267653D300E9218F /* ManualEnterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualEnterView.swift; sourceTree = "<group>"; };
 		F19815A326765FDF00E9218F /* ShowCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCameraView.swift; sourceTree = "<group>"; };
@@ -215,6 +219,23 @@
 				F15BD052265DA2440026B6DD /* CustomTextField */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F10FAE60267681B100B55A28 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				F10FAE632676834B00B55A28 /* Swift */,
+				F10FAE642676836700B55A28 /* ManualEnterTextField.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		F10FAE632676834B00B55A28 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				F10FAE61267681C600B55A28 /* ManualEnterTextFieldContainer.swift */,
+			);
+			path = Swift;
 			sourceTree = "<group>";
 		};
 		F11A19C2267401E9001AE455 /* Ticket */ = {
@@ -574,7 +595,6 @@
 			isa = PBXGroup;
 			children = (
 				F198159A26763C1A00E9218F /* Stores */,
-				F1981592267532EE00E9218F /* EnvironmentObjects */,
 				F198158C26750FAF00E9218F /* Alert */,
 				F11A19C2267401E9001AE455 /* Ticket */,
 				F1648D7B266EC4F100F1FDC1 /* Tab Bar */,
@@ -665,22 +685,6 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
-		F1981592267532EE00E9218F /* EnvironmentObjects */ = {
-			isa = PBXGroup;
-			children = (
-				F19815932675330700E9218F /* Alert */,
-			);
-			path = EnvironmentObjects;
-			sourceTree = "<group>";
-		};
-		F19815932675330700E9218F /* Alert */ = {
-			isa = PBXGroup;
-			children = (
-				F19815942675331900E9218F /* AlertObject.swift */,
-			);
-			path = Alert;
-			sourceTree = "<group>";
-		};
 		F198159A26763C1A00E9218F /* Stores */ = {
 			isa = PBXGroup;
 			children = (
@@ -693,6 +697,7 @@
 		F198159F2676539800E9218F /* ManualEnter */ = {
 			isa = PBXGroup;
 			children = (
+				F10FAE60267681B100B55A28 /* TextField */,
 				F1648D88266FF9C300F1FDC1 /* ShowManual */,
 				F19815A0267653D300E9218F /* ManualEnterView.swift */,
 			);
@@ -711,6 +716,7 @@
 			isa = PBXGroup;
 			children = (
 				F19815A82676698800E9218F /* ScanModel.swift */,
+				F10FAE5B267677FA00B55A28 /* ScanStore.swift */,
 			);
 			path = Scan;
 			sourceTree = "<group>";
@@ -813,6 +819,7 @@
 				F19815802674E4E500E9218F /* OkButton.swift in Sources */,
 				F1648D81266FE54700F1FDC1 /* ScanCameraView.swift in Sources */,
 				F10A0D302655C76600487FD5 /* InfoFieldView.swift in Sources */,
+				F10FAE5C267677FA00B55A28 /* ScanStore.swift in Sources */,
 				F1FCC331265EF6EB00951F8B /* Defaults.swift in Sources */,
 				F1FEC09C2659B862003B9235 /* SquareView.swift in Sources */,
 				F1648D64266D55CA00F1FDC1 /* DateFormatter.swift in Sources */,
@@ -835,11 +842,11 @@
 				F1648D6E266EB4A900F1FDC1 /* ParticipantsView.swift in Sources */,
 				F1572837266D026000F6BE64 /* EventsListView.swift in Sources */,
 				F169860B265322C400B26671 /* Action.swift in Sources */,
-				F19815952675331900E9218F /* AlertObject.swift in Sources */,
 				F19815A1267653D300E9218F /* ManualEnterView.swift in Sources */,
 				F198159126752FE800E9218F /* ScanView.swift in Sources */,
 				F11A19DE2674D44E001AE455 /* Text.swift in Sources */,
 				F157283B266D14AD00F6BE64 /* EventDataView.swift in Sources */,
+				F10FAE652676836700B55A28 /* ManualEnterTextField.swift in Sources */,
 				F11A19E22674DD32001AE455 /* CenteringColumnPreferenceKey.swift in Sources */,
 				F1648D77266EBB4300F1FDC1 /* UITabBar.swift in Sources */,
 				F1648D5E266D2B6B00F1FDC1 /* EventModel.swift in Sources */,
@@ -851,6 +858,7 @@
 				F1648D8B266FFC1A00F1FDC1 /* ShowManualView.swift in Sources */,
 				F1648D72266EB4C700F1FDC1 /* ProfileView.swift in Sources */,
 				F172FE8D2665631A00FF9569 /* LoginCredentialsStore.swift in Sources */,
+				F10FAE62267681C600B55A28 /* ManualEnterTextFieldContainer.swift in Sources */,
 				F1648D60266D2F2100F1FDC1 /* Date.swift in Sources */,
 				F19815A62676658B00E9218F /* SelectorHelper.swift in Sources */,
 				F16985EB2653101600B26671 /* RegistrationView.swift in Sources */,

@@ -10,17 +10,23 @@ import CodeScanner
 
 struct ScanCameraView: View {
     
-    @EnvironmentObject private var alertObject : AlertObject
+    @EnvironmentObject private var scanStore : ScanStore
     
     var body: some View {
         ZStack {
-            CodeScannerView(
-                codeTypes: [.qr],
-                scanMode: .oncePerCode,
-                scanInterval: 2,
-                completion: handleScan(result:)
-            )
-            .cornerRadius(20)
+            if scanStore.state.isManual {
+                ManualEnterView { _ in
+                    showAlert(with: .test)
+                }
+            } else {
+                CodeScannerView(
+                    codeTypes: [.qr],
+                    scanMode: .oncePerCode,
+                    scanInterval: 2,
+                    completion: handleScan(result:)
+                )
+                .cornerRadius(20)
+            }
             VStack {
                 Spacer()
                 HStack {
@@ -31,9 +37,9 @@ struct ScanCameraView: View {
                 }
             }
         }
-        .showPopup(alertObject: alertObject) {
+        .showPopup(alertModel: scanStore.state.alertModel) {
             withAnimation {
-                alertObject.alertModel = nil
+                scanStore.dispatch(action: .hideAlert)
             }
         }
     }
@@ -54,15 +60,15 @@ private extension ScanCameraView {
     //ahhhhh dont like this one
     func showAlert(with model: AlertModel) {
         
-        if alertObject.alertModel != nil {
+        if scanStore.state.alertModel != nil {
             withAnimation {
-                alertObject.alertModel = nil
+                scanStore.dispatch(action: .hideAlert)
             }
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
             withAnimation {
-                alertObject.alertModel = model
+                scanStore.dispatch(action: .showAlert(model))
             }
         }
     }

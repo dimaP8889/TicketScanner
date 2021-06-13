@@ -11,14 +11,12 @@ import SwiftUI
 struct TicketScannerApp: App {
     
     let loginStore = LoginStore(state: LoginCredentials(email: "", password: ""))
-    let alertObject = AlertObject()
     
     var body: some Scene {
         WindowGroup {
 //            RegistrationView()
 //                .environmentObject(loginStore)
             EventsListView()
-                .environmentObject(alertObject)
         }
     }
 }
