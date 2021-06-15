@@ -24,6 +24,7 @@ extension TicketStatusView {
                 }
                 HStack(spacing: 16) {
                     Image("ic_clock2")
+                        .padding(.top, 2)
                     Text(time)
                         .mainTicketStyle()
                     Text(date)

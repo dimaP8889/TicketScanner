@@ -19,6 +19,11 @@ final class ScanStore : ObservableObject {
         reducer = ScanReducer()
     }
     
+    var isTicketPresented : Bool {
+        get { state.isTicketPresented }
+        set { state.isTicketPresented = newValue }
+    }
+    
     func dispatch(action: ScanAction) {
         let newState = reducer.reduce(oldState: state, action: action)
         state = newState

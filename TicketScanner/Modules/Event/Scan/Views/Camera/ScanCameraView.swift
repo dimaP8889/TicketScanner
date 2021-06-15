@@ -37,11 +37,16 @@ struct ScanCameraView: View {
                 }
             }
         }
-        .showPopup(alertModel: scanStore.state.alertModel) {
-            withAnimation {
-                scanStore.dispatch(action: .hideAlert)
+        .showPopup(
+            alertModel: scanStore.state.alertModel,
+            swipeAction: {
+                withAnimation {
+                    scanStore.dispatch(action: .hideAlert)
+                }
+            }, tapAction: {
+                scanStore.dispatch(action: .showTicket)
             }
-        }
+        )
     }
 }
 

@@ -11,6 +11,8 @@ struct ScanModel {
     
     var isManual : Bool = false
     var alertModel : AlertModel? = nil
+    
+    var isTicketPresented : Bool = false
 }
 
 enum ScanAction {
@@ -19,6 +21,7 @@ enum ScanAction {
     case hideManual
     case showAlert(AlertModel)
     case hideAlert
+    case showTicket
 }
 
 struct ScanReducer {
@@ -37,6 +40,10 @@ struct ScanReducer {
             return newState
         case .hideManual:
             let newState = ScanModel(isManual: false, alertModel: nil)
+            return newState
+        case .showTicket:
+            let hasTicket = oldState.alertModel?.alertType.ticket != nil
+            let newState = ScanModel(isManual: oldState.isManual, alertModel: oldState.alertModel, isTicketPresented: hasTicket)
             return newState
         }
     }

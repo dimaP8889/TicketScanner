@@ -11,12 +11,18 @@ struct AlertView: View {
     
     let model : AlertModel
     let swipeAction : Action
+    let tapAction : Action
     
     private let timer : Timer
     
-    init(model: AlertModel, swipeAction: @escaping Action) {
+    init(
+        model: AlertModel,
+        swipeAction: @escaping Action,
+        tapAction: @escaping Action
+    ) {
         self.model = model
         self.swipeAction = swipeAction
+        self.tapAction = tapAction
         timer = Timer(timeInterval: 3, repeats: false) { _ in
             swipeAction()
         }
@@ -37,7 +43,11 @@ struct AlertView: View {
             Spacer()
         }
         .onDisappear {
+            swipeAction()
             timer.invalidate()
+        }
+        .onTapGesture {
+            tapAction()
         }
         .gesture(
             DragGesture(
@@ -55,6 +65,6 @@ struct AlertView: View {
 
 struct AlertView_Previews: PreviewProvider {
     static var previews: some View {
-        AlertView(model: .test, swipeAction: {})
+        AlertView(model: .test, swipeAction: {}, tapAction: {})
     }
 }

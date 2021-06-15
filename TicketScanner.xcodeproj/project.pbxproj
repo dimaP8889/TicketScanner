@@ -22,6 +22,8 @@
 		F11A19E22674DD32001AE455 /* CenteringColumnPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A19E12674DD32001AE455 /* CenteringColumnPreferenceKey.swift */; };
 		F11A19E52674DD81001AE455 /* CenteringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A19E42674DD81001AE455 /* CenteringView.swift */; };
 		F11A19E92674E088001AE455 /* Spacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A19E82674E088001AE455 /* Spacer.swift */; };
+		F138C44D2677D33700915BC5 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138C44C2677D33700915BC5 /* UINavigationController.swift */; };
+		F138C4502677D67300915BC5 /* TicketBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138C44F2677D67300915BC5 /* TicketBackButton.swift */; };
 		F13986F0266D1E5F00AD3199 /* ActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13986EF266D1E5F00AD3199 /* ActiveView.swift */; };
 		F1572836266D014800F6BE64 /* LogoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1572834266CFFD300F6BE64 /* LogoutButton.swift */; };
 		F1572837266D026000F6BE64 /* EventsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13288E32669416C009F2C48 /* EventsListView.swift */; };
@@ -93,6 +95,8 @@
 		F11A19E42674DD81001AE455 /* CenteringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteringView.swift; sourceTree = "<group>"; };
 		F11A19E82674E088001AE455 /* Spacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacer.swift; sourceTree = "<group>"; };
 		F13288E32669416C009F2C48 /* EventsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListView.swift; sourceTree = "<group>"; };
+		F138C44C2677D33700915BC5 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		F138C44F2677D67300915BC5 /* TicketBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketBackButton.swift; sourceTree = "<group>"; };
 		F13986EF266D1E5F00AD3199 /* ActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveView.swift; sourceTree = "<group>"; };
 		F1572834266CFFD300F6BE64 /* LogoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutButton.swift; sourceTree = "<group>"; };
 		F1572839266D122E00F6BE64 /* EventDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataView.swift; sourceTree = "<group>"; };
@@ -288,6 +292,14 @@
 			path = EventsList;
 			sourceTree = "<group>";
 		};
+		F138C44E2677D65700915BC5 /* BackButton */ = {
+			isa = PBXGroup;
+			children = (
+				F138C44F2677D67300915BC5 /* TicketBackButton.swift */,
+			);
+			path = BackButton;
+			sourceTree = "<group>";
+		};
 		F13986EE266D1CA900AD3199 /* ActiveView */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +347,7 @@
 		F158F45C266569E700AB8AE6 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				F138C44C2677D33700915BC5 /* UINavigationController.swift */,
 				F1648D61266D4BC800F1FDC1 /* UINavigationBar.swift */,
 				F1648D76266EBB4300F1FDC1 /* UITabBar.swift */,
 			);
@@ -624,8 +637,9 @@
 		F19815732674E4E500E9218F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F19815742674E4E500E9218F /* TicketStatusView.swift */,
+				F138C44E2677D65700915BC5 /* BackButton */,
 				F19815752674E4E500E9218F /* Subviews */,
+				F19815742674E4E500E9218F /* TicketStatusView.swift */,
 				F198157C2674E4E500E9218F /* TicketMainInfoView.swift */,
 				F198157D2674E4E500E9218F /* TicketSecondaryInfoView.swift */,
 			);
@@ -822,6 +836,7 @@
 				F10FAE5C267677FA00B55A28 /* ScanStore.swift in Sources */,
 				F1FCC331265EF6EB00951F8B /* Defaults.swift in Sources */,
 				F1FEC09C2659B862003B9235 /* SquareView.swift in Sources */,
+				F138C44D2677D33700915BC5 /* UINavigationController.swift in Sources */,
 				F1648D64266D55CA00F1FDC1 /* DateFormatter.swift in Sources */,
 				F10A0D2A2655C44900487FD5 /* CredentialsView.swift in Sources */,
 				F10A0D392655CCE700487FD5 /* Color.swift in Sources */,
@@ -873,6 +888,7 @@
 				F16985E92653101600B26671 /* TicketScannerApp.swift in Sources */,
 				F11A19D626741715001AE455 /* LeadingText.swift in Sources */,
 				F19815A92676698800E9218F /* ScanModel.swift in Sources */,
+				F138C4502677D67300915BC5 /* TicketBackButton.swift in Sources */,
 				F1648D75266EB4E400F1FDC1 /* EventTabBarView.swift in Sources */,
 				F1648D62266D4BC800F1FDC1 /* UINavigationBar.swift in Sources */,
 				F19815842674E4E500E9218F /* TicketMainInfoView.swift in Sources */,

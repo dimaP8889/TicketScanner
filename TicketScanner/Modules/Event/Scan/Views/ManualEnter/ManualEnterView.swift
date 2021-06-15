@@ -28,7 +28,7 @@ struct ManualEnterView: View {
                     Spacer()
                     ManualEnterTextField(text: $text, textDidChange: {
                         withAnimation {
-                            scanStore.dispatch(action: .showAlert(.test))
+                            
                         }
                     })
                     .frame(maxWidth: 300)

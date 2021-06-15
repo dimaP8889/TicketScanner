@@ -9,11 +9,11 @@ import SwiftUI
 
 extension View {
     
-    func showPopup(alertModel: AlertModel?, swipeAction: @escaping Action) -> some View {
+    func showPopup(alertModel: AlertModel?, swipeAction: @escaping Action, tapAction: @escaping Action) -> some View {
         ZStack {
             self
             if let model = alertModel {
-                AlertView(model: model, swipeAction: swipeAction)
+                AlertView(model: model, swipeAction: swipeAction, tapAction: tapAction)
                     .transition(.move(edge: .top))
             }
         }

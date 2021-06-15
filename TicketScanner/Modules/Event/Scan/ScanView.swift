@@ -28,6 +28,11 @@ struct ScanView: View {
                     .padding(.bottom, 12)
                 }
             }
+            NavigationLink(
+                destination: FullTicketView(),
+                isActive: $scanStore.isTicketPresented
+            ) { EmptyView() }
+            .hidden()
         }
     }
 }

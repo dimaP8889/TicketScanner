@@ -54,6 +54,8 @@ struct EventsListView: View {
                     }
                 }
             }
+            .navigationViewStyle(StackNavigationViewStyle())
+            .accentColor(.codGray)
         }
     }
 }
