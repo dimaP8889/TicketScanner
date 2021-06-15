@@ -9,6 +9,8 @@ import SwiftUI
 
 struct EventsListView: View {
     
+    @EnvironmentObject var appDataStore: AppDataStore
+    
     var models : [EventModel]
     
     init() {
@@ -46,6 +48,7 @@ struct EventsListView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     HStack {
                         LogoutButton {
+                            appDataStore.dispatch(action: .removeToken)
                         }
                         Spacer(minLength: 0)
                     }
