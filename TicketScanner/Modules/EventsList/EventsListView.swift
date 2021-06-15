@@ -20,37 +20,34 @@ struct EventsListView: View {
     
     var body: some View {
         
-        GeometryReader { geometry in
-            NavigationView {
-                ScrollView {
-                    VStack(spacing: 0) {
-                        Spacer()
-                            .frame(height: 10)
-                        ForEach(models) { data in
-                            NavigationLink(
-                                destination: EventTabBarView(eventName: data.festivalName),
-                                label: {
-                                    EventDataView(model: data)
-                                        .padding([.leading, .trailing], 12)
-                                        .padding([.top, .bottom], 6)
-                                }
-                            )
-                        }
+        NavigationView {
+            ScrollView {
+                LazyVStack(spacing: 0) {
+                    Spacer()
+                        .frame(height: 10)
+                    ForEach(models) { data in
+                        NavigationLink(
+                            destination: EventTabBarView(eventName: data.festivalName),
+                            label: {
+                                EventDataView(model: data)
+                                    .padding([.leading, .trailing], 12)
+                                    .padding([.top, .bottom], 6)
+                            }
+                        )
                     }
                 }
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Text(localStr("events.toolbar.leading"))
-                            .font(.main(size: 24))
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        HStack {
-                            LogoutButton {
-                                print(geometry.safeAreaInsets)
-                            }
-                            Spacer(minLength: 0)
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Text(localStr("events.toolbar.leading"))
+                        .font(.main(size: 24))
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    HStack {
+                        LogoutButton {
                         }
+                        Spacer(minLength: 0)
                     }
                 }
             }

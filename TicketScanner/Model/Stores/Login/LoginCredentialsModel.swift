@@ -22,8 +22,8 @@ struct LoginCredentials {
         self.email = email
         self.password = password
         
-        isValid = email.isEmail()
-            && password.isCorrectPassword()
+        isValid = true//email.isEmail()
+            //&& password.isCorrectPassword()
     }
 }
 

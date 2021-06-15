@@ -20,6 +20,8 @@ struct RegistrationView: View {
     
     @EnvironmentObject var store: LoginStore
     
+    @EnvironmentObject var appDataStore: AppDataStore
+    
     private var startHeight : CGFloat = {
         262 > UIScreen.main.bounds.height * 0.4 ?
             UIScreen.main.bounds.height * 0.4 : 262
@@ -52,7 +54,7 @@ struct RegistrationView: View {
                         LogInButton(
                             isButtonActive: store.state.isValid
                         ) {
-                            
+                            appDataStore.dispatch(action: .setToken("lol"))
                         }
                         .onAppear {
                             withAnimation {

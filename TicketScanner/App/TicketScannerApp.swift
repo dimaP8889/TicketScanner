@@ -10,13 +10,12 @@ import SwiftUI
 @main
 struct TicketScannerApp: App {
     
-    let loginStore = LoginStore(state: LoginCredentials(email: "", password: ""))
+    private let appDataStore = AppDataStore(state: AppData())
     
     var body: some Scene {
         WindowGroup {
-//            RegistrationView()
-//                .environmentObject(loginStore)
-            EventsListView()
+            AppRootView()
+                .environmentObject(appDataStore)
         }
     }
 }

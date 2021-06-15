@@ -24,6 +24,9 @@
 		F11A19E92674E088001AE455 /* Spacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A19E82674E088001AE455 /* Spacer.swift */; };
 		F138C44D2677D33700915BC5 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138C44C2677D33700915BC5 /* UINavigationController.swift */; };
 		F138C4502677D67300915BC5 /* TicketBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138C44F2677D67300915BC5 /* TicketBackButton.swift */; };
+		F138C4552678DB9600915BC5 /* AppDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138C4542678DB9600915BC5 /* AppDataStore.swift */; };
+		F138C4572678DBEB00915BC5 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138C4562678DBEB00915BC5 /* AppData.swift */; };
+		F138C4592678DE4200915BC5 /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138C4582678DE4200915BC5 /* AppRootView.swift */; };
 		F13986F0266D1E5F00AD3199 /* ActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13986EF266D1E5F00AD3199 /* ActiveView.swift */; };
 		F1572836266D014800F6BE64 /* LogoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1572834266CFFD300F6BE64 /* LogoutButton.swift */; };
 		F1572837266D026000F6BE64 /* EventsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13288E32669416C009F2C48 /* EventsListView.swift */; };
@@ -97,6 +100,9 @@
 		F13288E32669416C009F2C48 /* EventsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListView.swift; sourceTree = "<group>"; };
 		F138C44C2677D33700915BC5 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		F138C44F2677D67300915BC5 /* TicketBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketBackButton.swift; sourceTree = "<group>"; };
+		F138C4542678DB9600915BC5 /* AppDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataStore.swift; sourceTree = "<group>"; };
+		F138C4562678DBEB00915BC5 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		F138C4582678DE4200915BC5 /* AppRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootView.swift; sourceTree = "<group>"; };
 		F13986EF266D1E5F00AD3199 /* ActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveView.swift; sourceTree = "<group>"; };
 		F1572834266CFFD300F6BE64 /* LogoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutButton.swift; sourceTree = "<group>"; };
 		F1572839266D122E00F6BE64 /* EventDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataView.swift; sourceTree = "<group>"; };
@@ -298,6 +304,15 @@
 				F138C44F2677D67300915BC5 /* TicketBackButton.swift */,
 			);
 			path = BackButton;
+			sourceTree = "<group>";
+		};
+		F138C4532678DB8700915BC5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F138C4542678DB9600915BC5 /* AppDataStore.swift */,
+				F138C4562678DBEB00915BC5 /* AppData.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 		F13986EE266D1CA900AD3199 /* ActiveView */ = {
@@ -527,6 +542,7 @@
 			isa = PBXGroup;
 			children = (
 				F16985D62653101400B26671 /* TicketScannerApp.swift */,
+				F138C4582678DE4200915BC5 /* AppRootView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -702,6 +718,7 @@
 		F198159A26763C1A00E9218F /* Stores */ = {
 			isa = PBXGroup;
 			children = (
+				F138C4532678DB8700915BC5 /* App */,
 				F19815A72676692000E9218F /* Scan */,
 				F172FE8B266562F800FF9569 /* Login */,
 			);
@@ -862,13 +879,16 @@
 				F11A19DE2674D44E001AE455 /* Text.swift in Sources */,
 				F157283B266D14AD00F6BE64 /* EventDataView.swift in Sources */,
 				F10FAE652676836700B55A28 /* ManualEnterTextField.swift in Sources */,
+				F138C4552678DB9600915BC5 /* AppDataStore.swift in Sources */,
 				F11A19E22674DD32001AE455 /* CenteringColumnPreferenceKey.swift in Sources */,
+				F138C4572678DBEB00915BC5 /* AppData.swift in Sources */,
 				F1648D77266EBB4300F1FDC1 /* UITabBar.swift in Sources */,
 				F1648D5E266D2B6B00F1FDC1 /* EventModel.swift in Sources */,
 				F19815812674E4E500E9218F /* WrongEventView.swift in Sources */,
 				F10A0D372655CB7900487FD5 /* Font.swift in Sources */,
 				F19815832674E4E500E9218F /* RefundedView.swift in Sources */,
 				F158F45E266569F100AB8AE6 /* String.swift in Sources */,
+				F138C4592678DE4200915BC5 /* AppRootView.swift in Sources */,
 				F1981590267520F900E9218F /* AlertSubview.swift in Sources */,
 				F1648D8B266FFC1A00F1FDC1 /* ShowManualView.swift in Sources */,
 				F1648D72266EB4C700F1FDC1 /* ProfileView.swift in Sources */,
@@ -1029,7 +1049,7 @@
 				DEVELOPMENT_TEAM = 452NG5983H;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TicketScanner/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1051,7 +1071,7 @@
 				DEVELOPMENT_TEAM = 452NG5983H;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TicketScanner/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
