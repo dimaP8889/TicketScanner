@@ -16,6 +16,11 @@
 		F10FAE5C267677FA00B55A28 /* ScanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FAE5B267677FA00B55A28 /* ScanStore.swift */; };
 		F10FAE62267681C600B55A28 /* ManualEnterTextFieldContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FAE61267681C600B55A28 /* ManualEnterTextFieldContainer.swift */; };
 		F10FAE652676836700B55A28 /* ManualEnterTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FAE642676836700B55A28 /* ManualEnterTextField.swift */; };
+		F1102002267E9BC500AB420F /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1102001267E9BC500AB420F /* ApiClient.swift */; };
+		F1102004267E9BFC00AB420F /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1102003267E9BFC00AB420F /* Requestable.swift */; };
+		F1102007267EA17100AB420F /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1102006267EA17100AB420F /* ApiManager.swift */; };
+		F1102009267EA4D200AB420F /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1102008267EA4D200AB420F /* Keychain.swift */; };
+		F110200C267EA51400AB420F /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110200B267EA51400AB420F /* AccessToken.swift */; };
 		F11A19C4267401FF001AE455 /* FullTicketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A19C3267401FF001AE455 /* FullTicketModel.swift */; };
 		F11A19D626741715001AE455 /* LeadingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A19D526741715001AE455 /* LeadingText.swift */; };
 		F11A19DE2674D44E001AE455 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A19DD2674D44E001AE455 /* Text.swift */; };
@@ -91,6 +96,11 @@
 		F10FAE5B267677FA00B55A28 /* ScanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanStore.swift; sourceTree = "<group>"; };
 		F10FAE61267681C600B55A28 /* ManualEnterTextFieldContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualEnterTextFieldContainer.swift; sourceTree = "<group>"; };
 		F10FAE642676836700B55A28 /* ManualEnterTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualEnterTextField.swift; sourceTree = "<group>"; };
+		F1102001267E9BC500AB420F /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		F1102003267E9BFC00AB420F /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		F1102006267EA17100AB420F /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		F1102008267EA4D200AB420F /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		F110200B267EA51400AB420F /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		F11A19C3267401FF001AE455 /* FullTicketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullTicketModel.swift; sourceTree = "<group>"; };
 		F11A19D526741715001AE455 /* LeadingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadingText.swift; sourceTree = "<group>"; };
 		F11A19DD2674D44E001AE455 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
@@ -248,6 +258,24 @@
 			path = Swift;
 			sourceTree = "<group>";
 		};
+		F1102000267E9B8A00AB420F /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				F1102001267E9BC500AB420F /* ApiClient.swift */,
+				F1102003267E9BFC00AB420F /* Requestable.swift */,
+				F1102006267EA17100AB420F /* ApiManager.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		F110200A267EA4F900AB420F /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				F110200B267EA51400AB420F /* AccessToken.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
 		F11A19C2267401E9001AE455 /* Ticket */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +380,7 @@
 		F158F45B2665670400AB8AE6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F110200A267EA4F900AB420F /* Keychain */,
 				F158F46026656A0500AB8AE6 /* Foundation */,
 				F158F45C266569E700AB8AE6 /* UIKit */,
 				F10A0D352655CB6B00487FD5 /* SwiftUI */,
@@ -525,6 +554,7 @@
 				F16985F82653122100B26671 /* App */,
 				F16985FA2653125200B26671 /* Resources */,
 				F172FE8826655E8900FF9569 /* Model */,
+				F1102000267E9B8A00AB420F /* Api */,
 				F16985FB2653127100B26671 /* Modules */,
 			);
 			path = TicketScanner;
@@ -616,6 +646,7 @@
 				F1FCC332265EF79C00951F8B /* Global.swift */,
 				F1FCC35E2660272E00951F8B /* KeyboardHeightHelper.swift */,
 				F19815A52676658B00E9218F /* SelectorHelper.swift */,
+				F1102008267EA4D200AB420F /* Keychain.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -849,6 +880,7 @@
 				F11A19E92674E088001AE455 /* Spacer.swift in Sources */,
 				F19815802674E4E500E9218F /* OkButton.swift in Sources */,
 				F1648D81266FE54700F1FDC1 /* ScanCameraView.swift in Sources */,
+				F1102009267EA4D200AB420F /* Keychain.swift in Sources */,
 				F10A0D302655C76600487FD5 /* InfoFieldView.swift in Sources */,
 				F10FAE5C267677FA00B55A28 /* ScanStore.swift in Sources */,
 				F1FCC331265EF6EB00951F8B /* Defaults.swift in Sources */,
@@ -859,6 +891,7 @@
 				F10A0D392655CCE700487FD5 /* Color.swift in Sources */,
 				F10A0D3D2655D0BF00487FD5 /* CustomTextField.swift in Sources */,
 				F1FCC333265EF79C00951F8B /* Global.swift in Sources */,
+				F1102004267E9BFC00AB420F /* Requestable.swift in Sources */,
 				F13986F0266D1E5F00AD3199 /* ActiveView.swift in Sources */,
 				F198157E2674E4E500E9218F /* FullTicketView.swift in Sources */,
 				F198158E26750FD100E9218F /* AlertModel.swift in Sources */,
@@ -892,8 +925,10 @@
 				F1981590267520F900E9218F /* AlertSubview.swift in Sources */,
 				F1648D8B266FFC1A00F1FDC1 /* ShowManualView.swift in Sources */,
 				F1648D72266EB4C700F1FDC1 /* ProfileView.swift in Sources */,
+				F110200C267EA51400AB420F /* AccessToken.swift in Sources */,
 				F172FE8D2665631A00FF9569 /* LoginCredentialsStore.swift in Sources */,
 				F10FAE62267681C600B55A28 /* ManualEnterTextFieldContainer.swift in Sources */,
+				F1102002267E9BC500AB420F /* ApiClient.swift in Sources */,
 				F1648D60266D2F2100F1FDC1 /* Date.swift in Sources */,
 				F19815A62676658B00E9218F /* SelectorHelper.swift in Sources */,
 				F16985EB2653101600B26671 /* RegistrationView.swift in Sources */,
@@ -908,6 +943,7 @@
 				F16985E92653101600B26671 /* TicketScannerApp.swift in Sources */,
 				F11A19D626741715001AE455 /* LeadingText.swift in Sources */,
 				F19815A92676698800E9218F /* ScanModel.swift in Sources */,
+				F1102007267EA17100AB420F /* ApiManager.swift in Sources */,
 				F138C4502677D67300915BC5 /* TicketBackButton.swift in Sources */,
 				F1648D75266EB4E400F1FDC1 /* EventTabBarView.swift in Sources */,
 				F1648D62266D4BC800F1FDC1 /* UINavigationBar.swift in Sources */,

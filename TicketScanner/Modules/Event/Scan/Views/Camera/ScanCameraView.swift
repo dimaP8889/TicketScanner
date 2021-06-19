@@ -37,6 +37,10 @@ struct ScanCameraView: View {
                 }
             }
         }
+        .background(
+            RoundedRectangle(cornerRadius: 20)
+                .foregroundColor(Color.newGray)
+        )
         .showPopup(
             alertModel: scanStore.state.alertModel,
             swipeAction: {
