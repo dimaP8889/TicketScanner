@@ -29,11 +29,7 @@ extension Requestable {
     }
     
     func headers() -> [String : String] {
-        let lang = Defaults.shared.getCurrentLang()
-        return [
-            "Content-Type" : "application/json",
-            "Accept-Language" : "\(lang)"
-        ]
+        return [:]
     }
     
     func authorizationRequired() -> Bool {

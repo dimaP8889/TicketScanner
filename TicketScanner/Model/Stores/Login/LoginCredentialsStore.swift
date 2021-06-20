@@ -20,8 +20,6 @@ final class LoginStore : ObservableObject {
     }
     
     func dispatch(action: LoginAction) {
-        
-        let newState = reducer.reduce(oldState: state, action: action)
-        state = newState
+        reducer.reduce(state: &state, action: action)
     }
 }

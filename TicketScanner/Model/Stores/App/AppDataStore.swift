@@ -20,7 +20,6 @@ final class AppDataStore : ObservableObject {
     }
 
     func dispatch(action: AppDataAction) {
-        let newState = reducer.reduce(oldState: state, action: action)
-        state = newState
+        reducer.reduce(state: &state, action: action)
     }
 }

@@ -10,8 +10,12 @@ import Combine
 
 struct LoginCredentials {
     
-    var email : String
-    var password : String
+    var email : String {
+        didSet { setValid() }
+    }
+    var password : String {
+        didSet { setValid() }
+    }
     
     var isValid : Bool
     
@@ -25,6 +29,11 @@ struct LoginCredentials {
         isValid = true//email.isEmail()
             //&& password.isCorrectPassword()
     }
+    
+    private mutating func setValid() {
+        isValid = email.isEmail()
+            && password.isCorrectPassword()
+    }
 }
 
 enum LoginAction {
@@ -36,21 +45,17 @@ enum LoginAction {
 
 struct LoginReducer {
     
-    func reduce(oldState: LoginCredentials, action: LoginAction) -> LoginCredentials {
+    func reduce(state: inout LoginCredentials, action: LoginAction) {
         
         switch action {
         case let .changeEmail(email):
-            guard !email.isEmpty else { return oldState }
-            let newState = LoginCredentials(email: email, password: oldState.password)
-            return newState
+            guard !email.isEmpty else { return }
+            state.email = email
         case let .changePassword(password):
-            guard !password.isEmpty else { return oldState }
-            let newState = LoginCredentials(email: oldState.email, password: password)
-            return newState
-        case let .setError(state):
-            var newState = LoginCredentials(email: oldState.email, password: oldState.password)
-            newState.isError = state
-            return newState
+            guard !password.isEmpty else { return }
+            state.password = password
+        case let .setError(isError):
+            state.isError = isError
         }
     }
 }

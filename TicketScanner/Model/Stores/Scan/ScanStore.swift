@@ -25,7 +25,6 @@ final class ScanStore : ObservableObject {
     }
     
     func dispatch(action: ScanAction) {
-        let newState = reducer.reduce(oldState: state, action: action)
-        state = newState
+        reducer.reduce(state: &state, action: action)
     }
 }

@@ -26,25 +26,22 @@ enum ScanAction {
 
 struct ScanReducer {
     
-    func reduce(oldState: ScanModel, action: ScanAction) -> ScanModel {
+    func reduce(state: inout ScanModel, action: ScanAction) {
         
         switch action {
         case .hideAlert:
-            let newState = ScanModel(isManual: oldState.isManual, alertModel: nil)
-            return newState
+            state.alertModel = nil
         case let .showAlert(model):
-            let newState = ScanModel(isManual: oldState.isManual, alertModel: model)
-            return newState
+            state.alertModel = model
         case .showManual:
-            let newState = ScanModel(isManual: true, alertModel: nil)
-            return newState
+            state.isManual = true
+            state.alertModel = nil
         case .hideManual:
-            let newState = ScanModel(isManual: false, alertModel: nil)
-            return newState
+            state.isManual = false
+            state.alertModel = nil
         case .showTicket:
-            let hasTicket = oldState.alertModel?.alertType.ticket != nil
-            let newState = ScanModel(isManual: oldState.isManual, alertModel: oldState.alertModel, isTicketPresented: hasTicket)
-            return newState
+            let hasTicket = state.alertModel?.alertType.ticket != nil
+            state.isTicketPresented = hasTicket
         }
     }
 }

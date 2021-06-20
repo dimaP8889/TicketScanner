@@ -20,15 +20,13 @@ enum AppDataAction {
 
 struct AppDataReducer {
     
-    func reduce(oldState: AppData, action: AppDataAction) -> AppData {
+    func reduce(state: inout AppData, action: AppDataAction) {
         
         switch action {
         case .setToken(_):
-            let newState = AppData(isUserAuthorized: true)
-            return newState
+            state.isUserAuthorized = true
         case .removeToken:
-            let newState = AppData()
-            return newState
+            state.isUserAuthorized = false
         }
     }
 }

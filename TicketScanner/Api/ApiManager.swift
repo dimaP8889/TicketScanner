@@ -10,7 +10,7 @@ import Combine
 
 final class Networking {
     
-    private static let globalURL = ""
+    private static let globalURL = "https://ticket-checkin.development.2204ticketing.entireframework.com"
 }
 
 
@@ -31,7 +31,7 @@ class API<RQ: Requestable> : NSObject, URLSessionDelegate {
 
 extension API where RQ: Requestable {
     
-    func sync<T : Decodable>(_ rqParams : RQ) -> AnyPublisher<T, Error> {
+    func sync<T : Decodable>(_ rqParams : RQ) -> AnyPublisher<Response<T>, Error> {
         
         let url = createUrl(rqParams)
         
@@ -58,8 +58,6 @@ extension API where RQ: Requestable {
         request.httpMethod = rqParams.httpMethod()
         
         return apiClient.run(request)
-            .map(\.value)
-            .eraseToAnyPublisher()
     }
 }
 
