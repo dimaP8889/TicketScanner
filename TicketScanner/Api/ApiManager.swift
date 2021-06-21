@@ -11,6 +11,8 @@ import Combine
 final class Networking {
     
     private static let globalURL = "https://ticket-checkin.development.2204ticketing.entireframework.com"
+    
+    static let main = API<MainApi>(base: globalURL)
 }
 
 
@@ -31,7 +33,7 @@ class API<RQ: Requestable> : NSObject, URLSessionDelegate {
 
 extension API where RQ: Requestable {
     
-    func sync<T : Decodable>(_ rqParams : RQ) -> AnyPublisher<Response<T>, Error> {
+    func sync<T : Decodable>(_ rqParams : RQ) -> AnyPublisher<Response<T>, Never> {
         
         let url = createUrl(rqParams)
         
@@ -51,12 +53,11 @@ extension API where RQ: Requestable {
             request.allHTTPHeaderFields = authorizationHeaders()
         }
         
-        let formData = getData(params: rqParams.parameters())
+        let formData = getData(params: rqParams.formData())
         
         request.httpBody = formData
         request.allHTTPHeaderFields?.merge(rqParams.headers()) { (_, new) in new }
         request.httpMethod = rqParams.httpMethod()
-        
         return apiClient.run(request)
     }
 }
@@ -82,7 +83,7 @@ private extension API {
     func createUrl(_ rqParams : RQ) -> URL {
         
         let endPoint = rqParams.endPointRoute()
-        let urlString =  endPoint + (endPoint.isEmpty ? "" : "/")
+        let urlString = endPoint
         
         let url = base.appendingPathComponent(urlString)
         return url

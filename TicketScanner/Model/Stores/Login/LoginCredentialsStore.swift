@@ -11,6 +11,7 @@ import SwiftUI
 final class LoginStore : ObservableObject {
     
     @Published private(set) var state : LoginCredentials
+    private var cancellables: Set<AnyCancellable> = []
     
     private var reducer: LoginReducer
     
@@ -20,6 +21,14 @@ final class LoginStore : ObservableObject {
     }
     
     func dispatch(action: LoginAction) {
-        reducer.reduce(state: &state, action: action)
+        
+        guard let effect = reducer.reduce(state: &state, action: action) else {
+            return
+        }
+        
+        effect
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: dispatch(action:))
+            .store(in: &cancellables)
     }
 }

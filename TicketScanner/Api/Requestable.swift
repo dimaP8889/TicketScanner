@@ -29,7 +29,7 @@ extension Requestable {
     }
     
     func headers() -> [String : String] {
-        return [:]
+        return ["Content-Type": "application/json"]
     }
     
     func authorizationRequired() -> Bool {

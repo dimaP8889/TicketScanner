@@ -19,7 +19,6 @@ struct RegistrationView: View {
     @ObservedObject private var keyboardHelper = KeyboardHeightHelper()
     
     @EnvironmentObject var store: LoginStore
-    
     @EnvironmentObject var appDataStore: AppDataStore
     
     private var startHeight : CGFloat = {
@@ -54,7 +53,10 @@ struct RegistrationView: View {
                         LogInButton(
                             isButtonActive: store.state.isValid
                         ) {
-                            appDataStore.dispatch(action: .setToken("lol"))
+                            let successAction = { token in
+                                appDataStore.dispatch(action: .setToken(token))
+                            }
+                            store.dispatch(action: .logIn(successAction))
                         }
                         .onAppear {
                             withAnimation {

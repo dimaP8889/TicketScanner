@@ -65,6 +65,7 @@ enum APIError {
     case refreshTokenInvalid
     case accessTokenInvalid
     case expiredToken
+    case publisherError
     
     enum SystemError : Error {
         

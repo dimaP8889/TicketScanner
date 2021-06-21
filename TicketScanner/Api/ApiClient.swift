@@ -10,12 +10,13 @@ import Combine
 
 struct APIClient {
     
-    func run<T: Decodable>(_ request: URLRequest) -> AnyPublisher<Response<T>, Error> { // 2
+    func run<T: Decodable>(_ request: URLRequest) -> AnyPublisher<Response<T>, Never> { // 2
         return URLSession.shared
             .dataTaskPublisher(for: request) // 3
             .tryMap { result -> Response<T> in
                 ResponseHandler.handle(data: result.data, response: result.response)
             }
+            .replaceError(with: .failure(.publisherError))
             .receive(on: DispatchQueue.main) // 6
             .eraseToAnyPublisher() // 7
     }

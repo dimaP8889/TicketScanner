@@ -15,7 +15,7 @@ enum MainApi {
 
 extension API where RQ == MainApi {
     
-    func signin(username: String, password: String) -> AnyPublisher<Response<AuthModel>, Error> {
+    func signin(username: String, password: String) -> AnyPublisher<Response<AuthModel>, Never> {
         sync(.authorize(user: username, password: password))
     }
 }
@@ -34,5 +34,9 @@ extension MainApi : Requestable {
                 "password" : password
             ]
         }
+    }
+    
+    func httpMethod() -> String {
+        return "POST"
     }
 }
