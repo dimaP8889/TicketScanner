@@ -64,3 +64,9 @@
 "alert.subtitle.visited" = "Відвідувач зайшов о ";
 "alert.subtitle.enter_number" = "Спробуйте ввести номер квитка";
 "alert.ticket.name" = "Квиток︎︎︎ ↗︎︎";
+
+//Participants
+"participants.search.placeholder" = "Ім’я або номер квитка";
+"participants.search.filter.all" = "Всі";
+"participants.search.filter.success" = "Успішні";
+"participants.search.filter.failure" = "Відхилені";

@@ -82,6 +82,10 @@
 		F19815A62676658B00E9218F /* SelectorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19815A52676658B00E9218F /* SelectorHelper.swift */; };
 		F19815A92676698800E9218F /* ScanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19815A82676698800E9218F /* ScanModel.swift */; };
 		F1A1C24A2659BF7C006F4922 /* LogInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A1C2492659BF7C006F4922 /* LogInButton.swift */; };
+		F1DE370B2693A583001D11C0 /* SearchFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE370A2693A583001D11C0 /* SearchFieldView.swift */; };
+		F1DE370E2693B038001D11C0 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE370D2693B038001D11C0 /* FilterView.swift */; };
+		F1DE37112693B822001D11C0 /* ParticipantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE37102693B822001D11C0 /* ParticipantsModel.swift */; };
+		F1DE37132693BC01001D11C0 /* ParticipantsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE37122693BC01001D11C0 /* ParticipantsStore.swift */; };
 		F1FCC331265EF6EB00951F8B /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FCC330265EF6EB00951F8B /* Defaults.swift */; };
 		F1FCC333265EF79C00951F8B /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FCC332265EF79C00951F8B /* Global.swift */; };
 		F1FCC337265EF7DB00951F8B /* ua.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1FCC339265EF7DB00951F8B /* ua.strings */; };
@@ -167,6 +171,10 @@
 		F19815A52676658B00E9218F /* SelectorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorHelper.swift; sourceTree = "<group>"; };
 		F19815A82676698800E9218F /* ScanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanModel.swift; sourceTree = "<group>"; };
 		F1A1C2492659BF7C006F4922 /* LogInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInButton.swift; sourceTree = "<group>"; };
+		F1DE370A2693A583001D11C0 /* SearchFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldView.swift; sourceTree = "<group>"; };
+		F1DE370D2693B038001D11C0 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		F1DE37102693B822001D11C0 /* ParticipantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsModel.swift; sourceTree = "<group>"; };
+		F1DE37122693BC01001D11C0 /* ParticipantsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsStore.swift; sourceTree = "<group>"; };
 		F1FCC330265EF6EB00951F8B /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		F1FCC332265EF79C00951F8B /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		F1FCC338265EF7DB00951F8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ua.strings; sourceTree = "<group>"; };
@@ -481,6 +489,8 @@
 		F1648D68266EB46900F1FDC1 /* Participants */ = {
 			isa = PBXGroup;
 			children = (
+				F1DE370C2693B01E001D11C0 /* Filter */,
+				F1DE37072693A547001D11C0 /* Search Field */,
 				F1648D6D266EB4A900F1FDC1 /* ParticipantsView.swift */,
 			);
 			path = Participants;
@@ -775,8 +785,9 @@
 			isa = PBXGroup;
 			children = (
 				F138C4532678DB8700915BC5 /* App */,
-				F19815A72676692000E9218F /* Scan */,
 				F172FE8B266562F800FF9569 /* Login */,
+				F19815A72676692000E9218F /* Scan */,
+				F1DE370F2693B7A8001D11C0 /* Participants */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -814,6 +825,31 @@
 				F1A1C2492659BF7C006F4922 /* LogInButton.swift */,
 			);
 			path = LogInButton;
+			sourceTree = "<group>";
+		};
+		F1DE37072693A547001D11C0 /* Search Field */ = {
+			isa = PBXGroup;
+			children = (
+				F1DE370A2693A583001D11C0 /* SearchFieldView.swift */,
+			);
+			path = "Search Field";
+			sourceTree = "<group>";
+		};
+		F1DE370C2693B01E001D11C0 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				F1DE370D2693B038001D11C0 /* FilterView.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		F1DE370F2693B7A8001D11C0 /* Participants */ = {
+			isa = PBXGroup;
+			children = (
+				F1DE37102693B822001D11C0 /* ParticipantsModel.swift */,
+				F1DE37122693BC01001D11C0 /* ParticipantsStore.swift */,
+			);
+			path = Participants;
 			sourceTree = "<group>";
 		};
 		F1FCC334265EF7BD00951F8B /* String */ = {
@@ -904,6 +940,7 @@
 				F1102014267F387800AB420F /* ResponseHandler.swift in Sources */,
 				F198157F2674E4E500E9218F /* TicketStatusView.swift in Sources */,
 				F11A19E92674E088001AE455 /* Spacer.swift in Sources */,
+				F1DE37112693B822001D11C0 /* ParticipantsModel.swift in Sources */,
 				F19815802674E4E500E9218F /* OkButton.swift in Sources */,
 				F1648D81266FE54700F1FDC1 /* ScanCameraView.swift in Sources */,
 				F1102009267EA4D200AB420F /* Keychain.swift in Sources */,
@@ -952,8 +989,10 @@
 				F1648D8B266FFC1A00F1FDC1 /* ShowManualView.swift in Sources */,
 				F1648D72266EB4C700F1FDC1 /* ProfileView.swift in Sources */,
 				F110200C267EA51400AB420F /* AccessToken.swift in Sources */,
+				F1DE370E2693B038001D11C0 /* FilterView.swift in Sources */,
 				F172FE8D2665631A00FF9569 /* LoginCredentialsStore.swift in Sources */,
 				F10FAE62267681C600B55A28 /* ManualEnterTextFieldContainer.swift in Sources */,
+				F1DE370B2693A583001D11C0 /* SearchFieldView.swift in Sources */,
 				F1102002267E9BC500AB420F /* ApiClient.swift in Sources */,
 				F1648D60266D2F2100F1FDC1 /* Date.swift in Sources */,
 				F19815A62676658B00E9218F /* SelectorHelper.swift in Sources */,
@@ -962,6 +1001,7 @@
 				F1648D7D266EC50A00F1FDC1 /* TabBarModel.swift in Sources */,
 				F110200F267F333400AB420F /* MainApi.swift in Sources */,
 				F19815822674E4E500E9218F /* CheckedInView.swift in Sources */,
+				F1DE37132693BC01001D11C0 /* ParticipantsStore.swift in Sources */,
 				F1648D7A266EBDFD00F1FDC1 /* EventsBackButton.swift in Sources */,
 				F15BD055265DA27F0026B6DD /* CustomTextFieldSwift.swift in Sources */,
 				F11A19E52674DD81001AE455 /* CenteringView.swift in Sources */,
