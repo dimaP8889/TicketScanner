@@ -16,13 +16,14 @@ struct EventTabBarView: View {
     @ObservedObject private var data : TabBarModel
     
     private let scanStore = ScanStore(state: ScanModel())
+    private let participantsStore = ParticipantsStore()
     
     init(eventName: String) {
         
         self.eventName = eventName
         self.data = TabBarModel()
+        
         UITabBar.setBar(color: .white)
-        UINavigationBar.setBar(color: .white)
     }
     
     
@@ -40,6 +41,7 @@ struct EventTabBarView: View {
                 .tag(0)
             
             ParticipantsView()
+                .environmentObject(participantsStore)
                 .tabItem {
                     Image("ic_participants")
                         .renderingMode(.template)

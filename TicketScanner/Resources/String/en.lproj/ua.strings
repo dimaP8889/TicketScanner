@@ -70,3 +70,4 @@
 "participants.search.filter.all" = "Всі";
 "participants.search.filter.success" = "Успішні";
 "participants.search.filter.failure" = "Відхилені";
+"participants.search.cancel" = "Відмінити";

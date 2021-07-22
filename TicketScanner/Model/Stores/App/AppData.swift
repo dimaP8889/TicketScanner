@@ -9,7 +9,7 @@ import Foundation
 
 struct AppData {
     
-    var isUserAuthorized : Bool = false
+    var isUserAuthorized : Bool = (Keychain.shared.accessToken != nil)
 }
 
 enum AppDataAction {
@@ -24,7 +24,6 @@ struct AppDataReducer {
         
         switch action {
         case let .setToken(token):
-            
             if Keychain.shared.setAccess(token) == nil {
                 state.isUserAuthorized = true
             }

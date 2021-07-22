@@ -17,7 +17,7 @@ struct EventsListView: View {
         models = []
         models = createModel()
         models.sort { $0.startDate < $1.startDate }
-        UINavigationBar.setBar(color: .white)
+        UINavigationBar.setBar(color: .clear)
     }
     
     var body: some View {
