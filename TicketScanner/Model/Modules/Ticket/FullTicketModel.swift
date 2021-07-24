@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct FullTicketModel {
+struct FullTicketModel : Identifiable{
+    
+    let id = UUID()
     
     let main : TicketMainInfoModel
     let status : TicketStatus

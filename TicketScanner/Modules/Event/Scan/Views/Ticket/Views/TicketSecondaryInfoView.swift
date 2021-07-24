@@ -15,46 +15,49 @@ struct TicketSecondaryInfoView: View {
     
     var body: some View {
         
-        VStack(alignment: .leading) {
-            
-            HStack(alignment: .top, spacing: 24) {
-                Text(localStr("scan.ticket.type"))
-                    .mainTicketStyle()
-                    .frame(width: width, alignment: .leading)
-                    .background(CenteringView())
-                Text(model.type)
-                    .secodaryTicketStyle()
-                    .padding(.top, 2)
-            }
-            HStack(alignment: .top, spacing: 24) {
-                Text(localStr("scan.ticket.phone"))
-                    .mainTicketStyle()
-                    .frame(width: width, alignment: .leading)
-                    .background(CenteringView())
-                Text(model.number)
-                    .secodaryTicketStyle()
-                    .padding(.top, 2)
-            }
-            HStack(alignment: .top, spacing: 24) {
-                Text(localStr("scan.ticket.email"))
-                    .mainTicketStyle()
-                    .frame(width: width, alignment: .leading)
-                    .background(CenteringView())
-                Text(model.email)
-                    .secodaryTicketStyle()
-                    .padding(.top, 2)
-            }
-        }
-        .onPreferenceChange(CenteringColumnPreferenceKey.self) { preferences in
-            for p in preferences {
-                let oldWidth = self.width ?? CGFloat.zero
-                if p.width > oldWidth {
-                    self.width = p.width
+        HStack {
+            VStack(alignment: .leading) {
+                
+                HStack(alignment: .top, spacing: 24) {
+                    Text(localStr("scan.ticket.type"))
+                        .mainTicketStyle()
+                        .frame(width: width, alignment: .leading)
+                        .background(CenteringView())
+                    Text(model.type)
+                        .secodaryTicketStyle()
+                        .padding(.top, 2)
+                }
+                HStack(alignment: .top, spacing: 24) {
+                    Text(localStr("scan.ticket.phone"))
+                        .mainTicketStyle()
+                        .frame(width: width, alignment: .leading)
+                        .background(CenteringView())
+                    Text(model.number)
+                        .secodaryTicketStyle()
+                        .padding(.top, 2)
+                }
+                HStack(alignment: .top, spacing: 24) {
+                    Text(localStr("scan.ticket.email"))
+                        .mainTicketStyle()
+                        .frame(width: width, alignment: .leading)
+                        .background(CenteringView())
+                    Text(model.email)
+                        .secodaryTicketStyle()
+                        .padding(.top, 2)
                 }
             }
+            .onPreferenceChange(CenteringColumnPreferenceKey.self) { preferences in
+                for p in preferences {
+                    let oldWidth = self.width ?? CGFloat.zero
+                    if p.width > oldWidth {
+                        self.width = p.width
+                    }
+                }
+            }
+            Spacer()
         }
-        .padding([.leading, .trailing], 16)
         .padding(.top, 32)
+        .padding(.leading, 16)
     }
 }
 

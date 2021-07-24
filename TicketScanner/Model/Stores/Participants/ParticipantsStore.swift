@@ -16,7 +16,7 @@ final class ParticipantsStore : ObservableObject {
     private var reducer: ParticipantsReducer
     
     init() {
-        state = ParticipantsModel(filter: .all)
+        state = ParticipantsModel(filter: .all, participantsInfo: [])
         reducer = ParticipantsReducer()
     }
     

@@ -11,6 +11,9 @@ struct ParticipantsView: View {
     
     @State var searchText : String = ""
     
+    @EnvironmentObject
+    var participantsStore : ParticipantsStore
+    
     var body: some View {
         ZStack {
             Color.alabaster.ignoresSafeArea()
@@ -21,15 +24,16 @@ struct ParticipantsView: View {
                 }
                 .padding([.leading, .trailing], 12)
                 .padding(.top, 16)
-                Spacer()
+                ParticipantsListView(data: participantsStore.state.participantsInfo)
             }
+        }
+        .onAppear {
+            participantsStore.dispatch(action: .loadParticipants(name: ""))
         }
     }
 }
 
 struct ParticipantsView_Previews: PreviewProvider {
-    
-    private let participantsStore = ParticipantsStore()
     
     static var previews: some View {
         ParticipantsView()

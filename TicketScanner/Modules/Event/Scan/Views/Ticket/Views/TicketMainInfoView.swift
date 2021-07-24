@@ -10,20 +10,34 @@ import SwiftUI
 struct TicketMainInfoView: View {
     
     let model : TicketMainInfoModel
+    let status : TicketStatus
+    let isParticipantsTicket : Bool
+    
+    private var statusImage : Image {
+        switch status {
+        case .checkedIn:
+            return Image("ic_success_tick")
+        default:
+            return Image("ic_red_cross")
+        }
+    }
+    
+    private var timeTextColor : Color {
+        isParticipantsTicket ? .newGray : Color.radicalRed
+    }
     
     var body: some View {
         VStack(spacing: 32) {
-            HStack(spacing: 0) {
+            HStack(alignment: .firstTextBaseline, spacing: 0) {
                 Text(model.name)
                     .font(.main(size: 17))
                     .foregroundColor(Color.codGray)
                 Spacer()
-                Image("ic_red_cross")
+                statusImage
                     .padding(.trailing, 10)
-                    .padding(.top, 2)
                 Text(model.time)
                     .font(.main(size: 14))
-                    .foregroundColor(Color.radicalRed)
+                    .foregroundColor(timeTextColor)
             }
             HStack(spacing: 8) {
                 Text("#")
@@ -44,6 +58,6 @@ struct TicketMainInfoView: View {
 
 struct TicketMainInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        TicketMainInfoView(model: TicketMainInfoModel(name: "Vetralan Hampston", time: "18:54:13", ticketNumber: "1214Q67839ZX"))
+        TicketMainInfoView(model: TicketMainInfoModel(name: "Vetralan Hampston", time: "18:54:13", ticketNumber: "1214Q67839ZX"), status: .random, isParticipantsTicket: Bool.random())
     }
 }

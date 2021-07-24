@@ -36,6 +36,12 @@
 		F138C4572678DBEB00915BC5 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138C4562678DBEB00915BC5 /* AppData.swift */; };
 		F138C4592678DE4200915BC5 /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138C4582678DE4200915BC5 /* AppRootView.swift */; };
 		F13986F0266D1E5F00AD3199 /* ActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13986EF266D1E5F00AD3199 /* ActiveView.swift */; };
+		F14BB48226AC42A2004CA680 /* ParticipantsInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14BB48126AC42A2004CA680 /* ParticipantsInfoModel.swift */; };
+		F14BB48926AC528F004CA680 /* ParticipantsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14BB48826AC528F004CA680 /* ParticipantsListView.swift */; };
+		F14BB48C26AC54F2004CA680 /* TimeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14BB48B26AC54F2004CA680 /* TimeListView.swift */; };
+		F14BB48F26AC589A004CA680 /* ParticipantTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14BB48E26AC589A004CA680 /* ParticipantTicketView.swift */; };
+		F14BB49326AC595F004CA680 /* ParticipantFullTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14BB49226AC595F004CA680 /* ParticipantFullTicketView.swift */; };
+		F14BB49526AC596C004CA680 /* ParticipantSmallTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14BB49426AC596C004CA680 /* ParticipantSmallTicketView.swift */; };
 		F1572836266D014800F6BE64 /* LogoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1572834266CFFD300F6BE64 /* LogoutButton.swift */; };
 		F1572837266D026000F6BE64 /* EventsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13288E32669416C009F2C48 /* EventsListView.swift */; };
 		F157283B266D14AD00F6BE64 /* EventDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1572839266D122E00F6BE64 /* EventDataView.swift */; };
@@ -124,6 +130,12 @@
 		F138C4562678DBEB00915BC5 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		F138C4582678DE4200915BC5 /* AppRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootView.swift; sourceTree = "<group>"; };
 		F13986EF266D1E5F00AD3199 /* ActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveView.swift; sourceTree = "<group>"; };
+		F14BB48126AC42A2004CA680 /* ParticipantsInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsInfoModel.swift; sourceTree = "<group>"; };
+		F14BB48826AC528F004CA680 /* ParticipantsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsListView.swift; sourceTree = "<group>"; };
+		F14BB48B26AC54F2004CA680 /* TimeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeListView.swift; sourceTree = "<group>"; };
+		F14BB48E26AC589A004CA680 /* ParticipantTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantTicketView.swift; sourceTree = "<group>"; };
+		F14BB49226AC595F004CA680 /* ParticipantFullTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantFullTicketView.swift; sourceTree = "<group>"; };
+		F14BB49426AC596C004CA680 /* ParticipantSmallTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantSmallTicketView.swift; sourceTree = "<group>"; };
 		F1572834266CFFD300F6BE64 /* LogoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutButton.swift; sourceTree = "<group>"; };
 		F1572839266D122E00F6BE64 /* EventDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataView.swift; sourceTree = "<group>"; };
 		F158F45D266569F100AB8AE6 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -383,6 +395,69 @@
 			path = ActiveView;
 			sourceTree = "<group>";
 		};
+		F14BB47F26AC427B004CA680 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F14BB48026AC428A004CA680 /* Participants */,
+				F1648D5C266D2B4100F1FDC1 /* Event */,
+				F1648D7B266EC4F100F1FDC1 /* Tab Bar */,
+				F11A19C2267401E9001AE455 /* Ticket */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		F14BB48026AC428A004CA680 /* Participants */ = {
+			isa = PBXGroup;
+			children = (
+				F14BB48126AC42A2004CA680 /* ParticipantsInfoModel.swift */,
+			);
+			path = Participants;
+			sourceTree = "<group>";
+		};
+		F14BB48526AC526C004CA680 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				F14BB48A26AC54D7004CA680 /* Time List */,
+				F14BB48826AC528F004CA680 /* ParticipantsListView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		F14BB48A26AC54D7004CA680 /* Time List */ = {
+			isa = PBXGroup;
+			children = (
+				F14BB48D26AC5889004CA680 /* Ticket View */,
+				F14BB48B26AC54F2004CA680 /* TimeListView.swift */,
+			);
+			path = "Time List";
+			sourceTree = "<group>";
+		};
+		F14BB48D26AC5889004CA680 /* Ticket View */ = {
+			isa = PBXGroup;
+			children = (
+				F14BB49126AC58CC004CA680 /* Full Ticket */,
+				F14BB49026AC58C1004CA680 /* Small Ticket */,
+				F14BB48E26AC589A004CA680 /* ParticipantTicketView.swift */,
+			);
+			path = "Ticket View";
+			sourceTree = "<group>";
+		};
+		F14BB49026AC58C1004CA680 /* Small Ticket */ = {
+			isa = PBXGroup;
+			children = (
+				F14BB49426AC596C004CA680 /* ParticipantSmallTicketView.swift */,
+			);
+			path = "Small Ticket";
+			sourceTree = "<group>";
+		};
+		F14BB49126AC58CC004CA680 /* Full Ticket */ = {
+			isa = PBXGroup;
+			children = (
+				F14BB49226AC595F004CA680 /* ParticipantFullTicketView.swift */,
+			);
+			path = "Full Ticket";
+			sourceTree = "<group>";
+		};
 		F1572832266CFFBC00F6BE64 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,6 +564,7 @@
 		F1648D68266EB46900F1FDC1 /* Participants */ = {
 			isa = PBXGroup;
 			children = (
+				F14BB48526AC526C004CA680 /* List */,
 				F1DE370C2693B01E001D11C0 /* Filter */,
 				F1DE37072693A547001D11C0 /* Search Field */,
 				F1648D6D266EB4A900F1FDC1 /* ParticipantsView.swift */,
@@ -688,12 +764,10 @@
 		F172FE8826655E8900FF9569 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F14BB47F26AC427B004CA680 /* Modules */,
 				F1102010267F364B00AB420F /* API */,
 				F198159A26763C1A00E9218F /* Stores */,
 				F198158C26750FAF00E9218F /* Alert */,
-				F11A19C2267401E9001AE455 /* Ticket */,
-				F1648D7B266EC4F100F1FDC1 /* Tab Bar */,
-				F1648D5C266D2B4100F1FDC1 /* Event */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -936,6 +1010,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F14BB48926AC528F004CA680 /* ParticipantsListView.swift in Sources */,
 				F1FCC35F2660272E00951F8B /* KeyboardHeightHelper.swift in Sources */,
 				F1102014267F387800AB420F /* ResponseHandler.swift in Sources */,
 				F198157F2674E4E500E9218F /* TicketStatusView.swift in Sources */,
@@ -977,6 +1052,7 @@
 				F10FAE652676836700B55A28 /* ManualEnterTextField.swift in Sources */,
 				F138C4552678DB9600915BC5 /* AppDataStore.swift in Sources */,
 				F11A19E22674DD32001AE455 /* CenteringColumnPreferenceKey.swift in Sources */,
+				F14BB49326AC595F004CA680 /* ParticipantFullTicketView.swift in Sources */,
 				F138C4572678DBEB00915BC5 /* AppData.swift in Sources */,
 				F1648D77266EBB4300F1FDC1 /* UITabBar.swift in Sources */,
 				F1648D5E266D2B6B00F1FDC1 /* EventModel.swift in Sources */,
@@ -986,11 +1062,13 @@
 				F158F45E266569F100AB8AE6 /* String.swift in Sources */,
 				F138C4592678DE4200915BC5 /* AppRootView.swift in Sources */,
 				F1981590267520F900E9218F /* AlertSubview.swift in Sources */,
+				F14BB48C26AC54F2004CA680 /* TimeListView.swift in Sources */,
 				F1648D8B266FFC1A00F1FDC1 /* ShowManualView.swift in Sources */,
 				F1648D72266EB4C700F1FDC1 /* ProfileView.swift in Sources */,
 				F110200C267EA51400AB420F /* AccessToken.swift in Sources */,
 				F1DE370E2693B038001D11C0 /* FilterView.swift in Sources */,
 				F172FE8D2665631A00FF9569 /* LoginCredentialsStore.swift in Sources */,
+				F14BB48226AC42A2004CA680 /* ParticipantsInfoModel.swift in Sources */,
 				F10FAE62267681C600B55A28 /* ManualEnterTextFieldContainer.swift in Sources */,
 				F1DE370B2693A583001D11C0 /* SearchFieldView.swift in Sources */,
 				F1102002267E9BC500AB420F /* ApiClient.swift in Sources */,
@@ -1001,12 +1079,14 @@
 				F1648D7D266EC50A00F1FDC1 /* TabBarModel.swift in Sources */,
 				F110200F267F333400AB420F /* MainApi.swift in Sources */,
 				F19815822674E4E500E9218F /* CheckedInView.swift in Sources */,
+				F14BB48F26AC589A004CA680 /* ParticipantTicketView.swift in Sources */,
 				F1DE37132693BC01001D11C0 /* ParticipantsStore.swift in Sources */,
 				F1648D7A266EBDFD00F1FDC1 /* EventsBackButton.swift in Sources */,
 				F15BD055265DA27F0026B6DD /* CustomTextFieldSwift.swift in Sources */,
 				F11A19E52674DD81001AE455 /* CenteringView.swift in Sources */,
 				F172FE8A26655EAC00FF9569 /* LoginCredentialsModel.swift in Sources */,
 				F198158B26750C4B00E9218F /* AlertContentView.swift in Sources */,
+				F14BB49526AC596C004CA680 /* ParticipantSmallTicketView.swift in Sources */,
 				F16985E92653101600B26671 /* TicketScannerApp.swift in Sources */,
 				F11A19D626741715001AE455 /* LeadingText.swift in Sources */,
 				F19815A92676698800E9218F /* ScanModel.swift in Sources */,

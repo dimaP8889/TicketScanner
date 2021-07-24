@@ -11,12 +11,25 @@ import Combine
 enum MainApi {
     
     case authorize(user: String, password: String)
+    
+    case loadParticipants(name: String)
 }
 
 extension API where RQ == MainApi {
     
     func signin(username: String, password: String) -> AnyPublisher<Response<AuthModel>, Never> {
         sync(.authorize(user: username, password: password))
+    }
+    
+    func loadParticipants(with name : String) -> AnyPublisher<[ParticipantsInfoModel], Never> {
+        let numberOfTickets = (3...10).randomElement()!
+        let part = (0...numberOfTickets).map { _ in
+            ParticipantsInfoModel.random
+        }
+        let publisher = part.publisher
+        return publisher
+            .collect()
+            .eraseToAnyPublisher()
     }
 }
 
@@ -33,6 +46,8 @@ extension MainApi : Requestable {
                 "username" : user,
                 "password" : password
             ]
+        case  .loadParticipants:
+            return [:]
         }
     }
     
