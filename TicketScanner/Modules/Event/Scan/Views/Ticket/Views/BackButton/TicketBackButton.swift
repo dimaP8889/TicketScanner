@@ -15,7 +15,7 @@ struct TicketBackButton: View {
         Button(action: {
             backAction()
         }, label: {
-            HStack(spacing: 0) {
+            HStack(alignment: .firstTextBaseline, spacing: 0) {
                 Image("ic_back_arrow")
                     .padding(.trailing, 12)
                 Text("Сканувати")

@@ -11,20 +11,22 @@ struct EventsBackButton: View {
     
     var backAction : Action
     var title : String
-    @Binding var subtitle : String
+    @Binding var subtitle : String?
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Button(action: {
-                backAction()
-            }, label: {
-                Text("<- \(title)")
-                    .font(.main(size: 14))
-                    .foregroundColor(.newGray)
-            })
-            Text(subtitle)
-                .font(.main(size: 20))
-                .foregroundColor(.codGray)
+        if subtitle != nil {
+            VStack(alignment: .leading, spacing: 4) {
+                Button(action: {
+                    backAction()
+                }, label: {
+                    Text("<- \(title)")
+                        .font(.main(size: 14))
+                        .foregroundColor(.newGray)
+                })
+                Text(subtitle!)
+                    .font(.main(size: 20))
+                    .foregroundColor(.codGray)
+            }
         }
     }
 }

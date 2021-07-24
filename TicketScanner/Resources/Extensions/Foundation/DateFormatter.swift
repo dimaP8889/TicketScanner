@@ -15,7 +15,7 @@ extension DateFormatter {
         
         dateFormatter.dateFormat = "dd MMMM"
         
-        switch Defaults.shared.defaultLangKey {
+        switch Defaults.shared.getCurrentLang() {
         case "ua":
             dateFormatter.locale = Locale(identifier: "uk_UA")
         default:

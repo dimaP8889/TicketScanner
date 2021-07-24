@@ -12,7 +12,7 @@ final class Defaults {
     static let shared = Defaults()
     private init() {}
     
-    private let preferences = UserDefaults(suiteName: "DIM defaults")!
+    private let preferences = UserDefaults(suiteName: "TS defaults")!
 
     private func apply() {
         preferences.synchronize()
@@ -22,7 +22,7 @@ final class Defaults {
 // MARK: - Lang
 extension Defaults {
     
-    var defaultLangKey: String {
+    var defaultLang: String {
         return "ua"
     }
     
@@ -31,12 +31,33 @@ extension Defaults {
     }
     
     func getCurrentLang() -> String {
-        return preferences.string(forKey: currentLangKey) ?? defaultLangKey
+        return preferences.string(forKey: currentLangKey) ?? defaultLang
     }
 
     func setCurrentLang(_ code: String) {
         preferences.set(code, forKey: currentLangKey)
         apply()
     }
-
 }
+
+// MARK: - User
+extension Defaults {
+    
+    var defaultUser: String? {
+        return nil
+    }
+    
+    private var currentUserKey: String {
+        return "current_lang"
+    }
+    
+    func getCurrentUser() -> String? {
+        return preferences.string(forKey: currentUserKey) ?? defaultUser
+    }
+
+    func setCurrentUser(_ name: String) {
+        preferences.set(name, forKey: currentUserKey)
+        apply()
+    }
+}
+

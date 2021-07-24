@@ -9,7 +9,10 @@ import SwiftUI
 
 struct SearchFieldView: View {
     
-    @Binding var text : String
+    @Binding private var text : String
+    
+    @EnvironmentObject
+    var participantsStore : ParticipantsStore
     
     init(text: Binding<String>) {
         self._text = text
@@ -25,6 +28,9 @@ struct SearchFieldView: View {
                     .padding(.leading, 12)
                 TextField(localStr("participants.search.placeholder"), text: $text)
                     .font(.main(size: 17))
+                    .onChange(of: text) { value in
+                        participantsStore.dispatch(action: .loadParticipants(name: value))
+                    }
                 Spacer(minLength: 3)
             }
             .background(
@@ -34,6 +40,7 @@ struct SearchFieldView: View {
             
             if text.count > 0 {
                 Button(action: {
+                    text = ""
                     hideKeyboard()
                 }, label: {
                     Text(localStr("participants.search.cancel"))

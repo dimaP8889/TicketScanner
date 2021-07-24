@@ -50,7 +50,7 @@ enum LoginAction {
     
     case changeEmail(String)
     case changePassword(String)
-    case setLoginState(Response<AuthModel>, TypeAction<String>)
+    case setLoginState(Response<AuthModel>, String, TypeAction<String>)
     case logIn(TypeAction<String>)
 }
 
@@ -65,17 +65,19 @@ struct LoginReducer {
         case let .changePassword(password):
             guard !password.isEmpty else { return nil }
             state.password = password
-        case let .setLoginState(response, successAction):
+        case let .setLoginState(response, user, successAction):
             switch response {
             case let .success(model):
                 state.clear()
-                successAction(model.accessToken)
+                Defaults.shared.setCurrentUser(user)
+                successAction((model.accessToken))
             case .failure:
                 state.isError = true
             }
         case let .logIn(successAction):
-            return Networking.main?.signin(username: state.email, password: state.password)
-                .map { LoginAction.setLoginState($0,successAction) }
+            let user = state.email
+            return Networking.main?.signin(username: user, password: state.password)
+                .map { LoginAction.setLoginState($0, user, successAction) }
                 .eraseToAnyPublisher()
         }
         return nil

@@ -24,7 +24,7 @@ struct ShowManualView: View {
                 tapAction()
             },
             label: {
-                HStack(spacing: 12) {
+                HStack(alignment: .firstTextBaseline, spacing: 12) {
                     Image("ic_keyboard")
                     Text(localStr("scan.enter.number.title"))
                         .font(.main(size: 17))

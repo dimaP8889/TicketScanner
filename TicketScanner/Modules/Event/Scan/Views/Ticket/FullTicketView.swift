@@ -47,7 +47,7 @@ struct FullTicketView: View {
                 .foregroundColor(Color.galleryDark)
         )
         .padding([.trailing, .leading], 12)
-        .padding([.top, .bottom], 20)
+        .padding([.top, .bottom], 10)
     }
 }
 

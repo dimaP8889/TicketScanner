@@ -71,3 +71,7 @@
 "participants.search.filter.success" = "Успішні";
 "participants.search.filter.failure" = "Відхилені";
 "participants.search.cancel" = "Відмінити";
+
+//Profile
+"profile.title" = "Ваш профіль";
+"profile.controller" = "Контролер";

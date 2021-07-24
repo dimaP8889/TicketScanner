@@ -19,12 +19,12 @@ final class TabBarModel : ObservableObject {
             case 2:
                 buttonSubtitle = localStr("events.item.contacts")
             case 3:
-                buttonSubtitle = localStr("events.item.profile")
+                buttonSubtitle = nil
             default:
                 buttonSubtitle = localStr("events.item.scan")
             }
         }
     }
     
-    @Published var buttonSubtitle : String = localStr("events.item.scan")
+    @Published var buttonSubtitle : String? = localStr("events.item.scan")
 }

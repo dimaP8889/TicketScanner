@@ -11,9 +11,14 @@ struct ParticipantsListView: View {
     
     var data : [ParticipantsInfoModel]
     
+    init(data : [ParticipantsInfoModel]) {
+        self.data = data
+        UIScrollView.appearance().keyboardDismissMode = .onDrag
+    }
+    
     var body: some View {
         ScrollView {
-            LazyVStack {
+            VStack(spacing: 0) {
                 ForEach(data) { info in
                     TimeListView(data: info)
                         .padding([.leading, .trailing], 16)
