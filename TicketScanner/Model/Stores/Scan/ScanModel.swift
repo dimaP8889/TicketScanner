@@ -5,7 +5,7 @@
 //  Created by Dmytro Pogrebniak on 13.06.2021.
 //
 
-import Foundation
+import Combine
 
 struct ScanModel {
     
@@ -22,11 +22,13 @@ enum ScanAction {
     case showAlert(AlertModel)
     case hideAlert
     case showTicket
+    case scan(validation: String, eventId: String)
+    case setScanResult(Response<ScanResultApiModel, ErrorResponse>)
 }
 
 struct ScanReducer {
     
-    func reduce(state: inout ScanModel, action: ScanAction) {
+    func reduce(state: inout ScanModel, action: ScanAction) -> AnyPublisher<ScanAction, Never>? {
         
         switch action {
         case .hideAlert:
@@ -42,6 +44,27 @@ struct ScanReducer {
         case .showTicket:
             let hasTicket = state.alertModel?.alertType.ticket != nil
             state.isTicketPresented = hasTicket
+        case let .scan(validation, eventId):
+            return Networking.main?.scan(validation: validation, eventId: eventId)
+                .map { ScanAction.setScanResult($0) }
+                .eraseToAnyPublisher()
+        case let .setScanResult(response):
+            return parseScanResult(response: response)
+        }
+        return nil
+    }
+}
+
+private extension ScanReducer {
+    
+    #warning("Change Parser")
+    func parseScanResult(response: Response<ScanResultApiModel, ErrorResponse>) -> AnyPublisher<ScanAction, Never>? {
+        
+        switch response {
+        case let .success(result):
+            return nil
+        default:
+            return nil
         }
     }
 }

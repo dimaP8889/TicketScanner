@@ -10,13 +10,13 @@ import SwiftUI
 struct EventsListView: View {
     
     @EnvironmentObject var appDataStore: AppDataStore
+    @EnvironmentObject var eventListStore: EventListStore
     
-    var models : [EventModel]
+    var models : [EventModel] {
+        eventListStore.events
+    }
     
     init() {
-        models = []
-        models = createModel()
-        models.sort { $0.startDate < $1.startDate }
         UINavigationBar.setBar(color: .clear)
     }
     
@@ -27,9 +27,12 @@ struct EventsListView: View {
                 LazyVStack(spacing: 0) {
                     Spacer()
                         .frame(height: 10)
-                    ForEach(models) { data in
+                    ForEach(Array(zip(models.indices, models)), id: \.0) { index, data in
                         NavigationLink(
-                            destination: EventTabBarView(eventName: data.festivalName),
+                            destination: EventTabBarView(
+                                eventName: data.festivalName,
+                                eventId: eventListStore.eventId(by: index)
+                            ),
                             label: {
                                 EventDataView(model: data)
                                     .padding([.leading, .trailing], 12)
@@ -57,37 +60,9 @@ struct EventsListView: View {
             .navigationViewStyle(StackNavigationViewStyle())
             .accentColor(.codGray)
         }
-    }
-}
-
-private extension EventsListView {
-    
-    func createModel() -> [EventModel] {
-        
-        var model = [EventModel]()
-        let first = EventModel(startDate: Date(), endDate: Date(), festivalName: "Uncertain Festival 2021")
-        model.append(first)
-        
-        for _ in 0...3 {
-            var dayComponent = DateComponents()
-            dayComponent.day = Int.random(in: 0...1000)
-            let theCalendar = Calendar.current
-            let nextDate = theCalendar.date(byAdding: dayComponent, to: Date())
-            
-            let ev = EventModel(startDate: nextDate!, endDate: nextDate!, festivalName: "Uncertain Festival 2021")
-            model.append(ev)
+        .onAppear {
+            eventListStore.dispatch(action: .load)
         }
-        
-        for _ in 0...3 {
-            var dayComponent = DateComponents()
-            dayComponent.day = Int.random(in: 0...1234)
-            let theCalendar = Calendar.current
-            let start = theCalendar.date(byAdding: dayComponent, to: Date())
-            
-            let ev = EventModel(startDate: start!, endDate: Date(), festivalName: "Uncertain Festival 2021")
-            model.append(ev)
-        }
-        return model
     }
 }
 

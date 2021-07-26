@@ -50,7 +50,7 @@ enum LoginAction {
     
     case changeEmail(String)
     case changePassword(String)
-    case setLoginState(Response<AuthModel>, String, TypeAction<String>)
+    case setLoginState(Response<AuthModel, ErrorResponse>, String, TypeAction<String>)
     case logIn(TypeAction<String>)
 }
 

@@ -11,7 +11,7 @@ import Foundation
 
 final class ResponseHandler {
     
-    static func handle<T: Decodable>(data : Data?, response : URLResponse?) -> Response<T> {
+    static func handle<S: Decodable, F: Decodable>(data : Data?, response : URLResponse?) -> Response<S, F> {
         parseResponsee(data: data, response: response)
     }
 }
@@ -19,7 +19,7 @@ final class ResponseHandler {
 // MARK: - Private
 private extension ResponseHandler {
 
-    static func parseResponsee<T: Decodable>(data : Data?, response : URLResponse?) -> Response<T>  {
+    static func parseResponsee<S: Decodable, F: Decodable>(data : Data?, response : URLResponse?) -> Response<S, F>  {
 
         guard let code = (response as? HTTPURLResponse)?.statusCode else {
             return .failure(.system(.missingHTTPCode))
@@ -32,7 +32,7 @@ private extension ResponseHandler {
         //print("Response: ", String(data: _data, encoding: .utf8))
         guard 200..<300 ~= code else {
             do {
-                let responseObject = try JSONDecoder().decode(ErrorResponse.self, from: _data)
+                let responseObject = try JSONDecoder().decode(F.self, from: _data)
                 return .failure(.backend(responseObject))
             } catch {
                 #warning("Need to check if auth vode expired")
@@ -44,7 +44,7 @@ private extension ResponseHandler {
             if _data.isEmpty {
                 _data = "{}".data(using: .utf8)!
             }
-            let responseObject = try JSONDecoder().decode(T.self, from: _data)
+            let responseObject = try JSONDecoder().decode(S.self, from: _data)
             return .success(responseObject)
         } catch let decodeError {
             return .failure(.system(.jsonMappingFailed(decodeError)))
@@ -52,16 +52,16 @@ private extension ResponseHandler {
     }
 }
 
-enum Response<T> {
+enum Response<S,F> {
     
-    case success(T)
-    case failure(APIError)
+    case success(S)
+    case failure(APIError<F>)
 }
 
-enum APIError {
+enum APIError<T> {
     
     case system(SystemError)
-    case backend(ErrorResponse)
+    case backend(T)
     case refreshTokenInvalid
     case accessTokenInvalid
     case expiredToken

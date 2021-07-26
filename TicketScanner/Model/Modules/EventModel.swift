@@ -9,7 +9,7 @@ import Foundation
 
 struct EventModel : Identifiable {
     
-    let id = UUID()
+    let id : String
     
     let dates : String
     let festivalName : String
@@ -18,7 +18,9 @@ struct EventModel : Identifiable {
     
     let startDate : Date
     
-    init(startDate: Date, endDate: Date, festivalName : String) {
+    init(id : String, startDate: Date, endDate: Date, festivalName : String) {
+        
+        self.id = id
         
         let dateFormatter = DateFormatter.eventFormatter
         self.startDate = startDate

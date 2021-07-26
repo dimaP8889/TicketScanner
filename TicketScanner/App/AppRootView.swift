@@ -10,6 +10,8 @@ import SwiftUI
 struct AppRootView: View {
     
     private let loginStore = LoginStore(state: LoginCredentials(email: "", password: ""))
+    
+    private let eventListStore = EventListStore()
 
     @EnvironmentObject var appDataStore: AppDataStore
     
@@ -20,6 +22,7 @@ struct AppRootView: View {
                     .environmentObject(loginStore)
             } else {
                 EventsListView()
+                    .environmentObject(eventListStore)
             }
         }
     }

@@ -48,7 +48,7 @@ extension Defaults {
     }
     
     private var currentUserKey: String {
-        return "current_lang"
+        return "current_user"
     }
     
     func getCurrentUser() -> String? {

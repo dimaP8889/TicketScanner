@@ -50,6 +50,6 @@ struct EventDataView: View {
 
 struct EventDataView_Previews: PreviewProvider {
     static var previews: some View {
-        EventDataView(model: .init(startDate: Date(), endDate: Date(), festivalName: "Lol"))
+        EventDataView(model: .init(id: "", startDate: Date(), endDate: Date(), festivalName: "Lol"))
     }
 }

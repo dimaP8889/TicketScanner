@@ -33,7 +33,7 @@ class API<RQ: Requestable> : NSObject, URLSessionDelegate {
 
 extension API where RQ: Requestable {
     
-    func sync<T : Decodable>(_ rqParams : RQ) -> AnyPublisher<Response<T>, Never> {
+    func sync<T : Decodable, F: Decodable>(_ rqParams : RQ) -> AnyPublisher<Response<T,F>, Never> {
         
         let url = createUrl(rqParams)
         
