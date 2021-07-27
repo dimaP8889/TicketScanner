@@ -12,19 +12,21 @@ struct EventTabBarView: View {
     @Environment(\.presentationMode)
     var presentationMode: Binding<PresentationMode>
     
-    private var eventName : String
+    private var eventName : String {
+        event?.festivalName ?? ""
+    }
     private var event : EventModel?
     
     @ObservedObject private var data : TabBarModel
     
-    private let scanStore = ScanStore(state: ScanModel())
+    private let scanStore : ScanStore
     private let participantsStore = ParticipantsStore()
     
     init(event: EventModel?) {
         
-        self.eventName = event?.festivalName ?? ""
         self.event = event
         self.data = TabBarModel()
+        self.scanStore = ScanStore(eventId: event?.id ?? "")
         
         UITabBar.setBar(color: .white)
     }

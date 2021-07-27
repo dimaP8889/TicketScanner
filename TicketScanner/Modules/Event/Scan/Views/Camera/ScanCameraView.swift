@@ -60,8 +60,8 @@ private extension ScanCameraView {
        
         switch result {
         case let .success(code):
-            showAlert(with: .test)
-        case .failure(let error):
+            scanStore.dispatch(action: .scan(validation: code))
+        case .failure:
             showAlert(with: .test)
         }
     }

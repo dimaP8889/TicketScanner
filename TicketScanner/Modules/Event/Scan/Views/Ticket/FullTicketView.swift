@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FullTicketView: View {
     
-    let model : FullTicketModel = .random
+    let model : FullTicketModel
     
     @Environment(\.presentationMode)
     var presentationMode: Binding<PresentationMode>
@@ -53,6 +53,6 @@ struct FullTicketView: View {
 
 struct FullTciketView_Previews: PreviewProvider {
     static var previews: some View {
-        FullTicketView()
+        FullTicketView(model: .random)
     }
 }

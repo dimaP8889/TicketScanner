@@ -30,6 +30,7 @@
 		F11A19E22674DD32001AE455 /* CenteringColumnPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A19E12674DD32001AE455 /* CenteringColumnPreferenceKey.swift */; };
 		F11A19E52674DD81001AE455 /* CenteringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A19E42674DD81001AE455 /* CenteringView.swift */; };
 		F11A19E92674E088001AE455 /* Spacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A19E82674E088001AE455 /* Spacer.swift */; };
+		F11BD1AD26B09B9F00ED352D /* ScanSuccessResultApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BD1AC26B09B9F00ED352D /* ScanSuccessResultApiModel.swift */; };
 		F138C44D2677D33700915BC5 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138C44C2677D33700915BC5 /* UINavigationController.swift */; };
 		F138C4502677D67300915BC5 /* TicketBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138C44F2677D67300915BC5 /* TicketBackButton.swift */; };
 		F138C4552678DB9600915BC5 /* AppDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138C4542678DB9600915BC5 /* AppDataStore.swift */; };
@@ -93,7 +94,7 @@
 		F1A8B9FF26AF3C7C00BD4677 /* EventListApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8B9FE26AF3C7C00BD4677 /* EventListApiModel.swift */; };
 		F1A8BA0326AF40C900BD4677 /* EventListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8BA0226AF40C900BD4677 /* EventListModel.swift */; };
 		F1A8BA0526AF430700BD4677 /* EventListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8BA0426AF430700BD4677 /* EventListStore.swift */; };
-		F1A8BA0726AF4D6B00BD4677 /* ScanResultApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8BA0626AF4D6B00BD4677 /* ScanResultApiModel.swift */; };
+		F1A8BA0726AF4D6B00BD4677 /* ScanFailResultApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8BA0626AF4D6B00BD4677 /* ScanFailResultApiModel.swift */; };
 		F1A8BA0B26AFFD4D00BD4677 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8BA0A26AFFD4D00BD4677 /* ClearButton.swift */; };
 		F1DE370B2693A583001D11C0 /* SearchFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE370A2693A583001D11C0 /* SearchFieldView.swift */; };
 		F1DE370E2693B038001D11C0 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE370D2693B038001D11C0 /* FilterView.swift */; };
@@ -130,6 +131,7 @@
 		F11A19E12674DD32001AE455 /* CenteringColumnPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteringColumnPreferenceKey.swift; sourceTree = "<group>"; };
 		F11A19E42674DD81001AE455 /* CenteringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteringView.swift; sourceTree = "<group>"; };
 		F11A19E82674E088001AE455 /* Spacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacer.swift; sourceTree = "<group>"; };
+		F11BD1AC26B09B9F00ED352D /* ScanSuccessResultApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanSuccessResultApiModel.swift; sourceTree = "<group>"; };
 		F13288E32669416C009F2C48 /* EventsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListView.swift; sourceTree = "<group>"; };
 		F138C44C2677D33700915BC5 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		F138C44F2677D67300915BC5 /* TicketBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketBackButton.swift; sourceTree = "<group>"; };
@@ -195,7 +197,7 @@
 		F1A8B9FE26AF3C7C00BD4677 /* EventListApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListApiModel.swift; sourceTree = "<group>"; };
 		F1A8BA0226AF40C900BD4677 /* EventListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListModel.swift; sourceTree = "<group>"; };
 		F1A8BA0426AF430700BD4677 /* EventListStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListStore.swift; sourceTree = "<group>"; };
-		F1A8BA0626AF4D6B00BD4677 /* ScanResultApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultApiModel.swift; sourceTree = "<group>"; };
+		F1A8BA0626AF4D6B00BD4677 /* ScanFailResultApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanFailResultApiModel.swift; sourceTree = "<group>"; };
 		F1A8BA0A26AFFD4D00BD4677 /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		F1DE370A2693A583001D11C0 /* SearchFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldView.swift; sourceTree = "<group>"; };
 		F1DE370D2693B038001D11C0 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
@@ -357,6 +359,15 @@
 				F11A19E42674DD81001AE455 /* CenteringView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F11BD1AB26B09B3200ED352D /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				F1A8BA0626AF4D6B00BD4677 /* ScanFailResultApiModel.swift */,
+				F11BD1AC26B09B9F00ED352D /* ScanSuccessResultApiModel.swift */,
+			);
+			path = Scan;
 			sourceTree = "<group>";
 		};
 		F13288E22669400E009F2C48 /* EventsList */ = {
@@ -898,9 +909,9 @@
 		F1A8BA0026AF3C8400BD4677 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				F11BD1AB26B09B3200ED352D /* Scan */,
 				F1102011267F366200AB420F /* AuthApiModel.swift */,
 				F1A8B9FE26AF3C7C00BD4677 /* EventListApiModel.swift */,
-				F1A8BA0626AF4D6B00BD4677 /* ScanResultApiModel.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -1041,6 +1052,7 @@
 			files = (
 				F14BB48926AC528F004CA680 /* ParticipantsListView.swift in Sources */,
 				F1FCC35F2660272E00951F8B /* KeyboardHeightHelper.swift in Sources */,
+				F11BD1AD26B09B9F00ED352D /* ScanSuccessResultApiModel.swift in Sources */,
 				F1102014267F387800AB420F /* ResponseHandler.swift in Sources */,
 				F198157F2674E4E500E9218F /* TicketStatusView.swift in Sources */,
 				F11A19E92674E088001AE455 /* Spacer.swift in Sources */,
@@ -1065,7 +1077,7 @@
 				F13986F0266D1E5F00AD3199 /* ActiveView.swift in Sources */,
 				F198157E2674E4E500E9218F /* FullTicketView.swift in Sources */,
 				F198158E26750FD100E9218F /* AlertModel.swift in Sources */,
-				F1A8BA0726AF4D6B00BD4677 /* ScanResultApiModel.swift in Sources */,
+				F1A8BA0726AF4D6B00BD4677 /* ScanFailResultApiModel.swift in Sources */,
 				F19815A426765FDF00E9218F /* ShowCameraView.swift in Sources */,
 				F1648D70266EB4BE00F1FDC1 /* ContactsView.swift in Sources */,
 				F19815852674E4E500E9218F /* TicketSecondaryInfoView.swift in Sources */,

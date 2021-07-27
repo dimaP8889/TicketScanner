@@ -12,14 +12,15 @@ import Foundation
 final class ResponseHandler {
     
     static func handle<S: Decodable, F: Decodable>(data : Data?, response : URLResponse?) -> Response<S, F> {
-        parseResponsee(data: data, response: response)
+        let apiResponse : ApiResponse<S, F> = parseResponse(data: data, response: response)
+        return simplifyResponse(response: apiResponse)
     }
 }
 
 // MARK: - Private
 private extension ResponseHandler {
 
-    static func parseResponsee<S: Decodable, F: Decodable>(data : Data?, response : URLResponse?) -> Response<S, F>  {
+    static func parseResponse<S: Decodable, F: Decodable>(data : Data?, response : URLResponse?) -> ApiResponse<S, F>  {
 
         guard let code = (response as? HTTPURLResponse)?.statusCode else {
             return .failure(.system(.missingHTTPCode))
@@ -29,7 +30,7 @@ private extension ResponseHandler {
             return .failure(.system(.missingData))
         }
         
-        //print("Response: ", String(data: _data, encoding: .utf8))
+        print("Response: ", String(data: _data, encoding: .utf8))
         guard 200..<300 ~= code else {
             do {
                 let responseObject = try JSONDecoder().decode(F.self, from: _data)
@@ -50,22 +51,46 @@ private extension ResponseHandler {
             return .failure(.system(.jsonMappingFailed(decodeError)))
         }
     }
+    
+    static func simplifyResponse<S: Decodable, F: Decodable>(response: ApiResponse<S, F> ) -> Response<S, F> {
+        switch response {
+        case let .success(response):
+            return .success(response)
+        case let .failure(error):
+            return findError(from: error)
+        }
+    }
+    
+    static func findError<S: Decodable, F: Decodable>(from response: APIError<F>) -> Response<S, F> {
+        switch response {
+        case let .backend(error):
+            return .backend(error)
+        case let .system(error):
+            return .system(error.message)
+        }
+    }
+}
+
+enum ApiResponse<S,F> {
+    
+    case success(S)
+    case failure(APIError<F>)
 }
 
 enum Response<S,F> {
     
     case success(S)
-    case failure(APIError<F>)
+    case backend(F)
+    case system(String)
 }
 
 enum APIError<T> {
     
     case system(SystemError)
     case backend(T)
-    case refreshTokenInvalid
-    case accessTokenInvalid
-    case expiredToken
-    case publisherError
+//    case refreshTokenInvalid
+//    case accessTokenInvalid
+//    case expiredToken
     
     enum SystemError : Error {
         
@@ -75,6 +100,17 @@ enum APIError<T> {
         case badHTTPCode(Int)
         case missingData
         case jsonMappingFailed(Error)
+        
+        var message : String {
+            switch self {
+            case let .badHTTPCode(code):
+                return "bad code \(code)"
+            case let .jsonMappingFailed(error):
+                return error.localizedDescription
+            default:
+                return "System Error"
+            }
+        }
     }
 }
 

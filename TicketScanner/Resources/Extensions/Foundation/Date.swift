@@ -13,6 +13,21 @@ extension Date {
         return lhs.timeIntervalSinceReferenceDate - rhs.timeIntervalSinceReferenceDate
     }
     
+    var currentTime : String {
+        
+        let date = Date()
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm"
+        switch Defaults.shared.getCurrentLang() {
+        case "ua":
+            formatter.locale = Locale(identifier: "uk_UA")
+        default:
+            formatter.locale = Locale(identifier: "uk_UA")
+        }
+        return formatter.string(from: date)
+    }
+    
     func isSameDay(with date: Date) -> Bool {
         
         let c1 = NSCalendar.current.dateComponents([.year, .month, .day], from: self)

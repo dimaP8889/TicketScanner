@@ -6,11 +6,13 @@
 //
 
 import Combine
+import Foundation
 
 struct ScanModel {
     
     var isManual : Bool = false
     var alertModel : AlertModel? = nil
+    var eventId : String
     
     var isTicketPresented : Bool = false
 }
@@ -22,8 +24,8 @@ enum ScanAction {
     case showAlert(AlertModel)
     case hideAlert
     case showTicket
-    case scan(validation: String, eventId: String)
-    case setScanResult(Response<ScanResultApiModel, ErrorResponse>)
+    case scan(validation: String)
+    case setScanResult(Response<ScanSuccessResultApiModel, ScanFailResultApiModel>)
 }
 
 struct ScanReducer {
@@ -44,12 +46,12 @@ struct ScanReducer {
         case .showTicket:
             let hasTicket = state.alertModel?.alertType.ticket != nil
             state.isTicketPresented = hasTicket
-        case let .scan(validation, eventId):
-            return Networking.main?.scan(validation: validation, eventId: eventId)
+        case let .scan(validation):
+            return Networking.main?.scan(validation: validation, eventId: state.eventId)
                 .map { ScanAction.setScanResult($0) }
                 .eraseToAnyPublisher()
         case let .setScanResult(response):
-            return parseScanResult(response: response)
+            return parseScanResult(response: response, state: &state)
         }
         return nil
     }
@@ -57,13 +59,20 @@ struct ScanReducer {
 
 private extension ScanReducer {
     
-    #warning("Change Parser")
-    func parseScanResult(response: Response<ScanResultApiModel, ErrorResponse>) -> AnyPublisher<ScanAction, Never>? {
+    func parseScanResult(
+        response: Response<ScanSuccessResultApiModel, ScanFailResultApiModel>,
+        state: inout ScanModel
+    ) -> AnyPublisher<ScanAction, Never>? {
         
         switch response {
-        case let .success(result):
-            return nil
-        default:
+        case .success:
+            let alert = AlertModel(time: Date().currentTime, alertType: .success)
+            return reduce(state: &state, action: .showAlert(alert))
+        case let .backend(errorObject):
+            let alert = errorObject.adaptToAlert
+            return reduce(state: &state, action: .showAlert(alert))
+        case let .system(error):
+            print(error)
             return nil
         }
     }

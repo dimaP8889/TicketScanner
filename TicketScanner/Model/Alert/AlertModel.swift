@@ -13,7 +13,6 @@ struct AlertModel : Identifiable {
     
     let time : String
     let alertType : AlertType
-    let selectAction : Action
 }
 
 struct AlertSubviewModel {
@@ -26,10 +25,9 @@ extension AlertModel {
     
     static var test : AlertModel {
         
-        let ticket = "Ticket"
-        let types : [AlertType] = [.checkedIn(time: "23:46", ticket: ticket), .invalidQR, .refunded(ticket: ticket), .success, .wrongEvent(ticket: ticket)]
+        let types : [AlertType] = [.checkedIn(time: "23:46", ticket: FullTicketModel.random), .invalidQR, .refunded(ticket: FullTicketModel.random), .success, .wrongEvent(ticket: FullTicketModel.random)]
         
-        return AlertModel(time: "18:54:13", alertType: types.randomElement()!, selectAction: {})
+        return AlertModel(time: "18:54:13", alertType: types.randomElement()!)
     }
 }
 
@@ -37,8 +35,7 @@ extension AlertSubviewModel {
     
     static var test : AlertSubviewModel {
         
-        let ticket = "Ticket"
-        let types : [AlertModel.AlertType] = [.checkedIn(time: "23:46", ticket: ticket), .invalidQR, .refunded(ticket: ticket), .success, .wrongEvent(ticket: ticket)]
+        let types : [AlertModel.AlertType] = [.checkedIn(time: "23:46", ticket: FullTicketModel.random), .invalidQR, .refunded(ticket: FullTicketModel.random), .success, .wrongEvent(ticket: FullTicketModel.random)]
         
         return types.randomElement()!.subviewModel!
     }
@@ -49,9 +46,9 @@ extension AlertModel {
     enum AlertType {
         case success
         case invalidQR
-        case checkedIn(time: String, ticket: String)
-        case refunded(ticket: String)
-        case wrongEvent(ticket: String)
+        case checkedIn(time: String, ticket: FullTicketModel)
+        case refunded(ticket: FullTicketModel)
+        case wrongEvent(ticket: FullTicketModel)
         
         var result : String {
             switch self {
@@ -119,7 +116,7 @@ extension AlertModel {
             }
         }
         
-        var ticket : String? {
+        var ticket : FullTicketModel? {
             
             switch self {
             case let .checkedIn(_, ticket):

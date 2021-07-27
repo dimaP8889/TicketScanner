@@ -6,16 +6,18 @@
 //
 
 import Foundation
+import Combine
 import SwiftUI
 
 final class ScanStore : ObservableObject {
     
     @Published private(set) var state : ScanModel
+    private var cancellables = Set<AnyCancellable>()
     
     private var reducer: ScanReducer
     
-    init(state : ScanModel) {
-        self.state = state
+    init(eventId : String) {
+        self.state = ScanModel(eventId: eventId)
         reducer = ScanReducer()
     }
     
@@ -24,7 +26,18 @@ final class ScanStore : ObservableObject {
         set { state.isTicketPresented = newValue }
     }
     
+    var ticket : FullTicketModel {
+        get { state.alertModel?.alertType.ticket ?? .random }
+    }
+    
     func dispatch(action: ScanAction) {
-        reducer.reduce(state: &state, action: action)
+        guard let effect = reducer.reduce(state: &state, action: action) else {
+            return
+        }
+        
+        effect
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: dispatch(action:))
+            .store(in: &cancellables)
     }
 }

@@ -29,7 +29,7 @@ struct ScanView: View {
                 }
             }
             NavigationLink(
-                destination: FullTicketView(),
+                destination: FullTicketView(model: scanStore.ticket),
                 isActive: $scanStore.isTicketPresented
             ) { EmptyView() }
             .hidden()

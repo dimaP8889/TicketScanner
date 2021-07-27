@@ -37,7 +37,7 @@ extension API where RQ == MainApi {
             .eraseToAnyPublisher()
     }
     
-    func scan(validation: String, eventId: String) -> AnyPublisher<Response<ScanResultApiModel, ErrorResponse>, Never> {
+    func scan(validation: String, eventId: String) -> AnyPublisher<Response<ScanSuccessResultApiModel, ScanFailResultApiModel>, Never> {
         sync(.scan(validation: validation, eventId: eventId))
     }
 }
@@ -92,7 +92,7 @@ extension MainApi : Requestable {
     
     func authorizationRequired() -> Bool {
         switch self {
-        case .loadEvents:
+        case .loadEvents, .scan:
             return true
         default:
             return false

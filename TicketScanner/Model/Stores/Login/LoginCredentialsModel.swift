@@ -71,7 +71,7 @@ struct LoginReducer {
                 state.clear()
                 Defaults.shared.setCurrentUser(user)
                 successAction((model.accessToken))
-            case .failure:
+            default:
                 state.isError = true
             }
         case let .logIn(successAction):

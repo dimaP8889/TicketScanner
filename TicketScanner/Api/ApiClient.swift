@@ -16,7 +16,7 @@ struct APIClient {
             .tryMap { result -> Response<T,F> in
                 ResponseHandler.handle(data: result.data, response: result.response)
             }
-            .replaceError(with: .failure(.publisherError))
+            .replaceError(with: .system("Publisher Error"))
             .receive(on: DispatchQueue.main) // 6
             .eraseToAnyPublisher() // 7
     }

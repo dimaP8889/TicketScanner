@@ -33,7 +33,7 @@ struct EventListReducer {
                 var events = model.adaptToEventModelList
                 events.sort { $0.startDate < $1.startDate }
                 oldState.eventList = events
-            case .failure:
+            default:
                 break
             }
             return nil
