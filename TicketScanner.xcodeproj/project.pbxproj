@@ -94,6 +94,7 @@
 		F1A8BA0326AF40C900BD4677 /* EventListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8BA0226AF40C900BD4677 /* EventListModel.swift */; };
 		F1A8BA0526AF430700BD4677 /* EventListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8BA0426AF430700BD4677 /* EventListStore.swift */; };
 		F1A8BA0726AF4D6B00BD4677 /* ScanResultApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8BA0626AF4D6B00BD4677 /* ScanResultApiModel.swift */; };
+		F1A8BA0B26AFFD4D00BD4677 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8BA0A26AFFD4D00BD4677 /* ClearButton.swift */; };
 		F1DE370B2693A583001D11C0 /* SearchFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE370A2693A583001D11C0 /* SearchFieldView.swift */; };
 		F1DE370E2693B038001D11C0 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE370D2693B038001D11C0 /* FilterView.swift */; };
 		F1DE37112693B822001D11C0 /* ParticipantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE37102693B822001D11C0 /* ParticipantsModel.swift */; };
@@ -195,6 +196,7 @@
 		F1A8BA0226AF40C900BD4677 /* EventListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListModel.swift; sourceTree = "<group>"; };
 		F1A8BA0426AF430700BD4677 /* EventListStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListStore.swift; sourceTree = "<group>"; };
 		F1A8BA0626AF4D6B00BD4677 /* ScanResultApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultApiModel.swift; sourceTree = "<group>"; };
+		F1A8BA0A26AFFD4D00BD4677 /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		F1DE370A2693A583001D11C0 /* SearchFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldView.swift; sourceTree = "<group>"; };
 		F1DE370D2693B038001D11C0 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		F1DE37102693B822001D11C0 /* ParticipantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsModel.swift; sourceTree = "<group>"; };
@@ -491,6 +493,7 @@
 		F158F45B2665670400AB8AE6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F1A8BA0926AFFD3900BD4677 /* View Modifiers */,
 				F110200A267EA4F900AB420F /* Keychain */,
 				F158F46026656A0500AB8AE6 /* Foundation */,
 				F158F45C266569E700AB8AE6 /* UIKit */,
@@ -911,6 +914,22 @@
 			path = EventList;
 			sourceTree = "<group>";
 		};
+		F1A8BA0926AFFD3900BD4677 /* View Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				F1A8BA0C26AFFD5300BD4677 /* TextField */,
+				F1A8BA0A26AFFD4D00BD4677 /* ClearButton.swift */,
+			);
+			path = "View Modifiers";
+			sourceTree = "<group>";
+		};
+		F1A8BA0C26AFFD5300BD4677 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
 		F1DE37072693A547001D11C0 /* Search Field */ = {
 			isa = PBXGroup;
 			children = (
@@ -1090,6 +1109,7 @@
 				F1102002267E9BC500AB420F /* ApiClient.swift in Sources */,
 				F1648D60266D2F2100F1FDC1 /* Date.swift in Sources */,
 				F19815A62676658B00E9218F /* SelectorHelper.swift in Sources */,
+				F1A8BA0B26AFFD4D00BD4677 /* ClearButton.swift in Sources */,
 				F16985EB2653101600B26671 /* RegistrationView.swift in Sources */,
 				F198159926754B7E00E9218F /* View.swift in Sources */,
 				F1648D7D266EC50A00F1FDC1 /* TabBarModel.swift in Sources */,

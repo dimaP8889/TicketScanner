@@ -13,17 +13,17 @@ struct EventTabBarView: View {
     var presentationMode: Binding<PresentationMode>
     
     private var eventName : String
-    private var eventId : String
+    private var event : EventModel?
     
     @ObservedObject private var data : TabBarModel
     
     private let scanStore = ScanStore(state: ScanModel())
     private let participantsStore = ParticipantsStore()
     
-    init(eventName: String, eventId : String) {
+    init(event: EventModel?) {
         
-        self.eventName = eventName
-        self.eventId = eventId
+        self.eventName = event?.festivalName ?? ""
+        self.event = event
         self.data = TabBarModel()
         
         UITabBar.setBar(color: .white)
@@ -109,6 +109,6 @@ private extension EventTabBarView {
 
 struct EventTabBarView_Previews: PreviewProvider {
     static var previews: some View {
-        EventTabBarView(eventName: "first", eventId: "0")
+        EventTabBarView(event: EventModel(id: "123", startDate: Date(), endDate: Date(), festivalName: "Lol"))
     }
 }

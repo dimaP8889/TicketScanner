@@ -12,6 +12,9 @@ struct EventsListView: View {
     @EnvironmentObject var appDataStore: AppDataStore
     @EnvironmentObject var eventListStore: EventListStore
     
+    @State private var isNavLinkActive : Bool = false
+    @State private var selectedEvent : EventModel?
+    
     var models : [EventModel] {
         eventListStore.events
     }
@@ -28,20 +31,30 @@ struct EventsListView: View {
                     Spacer()
                         .frame(height: 10)
                     ForEach(Array(zip(models.indices, models)), id: \.0) { index, data in
-                        NavigationLink(
-                            destination: EventTabBarView(
-                                eventName: data.festivalName,
-                                eventId: eventListStore.eventId(by: index)
-                            ),
+                        Button(
+                            action: {
+                                selectedEvent = data
+                                isNavLinkActive = data.isActive
+                            },
                             label: {
                                 EventDataView(model: data)
-                                    .padding([.leading, .trailing], 12)
-                                    .padding([.top, .bottom], 6)
                             }
                         )
+                        .buttonStyle(PlainButtonStyle())
+                        .padding([.leading, .trailing], 12)
+                        .padding([.top, .bottom], 6)
                     }
                 }
             }
+            .background(
+                NavigationLink(
+                    destination: EventTabBarView(
+                        event: selectedEvent
+                    ),
+                    isActive: $isNavLinkActive,
+                    label: { EmptyView() }
+                )
+            )
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

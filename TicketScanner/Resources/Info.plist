@@ -37,6 +37,8 @@
 	<dict/>
 	<key>NSCameraUsageDescription</key>
 	<string>Дозвольте додатку доступ до камери. Це дозволить нам розпізнавати QR код</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>This app requires access to the photo library.</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

@@ -5,6 +5,7 @@
 //  Created by Dmytro Pogrebniak on 06.06.2021.
 //
 
+import SwiftUI
 import Foundation
 
 struct EventModel : Identifiable {
@@ -36,8 +37,15 @@ struct EventModel : Identifiable {
         
         self.festivalName = festivalName
         
-        self.timeToStart = Date().time(to: startDate)
+        let startTime = Date().time(to: startDate)
+        let isFinished = endDate < Date()
         
-        self.isActive = self.timeToStart == localStr("events.future.started")
+        if isFinished {
+            self.timeToStart = localStr("events.future.ended")
+            self.isActive = false
+        } else {
+            self.timeToStart = startTime
+            self.isActive = startTime == localStr("events.future.started")
+        }
     }
 }

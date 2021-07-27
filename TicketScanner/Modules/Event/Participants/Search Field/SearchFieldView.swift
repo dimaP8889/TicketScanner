@@ -16,7 +16,6 @@ struct SearchFieldView: View {
     
     init(text: Binding<String>) {
         self._text = text
-        UITextField.appearance().clearButtonMode = .whileEditing
     }
     
     var body: some View {
@@ -28,6 +27,7 @@ struct SearchFieldView: View {
                     .padding(.leading, 12)
                 TextField(localStr("participants.search.placeholder"), text: $text)
                     .font(.main(size: 17))
+                    .modifier(ClearButton(text: $text))
                     .onChange(of: text) { value in
                         participantsStore.dispatch(action: .loadParticipants(name: value))
                     }
