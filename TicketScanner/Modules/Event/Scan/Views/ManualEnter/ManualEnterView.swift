@@ -27,8 +27,9 @@ struct ManualEnterView: View {
                 HStack(alignment: .center) {
                     Spacer()
                     ManualEnterTextField(text: $text, textDidChange: {
-                        withAnimation {
-                            
+                        if text.count == Constants.codeLength {
+                            scanStore.dispatch(action: .scan(validation: text))
+                            text = ""
                         }
                     })
                     .frame(maxWidth: 300)

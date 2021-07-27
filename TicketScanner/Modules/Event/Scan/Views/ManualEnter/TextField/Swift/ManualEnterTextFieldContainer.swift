@@ -56,6 +56,7 @@ struct ManualEnterTextFieldContainer: UIViewRepresentable {
             textField.textAlignment = .center
             textField.autocorrectionType = .no
             textField.autocapitalizationType = .none
+            textField.keyboardType = .decimalPad
             textField.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
             textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         }

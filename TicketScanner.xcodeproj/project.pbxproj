@@ -31,6 +31,7 @@
 		F11A19E52674DD81001AE455 /* CenteringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A19E42674DD81001AE455 /* CenteringView.swift */; };
 		F11A19E92674E088001AE455 /* Spacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A19E82674E088001AE455 /* Spacer.swift */; };
 		F11BD1AD26B09B9F00ED352D /* ScanSuccessResultApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BD1AC26B09B9F00ED352D /* ScanSuccessResultApiModel.swift */; };
+		F11BD1AF26B0B23C00ED352D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BD1AE26B0B23C00ED352D /* Constants.swift */; };
 		F138C44D2677D33700915BC5 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138C44C2677D33700915BC5 /* UINavigationController.swift */; };
 		F138C4502677D67300915BC5 /* TicketBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138C44F2677D67300915BC5 /* TicketBackButton.swift */; };
 		F138C4552678DB9600915BC5 /* AppDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138C4542678DB9600915BC5 /* AppDataStore.swift */; };
@@ -132,6 +133,7 @@
 		F11A19E42674DD81001AE455 /* CenteringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteringView.swift; sourceTree = "<group>"; };
 		F11A19E82674E088001AE455 /* Spacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacer.swift; sourceTree = "<group>"; };
 		F11BD1AC26B09B9F00ED352D /* ScanSuccessResultApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanSuccessResultApiModel.swift; sourceTree = "<group>"; };
+		F11BD1AE26B0B23C00ED352D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F13288E32669416C009F2C48 /* EventsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListView.swift; sourceTree = "<group>"; };
 		F138C44C2677D33700915BC5 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		F138C44F2677D67300915BC5 /* TicketBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketBackButton.swift; sourceTree = "<group>"; };
@@ -761,6 +763,7 @@
 				F1FCC35E2660272E00951F8B /* KeyboardHeightHelper.swift */,
 				F19815A52676658B00E9218F /* SelectorHelper.swift */,
 				F1102008267EA4D200AB420F /* Keychain.swift */,
+				F11BD1AE26B0B23C00ED352D /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1070,6 +1073,7 @@
 				F1648D64266D55CA00F1FDC1 /* DateFormatter.swift in Sources */,
 				F1A8B9FF26AF3C7C00BD4677 /* EventListApiModel.swift in Sources */,
 				F10A0D2A2655C44900487FD5 /* CredentialsView.swift in Sources */,
+				F11BD1AF26B0B23C00ED352D /* Constants.swift in Sources */,
 				F10A0D392655CCE700487FD5 /* Color.swift in Sources */,
 				F10A0D3D2655D0BF00487FD5 /* CustomTextField.swift in Sources */,
 				F1FCC333265EF79C00951F8B /* Global.swift in Sources */,
