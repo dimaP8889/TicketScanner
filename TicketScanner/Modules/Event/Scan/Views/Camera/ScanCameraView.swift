@@ -22,7 +22,7 @@ struct ScanCameraView: View {
                 CodeScannerView(
                     codeTypes: [.qr],
                     scanMode: .continuous,
-                    scanInterval: 5,
+                    scanInterval: Constants.scanRefreshTime,
                     completion: handleScan(result:)
                 )
                 .cornerRadius(20)
@@ -62,7 +62,7 @@ private extension ScanCameraView {
         case let .success(code):
             scanStore.dispatch(action: .scan(validation: code))
         case .failure:
-            showAlert(with: .test)
+            return
         }
     }
     
@@ -75,7 +75,7 @@ private extension ScanCameraView {
             }
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             withAnimation {
                 scanStore.dispatch(action: .showAlert(model))
             }

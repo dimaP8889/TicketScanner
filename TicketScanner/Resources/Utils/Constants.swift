@@ -10,4 +10,6 @@ import Foundation
 struct Constants {
     
     static let codeLength : Int = 12
+    static let alertApperTime : Double = 4
+    static let scanRefreshTime : Double = alertApperTime + 0.5
 }

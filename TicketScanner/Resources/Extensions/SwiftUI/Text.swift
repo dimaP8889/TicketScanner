@@ -11,7 +11,7 @@ extension Text {
     
     func mainTicketStyle() -> Text {
         self
-            .font(.main(size: 16))
+            .font(.main(size: 14))
             .foregroundColor(Color.doveGray)
     }
     

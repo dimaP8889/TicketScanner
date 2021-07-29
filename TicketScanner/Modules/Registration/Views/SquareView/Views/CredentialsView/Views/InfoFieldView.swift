@@ -18,6 +18,10 @@ struct InfoFieldView: View {
     @State private var text : String = ""
     @State private var isEditting : Bool = false
     
+    private var isNeedShowError : Bool {
+        store.state.isError && fieldType == .email
+    }
+    
     private var trailingPadding : CGFloat {
         UIScreen.main.bounds.width - 243
     }
@@ -25,8 +29,10 @@ struct InfoFieldView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             field
-            if store.state.isError {
+            if isNeedShowError {
                 errorText
+                    .padding(.bottom, 20)
+                    .padding(.leading, 4)
             }
         }
         .background(Color.clear)
@@ -65,8 +71,9 @@ private extension InfoFieldView {
                 textDidChange: {
                     store.dispatch(
                         action:
-                            fieldType == .password ?
-                            .changePassword(text) : .changeEmail(text)
+                            fieldType == .password
+                            ? .changePassword(text)
+                            : .changeEmail(text)
                     )
                 },
                 isSecured: fieldType == .password
@@ -79,7 +86,7 @@ private extension InfoFieldView {
         .overlay(
             RoundedRectangle(cornerRadius: 19)
                 .stroke(
-                    store.state.isError ? Color.radicalRedLight : isEditting
+                    isNeedShowError ? Color.radicalRedLight : isEditting
                             ? Color.altoLight : Color.altoSuperLight
                 )
         )

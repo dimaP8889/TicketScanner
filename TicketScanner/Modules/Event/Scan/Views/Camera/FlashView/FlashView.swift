@@ -22,7 +22,7 @@ struct FlashView: View {
             RoundedRectangle(cornerRadius: 20)
                 .foregroundColor(isFlashOn ? Color.gallery : Color.doveGray)
         )
-        .onLongPressGesture {
+        .onTapGesture {
             
             let generator = UINotificationFeedbackGenerator()
             generator.notificationOccurred(.success)

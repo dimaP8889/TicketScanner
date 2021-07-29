@@ -23,7 +23,7 @@ struct AlertView: View {
         self.model = model
         self.swipeAction = swipeAction
         self.tapAction = tapAction
-        timer = Timer(timeInterval: 5, repeats: false) { _ in
+        timer = Timer(timeInterval: Constants.alertApperTime, repeats: false) { _ in
             swipeAction()
         }
         RunLoop.main.add(timer, forMode: .common)

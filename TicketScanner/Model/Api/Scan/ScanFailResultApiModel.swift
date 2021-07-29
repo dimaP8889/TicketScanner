@@ -82,7 +82,7 @@ extension ScanFailResultApiModel {
                 return nil
             }
             let date = Date(timeIntervalSince1970: TimeInterval(time / 1000))
-            status = .wrongEvent(name: title, time: date.stringFullTime)
+            status = .wrongEvent(name: title, time: date.stringDate)
         default:
             return nil
         }

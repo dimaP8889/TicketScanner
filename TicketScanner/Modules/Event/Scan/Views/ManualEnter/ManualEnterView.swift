@@ -29,8 +29,8 @@ struct ManualEnterView: View {
                     ManualEnterTextField(text: $text, textDidChange: {
                         if text.count == Constants.codeLength {
                             scanStore.dispatch(action: .scan(validation: text))
-                            text = ""
                         }
+                        text = String(text.prefix(Constants.codeLength))
                     })
                     .frame(maxWidth: 300)
                     .padding([.top, .bottom], 22)

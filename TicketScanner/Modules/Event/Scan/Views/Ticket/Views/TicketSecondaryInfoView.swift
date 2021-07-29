@@ -16,7 +16,7 @@ struct TicketSecondaryInfoView: View {
     var body: some View {
         
         HStack {
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 8) {
                 
                 HStack(alignment: .top, spacing: 24) {
                     Text(localStr("scan.ticket.type"))
