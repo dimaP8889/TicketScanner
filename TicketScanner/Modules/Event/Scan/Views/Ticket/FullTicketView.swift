@@ -16,6 +16,11 @@ struct FullTicketView: View {
     
     @GestureState private var dragOffset = CGSize.zero
     
+    init(model : FullTicketModel) {
+        
+        self.model = model
+    }
+    
     var body: some View {
         
         VStack {

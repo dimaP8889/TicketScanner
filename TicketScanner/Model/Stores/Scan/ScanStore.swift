@@ -27,7 +27,7 @@ final class ScanStore : ObservableObject {
     }
     
     var ticket : FullTicketModel {
-        get { state.alertModel?.alertType.ticket ?? .random }
+        get { state.ticketModel ?? .random }
     }
     
     func dispatch(action: ScanAction) {

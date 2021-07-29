@@ -10,7 +10,7 @@ import Foundation
 struct ScanFailResultApiModel : Codable {
     
       let response: String
-      let successfulScanTimestamp: String?
+      let successfulScanTimestamp: Int?
       let expectedEvent: Event?
       let ticket: Ticket?
 }
@@ -18,55 +18,71 @@ struct ScanFailResultApiModel : Codable {
 // MARK: - Adapter
 extension ScanFailResultApiModel {
     
-    var adaptToAlert : AlertModel {
+    func adaptToAlert(number : String) -> AlertModel {
         
-        guard let time = successfulScanTimestamp,
-              let ticket = adaptToTicket
+        guard let ticket = adaptToTicket(number: number)
         else {
-            return AlertModel(time: Date().currentTime, alertType: .invalidQR)
+            return AlertModel(time: Date.currentTime, alertType: .invalidQR)
         }
         
         switch response {
         case "already_checked_in":
-            return AlertModel(time: time, alertType: .checkedIn(time: time, ticket: ticket))
+            let checkedInTime : String = {
+                guard let timeInt = successfulScanTimestamp else {
+                    return ""
+                }
+                let time = Date(timeIntervalSince1970: TimeInterval(timeInt / 1000))
+                return time.stringShortTime
+            }()
+            return AlertModel(time: Date().stringFullTime, alertType: .checkedIn(time: checkedInTime, ticket: ticket))
         case "ticket_was_refunded":
-            return AlertModel(time: time, alertType: .refunded(ticket: ticket))
+            return AlertModel(time: Date().stringFullTime, alertType: .refunded(ticket: ticket))
         case "wrong_event":
-            return AlertModel(time: time, alertType: .wrongEvent(ticket: ticket))
+            return AlertModel(time: Date().stringFullTime, alertType: .wrongEvent(ticket: ticket))
         default:
-            return AlertModel(time: Date().currentTime, alertType: .invalidQR)
+            return AlertModel(time: Date.currentTime, alertType: .invalidQR)
         }
     }
     
-    var adaptToTicket : FullTicketModel? {
+    func adaptToTicket(number : String) -> FullTicketModel? {
         
-        guard let ticket = ticket,
-              let event = expectedEvent,
-              let time = successfulScanTimestamp
-        else {
+        guard let ticket = ticket else {
             return nil
         }
         
         let title : String
         switch Defaults.shared.getCurrentLang() {
         case "en":
-            title = event.titleEn
+            title = expectedEvent?.titleEn ?? expectedEvent?.titleUk ?? ""
         default:
-            title = event.titleUk
+            title = expectedEvent?.titleUk ?? ""
         }
+        let name = ticket.buyer.name
+        let date = Date()
         
-        #warning("No ticket number")
-        #warning("Need time in since1970")
-        let main = TicketMainInfoModel(name: event.titleUk, time: time, ticketNumber: "lolol")
+        let main = TicketMainInfoModel(name: name, time: date.stringFullTime, ticketNumber: number)
         
         let status : TicketStatus
         switch response {
         case "already_checked_in":
-            status = .checkedIn(time: time, date: time)
+            guard let time = successfulScanTimestamp else {
+                return nil
+            }
+            let date = Date(timeIntervalSince1970: TimeInterval(time / 1000))
+            status = .checkedIn(time: date.stringFullTime, date: date.stringDate)
         case "ticket_was_refunded":
-            status = .refunded(time: time)
+            #warning("TODO")
+//            guard let time = expectedEvent?.startDateTime else {
+//                return nil
+//            }
+//            let date = Date(timeIntervalSince1970: TimeInterval(time / 1000))
+            status = .refunded(time: Date().stringFullTime)
         case "wrong_event":
-            status = .wrongEvent(name: title, time: time)
+            guard let time = expectedEvent?.startDateTime else {
+                return nil
+            }
+            let date = Date(timeIntervalSince1970: TimeInterval(time / 1000))
+            status = .wrongEvent(name: title, time: date.stringFullTime)
         default:
             return nil
         }
@@ -74,7 +90,7 @@ extension ScanFailResultApiModel {
         let ticketType : String
         switch Defaults.shared.getCurrentLang() {
         case "en":
-            ticketType = ticket.ticketTypeEn
+            ticketType = ticket.ticketTypeEn ?? ticket.ticketTypeUk
         default:
             ticketType = ticket.ticketTypeUk
         }
@@ -97,8 +113,8 @@ extension ScanFailResultApiModel {
         }
         
         let titleUk: String
-        let titleEn: String
-        let startDateTime: String
+        let titleEn: String?
+        let startDateTime: Int
     }
 }
 
@@ -114,7 +130,7 @@ extension ScanFailResultApiModel {
         }
         
         let ticketTypeUk: String
-        let ticketTypeEn: String
+        let ticketTypeEn: String?
         let buyer : Buyer
     }
 }

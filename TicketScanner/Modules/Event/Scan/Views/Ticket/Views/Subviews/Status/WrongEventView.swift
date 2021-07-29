@@ -16,7 +16,7 @@ extension TicketStatusView {
         var body: some View {
             VStack(alignment: .leading, spacing: 0) {
                 LeadingText(
-                    text: Text(localStr("scan.error.refunded"))
+                    text: Text(localStr("scan.error.wrong_event"))
                         .font(.main(size: 17))
                         .foregroundColor(Color.radicalRed)
                 )

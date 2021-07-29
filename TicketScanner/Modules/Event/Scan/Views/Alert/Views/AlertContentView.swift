@@ -19,7 +19,7 @@ struct AlertContentView: View {
                     .foregroundColor(model.alertType.topTexColor)
                 Spacer()
                 Text(model.time)
-                    .font(.main(size: 17))
+                    .font(.main(size: 14))
                     .foregroundColor(model.alertType.topTexColor)
             }
             .padding([.leading, .trailing], 16)

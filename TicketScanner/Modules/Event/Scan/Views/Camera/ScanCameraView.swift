@@ -21,8 +21,8 @@ struct ScanCameraView: View {
             } else {
                 CodeScannerView(
                     codeTypes: [.qr],
-                    scanMode: .oncePerCode,
-                    scanInterval: 2,
+                    scanMode: .continuous,
+                    scanInterval: 5,
                     completion: handleScan(result:)
                 )
                 .cornerRadius(20)

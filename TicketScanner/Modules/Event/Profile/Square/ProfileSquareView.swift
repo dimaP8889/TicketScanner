@@ -10,9 +10,9 @@ import SwiftUI
 struct ProfileSquareView: View {
     
     private var sideLength : CGFloat = UIScreen.main.bounds.width - 24
-    private var user = {
-        Defaults.shared.defaultUser ?? "not found"
-    }()
+    private var user : String {
+        Defaults.shared.getCurrentUser() ?? "not found"
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {

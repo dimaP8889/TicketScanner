@@ -13,6 +13,7 @@ extension TicketStatusView {
         
         var date : String
         
+        #warning("TODO")
         var body: some View {
             VStack(alignment: .leading, spacing: 6) {
                 HStack {
@@ -21,12 +22,12 @@ extension TicketStatusView {
                         .foregroundColor(Color.radicalRed)
                     Spacer()
                 }
-                HStack(spacing: 16) {
-                    Image("ic_clock2")
-                        .padding(.top, 2)
-                    Text(date)
-                        .mainTicketStyle()
-                }
+//                HStack(spacing: 16) {
+//                    Image("ic_clock2")
+//                        .padding(.top, 2)
+//                    Text(date)
+//                        .mainTicketStyle()
+//                }
             }
             .padding([.leading, .trailing], 16)
             .padding([.top, .bottom], 24)

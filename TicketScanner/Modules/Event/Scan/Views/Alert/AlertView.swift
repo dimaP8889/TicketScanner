@@ -23,7 +23,7 @@ struct AlertView: View {
         self.model = model
         self.swipeAction = swipeAction
         self.tapAction = tapAction
-        timer = Timer(timeInterval: 3, repeats: false) { _ in
+        timer = Timer(timeInterval: 5, repeats: false) { _ in
             swipeAction()
         }
         RunLoop.main.add(timer, forMode: .common)
@@ -48,6 +48,7 @@ struct AlertView: View {
         }
         .onTapGesture {
             tapAction()
+            timer.invalidate()
         }
         .gesture(
             DragGesture(
@@ -57,6 +58,7 @@ struct AlertView: View {
             .onEnded{ value in
                 if value.translation.height < 0 {
                     swipeAction()
+                    timer.invalidate()
                 }
             }
         )

@@ -13,19 +13,35 @@ extension Date {
         return lhs.timeIntervalSinceReferenceDate - rhs.timeIntervalSinceReferenceDate
     }
     
-    var currentTime : String {
-        
-        let date = Date()
+    static var currentTime : String {
+        Date().stringShortTime
+    }
+    
+    var stringShortTime : String {
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "hh:mm"
-        switch Defaults.shared.getCurrentLang() {
-        case "ua":
-            formatter.locale = Locale(identifier: "uk_UA")
-        default:
-            formatter.locale = Locale(identifier: "uk_UA")
-        }
-        return formatter.string(from: date)
+        formatter.dateFormat = "HH:mm"
+        formatter.locale = locale
+        
+        return formatter.string(from: self)
+    }
+    
+    var stringFullTime : String {
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm:ss"
+        formatter.locale = locale
+        
+        return formatter.string(from: self)
+    }
+    
+    var stringDate : String {
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMMM YYYY"
+        formatter.locale = locale
+        
+        return formatter.string(from: self)
     }
     
     func isSameDay(with date: Date) -> Bool {
@@ -84,5 +100,15 @@ private extension Date {
         }
         
         return localStr(key + ".\(number)")
+    }
+    
+    var locale : Locale {
+        
+        switch Defaults.shared.getCurrentLang() {
+        case "ua":
+            return Locale(identifier: "uk_UA")
+        default:
+            return Locale(identifier: "uk_UA")
+        }
     }
 }

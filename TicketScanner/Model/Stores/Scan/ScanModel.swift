@@ -12,6 +12,7 @@ struct ScanModel {
     
     var isManual : Bool = false
     var alertModel : AlertModel? = nil
+    var ticketModel : FullTicketModel? = nil
     var eventId : String
     
     var isTicketPresented : Bool = false
@@ -25,7 +26,7 @@ enum ScanAction {
     case hideAlert
     case showTicket
     case scan(validation: String)
-    case setScanResult(Response<ScanSuccessResultApiModel, ScanFailResultApiModel>)
+    case setScanResult(Response<ScanSuccessResultApiModel, ScanFailResultApiModel>, String)
 }
 
 struct ScanReducer {
@@ -48,10 +49,10 @@ struct ScanReducer {
             state.isTicketPresented = hasTicket
         case let .scan(validation):
             return Networking.main?.scan(validation: validation, eventId: state.eventId)
-                .map { ScanAction.setScanResult($0) }
+                .map { ScanAction.setScanResult($0, validation) }
                 .eraseToAnyPublisher()
-        case let .setScanResult(response):
-            return parseScanResult(response: response, state: &state)
+        case let .setScanResult(response, validation):
+            return parseScanResult(response: response, validation: validation, state: &state)
         }
         return nil
     }
@@ -61,15 +62,18 @@ private extension ScanReducer {
     
     func parseScanResult(
         response: Response<ScanSuccessResultApiModel, ScanFailResultApiModel>,
+        validation: String,
         state: inout ScanModel
     ) -> AnyPublisher<ScanAction, Never>? {
         
         switch response {
         case .success:
-            let alert = AlertModel(time: Date().currentTime, alertType: .success)
+            let alert = AlertModel(time: Date.currentTime, alertType: .success)
+            state.ticketModel = nil
             return reduce(state: &state, action: .showAlert(alert))
         case let .backend(errorObject):
-            let alert = errorObject.adaptToAlert
+            let alert = errorObject.adaptToAlert(number: validation)
+            state.ticketModel = alert.alertType.ticket
             return reduce(state: &state, action: .showAlert(alert))
         case let .system(error):
             print(error)

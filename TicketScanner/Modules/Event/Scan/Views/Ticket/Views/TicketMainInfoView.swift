@@ -14,12 +14,7 @@ struct TicketMainInfoView: View {
     let isParticipantsTicket : Bool
     
     private var statusImage : Image {
-        switch status {
-        case .checkedIn:
-            return Image("ic_success_tick")
-        default:
-            return Image("ic_red_cross")
-        }
+        return Image("ic_red_cross")
     }
     
     private var timeTextColor : Color {

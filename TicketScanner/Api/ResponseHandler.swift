@@ -30,7 +30,7 @@ private extension ResponseHandler {
             return .failure(.system(.missingData))
         }
         
-        print("Response: ", String(data: _data, encoding: .utf8))
+        //print("Response: ", String(data: _data, encoding: .utf8))
         guard 200..<300 ~= code else {
             do {
                 let responseObject = try JSONDecoder().decode(F.self, from: _data)
