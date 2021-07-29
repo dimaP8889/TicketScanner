@@ -57,7 +57,7 @@
 //Alert
 "alert.sucess" = "Success";
 "alert.fail" = "Failed";
-"alert.title.success" = "Checked-in sucessfully";
+"alert.title.success" = "Checked-in suсcessfully";
 "alert.title.invalidQR" = "Invalid QR code";
 "alert.title.checked" = "Already checked-in";
 "alert.title.refunded" = "This ticket has been refunded";
