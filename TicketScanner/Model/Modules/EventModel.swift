@@ -19,26 +19,30 @@ struct EventModel : Identifiable {
     
     let startDate : Date
     
-    init(id : String, startDate: Date, endDate: Date, festivalName : String) {
+    init(id : String, startDate: Date, endDate: Date?, festivalName : String) {
         
         self.id = id
         
         let dateFormatter = DateFormatter.eventFormatter
         self.startDate = startDate
         
-        if startDate.isSameDay(with: endDate) {
-            dates = dateFormatter.string(from: startDate)
+        if let endDate = endDate {
+            if startDate.isSameDay(with: endDate) {
+                dates = dateFormatter.string(from: startDate)
+            } else {
+                let startDateString = dateFormatter.string(from: startDate)
+                let endDateString = dateFormatter.string(from: endDate)
+                
+                dates = "\(startDateString) — \(endDateString)"
+            }
         } else {
-            let startDateString = dateFormatter.string(from: startDate)
-            let endDateString = dateFormatter.string(from: endDate)
-            
-            dates = "\(startDateString) — \(endDateString)"
+            dates = dateFormatter.string(from: startDate)
         }
         
         self.festivalName = festivalName
         
         let startTime = Date().time(to: startDate)
-        let isFinished = endDate < Date()
+        let isFinished = endDate == nil ? false : endDate! < Date()
         
         if isFinished {
             self.timeToStart = localStr("events.future.ended")

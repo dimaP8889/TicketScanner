@@ -26,7 +26,7 @@ struct EventApiModel : Codable {
     let titleUk : String
     let titleEn : String?
     let startDateTime : Int
-    let endDateTime : Int
+    let endDateTime : Int?
     let id : String
 }
 
@@ -37,7 +37,7 @@ extension EventListApiModel {
         events.map { apiModel in
             
             let startDate = Date(timeIntervalSince1970: TimeInterval(apiModel.startDateTime / 1000))
-            let endDate = Date(timeIntervalSince1970: TimeInterval(apiModel.endDateTime / 1000))
+            let endDate =  apiModel.endDateTime == nil ? nil : Date(timeIntervalSince1970: TimeInterval(apiModel.endDateTime! / 1000))
             
             let title : String
             switch Defaults.shared.getCurrentLang() {
