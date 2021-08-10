@@ -49,7 +49,7 @@ struct EventModel : Identifiable {
             self.isActive = false
         } else {
             self.timeToStart = startTime
-            self.isActive = startTime == localStr("events.future.started")
+            self.isActive = true
         }
     }
 }

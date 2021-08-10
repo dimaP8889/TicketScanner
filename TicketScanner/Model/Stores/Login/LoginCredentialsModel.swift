@@ -38,11 +38,6 @@ struct LoginCredentials {
         
         isValid = email.isEmail()
             && password.isCorrectPassword()
-        
-        #warning("Remove later")
-            if email == "test_me_public" && password == "privetKakDela?" {
-            isValid = true
-        }
     }
 }
 

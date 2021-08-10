@@ -9,6 +9,12 @@ import SwiftUI
 
 struct CredentialsView: View {
     
+    @EnvironmentObject private var store: LoginStore
+    
+    private var isNeedShowError : Bool {
+        store.state.isError
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
@@ -28,8 +34,19 @@ struct CredentialsView: View {
                 .padding(.leading, 12)
                 .padding(.trailing, 12)
                 .frame(height: 73)
+            if isNeedShowError {
+                errorText
+                    .padding(.top, -6)
+                    .padding(.leading, 16)
+            }
         }
         .padding(.bottom, 16)
+    }
+    
+    private var errorText: some View {
+        Text(localStr("registration.error.title"))
+            .foregroundColor(.radicalRed)
+            .font(.main(size: 12))
     }
 }
 

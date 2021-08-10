@@ -12,17 +12,20 @@ struct AlertView: View {
     let model : AlertModel
     let swipeAction : Action
     let tapAction : Action
+    let tapWrongQrAction : Action
     
     private let timer : Timer
     
     init(
         model: AlertModel,
         swipeAction: @escaping Action,
-        tapAction: @escaping Action
+        tapAction: @escaping Action,
+        tapWrongQrAction: @escaping Action
     ) {
         self.model = model
         self.swipeAction = swipeAction
         self.tapAction = tapAction
+        self.tapWrongQrAction = tapWrongQrAction
         timer = Timer(timeInterval: Constants.alertApperTime, repeats: false) { _ in
             swipeAction()
         }
@@ -47,7 +50,7 @@ struct AlertView: View {
             timer.invalidate()
         }
         .onTapGesture {
-            tapAction()
+            model.isWrongQr ? tapWrongQrAction() : tapAction()
             timer.invalidate()
         }
         .gesture(
@@ -67,6 +70,6 @@ struct AlertView: View {
 
 struct AlertView_Previews: PreviewProvider {
     static var previews: some View {
-        AlertView(model: .test, swipeAction: {}, tapAction: {})
+        AlertView(model: .test, swipeAction: {}, tapAction: {}, tapWrongQrAction: {})
     }
 }

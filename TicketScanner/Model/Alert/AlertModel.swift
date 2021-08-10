@@ -13,6 +13,15 @@ struct AlertModel : Identifiable {
     
     let time : String
     let alertType : AlertType
+    
+    var isWrongQr : Bool {
+        switch alertType {
+        case .invalidQR:
+            return true
+        default:
+            return false
+        }
+    }
 }
 
 struct AlertSubviewModel {

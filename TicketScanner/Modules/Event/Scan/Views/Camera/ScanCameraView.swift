@@ -49,6 +49,10 @@ struct ScanCameraView: View {
                 }
             }, tapAction: {
                 scanStore.dispatch(action: .showTicket)
+            }, tapWrongQrAction: {
+                withAnimation {
+                    scanStore.dispatch(action: .showManual)
+                }
             }
         )
     }

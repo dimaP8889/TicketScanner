@@ -21,7 +21,7 @@
 "registration.button.title" = "Увійти";
 "registration.square.title" = "Вхід";
 "registration.button.check-in" = "2204\nCheck in";
-"registration.error.title" = "Будь ласка, введіть справжній email або id";
+"registration.error.title" = "Неправильний email або пароль";
 "registration.textfield.email.description" = "Email або id";
 "registration.textfield.password.description" = "Пароль";
 "registration.textfield.email.placeholder" = "введіть свій email або id";

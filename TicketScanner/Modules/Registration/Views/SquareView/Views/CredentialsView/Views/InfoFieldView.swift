@@ -18,8 +18,8 @@ struct InfoFieldView: View {
     @State private var text : String = ""
     @State private var isEditting : Bool = false
     
-    private var isNeedShowError : Bool {
-        store.state.isError && fieldType == .email
+    private var isErrorState : Bool {
+        store.state.isError
     }
     
     private var trailingPadding : CGFloat {
@@ -27,13 +27,8 @@ struct InfoFieldView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
+        VStack(alignment: .leading) {
             field
-            if isNeedShowError {
-                errorText
-                    .padding(.bottom, 20)
-                    .padding(.leading, 4)
-            }
         }
         .background(Color.clear)
         .padding(
@@ -86,17 +81,10 @@ private extension InfoFieldView {
         .overlay(
             RoundedRectangle(cornerRadius: 19)
                 .stroke(
-                    isNeedShowError ? Color.radicalRedLight : isEditting
+                    isErrorState ? Color.radicalRedLight : isEditting
                             ? Color.altoLight : Color.altoSuperLight
                 )
         )
-    }
-
-    var errorText: some View {
-        Text(localStr("registration.error.title"))
-            .foregroundColor(.radicalRed)
-            .font(.main(size: 12))
-            .animation(.easeInOut(duration: 0.1))
     }
 }
 
