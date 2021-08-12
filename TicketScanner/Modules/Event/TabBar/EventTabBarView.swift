@@ -20,18 +20,18 @@ struct EventTabBarView: View {
     @ObservedObject private var data : TabBarModel
     
     private let scanStore : ScanStore
-    private let participantsStore = ParticipantsStore()
+    private let participantsStore : ParticipantsStore
     
     init(event: EventModel?) {
         
         self.event = event
         self.data = TabBarModel()
         self.scanStore = ScanStore(eventId: event?.id ?? "")
+        self.participantsStore = ParticipantsStore(eventId: event?.id ?? "")
         
         UITabBar.setBar(color: .white)
     }
     
-    #warning("TODO")
     var body: some View {
         
         TabView(selection: $data.selection) {
@@ -45,24 +45,24 @@ struct EventTabBarView: View {
                 }
                 .tag(0)
             
-//            ParticipantsView()
-//                .environmentObject(participantsStore)
-//                .tabItem {
-//                    Image("ic_participants")
-//                        .renderingMode(.template)
-//                    Text(localStr("events.item.participants"))
-//                        .font(.main(size: 11))
-//                }
-//                .tag(1)
-//
-//            ContactsView()
-//                .tabItem {
-//                    Image("ic_contacts")
-//                        .renderingMode(.template)
-//                    Text(localStr("events.item.contacts"))
-//                        .font(.main(size: 11))
-//                }
-//                .tag(2)
+            ParticipantsView()
+                .environmentObject(participantsStore)
+                .tabItem {
+                    Image("ic_participants")
+                        .renderingMode(.template)
+                    Text(localStr("events.item.participants"))
+                        .font(.main(size: 11))
+                }
+                .tag(1)
+
+            ContactsView()
+                .tabItem {
+                    Image("ic_contacts")
+                        .renderingMode(.template)
+                    Text(localStr("events.item.contacts"))
+                        .font(.main(size: 11))
+                }
+                .tag(2)
             
             ProfileView()
                 .tabItem {

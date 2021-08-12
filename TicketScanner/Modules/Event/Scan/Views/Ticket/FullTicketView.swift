@@ -24,7 +24,7 @@ struct FullTicketView: View {
     var body: some View {
         
         VStack {
-            TicketMainInfoView(model: model.main, status: model.status, isParticipantsTicket: false)
+            TicketMainInfoView(model: model, isParticipantsTicket: false)
             Spacer()
                 .ticket()
             TicketStatusView(model: model.status)

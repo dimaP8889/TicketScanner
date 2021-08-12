@@ -15,8 +15,8 @@ final class ParticipantsStore : ObservableObject {
     
     private var reducer: ParticipantsReducer
     
-    init() {
-        state = ParticipantsModel(filter: .all, participantsInfo: [])
+    init(eventId : String) {
+        state = ParticipantsModel(eventId: eventId)
         reducer = ParticipantsReducer()
     }
     
@@ -30,5 +30,23 @@ final class ParticipantsStore : ObservableObject {
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: dispatch(action:))
             .store(in: &cancellables)
+    }
+}
+
+// MARK: - Public Variables
+extension ParticipantsStore {
+    
+    var filter : String {
+        state.filter.rawValue
+    }
+    
+    #warning("Set time")
+    var participants : [ParticipantsInfoModel] {
+        let tickets = state.participantsInfo.adaptToFullTicketModel()
+        return [ParticipantsInfoModel(time: "00:00", tickets: tickets)]
+    }
+    
+    var eventId : String {
+        state.eventId
     }
 }

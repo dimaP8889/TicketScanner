@@ -9,12 +9,16 @@ import SwiftUI
 
 struct TicketMainInfoView: View {
     
-    let model : TicketMainInfoModel
-    let status : TicketStatus
+    let model : FullTicketModel
     let isParticipantsTicket : Bool
     
     private var statusImage : Image {
-        return Image("ic_red_cross")
+        switch model.status {
+        case .success:
+            return Image("ic_success_tick")
+        default:
+            return Image("ic_red_cross")
+        }
     }
     
     private var timeTextColor : Color {
@@ -24,13 +28,13 @@ struct TicketMainInfoView: View {
     var body: some View {
         VStack(spacing: 32) {
             HStack(alignment: .firstTextBaseline, spacing: 0) {
-                Text(model.name)
+                Text(model.main.name)
                     .font(.main(size: 17))
                     .foregroundColor(Color.codGray)
                 Spacer()
                 statusImage
                     .padding(.trailing, 10)
-                Text(model.time)
+                Text(model.main.time)
                     .font(.main(size: 14))
                     .foregroundColor(timeTextColor)
             }
@@ -38,7 +42,7 @@ struct TicketMainInfoView: View {
                 Text("#")
                     .font(.main(size: 20))
                     .foregroundColor(Color.codGray)
-                Text(model.ticketNumber)
+                Text(model.main.ticketNumber)
                     .font(.main(size: 20))
                     .foregroundColor(Color.codGray)
                 Spacer()
@@ -53,6 +57,6 @@ struct TicketMainInfoView: View {
 
 struct TicketMainInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        TicketMainInfoView(model: TicketMainInfoModel(name: "Vetralan Hampston", time: "18:54:13", ticketNumber: "1214Q67839ZX"), status: .random, isParticipantsTicket: Bool.random())
+        TicketMainInfoView(model: .random, isParticipantsTicket: true)
     }
 }

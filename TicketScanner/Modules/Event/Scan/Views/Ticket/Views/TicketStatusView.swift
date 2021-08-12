@@ -20,6 +20,8 @@ struct TicketStatusView: View {
             CheckedInView(time: time, date: date)
         case let .wrongEvent(name, time):
             WrongEventView(festivalName: name, date: time)
+        case .success:
+            EmptyView()
         }
     }
 }

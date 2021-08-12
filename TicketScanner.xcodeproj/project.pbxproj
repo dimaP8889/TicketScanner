@@ -38,6 +38,7 @@
 		F138C4572678DBEB00915BC5 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138C4562678DBEB00915BC5 /* AppData.swift */; };
 		F138C4592678DE4200915BC5 /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138C4582678DE4200915BC5 /* AppRootView.swift */; };
 		F13986F0266D1E5F00AD3199 /* ActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13986EF266D1E5F00AD3199 /* ActiveView.swift */; };
+		F148999E26C5B97000FEC1B8 /* VisitiorsApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F148999D26C5B97000FEC1B8 /* VisitiorsApiModel.swift */; };
 		F14BB48226AC42A2004CA680 /* ParticipantsInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14BB48126AC42A2004CA680 /* ParticipantsInfoModel.swift */; };
 		F14BB48926AC528F004CA680 /* ParticipantsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14BB48826AC528F004CA680 /* ParticipantsListView.swift */; };
 		F14BB48C26AC54F2004CA680 /* TimeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14BB48B26AC54F2004CA680 /* TimeListView.swift */; };
@@ -141,6 +142,7 @@
 		F138C4562678DBEB00915BC5 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		F138C4582678DE4200915BC5 /* AppRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootView.swift; sourceTree = "<group>"; };
 		F13986EF266D1E5F00AD3199 /* ActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveView.swift; sourceTree = "<group>"; };
+		F148999D26C5B97000FEC1B8 /* VisitiorsApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitiorsApiModel.swift; sourceTree = "<group>"; };
 		F14BB48126AC42A2004CA680 /* ParticipantsInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsInfoModel.swift; sourceTree = "<group>"; };
 		F14BB48826AC528F004CA680 /* ParticipantsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsListView.swift; sourceTree = "<group>"; };
 		F14BB48B26AC54F2004CA680 /* TimeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeListView.swift; sourceTree = "<group>"; };
@@ -915,6 +917,7 @@
 				F11BD1AB26B09B3200ED352D /* Scan */,
 				F1102011267F366200AB420F /* AuthApiModel.swift */,
 				F1A8B9FE26AF3C7C00BD4677 /* EventListApiModel.swift */,
+				F148999D26C5B97000FEC1B8 /* VisitiorsApiModel.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -1062,6 +1065,7 @@
 				F1DE37112693B822001D11C0 /* ParticipantsModel.swift in Sources */,
 				F19815802674E4E500E9218F /* OkButton.swift in Sources */,
 				F1648D81266FE54700F1FDC1 /* ScanCameraView.swift in Sources */,
+				F148999E26C5B97000FEC1B8 /* VisitiorsApiModel.swift in Sources */,
 				F14BB49B26AC9FB3004CA680 /* LogoutBigButton.swift in Sources */,
 				F1102009267EA4D200AB420F /* Keychain.swift in Sources */,
 				F10A0D302655C76600487FD5 /* InfoFieldView.swift in Sources */,

@@ -25,6 +25,7 @@ struct TicketMainInfoModel {
 
 enum TicketStatus {
     
+    case success
     case refunded(time: String)
     case checkedIn(time: String, date: String)
     case wrongEvent(name: String, time: String)

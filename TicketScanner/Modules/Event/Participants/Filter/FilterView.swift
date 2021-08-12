@@ -104,6 +104,6 @@ struct FilterView_Previews: PreviewProvider {
 
     static var previews: some View {
         FilterView()
-            .environmentObject(ParticipantsStore())
+            .environmentObject(ParticipantsStore(eventId: ""))
     }
 }

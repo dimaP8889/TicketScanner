@@ -24,11 +24,17 @@ struct ParticipantsView: View {
                 }
                 .padding([.leading, .trailing], 12)
                 .padding(.top, 16)
-                ParticipantsListView(data: participantsStore.state.participantsInfo)
+                ParticipantsListView(data: participantsStore.participants)
             }
         }
         .onAppear {
-            participantsStore.dispatch(action: .loadParticipants(name: ""))
+            participantsStore.dispatch(
+                action: .loadParticipants(
+                    name: "",
+                    filter: participantsStore.filter,
+                    eventId: participantsStore.eventId
+                )
+            )
         }
     }
 }

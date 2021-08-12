@@ -10,26 +10,34 @@ import Combine
 
 struct ParticipantsModel {
     
+    var eventId : String
     var filter : FilterType
-    var participantsInfo : [ParticipantsInfoModel]
+    var participantsInfo : VisitiorsApiModel
+    
+    init(eventId : String) {
+        
+        self.eventId = eventId
+        filter = .all
+        participantsInfo = .init(checkins: [])
+    }
 }
 
 // MARK: - Model
 extension ParticipantsModel {
     
-    enum FilterType {
+    enum FilterType : String {
         
-        case all
-        case success
-        case failure
+        case all = "all"
+        case success = "ok"
+        case failure = "not_ok"
     }
 }
 
 enum ParticipantsAction {
     
     case changeType(to: ParticipantsModel.FilterType)
-    case loadParticipants(name : String)
-    case setParticipants(data : [ParticipantsInfoModel])
+    case loadParticipants(name : String, filter: String, eventId: String)
+    case setParticipants(response : Response<VisitiorsApiModel, ErrorResponse>)
 }
 
 struct ParticipantsReducer {
@@ -40,13 +48,22 @@ struct ParticipantsReducer {
         case let .changeType(to: type):
             state.filter = type
             return nil
-        case let .loadParticipants(name):
-            return Networking.main?.loadParticipants(with: name)
-                .map { ParticipantsAction.setParticipants(data: $0) }
+        case let .loadParticipants(name, filter, eventId):
+            return Networking.main?.loadParticipants(with: name, filter: filter, eventId: eventId)
+                .map { data in ParticipantsAction.setParticipants(response: data) }
                 .eraseToAnyPublisher()
-        case let .setParticipants(data):
-            state.participantsInfo = data
-            return nil
+        case let .setParticipants(response):
+            switch response {
+            case let .success(data):
+                state.participantsInfo = data
+                return nil
+            case let .backend(error):
+                print(error)
+                return nil
+            case let .system(error):
+                print(error)
+                return nil
+            }
         }
     }
 }

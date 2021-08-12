@@ -13,7 +13,7 @@ struct ParticipantSmallTicketView: View {
     
     private var statusImage : Image {
         switch data.status {
-        case .checkedIn:
+        case .success:
             return Image("ic_success_tick")
         default:
             return Image("ic_red_cross")

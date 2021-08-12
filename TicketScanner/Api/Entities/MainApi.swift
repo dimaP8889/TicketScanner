@@ -12,7 +12,7 @@ enum MainApi {
     
     case authorize(user: String, password: String)
     case loadEvents
-    case loadParticipants(name: String)
+    case loadParticipants(name: String, filter: String, eventId: String)
     case scan(validation: String, eventId : String)
 }
 
@@ -26,15 +26,8 @@ extension API where RQ == MainApi {
         sync(.loadEvents)
     }
     
-    func loadParticipants(with name : String) -> AnyPublisher<[ParticipantsInfoModel], Never> {
-        let numberOfTickets = (3...10).randomElement()!
-        let part = (0...numberOfTickets).map { _ in
-            ParticipantsInfoModel.random
-        }
-        let publisher = part.publisher
-        return publisher
-            .collect()
-            .eraseToAnyPublisher()
+    func loadParticipants(with name : String, filter: String, eventId: String) -> AnyPublisher<Response<VisitiorsApiModel, ErrorResponse>, Never> {
+        sync(.loadParticipants(name: name, filter: filter, eventId: eventId))
     }
     
     func scan(validation: String, eventId: String) -> AnyPublisher<Response<ScanSuccessResultApiModel, ScanFailResultApiModel>, Never> {
@@ -51,7 +44,7 @@ extension MainApi : Requestable {
         case .loadEvents:
             return "/events"
         case .loadParticipants:
-            return ""
+            return "/checkins"
         case .scan:
             return "/scan"
         }
@@ -66,8 +59,12 @@ extension MainApi : Requestable {
             ]
         case .loadEvents:
             return [:]
-        case  .loadParticipants:
-            return [:]
+        case let .loadParticipants(name, filter, eventId):
+            return [
+                "eventId" : eventId,
+                "status" : filter,
+                "term" : name
+            ]
         case let .scan(validation, eventId):
             return [
                 "ticketValidationString": validation,

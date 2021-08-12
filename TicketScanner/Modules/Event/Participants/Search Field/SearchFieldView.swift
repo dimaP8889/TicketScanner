@@ -29,7 +29,13 @@ struct SearchFieldView: View {
                     .font(.main(size: 17))
                     .modifier(ClearButton(text: $text))
                     .onChange(of: text) { value in
-                        participantsStore.dispatch(action: .loadParticipants(name: value))
+                        participantsStore.dispatch(
+                            action: .loadParticipants(
+                                name: text,
+                                filter: participantsStore.filter,
+                                eventId: participantsStore.eventId
+                            )
+                        )
                     }
                 Spacer(minLength: 3)
             }
