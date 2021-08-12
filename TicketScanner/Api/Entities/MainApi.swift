@@ -37,6 +37,19 @@ extension API where RQ == MainApi {
 
 extension MainApi : Requestable {
     
+    func parameters() -> [String : String] {
+        switch self {
+        case let .loadParticipants(name, filter, eventId):
+            return [
+                "eventId": eventId,
+                "status": filter,
+                "term": name
+            ]
+        default:
+            return [:]
+        }
+    }
+    
     func endPointRoute() -> String {
         switch self {
         case .authorize:
@@ -59,12 +72,8 @@ extension MainApi : Requestable {
             ]
         case .loadEvents:
             return [:]
-        case let .loadParticipants(name, filter, eventId):
-            return [
-                "eventId" : eventId,
-                "status" : filter,
-                "term" : name
-            ]
+        case .loadParticipants:
+            return [:]
         case let .scan(validation, eventId):
             return [
                 "ticketValidationString": validation,
@@ -89,9 +98,9 @@ extension MainApi : Requestable {
     
     func authorizationRequired() -> Bool {
         switch self {
-        case .loadEvents, .scan:
+        case .loadEvents, .scan, .loadParticipants:
             return true
-        default:
+        case .authorize:
             return false
         }
     }
