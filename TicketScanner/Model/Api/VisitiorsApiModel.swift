@@ -29,6 +29,38 @@ extension VisitiorsApiModel {
         let result: String
         let buyer: Buyer?
         let timestamp: Int
+        
+        init(from decoder: Decoder) throws {
+            
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            
+            if let ticketTypeUk = try? container.decode(String?.self, forKey: .ticketTypeUk) {
+                self.ticketTypeUk = ticketTypeUk
+            } else {
+                self.ticketTypeUk = nil
+            }
+            
+            if let ticketTypeEn = try? container.decode(String?.self, forKey: .ticketTypeEn) {
+                self.ticketTypeEn = ticketTypeEn
+            } else {
+                self.ticketTypeEn = nil
+            }
+            
+            if let validationString = try? container.decode(String?.self, forKey: .validationString) {
+                self.validationString = validationString
+            } else {
+                self.validationString = nil
+            }
+            
+            result = try container.decode(String.self, forKey: .result)
+            if let buyer = try? container.decode(Buyer?.self, forKey: .buyer) {
+                self.buyer = buyer
+            } else {
+                self.buyer = nil
+            }
+            
+            timestamp = try container.decode(Int.self, forKey: .timestamp)
+        }
     }
 }
 
@@ -38,21 +70,18 @@ extension VisitiorsApiModel {
         
         return checkins.map { checkin in
             
-            #warning("Ticket Number")
             guard let buyer = checkin.buyer else { return nil }
             
             let time = Date(timeIntervalSince1970: TimeInterval(checkin.timestamp / 1000)).stringFullTime
-            let main = TicketMainInfoModel(name: buyer.name, time: time, ticketNumber: "Lol")
+            let main = TicketMainInfoModel(name: buyer.name, time: time, ticketNumber: checkin.validationString ?? "")
             
             let status : TicketStatus = {
                 
                 switch checkin.result {
                 case "ok":
                     return .success
-                case "not_ok":
-                    return .wrongEvent(name: "", time: "")
                 default:
-                    return .success
+                    return .wrongEvent(name: "", time: "")
                 }
             }()
             
