@@ -29,11 +29,7 @@ struct ParticipantsView: View {
         }
         .onAppear {
             participantsStore.dispatch(
-                action: .loadParticipants(
-                    name: "",
-                    filter: participantsStore.filter,
-                    eventId: participantsStore.eventId
-                )
+                action: .loadParticipants
             )
         }
     }

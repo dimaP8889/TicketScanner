@@ -40,10 +40,15 @@ extension ParticipantsStore {
         state.filter.rawValue
     }
     
-    #warning("Set time")
     var participants : [ParticipantsInfoModel] {
-        let tickets = state.participantsInfo.adaptToFullTicketModel()
-        return [ParticipantsInfoModel(time: "00:00", tickets: tickets)]
+        let sorted = state.participantsInfo.sortByTime()
+        return sorted.map { (hour, model) in
+            return ParticipantsInfoModel(
+                timeNum: Double(hour * 3600),
+                tickets: model.adaptToFullTicketModel()
+            )
+        }
+        .sorted { $0.timeNum > $1.timeNum }
     }
     
     var eventId : String {

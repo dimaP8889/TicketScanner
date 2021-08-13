@@ -11,8 +11,13 @@ struct ParticipantsInfoModel : Identifiable {
     
     let id = UUID()
     
-    let time : String
+    let timeNum : Double
     let tickets : [FullTicketModel]
+    
+    var time : String {
+        let time = Date(timeIntervalSince1970: timeNum)
+        return time.stringShortTime
+    }
 }
 
 extension ParticipantsInfoModel {
@@ -27,6 +32,6 @@ extension ParticipantsInfoModel {
             FullTicketModel.random
         }
         let time = times.randomElement()!
-        return ParticipantsInfoModel(time: time, tickets: tickets)
+        return ParticipantsInfoModel(timeNum: 2838439893, tickets: tickets)
     }
 }

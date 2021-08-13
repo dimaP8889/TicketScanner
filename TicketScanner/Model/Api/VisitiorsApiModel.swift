@@ -16,6 +16,17 @@ extension VisitiorsApiModel {
     
     struct Checkins : Codable {
         
+        #warning("Delete later")
+        internal init(ticketTypeUk: String?, ticketTypeEn: String?, validationString: String?, result: String, buyer: VisitiorsApiModel.Buyer?, timestamp: Int) {
+            self.ticketTypeUk = ticketTypeUk
+            self.ticketTypeEn = ticketTypeEn
+            self.validationString = validationString
+            self.result = result
+            self.buyer = buyer
+            self.timestamp = timestamp
+        }
+        
+        
         enum CodingKeys : String, CodingKey {
             
             case ticketTypeUk = "ticketType_uk"
@@ -61,10 +72,52 @@ extension VisitiorsApiModel {
             
             timestamp = try container.decode(Int.self, forKey: .timestamp)
         }
+        
+        #warning("Delete Later")
+        func copy() -> Checkins {
+            Checkins(
+                ticketTypeUk: ticketTypeUk,
+                ticketTypeEn: ticketTypeEn,
+                validationString: validationString,
+                result: result,
+                buyer: buyer,
+                timestamp: timestamp + 5000000
+            )
+        }
     }
 }
 
 extension VisitiorsApiModel {
+    
+    func sortByTime() -> [Int: VisitiorsApiModel] {
+        
+        var timeDictionary : [Int: [Checkins]] = [:]
+        
+        let checkins = self.checkins
+        let new = checkins.map { $0.copy() }
+        let new1 = new.map { $0.copy() }
+        
+        let all = (checkins + new + new1).sorted { $0.timestamp > $1.timestamp }
+        for checkin in all {
+            
+            let seconds = checkin.timestamp / 1000
+            let hour = seconds / 3600
+            
+            if let oldTime = timeDictionary[hour] {
+                let newCheckin = oldTime + [checkin]
+                timeDictionary[hour] = newCheckin
+            } else {
+                timeDictionary[hour] = [checkin]
+            }
+        }
+        
+        var returnDict : [Int: VisitiorsApiModel] = [:]
+        timeDictionary.forEach {
+            returnDict[$0.key] = VisitiorsApiModel(checkins: $0.value)
+        }
+        
+        return returnDict
+    }
     
     func adaptToFullTicketModel() -> [FullTicketModel] {
         

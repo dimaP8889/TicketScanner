@@ -13,11 +13,13 @@ struct ParticipantsModel {
     var eventId : String
     var filter : FilterType
     var participantsInfo : VisitiorsApiModel
+    var searchText : String
     
     init(eventId : String) {
         
         self.eventId = eventId
         filter = .all
+        searchText = ""
         participantsInfo = .init(checkins: [])
     }
 }
@@ -36,7 +38,8 @@ extension ParticipantsModel {
 enum ParticipantsAction {
     
     case changeType(to: ParticipantsModel.FilterType)
-    case loadParticipants(name : String, filter: String, eventId: String)
+    case loadParticipants
+    case changeSearch(text: String)
     case setParticipants(response : Response<VisitiorsApiModel, ErrorResponse>)
 }
 
@@ -45,11 +48,14 @@ struct ParticipantsReducer {
     func reduce(state: inout ParticipantsModel, action: ParticipantsAction) -> AnyPublisher<ParticipantsAction, Never>? {
         
         switch action {
-        case let .changeType(to: type):
+        case let .changeType(type):
             state.filter = type
-            return nil
-        case let .loadParticipants(name, filter, eventId):
-            return Networking.main?.loadParticipants(with: name, filter: filter, eventId: eventId)
+            return reduce(state: &state, action: .loadParticipants)
+        case let .changeSearch(text):
+            state.searchText = text
+            return reduce(state: &state, action: .loadParticipants)
+        case .loadParticipants:
+            return Networking.main?.loadParticipants(with: state.searchText, filter: state.filter.rawValue, eventId: state.eventId)
                 .map { data in ParticipantsAction.setParticipants(response: data) }
                 .eraseToAnyPublisher()
         case let .setParticipants(response):
@@ -64,6 +70,6 @@ struct ParticipantsReducer {
                 print(error)
                 return nil
             }
-        }
+    }
     }
 }
