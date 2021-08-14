@@ -55,14 +55,15 @@ struct EventTabBarView: View {
                 }
                 .tag(1)
 
-            ContactsView()
-                .tabItem {
-                    Image("ic_contacts")
-                        .renderingMode(.template)
-                    Text(localStr("events.item.contacts"))
-                        .font(.main(size: 11))
-                }
-                .tag(2)
+            #warning("TODO")
+//            ContactsView()
+//                .tabItem {
+//                    Image("ic_contacts")
+//                        .renderingMode(.template)
+//                    Text(localStr("events.item.contacts"))
+//                        .font(.main(size: 11))
+//                }
+//                .tag(2)
             
             ProfileView()
                 .tabItem {
