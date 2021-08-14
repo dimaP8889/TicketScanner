@@ -45,6 +45,7 @@
 //Scan
 "scan.enter.number.title" = "Ввести номер";
 "scan.error.refunded" = "This ticket has been refunded";
+"scan.error.invalidQR" = "Invalid QR code";
 "scan.error.wrong_event" = "Wrong event";
 "scan.error.wrong_event.secondary" = "This ticket is for event:";
 "scan.error.checked_in" = "Already checked-in";
@@ -76,3 +77,8 @@
 //Profile
 "profile.title" = "Ваш профіль";
 "profile.controller" = "Контролер";
+
+//Ticket
+"ticket.status.not_activated.name.placeholder" = "Pre-printed ticket";
+"ticket.status.not_activated.tel.placeholder" = "No buyer info";
+"ticket.status.not_activated.email.placeholder" = "No buyer info";

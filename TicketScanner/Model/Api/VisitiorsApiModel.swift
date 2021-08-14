@@ -64,6 +64,34 @@ extension VisitiorsApiModel {
     }
 }
 
+extension VisitiorsApiModel.Checkins {
+    
+    var notActivated : FullTicketModel {
+        
+        let time = Date(timeIntervalSince1970: TimeInterval(timestamp / 1000))
+        let main = TicketMainInfoModel(name: localStr("ticket.status.not_activated.name.placeholder"), time: time.stringFullTime, ticketNumber: validationString ?? "")
+        
+        let ticketType : String
+        switch Defaults.shared.getCurrentLang() {
+        case "en":
+            ticketType = ticketTypeEn ?? ticketTypeUk ?? ""
+        default:
+            ticketType = ticketTypeUk ?? localStr("ticket.status.not_activated.name.placeholder")
+        }
+        
+        return FullTicketModel(
+            main: main,
+            status: .notActivated,
+            secondary: TicketSecondaryInfoModel(
+                type: ticketType,
+                number: localStr("ticket.status.not_activated.tel.placeholder"),
+                email: localStr("ticket.status.not_activated.email.placeholder")
+            ),
+            timeDouble: Double(timestamp)
+        )
+    }
+}
+
 extension VisitiorsApiModel {
     
     func sortByTime() -> [Int: VisitiorsApiModel] {
@@ -97,7 +125,9 @@ extension VisitiorsApiModel {
         
         return checkins.map { checkin in
             
-            guard let buyer = checkin.buyer else { return nil }
+            guard let buyer = checkin.buyer else {
+                return checkin.notActivated
+            }
             
             let time = Date(timeIntervalSince1970: TimeInterval(checkin.timestamp / 1000))
             let main = TicketMainInfoModel(name: buyer.name, time: time.stringFullTime, ticketNumber: checkin.validationString ?? "")
@@ -121,6 +151,8 @@ extension VisitiorsApiModel {
                     return .wrongEvent(name: ticketType, time: nil)
                 case "success":
                     return .success
+                case "ticket_is_not_preprint_activated":
+                    return .notActivated
                 default:
                     return .wrongEvent(name: ticketType, time: nil)
                 }

@@ -50,7 +50,6 @@ struct TicketMainInfoView: View {
         }
         .padding(.top, 19)
         .padding([.leading, .trailing], 16)
-        .padding(.bottom, 24)
         .background(Color.clear)
     }
 }

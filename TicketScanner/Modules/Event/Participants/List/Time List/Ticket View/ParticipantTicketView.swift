@@ -30,7 +30,7 @@ struct ParticipantTicketView: View {
         }
         .background(
             RoundedRectangle(cornerRadius: 18)
-                .foregroundColor(.gallery)
+                .foregroundColor(isOpened ? .galleryDark : .gallery)
         )
         .onTapGesture {
             isOpened ?

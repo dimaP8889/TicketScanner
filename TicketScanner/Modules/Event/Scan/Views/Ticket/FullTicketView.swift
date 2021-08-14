@@ -25,12 +25,14 @@ struct FullTicketView: View {
         
         VStack {
             TicketMainInfoView(model: model, isParticipantsTicket: false)
+                .padding(.bottom, 24)
             Spacer()
                 .ticket()
             TicketStatusView(model: model.status)
             Spacer()
                 .ticket()
             TicketSecondaryInfoView(model: model.secondary)
+                .padding(.top, 32)
             Spacer()
             HStack {
                 Spacer()

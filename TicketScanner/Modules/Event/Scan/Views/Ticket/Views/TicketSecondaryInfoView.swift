@@ -18,7 +18,7 @@ struct TicketSecondaryInfoView: View {
         HStack {
             VStack(alignment: .leading, spacing: 8) {
                 
-                HStack(alignment: .top, spacing: 24) {
+                HStack(alignment: .bottom, spacing: 24) {
                     Text(localStr("scan.ticket.type"))
                         .mainTicketStyle()
                         .frame(width: width, alignment: .leading)
@@ -27,7 +27,7 @@ struct TicketSecondaryInfoView: View {
                         .secodaryTicketStyle()
                         .padding(.top, 2)
                 }
-                HStack(alignment: .top, spacing: 24) {
+                HStack(alignment: .bottom, spacing: 24) {
                     Text(localStr("scan.ticket.phone"))
                         .mainTicketStyle()
                         .frame(width: width, alignment: .leading)
@@ -36,7 +36,7 @@ struct TicketSecondaryInfoView: View {
                         .secodaryTicketStyle()
                         .padding(.top, 2)
                 }
-                HStack(alignment: .top, spacing: 24) {
+                HStack(alignment: .bottom, spacing: 24) {
                     Text(localStr("scan.ticket.email"))
                         .mainTicketStyle()
                         .frame(width: width, alignment: .leading)
@@ -56,7 +56,6 @@ struct TicketSecondaryInfoView: View {
             }
             Spacer()
         }
-        .padding(.top, 32)
         .padding(.leading, 16)
     }
 }

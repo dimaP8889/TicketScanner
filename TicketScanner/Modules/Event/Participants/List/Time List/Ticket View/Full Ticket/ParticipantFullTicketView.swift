@@ -12,16 +12,13 @@ struct ParticipantFullTicketView: View {
     let model : FullTicketModel
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             TicketMainInfoView(model: model, isParticipantsTicket: true)
+            TicketStatusView(model: model.status)
             Spacer()
                 .ticket()
-            if model.isNeedToShowStatus {
-                TicketStatusView(model: model.status)
-                Spacer()
-                    .ticket()
-            }
             TicketSecondaryInfoView(model: model.secondary)
+                .padding(.top, 20)
             Spacer()
                 .frame(minHeight: 32)
         }

@@ -18,11 +18,6 @@ struct FullTicketModel : Identifiable {
     
     let timeDouble : Double
     
-    var isNeedToShowStatus : Bool {
-        guard case .success = status else { return true }
-        return false
-    }
-    
     init(main: TicketMainInfoModel, status: TicketStatus, secondary: TicketSecondaryInfoModel, timeDouble: Double) {
         self.ticketId = {
             var hasher = Hasher()
@@ -47,6 +42,7 @@ struct TicketMainInfoModel {
 enum TicketStatus {
     
     case success
+    case notActivated
     case refunded(time: String?)
     case checkedIn(time: String?, date: String?)
     case wrongEvent(name: String, time: String?)
@@ -99,7 +95,7 @@ extension FullTicketModel {
         
         return FullTicketModel(
             main: main,
-            status: TicketStatus.random,
+            status: .random,
             secondary: secondary,
             timeDouble: Double.random(in: 0...500)
         )
