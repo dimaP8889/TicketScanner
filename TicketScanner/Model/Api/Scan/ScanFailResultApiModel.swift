@@ -59,7 +59,7 @@ extension ScanFailResultApiModel {
         default:
             title = expectedEvent?.titleUk ?? ""
         }
-        let name = ticket.buyer.name
+        let name = ticket.buyer?.name ?? localStr("ticket.status.not_activated.name.placeholder")
         let date = Date()
         
         let main = TicketMainInfoModel(name: name, time: date.stringFullTime, ticketNumber: number)
@@ -99,7 +99,9 @@ extension ScanFailResultApiModel {
             ticketType = ticket.ticketTypeUk
         }
         
-        let secondary = TicketSecondaryInfoModel(type: ticketType, number: ticket.buyer.phone, email: ticket.buyer.email)
+        let number = ticket.buyer?.phone ?? localStr("ticket.status.not_activated.tel.placeholder")
+        let email = ticket.buyer?.email ?? localStr("ticket.status.not_activated.email.placeholder")
+        let secondary = TicketSecondaryInfoModel(type: ticketType, number: number, email: email)
         
         return FullTicketModel(main: main, status: status, secondary: secondary, timeDouble: date.timeIntervalSinceNow)
     }
@@ -135,7 +137,7 @@ extension ScanFailResultApiModel {
         
         let ticketTypeUk: String
         let ticketTypeEn: String?
-        let buyer : Buyer
+        let buyer : Buyer?
     }
 }
 
