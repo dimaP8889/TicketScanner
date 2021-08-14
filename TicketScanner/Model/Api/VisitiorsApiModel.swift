@@ -16,17 +16,6 @@ extension VisitiorsApiModel {
     
     struct Checkins : Codable {
         
-        #warning("Delete later")
-        internal init(ticketTypeUk: String?, ticketTypeEn: String?, validationString: String?, result: String, buyer: VisitiorsApiModel.Buyer?, timestamp: Int) {
-            self.ticketTypeUk = ticketTypeUk
-            self.ticketTypeEn = ticketTypeEn
-            self.validationString = validationString
-            self.result = result
-            self.buyer = buyer
-            self.timestamp = timestamp
-        }
-        
-        
         enum CodingKeys : String, CodingKey {
             
             case ticketTypeUk = "ticketType_uk"
@@ -72,18 +61,6 @@ extension VisitiorsApiModel {
             
             timestamp = try container.decode(Int.self, forKey: .timestamp)
         }
-        
-        #warning("Delete Later")
-        func copy() -> Checkins {
-            Checkins(
-                ticketTypeUk: ticketTypeUk,
-                ticketTypeEn: ticketTypeEn,
-                validationString: validationString,
-                result: result,
-                buyer: buyer,
-                timestamp: timestamp + 5000000
-            )
-        }
     }
 }
 
@@ -93,12 +70,9 @@ extension VisitiorsApiModel {
         
         var timeDictionary : [Int: [Checkins]] = [:]
         
-        let checkins = self.checkins
-        let new = checkins.map { $0.copy() }
-        let new1 = new.map { $0.copy() }
+        let checkins = self.checkins.sorted { $0.timestamp > $1.timestamp }
         
-        let all = (checkins + new + new1).sorted { $0.timestamp > $1.timestamp }
-        for checkin in all {
+        for checkin in checkins {
             
             let seconds = checkin.timestamp / 1000
             let hour = seconds / 3600
@@ -125,18 +99,8 @@ extension VisitiorsApiModel {
             
             guard let buyer = checkin.buyer else { return nil }
             
-            let time = Date(timeIntervalSince1970: TimeInterval(checkin.timestamp / 1000)).stringFullTime
-            let main = TicketMainInfoModel(name: buyer.name, time: time, ticketNumber: checkin.validationString ?? "")
-            
-            let status : TicketStatus = {
-                
-                switch checkin.result {
-                case "ok":
-                    return .success
-                default:
-                    return .wrongEvent(name: "", time: "")
-                }
-            }()
+            let time = Date(timeIntervalSince1970: TimeInterval(checkin.timestamp / 1000))
+            let main = TicketMainInfoModel(name: buyer.name, time: time.stringFullTime, ticketNumber: checkin.validationString ?? "")
             
             let ticketType : String
             switch Defaults.shared.getCurrentLang() {
@@ -146,9 +110,25 @@ extension VisitiorsApiModel {
                 ticketType = checkin.ticketTypeUk ?? ""
             }
             
+            let status : TicketStatus = {
+                
+                switch checkin.result {
+                case "already_checked_in":
+                    return .checkedIn(time: nil, date: nil)
+                case "ticket_was_refunded":
+                    return .refunded(time: nil)
+                case "wrong_event":
+                    return .wrongEvent(name: ticketType, time: nil)
+                case "success":
+                    return .success
+                default:
+                    return .wrongEvent(name: ticketType, time: nil)
+                }
+            }()
+            
             let secondary = TicketSecondaryInfoModel(type: ticketType, number: buyer.phone, email: buyer.email)
             
-            return FullTicketModel(main: main, status: status, secondary: secondary)
+            return FullTicketModel(main: main, status: status, secondary: secondary, timeDouble: Double(checkin.timestamp))
         }.compactMap { $0 }
     }
 }

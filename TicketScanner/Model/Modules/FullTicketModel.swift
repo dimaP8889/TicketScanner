@@ -7,13 +7,34 @@
 
 import Foundation
 
-struct FullTicketModel : Identifiable{
+struct FullTicketModel : Identifiable {
     
     let id = UUID()
     
+    let ticketId : Int
     let main : TicketMainInfoModel
     let status : TicketStatus
     let secondary : TicketSecondaryInfoModel
+    
+    let timeDouble : Double
+    
+    var isNeedToShowStatus : Bool {
+        guard case .success = status else { return true }
+        return false
+    }
+    
+    init(main: TicketMainInfoModel, status: TicketStatus, secondary: TicketSecondaryInfoModel, timeDouble: Double) {
+        self.ticketId = {
+            var hasher = Hasher()
+            hasher.combine(timeDouble)
+            hasher.combine(main.ticketNumber)
+            return hasher.finalize()
+        }()
+        self.main = main
+        self.status = status
+        self.secondary = secondary
+        self.timeDouble = timeDouble
+    }
 }
 
 struct TicketMainInfoModel {
@@ -26,9 +47,9 @@ struct TicketMainInfoModel {
 enum TicketStatus {
     
     case success
-    case refunded(time: String)
-    case checkedIn(time: String, date: String)
-    case wrongEvent(name: String, time: String)
+    case refunded(time: String?)
+    case checkedIn(time: String?, date: String?)
+    case wrongEvent(name: String, time: String?)
 }
 
 struct TicketSecondaryInfoModel {
@@ -79,7 +100,8 @@ extension FullTicketModel {
         return FullTicketModel(
             main: main,
             status: TicketStatus.random,
-            secondary: secondary
+            secondary: secondary,
+            timeDouble: Double.random(in: 0...500)
         )
     }
 }

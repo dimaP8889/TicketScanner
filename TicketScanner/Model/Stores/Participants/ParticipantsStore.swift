@@ -55,3 +55,11 @@ extension ParticipantsStore {
         state.eventId
     }
 }
+
+// MARK: - Public Methods
+extension ParticipantsStore {
+    
+    func isTicketOpen(_ hash : Int) -> Bool {
+        state.openedTicked == hash
+    }
+}

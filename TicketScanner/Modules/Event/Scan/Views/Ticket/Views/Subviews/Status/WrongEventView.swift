@@ -8,10 +8,11 @@
 import SwiftUI
 
 extension TicketStatusView {
+    
     struct WrongEventView: View {
         
         var festivalName : String
-        var date : String
+        var date : String?
         
         var body: some View {
             VStack(alignment: .leading, spacing: 0) {
@@ -27,8 +28,10 @@ extension TicketStatusView {
                 Text(festivalName)
                     .secodaryTicketStyle()
                     .padding(.bottom, 2)
-                Text(date)
-                    .secodaryTicketStyle()
+                if date != nil {
+                    Text(date!)
+                        .secodaryTicketStyle()
+                }
             }
             .padding([.leading, .trailing], 16)
             .padding([.top, .bottom], 24)

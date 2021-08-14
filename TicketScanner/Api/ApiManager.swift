@@ -10,7 +10,11 @@ import Combine
 
 final class Networking {
     
-    private static let globalURL = "https://ticket-checkin.tickets.2204.ua"
+    #if DEV
+        private static let globalURL = "https://ticket-checkin.development.2204ticketing.entireframework.com"
+    #else
+        private static let globalURL = "https://ticket-checkin.tickets.2204.ua"
+    #endif
     
     static let main = API<MainApi>(base: globalURL)
 }

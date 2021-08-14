@@ -16,9 +16,14 @@ struct ParticipantFullTicketView: View {
             TicketMainInfoView(model: model, isParticipantsTicket: true)
             Spacer()
                 .ticket()
+            if model.isNeedToShowStatus {
+                TicketStatusView(model: model.status)
+                Spacer()
+                    .ticket()
+            }
             TicketSecondaryInfoView(model: model.secondary)
             Spacer()
-                .frame(maxHeight: 32)
+                .frame(minHeight: 32)
         }
     }
 }

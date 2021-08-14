@@ -46,8 +46,7 @@ struct EventModel : Identifiable {
         
         if isFinished {
             self.timeToStart = localStr("events.future.ended")
-            #warning("Change later")
-            self.isActive = true
+            self.isActive = false
         } else {
             self.timeToStart = startTime
             self.isActive = true

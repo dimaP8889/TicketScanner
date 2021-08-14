@@ -76,7 +76,7 @@ extension ScanFailResultApiModel {
 //                return nil
 //            }
 //            let date = Date(timeIntervalSince1970: TimeInterval(time / 1000))
-            status = .refunded(time: Date().stringFullTime)
+            status = .refunded(time: nil)
         case "wrong_event":
             guard let time = expectedEvent?.startDateTime else {
                 return nil
@@ -97,7 +97,7 @@ extension ScanFailResultApiModel {
         
         let secondary = TicketSecondaryInfoModel(type: ticketType, number: ticket.buyer.phone, email: ticket.buyer.email)
         
-        return FullTicketModel(main: main, status: status, secondary: secondary)
+        return FullTicketModel(main: main, status: status, secondary: secondary, timeDouble: date.timeIntervalSinceNow)
     }
 }
 

@@ -15,12 +15,15 @@ struct ParticipantsModel {
     var participantsInfo : VisitiorsApiModel
     var searchText : String
     
+    var openedTicked : Int?
+    
     init(eventId : String) {
         
         self.eventId = eventId
         filter = .all
         searchText = ""
         participantsInfo = .init(checkins: [])
+        openedTicked = nil
     }
 }
 
@@ -37,6 +40,8 @@ extension ParticipantsModel {
 
 enum ParticipantsAction {
     
+    case openTicket(hash: Int)
+    case closeTicket
     case changeType(to: ParticipantsModel.FilterType)
     case loadParticipants
     case changeSearch(text: String)
@@ -50,6 +55,7 @@ struct ParticipantsReducer {
         switch action {
         case let .changeType(type):
             state.filter = type
+            state.openedTicked = nil
             return reduce(state: &state, action: .loadParticipants)
         case let .changeSearch(text):
             state.searchText = text
@@ -70,6 +76,12 @@ struct ParticipantsReducer {
                 print(error)
                 return nil
             }
-    }
+        case let .openTicket(hash):
+            state.openedTicked = hash
+            return nil
+        case .closeTicket:
+            state.openedTicked = nil
+            return nil
+        }
     }
 }

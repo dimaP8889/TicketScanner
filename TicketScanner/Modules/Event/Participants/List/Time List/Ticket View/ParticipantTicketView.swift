@@ -10,9 +10,13 @@ import SwiftUI
 struct ParticipantTicketView: View {
     
     var data : FullTicketModel
-    @State private var isOpened : Bool = false
+    private var isOpened : Bool
     
-    init(data : FullTicketModel) {
+    @EnvironmentObject
+    var participantsStore : ParticipantsStore
+    
+    init(data : FullTicketModel, isOpened : Bool) {
+        self.isOpened = isOpened
         self.data = data
     }
     
@@ -29,13 +33,15 @@ struct ParticipantTicketView: View {
                 .foregroundColor(.gallery)
         )
         .onTapGesture {
-            isOpened.toggle()
+            isOpened ?
+                participantsStore.dispatch(action: .closeTicket) :
+                participantsStore.dispatch(action: .openTicket(hash: data.ticketId))
         }
     }
 }
 
 struct ParticipantTicketView_Previews: PreviewProvider {
     static var previews: some View {
-        ParticipantTicketView(data: FullTicketModel.random)
+        ParticipantTicketView(data: FullTicketModel.random, isOpened: true)
     }
 }

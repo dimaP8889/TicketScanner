@@ -9,6 +9,9 @@ import SwiftUI
 
 struct TimeListView: View {
     
+    @EnvironmentObject
+    var participantsStore : ParticipantsStore
+    
     var data : ParticipantsInfoModel
     
     var body: some View {
@@ -23,7 +26,7 @@ struct TimeListView: View {
                     .padding(.trailing, 16)
             }
             ForEach(data.tickets) { ticket in
-                ParticipantTicketView(data: ticket)
+                ParticipantTicketView(data: ticket, isOpened: participantsStore.isTicketOpen(ticket.ticketId))
                     .padding([.top, .bottom], 2)
             }
         }
