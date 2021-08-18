@@ -15,9 +15,7 @@ struct ScanCameraView: View {
     var body: some View {
         ZStack {
             if scanStore.state.isManual {
-                ManualEnterView { _ in
-                    showAlert(with: .test)
-                }
+                ManualEnterView()
             } else {
                 CodeScannerView(
                     codeTypes: [.qr],
@@ -36,6 +34,10 @@ struct ScanCameraView: View {
                         .padding([.trailing, .bottom], 12)
                 }
             }
+        }
+        .onTapGesture {
+            #warning("Delete later")
+            showAlert(with: AlertModel.test)
         }
         .background(
             RoundedRectangle(cornerRadius: 20)
@@ -71,6 +73,7 @@ private extension ScanCameraView {
     }
     
     //ahhhhh dont like this one
+    #warning("Change alert appearance")
     func showAlert(with model: AlertModel) {
         
         if scanStore.state.alertModel != nil {

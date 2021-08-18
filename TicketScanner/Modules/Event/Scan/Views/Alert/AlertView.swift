@@ -9,10 +9,12 @@ import SwiftUI
 
 struct AlertView: View {
     
-    let model : AlertModel
-    let swipeAction : Action
-    let tapAction : Action
-    let tapWrongQrAction : Action
+    private let model : AlertModel
+    private let swipeAction : Action
+    private let tapAction : Action
+    private let tapWrongQrAction : Action
+    
+    @State private var yOffset : CGFloat = 0
     
     private let timer : Timer
     

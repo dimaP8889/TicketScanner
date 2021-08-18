@@ -13,8 +13,6 @@ struct ManualEnterView: View {
     
     @EnvironmentObject var scanStore : ScanStore
     
-    var codeAction : TypeAction<String>
-    
     var body: some View {
         
         VStack {
@@ -65,6 +63,6 @@ struct ManualEnterView: View {
 
 struct ManualEnterView_Previews: PreviewProvider {
     static var previews: some View {
-        ManualEnterView(codeAction: {_ in})
+        ManualEnterView()
     }
 }
