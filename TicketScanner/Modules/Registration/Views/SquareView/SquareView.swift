@@ -10,7 +10,7 @@ import SwiftUI
 struct SquareView: View {
     
     var buttonAlpha : CGFloat
-    @Binding var isAccountButtonPressed : Bool
+    var isAccountButtonPressed : Bool
     
     var body: some View {
         
@@ -28,16 +28,11 @@ struct SquareView: View {
                 .foregroundColor(.black)
         )
         .background(Color.clear)
-        .onTapGesture {
-            if !isAccountButtonPressed {
-                isAccountButtonPressed = true
-            }
-        }
     }
 }
 
 struct SquareView_Previews: PreviewProvider {
     static var previews: some View {
-        SquareView(buttonAlpha: 1, isAccountButtonPressed: .constant(false))
+        SquareView(buttonAlpha: 1, isAccountButtonPressed: false)
     }
 }

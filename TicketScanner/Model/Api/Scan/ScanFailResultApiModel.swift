@@ -20,6 +20,7 @@ struct ScanFailResultApiModel : Codable {
 // MARK: - Adapter
 extension ScanFailResultApiModel {
     
+    // This one is only for failure response from backend
     func adaptToAlert(number : String) -> AlertModel {
         
         guard let ticket = adaptToTicket(number: number)

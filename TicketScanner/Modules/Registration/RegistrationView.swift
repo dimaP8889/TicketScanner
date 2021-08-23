@@ -10,7 +10,7 @@ import SwiftUI
 // Need Refactor Dimas
 struct RegistrationView: View {
     
-    @State private var topInset : CGFloat = UIScreen.main.bounds.height
+    @State private var topInset : CGFloat = UIScreen.main.bounds.height - 300
     @State private var squareButtonAlpha : CGFloat = 0
     @State private var isAccountButtonPressed : Bool = false
     
@@ -39,7 +39,7 @@ struct RegistrationView: View {
                         .frame(width: 0, height: topInset)
                     SquareView(
                         buttonAlpha: squareButtonAlpha,
-                        isAccountButtonPressed: $isAccountButtonPressed.animation(.easeOut(duration: 1))
+                        isAccountButtonPressed: isAccountButtonPressed
                     )
                     .frame(
                         width: isAccountButtonPressed
@@ -72,14 +72,16 @@ struct RegistrationView: View {
             }
             .padding([.leading], 12)
             .onAppear {
-                let baseAnimation = Animation.spring(
-                    response: 1,
-                    dampingFraction: 0.7,
-                    blendDuration: 1
-                )
+                let baseAnimation = Animation.easeIn(duration: 1)
                 withAnimation(baseAnimation) {
                     squareButtonAlpha = 1
                     topInset = 18
+                }
+            }
+            .onAnimationCompleted(for: topInset) {
+                let animation = Animation.easeOut(duration: 1)
+                withAnimation(animation) {
+                    isAccountButtonPressed = true
                 }
             }
         }

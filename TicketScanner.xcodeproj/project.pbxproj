@@ -99,6 +99,9 @@
 		F1A8BA0726AF4D6B00BD4677 /* ScanFailResultApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8BA0626AF4D6B00BD4677 /* ScanFailResultApiModel.swift */; };
 		F1A8BA0B26AFFD4D00BD4677 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8BA0A26AFFD4D00BD4677 /* ClearButton.swift */; };
 		F1ADE0F026C814DF00E77360 /* InvalidQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ADE0EF26C814DF00E77360 /* InvalidQRView.swift */; };
+		F1CE7B9E26D4014C00EA53AE /* error.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1CE7B9D26D4014C00EA53AE /* error.wav */; };
+		F1CE7BA026D4015300EA53AE /* success.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1CE7B9F26D4015300EA53AE /* success.wav */; };
+		F1CE7BA226D40E1F00EA53AE /* AnimationCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7BA126D40E1F00EA53AE /* AnimationCompletion.swift */; };
 		F1DE370B2693A583001D11C0 /* SearchFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE370A2693A583001D11C0 /* SearchFieldView.swift */; };
 		F1DE370E2693B038001D11C0 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE370D2693B038001D11C0 /* FilterView.swift */; };
 		F1DE37112693B822001D11C0 /* ParticipantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE37102693B822001D11C0 /* ParticipantsModel.swift */; };
@@ -205,6 +208,9 @@
 		F1A8BA0626AF4D6B00BD4677 /* ScanFailResultApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanFailResultApiModel.swift; sourceTree = "<group>"; };
 		F1A8BA0A26AFFD4D00BD4677 /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		F1ADE0EF26C814DF00E77360 /* InvalidQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidQRView.swift; sourceTree = "<group>"; };
+		F1CE7B9D26D4014C00EA53AE /* error.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = error.wav; sourceTree = "<group>"; };
+		F1CE7B9F26D4015300EA53AE /* success.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = success.wav; sourceTree = "<group>"; };
+		F1CE7BA126D40E1F00EA53AE /* AnimationCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCompletion.swift; sourceTree = "<group>"; };
 		F1DE370A2693A583001D11C0 /* SearchFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldView.swift; sourceTree = "<group>"; };
 		F1DE370D2693B038001D11C0 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		F1DE37102693B822001D11C0 /* ParticipantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsModel.swift; sourceTree = "<group>"; };
@@ -700,6 +706,7 @@
 		F16985FA2653125200B26671 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F1CE7B9C26D4004C00EA53AE /* Sounds */,
 				F11A19E02674DD19001AE455 /* Preference Key */,
 				F11A19D326741701001AE455 /* Views */,
 				F158F45B2665670400AB8AE6 /* Extensions */,
@@ -768,6 +775,7 @@
 				F19815A52676658B00E9218F /* SelectorHelper.swift */,
 				F1102008267EA4D200AB420F /* Keychain.swift */,
 				F11BD1AE26B0B23C00ED352D /* Constants.swift */,
+				F1CE7BA126D40E1F00EA53AE /* AnimationCompletion.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -950,6 +958,15 @@
 			path = TextField;
 			sourceTree = "<group>";
 		};
+		F1CE7B9C26D4004C00EA53AE /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				F1CE7B9F26D4015300EA53AE /* success.wav */,
+				F1CE7B9D26D4014C00EA53AE /* error.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		F1DE37072693A547001D11C0 /* Search Field */ = {
 			isa = PBXGroup;
 			children = (
@@ -1046,9 +1063,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1CE7BA026D4015300EA53AE /* success.wav in Resources */,
 				F1FCC337265EF7DB00951F8B /* ua.strings in Resources */,
 				F1698607265321A000B26671 /* EKRepro-2204.otf in Resources */,
 				F16985ED2653101600B26671 /* Assets.xcassets in Resources */,
+				F1CE7B9E26D4014C00EA53AE /* error.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1085,6 +1104,7 @@
 				F10A0D3D2655D0BF00487FD5 /* CustomTextField.swift in Sources */,
 				F1FCC333265EF79C00951F8B /* Global.swift in Sources */,
 				F1102004267E9BFC00AB420F /* Requestable.swift in Sources */,
+				F1CE7BA226D40E1F00EA53AE /* AnimationCompletion.swift in Sources */,
 				F13986F0266D1E5F00AD3199 /* ActiveView.swift in Sources */,
 				F198157E2674E4E500E9218F /* FullTicketView.swift in Sources */,
 				F198158E26750FD100E9218F /* AlertModel.swift in Sources */,

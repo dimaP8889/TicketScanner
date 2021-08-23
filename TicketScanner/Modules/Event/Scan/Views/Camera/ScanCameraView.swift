@@ -13,7 +13,7 @@ struct ScanCameraView: View {
     
     @EnvironmentObject private var scanStore : ScanStore
     
-    @State private var radius : CGFloat = 100
+    @State private var radius : CGFloat = 0
     @State private var startTime = Date()
     
     @State private var timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
@@ -24,6 +24,11 @@ struct ScanCameraView: View {
         ZStack {
             if scanStore.state.isManual {
                 ManualEnterView()
+                    .onAppear {
+                        // Calling this method to set blur
+                        // when show manual view
+                        radius = startRadius
+                    }
             } else {
                 CodeScannerView(
                     codeTypes: [.qr],
@@ -33,7 +38,6 @@ struct ScanCameraView: View {
                 )
                 .blur(radius: radius, opaque: true)
                 .onAppear {
-                    radius = startRadius
                     startTimer()
                 }
                 .onReceive(timer) { _ in

@@ -16,6 +16,30 @@ struct ScanModel {
     var eventId : String
     
     var isTicketPresented : Bool = false
+    
+    var sound : Sound {
+        
+        guard !isTicketPresented else {
+            return .none
+        }
+        
+        switch alertModel?.alertType {
+        case .checkedIn, .invalidQR, .refunded, .wrongEvent:
+            return .some("error")
+        case .success:
+            return .some("success")
+        case .none:
+            return .none
+        }
+    }
+}
+
+extension ScanModel {
+    
+    enum Sound {
+        case some(String)
+        case none
+    }
 }
 
 enum ScanAction {
