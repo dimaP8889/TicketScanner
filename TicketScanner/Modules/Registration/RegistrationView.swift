@@ -10,7 +10,7 @@ import SwiftUI
 // Need Refactor Dimas
 struct RegistrationView: View {
     
-    @State private var topInset : CGFloat = UIScreen.main.bounds.height - 300
+    @State private var topInset : CGFloat = UIScreen.main.bounds.height
     @State private var squareButtonAlpha : CGFloat = 0
     @State private var isAccountButtonPressed : Bool = false
     
