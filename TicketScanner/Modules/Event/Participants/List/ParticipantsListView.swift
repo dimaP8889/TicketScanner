@@ -21,7 +21,6 @@ struct ParticipantsListView: View {
             VStack(spacing: 0) {
                 ForEach(data) { info in
                     TimeListView(data: info)
-                        .padding([.leading, .trailing], 16)
                 }
             }
         }

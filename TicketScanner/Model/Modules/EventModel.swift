@@ -26,18 +26,7 @@ struct EventModel : Identifiable {
         let dateFormatter = DateFormatter.eventFormatter
         self.startDate = startDate
         
-        if let endDate = endDate {
-            if startDate.isSameDay(with: endDate) {
-                dates = dateFormatter.string(from: startDate)
-            } else {
-                let startDateString = dateFormatter.string(from: startDate)
-                let endDateString = dateFormatter.string(from: endDate)
-                
-                dates = "\(startDateString) — \(endDateString)"
-            }
-        } else {
-            dates = dateFormatter.string(from: startDate)
-        }
+        dates = dateFormatter.string(from: startDate)
         
         self.festivalName = festivalName
         

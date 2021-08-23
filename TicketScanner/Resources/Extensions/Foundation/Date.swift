@@ -44,19 +44,6 @@ extension Date {
         return formatter.string(from: self)
     }
     
-    func isSameDay(with date: Date) -> Bool {
-        
-        let c1 = NSCalendar.current.dateComponents([.year, .month, .day], from: self)
-        let c2 = NSCalendar.current.dateComponents([.year, .month, .day], from: date)
-        
-        if c1.day == c2.day,
-           c1.month == c2.month,
-           c1.year == c2.year {
-            return true
-        }
-        return false
-    }
-    
     func time(to date: Date) -> String {
         
         let calendar = NSCalendar.current

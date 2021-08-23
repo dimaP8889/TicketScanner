@@ -21,15 +21,6 @@ final class ScanStore : ObservableObject {
         reducer = ScanReducer()
     }
     
-    var isTicketPresented : Bool {
-        get { state.isTicketPresented }
-        set { state.isTicketPresented = newValue }
-    }
-    
-    var ticket : FullTicketModel {
-        get { state.ticketModel ?? .random }
-    }
-    
     func dispatch(action: ScanAction) {
         guard let effect = reducer.reduce(state: &state, action: action) else {
             return
@@ -39,5 +30,30 @@ final class ScanStore : ObservableObject {
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: dispatch(action:))
             .store(in: &cancellables)
+    }
+}
+
+// MARK: - Public Ticket
+extension ScanStore {
+    
+    var isTicketPresented : Bool {
+        get { state.isTicketPresented }
+        set { state.isTicketPresented = newValue }
+    }
+    
+    var ticket : FullTicketModel {
+        get { state.ticketModel ?? .random }
+    }
+}
+
+// MARK: - Public Alert
+extension ScanStore {
+    
+    var isAlertHidden : Bool {
+        state.alertModel == nil
+    }
+    
+    var alertModel : AlertModel? {
+        state.alertModel
     }
 }

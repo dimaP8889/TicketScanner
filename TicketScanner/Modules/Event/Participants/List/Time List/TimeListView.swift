@@ -31,6 +31,7 @@ struct TimeListView: View {
             }
         }
         .padding(.top, 2)
+        .padding([.leading, .trailing], 12)
     }
 }
 

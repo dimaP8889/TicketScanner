@@ -35,6 +35,7 @@ struct ParticipantSmallTicketView: View {
                 .foregroundColor(.newGray)
                 .padding(.trailing, 16)
         }
+        .padding([.bottom], 3)
     }
 }
 

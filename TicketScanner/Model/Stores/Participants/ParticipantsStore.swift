@@ -44,7 +44,7 @@ extension ParticipantsStore {
         let sorted = state.participantsInfo.sortByTime()
         return sorted.map { (hour, model) in
             return ParticipantsInfoModel(
-                timeNum: Double(hour * 3600),
+                timeNum: Double((hour + 1) * 3600),
                 tickets: model.adaptToFullTicketModel()
             )
         }

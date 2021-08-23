@@ -35,6 +35,7 @@ struct FilterView: View {
             Spacer()
                 .frame(width: 24)
         }
+        .padding([.bottom], 2)
         .background(
             RoundedRectangle(cornerRadius: 10)
                 .foregroundColor(
@@ -61,6 +62,7 @@ struct FilterView: View {
                 .padding([.top, .bottom], 8)
             Spacer()
         }
+        .padding([.bottom], 2)
         .background(
             RoundedRectangle(cornerRadius: 10)
                 .foregroundColor(
@@ -87,6 +89,7 @@ struct FilterView: View {
                 .padding([.top, .bottom], 8)
             Spacer()
         }
+        .padding([.bottom], 2)
         .background(
             RoundedRectangle(cornerRadius: 10)
                 .foregroundColor(

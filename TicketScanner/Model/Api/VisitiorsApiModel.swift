@@ -125,12 +125,10 @@ extension VisitiorsApiModel {
         
         return checkins.map { checkin in
             
-            guard let buyer = checkin.buyer else {
-                return checkin.notActivated
-            }
+            let name = checkin.buyer?.name ?? localStr("ticket.status.not_activated.name.placeholder")
             
             let time = Date(timeIntervalSince1970: TimeInterval(checkin.timestamp / 1000))
-            let main = TicketMainInfoModel(name: buyer.name, time: time.stringFullTime, ticketNumber: checkin.validationString ?? "")
+            let main = TicketMainInfoModel(name: name, time: time.stringFullTime, ticketNumber: checkin.validationString ?? "")
             
             let ticketType : String
             switch Defaults.shared.getCurrentLang() {
@@ -149,7 +147,7 @@ extension VisitiorsApiModel {
                     return .refunded(time: nil)
                 case "wrong_event":
                     return .wrongEvent(name: ticketType, time: nil)
-                case "success":
+                case "ok":
                     return .success
                 case "ticket_is_not_preprint_activated":
                     return .notActivated
@@ -158,7 +156,10 @@ extension VisitiorsApiModel {
                 }
             }()
             
-            let secondary = TicketSecondaryInfoModel(type: ticketType, number: buyer.phone, email: buyer.email)
+            let num = checkin.buyer?.phone ?? localStr("ticket.status.not_activated.tel.placeholder")
+            let email = checkin.buyer?.phone ?? localStr("ticket.status.not_activated.email.placeholder")
+            
+            let secondary = TicketSecondaryInfoModel(type: ticketType, number: num, email: email)
             
             return FullTicketModel(main: main, status: status, secondary: secondary, timeDouble: Double(checkin.timestamp))
         }.compactMap { $0 }
