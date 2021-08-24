@@ -27,10 +27,10 @@ struct CheckInView: View {
         VStack {
             Text(localStr("registration.button.check-in"))
                 .font(.main(size: 24))
-            .padding([.leading], 12)
-            .padding([.top], 8)
-            .foregroundColor(.white)
-            .opacity(Double(alpha))
+                .padding([.leading], 12)
+                .padding([.top], 8)
+                .foregroundColor(.white)
+                .opacity(Double(alpha))
         }
     }
 }
