@@ -52,6 +52,23 @@
 		F157283B266D14AD00F6BE64 /* EventDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1572839266D122E00F6BE64 /* EventDataView.swift */; };
 		F158F45E266569F100AB8AE6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158F45D266569F100AB8AE6 /* String.swift */; };
 		F15BD055265DA27F0026B6DD /* CustomTextFieldSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15BD054265DA27F0026B6DD /* CustomTextFieldSwift.swift */; };
+		F161847C26D54F5700C97FD9 /* ParticipantsTicketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F161847926D54F5700C97FD9 /* ParticipantsTicketCell.swift */; };
+		F161847D26D54F5700C97FD9 /* ParticipantsTicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F161847A26D54F5700C97FD9 /* ParticipantsTicketViewModel.swift */; };
+		F161847E26D54F5700C97FD9 /* ParticipantsTicketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F161847B26D54F5700C97FD9 /* ParticipantsTicketCell.xib */; };
+		F161848026D5585800C97FD9 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F161847F26D5585800C97FD9 /* UIFont.swift */; };
+		F161848426D568CD00C97FD9 /* NibableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F161848226D568CD00C97FD9 /* NibableProtocol.swift */; };
+		F161848526D568CD00C97FD9 /* NibableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F161848326D568CD00C97FD9 /* NibableView.swift */; };
+		F161848926D568FC00C97FD9 /* RefundedUIKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F161848726D568FC00C97FD9 /* RefundedUIKitView.swift */; };
+		F161848A26D568FC00C97FD9 /* RefundedUIKitView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F161848826D568FC00C97FD9 /* RefundedUIKitView.xib */; };
+		F161849126D56A2300C97FD9 /* InvalidQrUIKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F161848F26D56A2300C97FD9 /* InvalidQrUIKitView.swift */; };
+		F161849226D56A2300C97FD9 /* InvalidQrUIKitView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F161849026D56A2300C97FD9 /* InvalidQrUIKitView.xib */; };
+		F161849526D56A3600C97FD9 /* CheckedInUIKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F161849326D56A3600C97FD9 /* CheckedInUIKitView.swift */; };
+		F161849626D56A3600C97FD9 /* CheckedInUIKitView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F161849426D56A3600C97FD9 /* CheckedInUIKitView.xib */; };
+		F161849926D56A4A00C97FD9 /* WrongEventUIKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F161849726D56A4A00C97FD9 /* WrongEventUIKitView.swift */; };
+		F161849A26D56A4A00C97FD9 /* WrongEventUIKitView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F161849826D56A4A00C97FD9 /* WrongEventUIKitView.xib */; };
+		F161849C26D56D3E00C97FD9 /* RefundedUIKitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F161849B26D56D3E00C97FD9 /* RefundedUIKitViewModel.swift */; };
+		F161849F26D5740B00C97FD9 /* CheckedInUIKitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F161849E26D5740B00C97FD9 /* CheckedInUIKitViewModel.swift */; };
+		F16184A226D5789B00C97FD9 /* WrongEventUIKitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16184A126D5789B00C97FD9 /* WrongEventUIKitViewModel.swift */; };
 		F1648D5E266D2B6B00F1FDC1 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D5D266D2B6B00F1FDC1 /* EventModel.swift */; };
 		F1648D60266D2F2100F1FDC1 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D5F266D2F2100F1FDC1 /* Date.swift */; };
 		F1648D62266D4BC800F1FDC1 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1648D61266D4BC800F1FDC1 /* UINavigationBar.swift */; };
@@ -159,6 +176,23 @@
 		F1572839266D122E00F6BE64 /* EventDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataView.swift; sourceTree = "<group>"; };
 		F158F45D266569F100AB8AE6 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F15BD054265DA27F0026B6DD /* CustomTextFieldSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldSwift.swift; sourceTree = "<group>"; };
+		F161847926D54F5700C97FD9 /* ParticipantsTicketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsTicketCell.swift; sourceTree = "<group>"; };
+		F161847A26D54F5700C97FD9 /* ParticipantsTicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsTicketViewModel.swift; sourceTree = "<group>"; };
+		F161847B26D54F5700C97FD9 /* ParticipantsTicketCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParticipantsTicketCell.xib; sourceTree = "<group>"; };
+		F161847F26D5585800C97FD9 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		F161848226D568CD00C97FD9 /* NibableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibableProtocol.swift; sourceTree = "<group>"; };
+		F161848326D568CD00C97FD9 /* NibableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibableView.swift; sourceTree = "<group>"; };
+		F161848726D568FC00C97FD9 /* RefundedUIKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefundedUIKitView.swift; sourceTree = "<group>"; };
+		F161848826D568FC00C97FD9 /* RefundedUIKitView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RefundedUIKitView.xib; sourceTree = "<group>"; };
+		F161848F26D56A2300C97FD9 /* InvalidQrUIKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidQrUIKitView.swift; sourceTree = "<group>"; };
+		F161849026D56A2300C97FD9 /* InvalidQrUIKitView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvalidQrUIKitView.xib; sourceTree = "<group>"; };
+		F161849326D56A3600C97FD9 /* CheckedInUIKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckedInUIKitView.swift; sourceTree = "<group>"; };
+		F161849426D56A3600C97FD9 /* CheckedInUIKitView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckedInUIKitView.xib; sourceTree = "<group>"; };
+		F161849726D56A4A00C97FD9 /* WrongEventUIKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongEventUIKitView.swift; sourceTree = "<group>"; };
+		F161849826D56A4A00C97FD9 /* WrongEventUIKitView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WrongEventUIKitView.xib; sourceTree = "<group>"; };
+		F161849B26D56D3E00C97FD9 /* RefundedUIKitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefundedUIKitViewModel.swift; sourceTree = "<group>"; };
+		F161849E26D5740B00C97FD9 /* CheckedInUIKitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckedInUIKitViewModel.swift; sourceTree = "<group>"; };
+		F16184A126D5789B00C97FD9 /* WrongEventUIKitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongEventUIKitViewModel.swift; sourceTree = "<group>"; };
 		F1648D5D266D2B6B00F1FDC1 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		F1648D5F266D2F2100F1FDC1 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		F1648D61266D4BC800F1FDC1 /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
@@ -430,6 +464,7 @@
 		F14BB48526AC526C004CA680 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				F161847726D54EBD00C97FD9 /* Table View */,
 				F14BB48A26AC54D7004CA680 /* Time List */,
 				F14BB48826AC528F004CA680 /* ParticipantsListView.swift */,
 			);
@@ -531,6 +566,7 @@
 				F138C44C2677D33700915BC5 /* UINavigationController.swift */,
 				F1648D61266D4BC800F1FDC1 /* UINavigationBar.swift */,
 				F1648D76266EBB4300F1FDC1 /* UITabBar.swift */,
+				F161847F26D5585800C97FD9 /* UIFont.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -560,6 +596,108 @@
 				F15BD054265DA27F0026B6DD /* CustomTextFieldSwift.swift */,
 			);
 			path = Swift;
+			sourceTree = "<group>";
+		};
+		F161847726D54EBD00C97FD9 /* Table View */ = {
+			isa = PBXGroup;
+			children = (
+				F161847826D54F2F00C97FD9 /* Cell */,
+			);
+			path = "Table View";
+			sourceTree = "<group>";
+		};
+		F161847826D54F2F00C97FD9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F161848126D5655000C97FD9 /* Views */,
+				F161847926D54F5700C97FD9 /* ParticipantsTicketCell.swift */,
+				F161847A26D54F5700C97FD9 /* ParticipantsTicketViewModel.swift */,
+				F161847B26D54F5700C97FD9 /* ParticipantsTicketCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F161848126D5655000C97FD9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F161848E26D569C400C97FD9 /* InvalidQr */,
+				F161848B26D5690300C97FD9 /* Refunded */,
+				F161848C26D569A000C97FD9 /* CheckedIn */,
+				F161848D26D569BA00C97FD9 /* WrongEvent */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F161848626D568D200C97FD9 /* Nibable */ = {
+			isa = PBXGroup;
+			children = (
+				F161848326D568CD00C97FD9 /* NibableView.swift */,
+				F161848226D568CD00C97FD9 /* NibableProtocol.swift */,
+			);
+			path = Nibable;
+			sourceTree = "<group>";
+		};
+		F161848B26D5690300C97FD9 /* Refunded */ = {
+			isa = PBXGroup;
+			children = (
+				F161849D26D573DB00C97FD9 /* View Model */,
+				F161848826D568FC00C97FD9 /* RefundedUIKitView.xib */,
+				F161848726D568FC00C97FD9 /* RefundedUIKitView.swift */,
+				F161849B26D56D3E00C97FD9 /* RefundedUIKitViewModel.swift */,
+			);
+			path = Refunded;
+			sourceTree = "<group>";
+		};
+		F161848C26D569A000C97FD9 /* CheckedIn */ = {
+			isa = PBXGroup;
+			children = (
+				F16184A026D5740F00C97FD9 /* View Model */,
+				F161849326D56A3600C97FD9 /* CheckedInUIKitView.swift */,
+				F161849426D56A3600C97FD9 /* CheckedInUIKitView.xib */,
+			);
+			path = CheckedIn;
+			sourceTree = "<group>";
+		};
+		F161848D26D569BA00C97FD9 /* WrongEvent */ = {
+			isa = PBXGroup;
+			children = (
+				F16184A326D57BE600C97FD9 /* View Model */,
+				F161849726D56A4A00C97FD9 /* WrongEventUIKitView.swift */,
+				F161849826D56A4A00C97FD9 /* WrongEventUIKitView.xib */,
+			);
+			path = WrongEvent;
+			sourceTree = "<group>";
+		};
+		F161848E26D569C400C97FD9 /* InvalidQr */ = {
+			isa = PBXGroup;
+			children = (
+				F161848F26D56A2300C97FD9 /* InvalidQrUIKitView.swift */,
+				F161849026D56A2300C97FD9 /* InvalidQrUIKitView.xib */,
+			);
+			path = InvalidQr;
+			sourceTree = "<group>";
+		};
+		F161849D26D573DB00C97FD9 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		F16184A026D5740F00C97FD9 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				F161849E26D5740B00C97FD9 /* CheckedInUIKitViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		F16184A326D57BE600C97FD9 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				F16184A126D5789B00C97FD9 /* WrongEventUIKitViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		F1648D65266EB41E00F1FDC1 /* Event */ = {
@@ -776,6 +914,7 @@
 				F1102008267EA4D200AB420F /* Keychain.swift */,
 				F11BD1AE26B0B23C00ED352D /* Constants.swift */,
 				F1CE7BA126D40E1F00EA53AE /* AnimationCompletion.swift */,
+				F161848626D568D200C97FD9 /* Nibable */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1063,11 +1202,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F161849A26D56A4A00C97FD9 /* WrongEventUIKitView.xib in Resources */,
+				F161849626D56A3600C97FD9 /* CheckedInUIKitView.xib in Resources */,
+				F161848A26D568FC00C97FD9 /* RefundedUIKitView.xib in Resources */,
 				F1CE7BA026D4015300EA53AE /* success.wav in Resources */,
+				F161849226D56A2300C97FD9 /* InvalidQrUIKitView.xib in Resources */,
 				F1FCC337265EF7DB00951F8B /* ua.strings in Resources */,
 				F1698607265321A000B26671 /* EKRepro-2204.otf in Resources */,
 				F16985ED2653101600B26671 /* Assets.xcassets in Resources */,
 				F1CE7B9E26D4014C00EA53AE /* error.wav in Resources */,
+				F161847E26D54F5700C97FD9 /* ParticipantsTicketCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1088,6 +1232,7 @@
 				F19815802674E4E500E9218F /* OkButton.swift in Sources */,
 				F1648D81266FE54700F1FDC1 /* ScanCameraView.swift in Sources */,
 				F148999E26C5B97000FEC1B8 /* VisitiorsApiModel.swift in Sources */,
+				F161849C26D56D3E00C97FD9 /* RefundedUIKitViewModel.swift in Sources */,
 				F14BB49B26AC9FB3004CA680 /* LogoutBigButton.swift in Sources */,
 				F1102009267EA4D200AB420F /* Keychain.swift in Sources */,
 				F10A0D302655C76600487FD5 /* InfoFieldView.swift in Sources */,
@@ -1100,13 +1245,16 @@
 				F1A8B9FF26AF3C7C00BD4677 /* EventListApiModel.swift in Sources */,
 				F10A0D2A2655C44900487FD5 /* CredentialsView.swift in Sources */,
 				F11BD1AF26B0B23C00ED352D /* Constants.swift in Sources */,
+				F161849526D56A3600C97FD9 /* CheckedInUIKitView.swift in Sources */,
 				F10A0D392655CCE700487FD5 /* Color.swift in Sources */,
 				F10A0D3D2655D0BF00487FD5 /* CustomTextField.swift in Sources */,
 				F1FCC333265EF79C00951F8B /* Global.swift in Sources */,
 				F1102004267E9BFC00AB420F /* Requestable.swift in Sources */,
 				F1CE7BA226D40E1F00EA53AE /* AnimationCompletion.swift in Sources */,
+				F161848526D568CD00C97FD9 /* NibableView.swift in Sources */,
 				F13986F0266D1E5F00AD3199 /* ActiveView.swift in Sources */,
 				F198157E2674E4E500E9218F /* FullTicketView.swift in Sources */,
+				F161848426D568CD00C97FD9 /* NibableProtocol.swift in Sources */,
 				F198158E26750FD100E9218F /* AlertModel.swift in Sources */,
 				F1A8BA0726AF4D6B00BD4677 /* ScanFailResultApiModel.swift in Sources */,
 				F19815A426765FDF00E9218F /* ShowCameraView.swift in Sources */,
@@ -1124,6 +1272,7 @@
 				F1572837266D026000F6BE64 /* EventsListView.swift in Sources */,
 				F169860B265322C400B26671 /* Action.swift in Sources */,
 				F19815A1267653D300E9218F /* ManualEnterView.swift in Sources */,
+				F161848926D568FC00C97FD9 /* RefundedUIKitView.swift in Sources */,
 				F198159126752FE800E9218F /* ScanView.swift in Sources */,
 				F11A19DE2674D44E001AE455 /* Text.swift in Sources */,
 				F157283B266D14AD00F6BE64 /* EventDataView.swift in Sources */,
@@ -1131,11 +1280,14 @@
 				F138C4552678DB9600915BC5 /* AppDataStore.swift in Sources */,
 				F11A19E22674DD32001AE455 /* CenteringColumnPreferenceKey.swift in Sources */,
 				F14BB49326AC595F004CA680 /* ParticipantFullTicketView.swift in Sources */,
+				F161848026D5585800C97FD9 /* UIFont.swift in Sources */,
 				F138C4572678DBEB00915BC5 /* AppData.swift in Sources */,
 				F1648D77266EBB4300F1FDC1 /* UITabBar.swift in Sources */,
 				F1648D5E266D2B6B00F1FDC1 /* EventModel.swift in Sources */,
 				F19815812674E4E500E9218F /* WrongEventView.swift in Sources */,
+				F161849F26D5740B00C97FD9 /* CheckedInUIKitViewModel.swift in Sources */,
 				F10A0D372655CB7900487FD5 /* Font.swift in Sources */,
+				F161849126D56A2300C97FD9 /* InvalidQrUIKitView.swift in Sources */,
 				F19815832674E4E500E9218F /* RefundedView.swift in Sources */,
 				F158F45E266569F100AB8AE6 /* String.swift in Sources */,
 				F14BB49826AC91D6004CA680 /* ProfileSquareView.swift in Sources */,
@@ -1155,6 +1307,9 @@
 				F19815A62676658B00E9218F /* SelectorHelper.swift in Sources */,
 				F1A8BA0B26AFFD4D00BD4677 /* ClearButton.swift in Sources */,
 				F16985EB2653101600B26671 /* RegistrationView.swift in Sources */,
+				F161847C26D54F5700C97FD9 /* ParticipantsTicketCell.swift in Sources */,
+				F16184A226D5789B00C97FD9 /* WrongEventUIKitViewModel.swift in Sources */,
+				F161847D26D54F5700C97FD9 /* ParticipantsTicketViewModel.swift in Sources */,
 				F198159926754B7E00E9218F /* View.swift in Sources */,
 				F1648D7D266EC50A00F1FDC1 /* TabBarModel.swift in Sources */,
 				F110200F267F333400AB420F /* MainApi.swift in Sources */,
@@ -1166,6 +1321,7 @@
 				F11A19E52674DD81001AE455 /* CenteringView.swift in Sources */,
 				F172FE8A26655EAC00FF9569 /* LoginCredentialsModel.swift in Sources */,
 				F198158B26750C4B00E9218F /* AlertContentView.swift in Sources */,
+				F161849926D56A4A00C97FD9 /* WrongEventUIKitView.swift in Sources */,
 				F14BB49526AC596C004CA680 /* ParticipantSmallTicketView.swift in Sources */,
 				F16985E92653101600B26671 /* TicketScannerApp.swift in Sources */,
 				F11A19D626741715001AE455 /* LeadingText.swift in Sources */,

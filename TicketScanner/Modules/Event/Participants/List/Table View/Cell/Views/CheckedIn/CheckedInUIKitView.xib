@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckedInUIKitView" customModule="TicketScanner" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="l5v-Os-pgF"/>
+                <outlet property="dateLabel" destination="mne-Fw-CJg" id="cRR-u4-WdN"/>
+                <outlet property="dateView" destination="dg3-Yn-fBu" id="jA3-rL-nTn"/>
+                <outlet property="timeLabel" destination="YhW-XX-0lk" id="FKy-to-VJo"/>
+                <outlet property="titleLabel" destination="4YR-nk-Igp" id="q0s-hg-Y5G"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="427" height="157"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="rh5-IO-dDQ">
+                    <rect key="frame" x="0.0" y="24" width="427" height="109"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4YR-nk-Igp">
+                            <rect key="frame" x="0.0" y="0.0" width="427" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dg3-Yn-fBu">
+                            <rect key="frame" x="0.0" y="26.5" width="427" height="82.5"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_clock2" translatesAutoresizingMaskIntoConstraints="NO" id="yWz-4v-2Sm">
+                                    <rect key="frame" x="0.0" y="35" width="13" height="13"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="13" id="33U-BG-JZL"/>
+                                        <constraint firstAttribute="height" constant="13" id="HEq-xT-Pps"/>
+                                    </constraints>
+                                </imageView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tab-Ie-V8c">
+                                    <rect key="frame" x="25" y="0.0" width="99" height="82.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YhW-XX-0lk">
+                                            <rect key="frame" x="0.0" y="0.0" width="41.5" height="82.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mne-Fw-CJg">
+                                            <rect key="frame" x="57.5" y="0.0" width="41.5" height="82.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="yWz-4v-2Sm" firstAttribute="leading" secondItem="dg3-Yn-fBu" secondAttribute="leading" id="1ws-kM-b4n"/>
+                                <constraint firstItem="tab-Ie-V8c" firstAttribute="leading" secondItem="yWz-4v-2Sm" secondAttribute="trailing" constant="12" id="3eO-3H-dyH"/>
+                                <constraint firstItem="tab-Ie-V8c" firstAttribute="top" secondItem="dg3-Yn-fBu" secondAttribute="top" id="5w0-78-mhk"/>
+                                <constraint firstAttribute="bottom" secondItem="tab-Ie-V8c" secondAttribute="bottom" id="jme-Pz-QLl"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tab-Ie-V8c" secondAttribute="trailing" id="oTx-mU-Umo"/>
+                                <constraint firstItem="yWz-4v-2Sm" firstAttribute="centerY" secondItem="dg3-Yn-fBu" secondAttribute="centerY" id="vEW-sJ-RfL"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="rh5-IO-dDQ" secondAttribute="bottom" constant="24" id="U34-Yu-yIg"/>
+                <constraint firstItem="rh5-IO-dDQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="Uyt-Qp-Sa8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="rh5-IO-dDQ" secondAttribute="trailing" id="fFU-d8-JdC"/>
+                <constraint firstItem="rh5-IO-dDQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="idV-zj-Bbx"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-136.95652173913044" y="-258.14732142857144"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_clock2" width="13" height="13"/>
+    </resources>
+</document>
