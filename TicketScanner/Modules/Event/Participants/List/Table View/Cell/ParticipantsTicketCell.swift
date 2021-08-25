@@ -10,7 +10,8 @@ import SwiftUI
 
 final class ParticipantsTicketCell: UITableViewCell {
     
-    @IBOutlet var mainStackView: UIStackView!
+    @IBOutlet private var mainStackView: UIStackView!
+    @IBOutlet private var mainView: UIView!
     
     // Short Ticket
     @IBOutlet private var shortTicketView: UIView!
@@ -19,10 +20,11 @@ final class ParticipantsTicketCell: UITableViewCell {
     @IBOutlet private var timeLabel: UILabel!
 
     // Status
-    @IBOutlet var invalidQrView: InvalidQrUIKitView!
-    @IBOutlet var refundedView: RefundedUIKitView!
-    @IBOutlet var alreadyCheckedView: CheckedInUIKitView!
-    @IBOutlet var wrongEventView: WrongEventUIKitView!
+    @IBOutlet private var statusStackView: UIStackView!
+    @IBOutlet private var invalidQrView: InvalidQrUIKitView!
+    @IBOutlet private var refundedView: RefundedUIKitView!
+    @IBOutlet private var alreadyCheckedView: CheckedInUIKitView!
+    @IBOutlet private var wrongEventView: WrongEventUIKitView!
     
     // Full Ticket
     @IBOutlet private var fullTicketView: UIView!
@@ -57,7 +59,10 @@ final class ParticipantsTicketCell: UITableViewCell {
 private extension ParticipantsTicketCell {
     
     func updateCell() {
-        #warning("todo")
+        setTicketType()
+        setLabels()
+        setStatusViews()
+        setCellColor()
     }
 }
 
@@ -65,7 +70,10 @@ private extension ParticipantsTicketCell {
 private extension ParticipantsTicketCell {
     
     func setupCell() {
-        #warning("todo")
+        setLabelsParams()
+        setSeparator()
+        setStatusViews()
+        mainView.crop(radius: 18)
     }
     
     func setTicketType() {
@@ -74,7 +82,6 @@ private extension ParticipantsTicketCell {
             return
         }
         
-        shortTicketView.isHidden = viewModel.isOpened
         fullTicketView.isHidden = !viewModel.isOpened
     }
     
@@ -88,7 +95,6 @@ private extension ParticipantsTicketCell {
         
         ticketNumberLabel.font = .main(ofSize: 17)
         ticketNumberLabel.textColor = UIColor(Color.codGray)
-        
         
         ticketTypeTitleLabel.font = .main(ofSize: 14)
         ticketTypeTitleLabel.textColor = UIColor(Color.doveGray)
@@ -108,16 +114,77 @@ private extension ParticipantsTicketCell {
         emailTitleLabel.textColor = UIColor(Color.doveGray)
         
         emailValueLabel.font = .main(ofSize: 14)
-        emailTitleLabel.textColor = UIColor(Color.codGray)
+        emailValueLabel.textColor = UIColor(Color.codGray)
+    }
+    
+    func setLabels() {
+        
+        guard let viewModel = viewModel else { return }
+        
+        participantNameLabel.text = viewModel.model.main.name
+        timeLabel.text = viewModel.model.main.time
+        ticketNumberLabel.text = viewModel.isOpened ? viewModel.model.main.ticketNumber : nil
+        
+        ticketTypeTitleLabel.text = localStr("scan.ticket.type")
+        ticketTypeValueLabel.text = viewModel.model.secondary.type
+        
+        phoneNumberTitleLabel.text = localStr("scan.ticket.phone")
+        phoneNumberValueLabel.text = viewModel.model.secondary.number
+        
+        emailTitleLabel.text = localStr("scan.ticket.email")
+        emailValueLabel.text = viewModel.model.secondary.email
     }
     
     func setStatusViews() {
+        
+        guard let viewModel = viewModel else { return }
         
         invalidQrView.isHidden = true
         refundedView.isHidden = true
         alreadyCheckedView.isHidden = true
         wrongEventView.isHidden = true
         
+        guard viewModel.isOpened else {
+            statusStackView.isHidden = true
+            return
+        }
         
+        statusStackView.isHidden = false
+        
+        switch viewModel.model.status {
+        case let .checkedIn(time, date):
+            let vm = CheckedInUIKitViewModel(time: time, date: date)
+            alreadyCheckedView.viewModel = vm
+            alreadyCheckedView.isHidden = false
+        case .notActivated:
+            invalidQrView.isHidden = false
+        case let .refunded(time):
+            let vm = RefundedUIKitViewModel(date: time)
+            refundedView.viewModel = vm
+            refundedView.isHidden = false
+        case .success:
+            return
+        case let .wrongEvent(name, time):
+            let vm = WrongEventUIKitViewModel(date: time, festivalName: name)
+            wrongEventView.viewModel = vm
+            wrongEventView.isHidden = false
+        }
+    }
+    
+    func setMainStackView() {
+        
+        mainStackView.setCustomSpacing(24, after: ticketNumberLabel)
+        mainStackView.setCustomSpacing(20, after: statusStackView)
+    }
+    
+    func setCellColor() {
+        
+        guard let viewModel = viewModel else { return }
+        
+        mainView.backgroundColor = viewModel.isOpened ? UIColor(Color.galleryDark) : UIColor(Color.gallery)
+    }
+    
+    func setSeparator() {
+        separator.backgroundColor = UIColor.black.withAlphaComponent(0.05)
     }
 }

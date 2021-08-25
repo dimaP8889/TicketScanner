@@ -116,6 +116,10 @@
 		F1A8BA0726AF4D6B00BD4677 /* ScanFailResultApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8BA0626AF4D6B00BD4677 /* ScanFailResultApiModel.swift */; };
 		F1A8BA0B26AFFD4D00BD4677 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8BA0A26AFFD4D00BD4677 /* ClearButton.swift */; };
 		F1ADE0F026C814DF00E77360 /* InvalidQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ADE0EF26C814DF00E77360 /* InvalidQRView.swift */; };
+		F1B73CED26D6DEA400620CCF /* ParticipantsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B73CEC26D6DEA400620CCF /* ParticipantsTableView.swift */; };
+		F1B73CF226D6E00600620CCF /* TimeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B73CF126D6E00600620CCF /* TimeHeader.swift */; };
+		F1B73CF426D6E01700620CCF /* TimeHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1B73CF326D6E01700620CCF /* TimeHeader.xib */; };
+		F1B73CF626D6F14400620CCF /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B73CF526D6F14400620CCF /* UIView.swift */; };
 		F1CE7B9E26D4014C00EA53AE /* error.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1CE7B9D26D4014C00EA53AE /* error.wav */; };
 		F1CE7BA026D4015300EA53AE /* success.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1CE7B9F26D4015300EA53AE /* success.wav */; };
 		F1CE7BA226D40E1F00EA53AE /* AnimationCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7BA126D40E1F00EA53AE /* AnimationCompletion.swift */; };
@@ -242,6 +246,10 @@
 		F1A8BA0626AF4D6B00BD4677 /* ScanFailResultApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanFailResultApiModel.swift; sourceTree = "<group>"; };
 		F1A8BA0A26AFFD4D00BD4677 /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		F1ADE0EF26C814DF00E77360 /* InvalidQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidQRView.swift; sourceTree = "<group>"; };
+		F1B73CEC26D6DEA400620CCF /* ParticipantsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsTableView.swift; sourceTree = "<group>"; };
+		F1B73CF126D6E00600620CCF /* TimeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHeader.swift; sourceTree = "<group>"; };
+		F1B73CF326D6E01700620CCF /* TimeHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeHeader.xib; sourceTree = "<group>"; };
+		F1B73CF526D6F14400620CCF /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		F1CE7B9D26D4014C00EA53AE /* error.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = error.wav; sourceTree = "<group>"; };
 		F1CE7B9F26D4015300EA53AE /* success.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = success.wav; sourceTree = "<group>"; };
 		F1CE7BA126D40E1F00EA53AE /* AnimationCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCompletion.swift; sourceTree = "<group>"; };
@@ -567,6 +575,7 @@
 				F1648D61266D4BC800F1FDC1 /* UINavigationBar.swift */,
 				F1648D76266EBB4300F1FDC1 /* UITabBar.swift */,
 				F161847F26D5585800C97FD9 /* UIFont.swift */,
+				F1B73CF526D6F14400620CCF /* UIView.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -601,7 +610,9 @@
 		F161847726D54EBD00C97FD9 /* Table View */ = {
 			isa = PBXGroup;
 			children = (
+				F1B73CEE26D6DFDE00620CCF /* Header */,
 				F161847826D54F2F00C97FD9 /* Cell */,
+				F1B73CEC26D6DEA400620CCF /* ParticipantsTableView.swift */,
 			);
 			path = "Table View";
 			sourceTree = "<group>";
@@ -643,7 +654,6 @@
 				F161849D26D573DB00C97FD9 /* View Model */,
 				F161848826D568FC00C97FD9 /* RefundedUIKitView.xib */,
 				F161848726D568FC00C97FD9 /* RefundedUIKitView.swift */,
-				F161849B26D56D3E00C97FD9 /* RefundedUIKitViewModel.swift */,
 			);
 			path = Refunded;
 			sourceTree = "<group>";
@@ -680,6 +690,7 @@
 		F161849D26D573DB00C97FD9 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				F161849B26D56D3E00C97FD9 /* RefundedUIKitViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -1097,6 +1108,15 @@
 			path = TextField;
 			sourceTree = "<group>";
 		};
+		F1B73CEE26D6DFDE00620CCF /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				F1B73CF126D6E00600620CCF /* TimeHeader.swift */,
+				F1B73CF326D6E01700620CCF /* TimeHeader.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		F1CE7B9C26D4004C00EA53AE /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -1211,6 +1231,7 @@
 				F1698607265321A000B26671 /* EKRepro-2204.otf in Resources */,
 				F16985ED2653101600B26671 /* Assets.xcassets in Resources */,
 				F1CE7B9E26D4014C00EA53AE /* error.wav in Resources */,
+				F1B73CF426D6E01700620CCF /* TimeHeader.xib in Resources */,
 				F161847E26D54F5700C97FD9 /* ParticipantsTicketCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1241,6 +1262,7 @@
 				F1FEC09C2659B862003B9235 /* SquareView.swift in Sources */,
 				F138C44D2677D33700915BC5 /* UINavigationController.swift in Sources */,
 				F1A8BA0526AF430700BD4677 /* EventListStore.swift in Sources */,
+				F1B73CF226D6E00600620CCF /* TimeHeader.swift in Sources */,
 				F1648D64266D55CA00F1FDC1 /* DateFormatter.swift in Sources */,
 				F1A8B9FF26AF3C7C00BD4677 /* EventListApiModel.swift in Sources */,
 				F10A0D2A2655C44900487FD5 /* CredentialsView.swift in Sources */,
@@ -1293,11 +1315,13 @@
 				F14BB49826AC91D6004CA680 /* ProfileSquareView.swift in Sources */,
 				F138C4592678DE4200915BC5 /* AppRootView.swift in Sources */,
 				F1981590267520F900E9218F /* AlertSubview.swift in Sources */,
+				F1B73CF626D6F14400620CCF /* UIView.swift in Sources */,
 				F14BB48C26AC54F2004CA680 /* TimeListView.swift in Sources */,
 				F1648D8B266FFC1A00F1FDC1 /* ShowManualView.swift in Sources */,
 				F1648D72266EB4C700F1FDC1 /* ProfileView.swift in Sources */,
 				F110200C267EA51400AB420F /* AccessToken.swift in Sources */,
 				F1DE370E2693B038001D11C0 /* FilterView.swift in Sources */,
+				F1B73CED26D6DEA400620CCF /* ParticipantsTableView.swift in Sources */,
 				F172FE8D2665631A00FF9569 /* LoginCredentialsStore.swift in Sources */,
 				F14BB48226AC42A2004CA680 /* ParticipantsInfoModel.swift in Sources */,
 				F10FAE62267681C600B55A28 /* ManualEnterTextFieldContainer.swift in Sources */,

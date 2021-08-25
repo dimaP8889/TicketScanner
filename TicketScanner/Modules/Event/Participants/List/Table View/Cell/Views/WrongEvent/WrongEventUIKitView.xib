@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="1sE-eB-1xl">
-                    <rect key="frame" x="0.0" y="24" width="427" height="109"/>
+                    <rect key="frame" x="0.0" y="0.0" width="427" height="157"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68m-TB-Sd9">
                             <rect key="frame" x="0.0" y="0.0" width="427" height="20.5"/>
@@ -32,19 +32,19 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8P8-OA-CSg">
-                            <rect key="frame" x="0.0" y="29.5" width="427" height="20.5"/>
+                            <rect key="frame" x="0.0" y="45.5" width="427" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xW-AD-MVK">
-                            <rect key="frame" x="0.0" y="59" width="427" height="20.5"/>
+                            <rect key="frame" x="0.0" y="91" width="427" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMj-nO-JL4">
-                            <rect key="frame" x="0.0" y="88.5" width="427" height="20.5"/>
+                            <rect key="frame" x="0.0" y="136.5" width="427" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -56,8 +56,8 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="1sE-eB-1xl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Uxe-NY-LRg"/>
-                <constraint firstAttribute="bottom" secondItem="1sE-eB-1xl" secondAttribute="bottom" constant="24" id="fHm-8Y-Rej"/>
-                <constraint firstItem="1sE-eB-1xl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="ku8-D7-h2k"/>
+                <constraint firstAttribute="bottom" secondItem="1sE-eB-1xl" secondAttribute="bottom" id="fHm-8Y-Rej"/>
+                <constraint firstItem="1sE-eB-1xl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ku8-D7-h2k"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1sE-eB-1xl" secondAttribute="trailing" id="xSz-OM-UA3"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

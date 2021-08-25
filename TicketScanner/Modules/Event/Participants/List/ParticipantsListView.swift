@@ -12,19 +12,14 @@ struct ParticipantsListView: View {
     var data : [ParticipantsInfoModel]
     
     init(data : [ParticipantsInfoModel]) {
-        self.data = data
+        
+        self.data = (0...10).map{_ in ParticipantsInfoModel.random}
         UIScrollView.appearance().keyboardDismissMode = .onDrag
     }
     
     var body: some View {
-        ScrollView {
-            VStack(spacing: 0) {
-                ForEach(data) { info in
-                    TimeListView(data: info)
-                }
-            }
-        }
-        .background(Color.white)
+        ParticipantsTableView(participants: data)
+            .background(Color.white)
     }
 }
 
