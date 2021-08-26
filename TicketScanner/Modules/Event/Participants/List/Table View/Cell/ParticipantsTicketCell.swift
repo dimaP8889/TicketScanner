@@ -16,6 +16,7 @@ final class ParticipantsTicketCell: UITableViewCell {
     // Short Ticket
     @IBOutlet private var shortTicketView: UIView!
     
+    @IBOutlet private var resultTicker: UIImageView!
     @IBOutlet private var participantNameLabel: UILabel!
     @IBOutlet private var timeLabel: UILabel!
 
@@ -60,9 +61,17 @@ private extension ParticipantsTicketCell {
     
     func updateCell() {
         setTicketType()
+        setTicker()
         setLabels()
         setStatusViews()
         setCellColor()
+    }
+    
+    @objc func didSelectCell() {
+        
+        guard let viewModel = viewModel else { return }
+        
+        viewModel.selectAction(viewModel.model.ticketId)
     }
 }
 
@@ -70,10 +79,18 @@ private extension ParticipantsTicketCell {
 private extension ParticipantsTicketCell {
     
     func setupCell() {
+        setMainView()
+        setMainStackView()
         setLabelsParams()
         setSeparator()
         setStatusViews()
+    }
+    
+    func setMainView() {
+        
         mainView.crop(radius: 18)
+        mainView.isUserInteractionEnabled = true
+        mainView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didSelectCell)))
     }
     
     func setTicketType() {
@@ -83,6 +100,18 @@ private extension ParticipantsTicketCell {
         }
         
         fullTicketView.isHidden = !viewModel.isOpened
+    }
+    
+    func setTicker() {
+        
+        guard let viewModel = viewModel else { return }
+        
+        switch viewModel.model.status {
+        case .success:
+            resultTicker.image = UIImage(named: "ic_success_tick")
+        default:
+            resultTicker.image = UIImage(named: "ic_red_cross")
+        }
     }
     
     func setLabelsParams() {
@@ -123,7 +152,8 @@ private extension ParticipantsTicketCell {
         
         participantNameLabel.text = viewModel.model.main.name
         timeLabel.text = viewModel.model.main.time
-        ticketNumberLabel.text = viewModel.isOpened ? viewModel.model.main.ticketNumber : nil
+        ticketNumberLabel.text = "# " + viewModel.model.main.ticketNumber
+        ticketNumberLabel.isHidden = !viewModel.isOpened
         
         ticketTypeTitleLabel.text = localStr("scan.ticket.type")
         ticketTypeValueLabel.text = viewModel.model.secondary.type
@@ -139,6 +169,7 @@ private extension ParticipantsTicketCell {
         
         guard let viewModel = viewModel else { return }
         
+        mainStackView.setCustomSpacing(32, after: statusStackView)
         invalidQrView.isHidden = true
         refundedView.isHidden = true
         alreadyCheckedView.isHidden = true
@@ -163,6 +194,7 @@ private extension ParticipantsTicketCell {
             refundedView.viewModel = vm
             refundedView.isHidden = false
         case .success:
+            mainStackView.setCustomSpacing(0, after: statusStackView)
             return
         case let .wrongEvent(name, time):
             let vm = WrongEventUIKitViewModel(date: time, festivalName: name)

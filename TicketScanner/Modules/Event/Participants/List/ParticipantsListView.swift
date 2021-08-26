@@ -9,22 +9,26 @@ import SwiftUI
 
 struct ParticipantsListView: View {
     
-    var data : [ParticipantsInfoModel]
+    @EnvironmentObject
+    var participantsStore : ParticipantsStore
     
-    init(data : [ParticipantsInfoModel]) {
-        
-        self.data = (0...10).map{_ in ParticipantsInfoModel.random}
+    init() {
         UIScrollView.appearance().keyboardDismissMode = .onDrag
     }
     
     var body: some View {
-        ParticipantsTableView(participants: data)
-            .background(Color.white)
+        ParticipantsTableView(
+            participants: participantsStore.participants,
+            openedTicket: participantsStore.openedTicket
+        ) { id in
+            participantsStore.dispatch(action: .openTicket(hash: id))
+        }
+        .background(Color.white)
     }
 }
 
 struct ParticipantsListView_Previews: PreviewProvider {
     static var previews: some View {
-        ParticipantsListView(data: (0...10).map{_ in ParticipantsInfoModel.random})
+        ParticipantsListView()
     }
 }

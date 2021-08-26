@@ -9,4 +9,5 @@ struct ParticipantsTicketViewModel {
     
     let model : FullTicketModel
     let isOpened : Bool
+    let selectAction : TypeAction<Int>
 }

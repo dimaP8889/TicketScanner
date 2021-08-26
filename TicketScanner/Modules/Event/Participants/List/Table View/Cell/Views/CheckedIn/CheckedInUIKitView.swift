@@ -16,7 +16,9 @@ final class CheckedInUIKitView : NibableView {
     
     @IBOutlet private var dateView: UIView!
     
-    var viewModel : CheckedInUIKitViewModel?
+    var viewModel : CheckedInUIKitViewModel? {
+        didSet { updateView() }
+    }
     
     override func setView() {
         setLabelsParams()
@@ -35,7 +37,7 @@ private extension CheckedInUIKitView {
         
         titleLabel.font = .main(ofSize: 17)
         titleLabel.textColor = UIColor(Color.radicalRed)
-        titleLabel.text = localStr("scan.error.invalidQR")
+        titleLabel.text = localStr("scan.error.checked_in")
         
         timeLabel.font = .main(ofSize: 14)
         timeLabel.textColor = UIColor(Color.doveGray)

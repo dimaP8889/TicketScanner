@@ -24,7 +24,7 @@ struct ParticipantsView: View {
                 }
                 .padding([.leading, .trailing], 12)
                 .padding(.top, 16)
-                ParticipantsListView(data: participantsStore.participants)
+                ParticipantsListView()
             }
         }
         .onAppear {

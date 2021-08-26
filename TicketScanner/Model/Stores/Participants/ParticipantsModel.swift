@@ -77,7 +77,11 @@ struct ParticipantsReducer {
                 return nil
             }
         case let .openTicket(hash):
-            state.openedTicked = hash
+            if state.openedTicked == hash {
+                return reduce(state: &state, action: .closeTicket)
+            } else {
+                state.openedTicked = hash
+            }
             return nil
         case .closeTicket:
             state.openedTicked = nil

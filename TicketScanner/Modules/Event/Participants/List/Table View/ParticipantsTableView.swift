@@ -8,42 +8,51 @@
 import UIKit
 import SwiftUI
 
-struct ParticipantsTableView: UIViewControllerRepresentable {
-    
+struct ParticipantsTableView: UIViewRepresentable {
+
     var participants : [ParticipantsInfoModel]
+    var openedTicket : Int?
+    var selectAction : TypeAction<Int>
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(participants: participants)
+        Coordinator(participants: participants, openedTicket: openedTicket, selectAction: selectAction)
     }
     
-    func makeUIViewController(context: Context) ->
-    UITableViewController {
-        UITableViewController(style: .grouped)
-    }
-    
-    func updateUIViewController(_ viewController:
-                                    UITableViewController,
-                                context: Context) {
-        viewController.tableView.dataSource = context.coordinator
-        viewController.tableView.delegate = context.coordinator
-        viewController.tableView.separatorStyle = .none
-        viewController.tableView.backgroundColor = .white
+    func makeUIView(context: Context) -> UITableView {
+        let tableView = UITableView(frame: .zero, style: .grouped)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.dataSource = context.coordinator
+        tableView.delegate = context.coordinator
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = .white
         
         let participantsTicketViewCellNib =
             UINib(nibName: "ParticipantsTicketCell", bundle: Bundle.main)
-        viewController.tableView.register(participantsTicketViewCellNib,
+        tableView.register(participantsTicketViewCellNib,
                                           forCellReuseIdentifier: "ParticipantsTicketCell")
         
         let timeHeader = UINib(nibName: "TimeHeader", bundle: Bundle.main)
-        viewController.tableView.register(timeHeader, forHeaderFooterViewReuseIdentifier: "TimeHeader")
+        tableView.register(timeHeader, forHeaderFooterViewReuseIdentifier: "TimeHeader")
+        return tableView
+    }
+    
+    func updateUIView(_ uiView: UITableView, context: Context) {
+        context.coordinator.participants = participants
+        context.coordinator.openedTicket = openedTicket
+        uiView.reloadData()
     }
 }
 
 class Coordinator: NSObject {
-    var participants : [ParticipantsInfoModel]
     
-    init(participants: [ParticipantsInfoModel]) {
+    var participants : [ParticipantsInfoModel]
+    var openedTicket : Int?
+    var selectAction : TypeAction<Int>
+    
+    init(participants: [ParticipantsInfoModel], openedTicket : Int?, selectAction : @escaping TypeAction<Int>) {
         self.participants = participants
+        self.openedTicket = openedTicket
+        self.selectAction = selectAction
     }
 }
 
@@ -67,7 +76,7 @@ extension Coordinator: UITableViewDataSource {
             for: indexPath) as! ParticipantsTicketCell
         
         let data = participants[indexPath.section].tickets[indexPath.row]
-        cell.viewModel = .init(model: data, isOpened: true)
+        cell.viewModel = .init(model: data, isOpened: data.ticketId == openedTicket, selectAction: selectAction)
         return cell
         
     }
@@ -93,6 +102,10 @@ extension Coordinator: UITableViewDelegate{
         return 0.00001
     }
     
+    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return 26
+    }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         UITableView.automaticDimension
     }
@@ -102,7 +115,14 @@ extension Coordinator: UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 58
+        
+        let data = participants[indexPath.section].tickets[indexPath.row]
+        
+        if data.ticketId == openedTicket {
+            return 260
+        } else {
+            return 58
+        }
     }
 }
 
