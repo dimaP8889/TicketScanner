@@ -51,6 +51,8 @@ enum LoginAction {
 
 struct LoginReducer {
     
+    var expiredTokenAction : Action?
+    
     func reduce(state: inout LoginCredentials, action: LoginAction) -> AnyPublisher<LoginAction, Never>? {
         
         switch action {
@@ -66,6 +68,8 @@ struct LoginReducer {
                 state.clear()
                 Defaults.shared.setCurrentUser(user)
                 successAction((model.accessToken))
+            case .expiredToken:
+                expiredTokenAction?()
             default:
                 state.isError = true
             }

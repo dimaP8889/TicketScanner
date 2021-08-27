@@ -11,12 +11,16 @@ import Combine
 final class EventListStore : ObservableObject {
     
     @Published var model : EventListModel
-    private let reducer : EventListReducer
+    private var reducer : EventListReducer
     private var cancellables: Set<AnyCancellable> = []
     
     init() {
         model = EventListModel(eventList: [])
         reducer = EventListReducer()
+    }
+    
+    func setExpiredAction(expiredTokenAction : Action?) {
+        reducer.expiredTokenAction = expiredTokenAction
     }
     
     func eventId(by index: Int) -> String {

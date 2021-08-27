@@ -55,6 +55,8 @@ enum ScanAction {
 
 struct ScanReducer {
     
+    var expiredTokenAction : Action?
+    
     func reduce(state: inout ScanModel, action: ScanAction) -> AnyPublisher<ScanAction, Never>? {
         
         switch action {
@@ -101,6 +103,9 @@ private extension ScanReducer {
             return reduce(state: &state, action: .showAlert(alert))
         case let .system(error):
             print(error)
+            return nil
+        case .expiredToken:
+            expiredTokenAction?()
             return nil
         }
     }

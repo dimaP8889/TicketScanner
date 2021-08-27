@@ -20,6 +20,10 @@ final class LoginStore : ObservableObject {
         reducer = LoginReducer()
     }
     
+    func setExpiredAction(expiredTokenAction : Action?) {
+        reducer.expiredTokenAction = expiredTokenAction
+    }
+    
     func dispatch(action: LoginAction) {
         
         guard let effect = reducer.reduce(state: &state, action: action) else {

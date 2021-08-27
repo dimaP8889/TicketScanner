@@ -68,7 +68,8 @@ extension MainApi : Requestable {
         case let .authorize(user, password):
             return [
                 "username" : user,
-                "password" : password
+                "password" : password,
+                "expiresIn" : "30 days"
             ]
         case .loadEvents:
             return [:]

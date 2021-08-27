@@ -21,6 +21,10 @@ final class ScanStore : ObservableObject {
         reducer = ScanReducer()
     }
     
+    func setExpiredAction(expiredTokenAction : Action?) {
+        reducer.expiredTokenAction = expiredTokenAction
+    }
+    
     func dispatch(action: ScanAction) {
         guard let effect = reducer.reduce(state: &state, action: action) else {
             return

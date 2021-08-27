@@ -50,6 +50,8 @@ enum ParticipantsAction {
 
 struct ParticipantsReducer {
     
+    var expiredTokenAction : Action?
+    
     func reduce(state: inout ParticipantsModel, action: ParticipantsAction) -> AnyPublisher<ParticipantsAction, Never>? {
         
         switch action {
@@ -74,6 +76,9 @@ struct ParticipantsReducer {
                 return nil
             case let .system(error):
                 print(error)
+                return nil
+            case .expiredToken:
+                expiredTokenAction?()
                 return nil
             }
         case let .openTicket(hash):

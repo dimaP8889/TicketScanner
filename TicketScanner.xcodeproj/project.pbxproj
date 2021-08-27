@@ -112,6 +112,7 @@
 		F1A8BA0726AF4D6B00BD4677 /* ScanFailResultApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8BA0626AF4D6B00BD4677 /* ScanFailResultApiModel.swift */; };
 		F1A8BA0B26AFFD4D00BD4677 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8BA0A26AFFD4D00BD4677 /* ClearButton.swift */; };
 		F1ADE0F026C814DF00E77360 /* InvalidQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ADE0EF26C814DF00E77360 /* InvalidQRView.swift */; };
+		F1B435C126D9970F00B4AFE8 /* UnauthorizedApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B435C026D9970F00B4AFE8 /* UnauthorizedApiModel.swift */; };
 		F1B73CED26D6DEA400620CCF /* ParticipantsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B73CEC26D6DEA400620CCF /* ParticipantsTableView.swift */; };
 		F1B73CF226D6E00600620CCF /* TimeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B73CF126D6E00600620CCF /* TimeHeader.swift */; };
 		F1B73CF426D6E01700620CCF /* TimeHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1B73CF326D6E01700620CCF /* TimeHeader.xib */; };
@@ -238,6 +239,7 @@
 		F1A8BA0626AF4D6B00BD4677 /* ScanFailResultApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanFailResultApiModel.swift; sourceTree = "<group>"; };
 		F1A8BA0A26AFFD4D00BD4677 /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		F1ADE0EF26C814DF00E77360 /* InvalidQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidQRView.swift; sourceTree = "<group>"; };
+		F1B435C026D9970F00B4AFE8 /* UnauthorizedApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnauthorizedApiModel.swift; sourceTree = "<group>"; };
 		F1B73CEC26D6DEA400620CCF /* ParticipantsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsTableView.swift; sourceTree = "<group>"; };
 		F1B73CF126D6E00600620CCF /* TimeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHeader.swift; sourceTree = "<group>"; };
 		F1B73CF326D6E01700620CCF /* TimeHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeHeader.xib; sourceTree = "<group>"; };
@@ -1035,6 +1037,7 @@
 				F1102011267F366200AB420F /* AuthApiModel.swift */,
 				F1A8B9FE26AF3C7C00BD4677 /* EventListApiModel.swift */,
 				F148999D26C5B97000FEC1B8 /* VisitiorsApiModel.swift */,
+				F1B435C026D9970F00B4AFE8 /* UnauthorizedApiModel.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -1235,6 +1238,7 @@
 				F161848426D568CD00C97FD9 /* NibableProtocol.swift in Sources */,
 				F198158E26750FD100E9218F /* AlertModel.swift in Sources */,
 				F1A8BA0726AF4D6B00BD4677 /* ScanFailResultApiModel.swift in Sources */,
+				F1B435C126D9970F00B4AFE8 /* UnauthorizedApiModel.swift in Sources */,
 				F19815A426765FDF00E9218F /* ShowCameraView.swift in Sources */,
 				F1648D70266EB4BE00F1FDC1 /* ContactsView.swift in Sources */,
 				F19815852674E4E500E9218F /* TicketSecondaryInfoView.swift in Sources */,

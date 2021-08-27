@@ -20,6 +20,10 @@ final class ParticipantsStore : ObservableObject {
         reducer = ParticipantsReducer()
     }
     
+    func setExpiredAction(expiredTokenAction : Action?) {
+        reducer.expiredTokenAction = expiredTokenAction
+    }
+    
     func dispatch(action: ParticipantsAction) {
         
         guard let effect = reducer.reduce(state: &state, action: action) else {

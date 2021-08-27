@@ -36,8 +36,16 @@ private extension ResponseHandler {
                 let responseObject = try JSONDecoder().decode(F.self, from: _data)
                 return .failure(.backend(responseObject))
             } catch {
-                #warning("Need to check if auth vode expired")
-                return .failure(.system(.badHTTPCode(code)))
+                do {
+                    let responseObject = try JSONDecoder().decode(UnauthorizedApiModel.self, from: _data)
+                    if responseObject.error == "Unauthorized" {
+                        return .failure(.expiredToken)
+                    }
+                    return .failure(.system(.badHTTPCode(code)))
+                }
+                catch {
+                    return .failure(.system(.badHTTPCode(code)))
+                }
             }
         }
             
@@ -67,6 +75,8 @@ private extension ResponseHandler {
             return .backend(error)
         case let .system(error):
             return .system(error.message)
+        case .expiredToken:
+            return .expiredToken
         }
     }
 }
@@ -81,6 +91,7 @@ enum Response<S,F> {
     
     case success(S)
     case backend(F)
+    case expiredToken
     case system(String)
 }
 
@@ -90,7 +101,7 @@ enum APIError<T> {
     case backend(T)
 //    case refreshTokenInvalid
 //    case accessTokenInvalid
-//    case expiredToken
+    case expiredToken
     
     enum SystemError : Error {
         

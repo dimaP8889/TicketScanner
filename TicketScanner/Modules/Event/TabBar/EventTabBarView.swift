@@ -9,6 +9,11 @@ import SwiftUI
 
 struct EventTabBarView: View {
     
+    @ObservedObject private var data : TabBarModel
+    
+    @EnvironmentObject
+    var appDataStore: AppDataStore
+    
     @Environment(\.presentationMode)
     var presentationMode: Binding<PresentationMode>
     
@@ -16,8 +21,6 @@ struct EventTabBarView: View {
         event?.festivalName ?? ""
     }
     private var event : EventModel?
-    
-    @ObservedObject private var data : TabBarModel
     
     private let scanStore : ScanStore
     private let participantsStore : ParticipantsStore
@@ -75,8 +78,11 @@ struct EventTabBarView: View {
                 .tag(3)
             
         }
+        .onAppear {
+            scanStore.setExpiredAction { appDataStore.dispatch(action: .removeToken) }
+            participantsStore.setExpiredAction { appDataStore.dispatch(action: .removeToken) }
+        }
         .accentColor(.codGray)
-        
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(
             leading: EventsBackButton(

@@ -20,6 +20,8 @@ enum EventListAction {
 
 struct EventListReducer {
     
+    var expiredTokenAction : Action?
+    
     func reduce(oldState : inout EventListModel, action : EventListAction) -> AnyPublisher<EventListAction, Never>? {
         
         switch action {
@@ -33,6 +35,8 @@ struct EventListReducer {
                 var events = model.adaptToEventModelList
                 events.sort { $0.startDate < $1.startDate }
                 oldState.eventList = events
+            case .expiredToken:
+                expiredTokenAction?()
             default:
                 break
             }
