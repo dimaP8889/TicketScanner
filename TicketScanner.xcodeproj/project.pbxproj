@@ -119,7 +119,6 @@
 		F1B73CF626D6F14400620CCF /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B73CF526D6F14400620CCF /* UIView.swift */; };
 		F1CE7B9E26D4014C00EA53AE /* error.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1CE7B9D26D4014C00EA53AE /* error.wav */; };
 		F1CE7BA026D4015300EA53AE /* success.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1CE7B9F26D4015300EA53AE /* success.wav */; };
-		F1CE7BA226D40E1F00EA53AE /* AnimationCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7BA126D40E1F00EA53AE /* AnimationCompletion.swift */; };
 		F1DE370B2693A583001D11C0 /* SearchFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE370A2693A583001D11C0 /* SearchFieldView.swift */; };
 		F1DE370E2693B038001D11C0 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE370D2693B038001D11C0 /* FilterView.swift */; };
 		F1DE37112693B822001D11C0 /* ParticipantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE37102693B822001D11C0 /* ParticipantsModel.swift */; };
@@ -246,7 +245,6 @@
 		F1B73CF526D6F14400620CCF /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		F1CE7B9D26D4014C00EA53AE /* error.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = error.wav; sourceTree = "<group>"; };
 		F1CE7B9F26D4015300EA53AE /* success.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = success.wav; sourceTree = "<group>"; };
-		F1CE7BA126D40E1F00EA53AE /* AnimationCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCompletion.swift; sourceTree = "<group>"; };
 		F1DE370A2693A583001D11C0 /* SearchFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldView.swift; sourceTree = "<group>"; };
 		F1DE370D2693B038001D11C0 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		F1DE37102693B822001D11C0 /* ParticipantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsModel.swift; sourceTree = "<group>"; };
@@ -882,7 +880,6 @@
 				F19815A52676658B00E9218F /* SelectorHelper.swift */,
 				F1102008267EA4D200AB420F /* Keychain.swift */,
 				F11BD1AE26B0B23C00ED352D /* Constants.swift */,
-				F1CE7BA126D40E1F00EA53AE /* AnimationCompletion.swift */,
 				F161848626D568D200C97FD9 /* Nibable */,
 			);
 			path = Utils;
@@ -1231,7 +1228,6 @@
 				F10A0D3D2655D0BF00487FD5 /* CustomTextField.swift in Sources */,
 				F1FCC333265EF79C00951F8B /* Global.swift in Sources */,
 				F1102004267E9BFC00AB420F /* Requestable.swift in Sources */,
-				F1CE7BA226D40E1F00EA53AE /* AnimationCompletion.swift in Sources */,
 				F161848526D568CD00C97FD9 /* NibableView.swift in Sources */,
 				F13986F0266D1E5F00AD3199 /* ActiveView.swift in Sources */,
 				F198157E2674E4E500E9218F /* FullTicketView.swift in Sources */,
@@ -1448,7 +1444,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = 6X6CU69VVK;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TicketScanner/Resources/Info.plist;
@@ -1471,7 +1467,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = 6X6CU69VVK;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TicketScanner/Resources/Info.plist;
@@ -1555,7 +1551,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = 6X6CU69VVK;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TicketScanner/Resources/Info.plist;
@@ -1632,7 +1628,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = 6X6CU69VVK;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TicketScanner/Resources/Info.plist;

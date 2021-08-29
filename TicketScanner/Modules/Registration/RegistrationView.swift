@@ -75,18 +75,15 @@ struct RegistrationView: View {
                 topInset = UIScreen.main.bounds.height
                     - startHeight - geometry.safeAreaInsets.bottom
                     - geometry.safeAreaInsets.top - 20
-                let baseAnimation = Animation.easeInOut(duration: 0.9)
+                let baseAnimation = Animation.spring(
+                    response: 1,
+                    dampingFraction: 0.7,
+                    blendDuration: 1
+                )
                     .delay(0.5)
                 withAnimation(baseAnimation) {
                     squareButtonAlpha = 1
                     topInset = 18
-                }
-            }
-            .onAnimationCompleted(for: topInset) {
-                let animation = Animation.easeOut(duration: 1)
-                squareButtonAlpha = 0
-                withAnimation(animation) {
-                    isAccountButtonPressed = true
                 }
             }
         }
