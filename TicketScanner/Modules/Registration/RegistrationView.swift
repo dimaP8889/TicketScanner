@@ -39,7 +39,7 @@ struct RegistrationView: View {
                         .frame(width: 0, height: topInset)
                     SquareView(
                         buttonAlpha: squareButtonAlpha,
-                        isAccountButtonPressed: isAccountButtonPressed
+                        isAccountButtonPressed: $isAccountButtonPressed
                     )
                     .frame(
                         width: isAccountButtonPressed

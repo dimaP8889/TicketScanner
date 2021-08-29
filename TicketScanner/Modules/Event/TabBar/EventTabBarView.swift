@@ -84,15 +84,17 @@ struct EventTabBarView: View {
         }
         .accentColor(.codGray)
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(
-            leading: EventsBackButton(
-                backAction: {
-                    presentationMode.wrappedValue.dismiss()
-                },
-                title: eventName,
-                subtitle: $data.buttonSubtitle
-            )
-        )
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                EventsBackButton(
+                    backAction: {
+                        presentationMode.wrappedValue.dismiss()
+                    },
+                    title: eventName,
+                    subtitle: $data.buttonSubtitle
+                )
+            }
+        }
     }
 }
 

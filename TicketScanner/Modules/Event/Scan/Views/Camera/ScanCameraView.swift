@@ -58,10 +58,6 @@ struct ScanCameraView: View {
                 }
             }
         }
-        .onTapGesture {
-            #warning("Delete later")
-            showAlert(with: AlertModel.test)
-        }
         .background(
             RoundedRectangle(cornerRadius: 20)
                 .foregroundColor(Color.newGray)
