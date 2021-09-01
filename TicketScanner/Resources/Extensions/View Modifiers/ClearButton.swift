@@ -23,6 +23,7 @@ public struct ClearButton: ViewModifier {
                 .foregroundColor(.secondary)
                 .opacity(text == "" ? 0 : 1)
                 .onTapGesture { self.text = "" }
+                .padding(.trailing, -5)
         }
     }
 }

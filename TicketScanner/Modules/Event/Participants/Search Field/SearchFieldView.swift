@@ -21,7 +21,7 @@ struct SearchFieldView: View {
     var body: some View {
         
         HStack(spacing: 12) {
-            HStack(spacing: 9) {
+            HStack(alignment: .center, spacing: 9) {
                 Image("ic_search")
                     .padding([.top, .bottom], 10.5)
                     .padding(.leading, 12)

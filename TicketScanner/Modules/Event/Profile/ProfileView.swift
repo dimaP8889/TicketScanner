@@ -19,7 +19,7 @@ struct ProfileView: View {
             }
             Spacer()
         }
-        .padding(.top, -30)
+        .navigationBarHidden(true)
     }
 }
 

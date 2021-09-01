@@ -24,7 +24,8 @@ struct AppRootView: View {
                 EventsListView()
                     .environmentObject(eventListStore)
             }
-        }.onAppear {
+        }
+        .onAppear {
             loginStore.setExpiredAction { appDataStore.dispatch(action: .removeToken) }
             eventListStore.setExpiredAction { appDataStore.dispatch(action: .removeToken) }
         }
