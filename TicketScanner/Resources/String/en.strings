@@ -1,0 +1,84 @@
+/* 
+  en.strings
+  TicketScanner
+
+  Created by Dmytro Pogrebniak on 03.09.2021.
+  
+*/
+
+//Common
+"months.0" = "month";
+"months.1" = "months";
+"months.2" = "months";
+"days.0" = "day";
+"days.1" = "days";
+"days.2" = "days";
+"hours" = "h";
+"min" = "min";
+"ok" = "ОК";
+
+//Registration
+"registration.button.title" = "Log In";
+"registration.square.title" = "Login";
+"registration.button.check-in" = "2204\nCheck in";
+"registration.error.title" = "Incorrect email or password";
+"registration.textfield.email.description" = "Email or id";
+"registration.textfield.password.description" = "Password";
+"registration.textfield.email.placeholder" = "enter your email or id";
+"registration.textfield.password.placeholder" = "enter your password";
+
+//Events
+"events.toolbar.leading" = "Events";
+"events.logout.title" = "Log Out";
+"events.active.title" = "Active";
+"events.future.started" = "Started";
+"events.future.ended" = "Ended";
+"events.future.1" = "Active in";
+"events.future.2" = "Starts in";
+
+//Tab Bar
+"events.item.scan" = "Scan";
+"events.item.participants" = "Check-Ins";
+"events.item.contacts" = "Contact";
+"events.item.profile" = "Profile";
+
+//Scan
+"scan.enter.number.title" = "Enter Number";
+"scan.error.refunded" = "This ticket has been refunded";
+"scan.error.invalidQR" = "Invalid QR code";
+"scan.error.wrong_event" = "Wrong event";
+"scan.error.wrong_event.secondary" = "This ticket is for event:";
+"scan.error.checked_in" = "Already checked-in";
+"scan.ticket.type" = "Ticket type";
+"scan.ticket.phone" = "Buyer tel.";
+"scan.ticket.email" = "Email";
+"scan.manual.enter.description" = "Enter 12-digit ticket number";
+"scan.camera.title" = "Scanner";
+
+//Alert
+"alert.sucess" = "Success";
+"alert.fail" = "Failed";
+"alert.title.success" = "Checked-in suсcessfully";
+"alert.title.invalidQR" = "Invalid QR code";
+"alert.title.checked" = "Already checked-in";
+"alert.title.refunded" = "This ticket has been refunded";
+"alert.title.wrong" = "Wrong event";
+"alert.subtitle.visited" = "Visitor checked-in at ";
+"alert.subtitle.enter_number" = "Try entering a ticket number";
+"alert.ticket.name" = "Ticket ↗︎︎";
+
+//Participants
+"participants.search.placeholder" = "Visitor name or ticket number";
+"participants.search.filter.all" = "All";
+"participants.search.filter.success" = "Successful";
+"participants.search.filter.failure" = "Failed";
+"participants.search.cancel" = "Cancel";
+
+//Profile
+"profile.title" = "Your profile";
+"profile.controller" = "Inspector";
+
+//Ticket
+"ticket.status.not_activated.name.placeholder" = "Pre-printed ticket";
+"ticket.status.not_activated.tel.placeholder" = "No buyer info";
+"ticket.status.not_activated.email.placeholder" = "No buyer info";

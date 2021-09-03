@@ -20,7 +20,7 @@ struct EventsListView: View {
     }
     
     init() {
-        UINavigationBar.setBar(color: .white)
+        UINavigationBar.setBar(color: .clear)
     }
     
     var body: some View {

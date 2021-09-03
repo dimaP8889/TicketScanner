@@ -81,7 +81,7 @@ extension VisitiorsApiModel.Checkins {
         
         return FullTicketModel(
             main: main,
-            status: .notActivated,
+            status: .invalidQR,
             secondary: TicketSecondaryInfoModel(
                 type: ticketType,
                 number: localStr("ticket.status.not_activated.tel.placeholder"),
@@ -149,15 +149,16 @@ extension VisitiorsApiModel {
                     return .wrongEvent(name: ticketType, time: nil)
                 case "ok":
                     return .success
-                case "ticket_is_not_preprint_activated":
-                    return .notActivated
+                case "ticket_is_not_preprint_activated", "ticket_orphaned",
+                     "ticket_was_cancelled_from_guestlist", "not_found":
+                    return .invalidQR
                 default:
-                    return .wrongEvent(name: ticketType, time: nil)
+                    return .invalidQR
                 }
             }()
             
             let num = checkin.buyer?.phone ?? localStr("ticket.status.not_activated.tel.placeholder")
-            let email = checkin.buyer?.phone ?? localStr("ticket.status.not_activated.email.placeholder")
+            let email = checkin.buyer?.email ?? localStr("ticket.status.not_activated.email.placeholder")
             
             let secondary = TicketSecondaryInfoModel(type: ticketType, number: num, email: email)
             

@@ -23,7 +23,19 @@ final class Defaults {
 extension Defaults {
     
     var defaultLang: String {
-        return "ua"
+        
+        let preferredLanguage = Locale.preferredLanguages[0] as String
+        let arr = preferredLanguage.components(separatedBy: "-")
+        guard let deviceLanguage = arr.first else {
+            return "en"
+        }
+        
+        switch deviceLanguage {
+        case "uk":
+            return "ua"
+        default:
+            return "en"
+        }
     }
     
     private var currentLangKey: String {

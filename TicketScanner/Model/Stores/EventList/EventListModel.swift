@@ -33,7 +33,7 @@ struct EventListReducer {
             switch response {
             case let .success(model):
                 var events = model.adaptToEventModelList
-                events.sort { $0.startDate < $1.startDate }
+                events.sort { $0.startDate > $1.startDate }
                 oldState.eventList = events
             case .expiredToken:
                 expiredTokenAction?()

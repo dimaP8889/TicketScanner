@@ -85,6 +85,7 @@
 		F16985ED2653101600B26671 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16985D82653101500B26671 /* Assets.xcassets */; };
 		F1698607265321A000B26671 /* EKRepro-2204.otf in Resources */ = {isa = PBXBuildFile; fileRef = F1698606265321A000B26671 /* EKRepro-2204.otf */; };
 		F169860B265322C400B26671 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F169860A265322C400B26671 /* Action.swift */; };
+		F169985F26E245FB005488DA /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = F169985E26E245FB005488DA /* en.strings */; };
 		F172FE8A26655EAC00FF9569 /* LoginCredentialsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F172FE8926655EAC00FF9569 /* LoginCredentialsModel.swift */; };
 		F172FE8D2665631A00FF9569 /* LoginCredentialsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F172FE8C2665631A00FF9569 /* LoginCredentialsStore.swift */; };
 		F198157E2674E4E500E9218F /* FullTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19815722674E4E500E9218F /* FullTicketView.swift */; };
@@ -212,6 +213,7 @@
 		F1698604265315B600B26671 /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		F1698606265321A000B26671 /* EKRepro-2204.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EKRepro-2204.otf"; sourceTree = "<group>"; };
 		F169860A265322C400B26671 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		F169985E26E245FB005488DA /* en.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = en.strings; sourceTree = "<group>"; };
 		F172FE8926655EAC00FF9569 /* LoginCredentialsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCredentialsModel.swift; sourceTree = "<group>"; };
 		F172FE8C2665631A00FF9569 /* LoginCredentialsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCredentialsStore.swift; sourceTree = "<group>"; };
 		F19815722674E4E500E9218F /* FullTicketView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullTicketView.swift; sourceTree = "<group>"; };
@@ -1111,6 +1113,7 @@
 			isa = PBXGroup;
 			children = (
 				F1FCC339265EF7DB00951F8B /* ua.strings */,
+				F169985E26E245FB005488DA /* en.strings */,
 			);
 			path = String;
 			sourceTree = "<group>";
@@ -1187,6 +1190,7 @@
 				F1698607265321A000B26671 /* EKRepro-2204.otf in Resources */,
 				F16985ED2653101600B26671 /* Assets.xcassets in Resources */,
 				F1CE7B9E26D4014C00EA53AE /* error.wav in Resources */,
+				F169985F26E245FB005488DA /* en.strings in Resources */,
 				F1B73CF426D6E01700620CCF /* TimeHeader.xib in Resources */,
 				F161847E26D54F5700C97FD9 /* ParticipantsTicketCell.xib in Resources */,
 			);

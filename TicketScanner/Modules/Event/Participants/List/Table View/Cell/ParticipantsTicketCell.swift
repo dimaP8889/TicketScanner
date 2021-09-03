@@ -187,7 +187,7 @@ private extension ParticipantsTicketCell {
             let vm = CheckedInUIKitViewModel(time: time, date: date)
             alreadyCheckedView.viewModel = vm
             alreadyCheckedView.isHidden = false
-        case .notActivated:
+        case .invalidQR:
             invalidQrView.isHidden = false
         case let .refunded(time):
             let vm = RefundedUIKitViewModel(date: time)

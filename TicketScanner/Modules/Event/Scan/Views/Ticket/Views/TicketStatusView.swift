@@ -22,7 +22,7 @@ struct TicketStatusView: View {
             WrongEventView(festivalName: name, date: time)
         case .success:
             EmptyView()
-        case .notActivated:
+        case .invalidQR:
             InvalidQRView()
         }
     }

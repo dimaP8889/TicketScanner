@@ -87,7 +87,7 @@ extension ScanFailResultApiModel {
             let date = Date(timeIntervalSince1970: TimeInterval(time / 1000))
             status = .wrongEvent(name: title, time: date.stringDate)
         case "ticket_is_not_preprint_activated":
-            status = .notActivated
+            status = .invalidQR
         default:
             return nil
         }
