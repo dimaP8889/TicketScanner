@@ -20,7 +20,7 @@
 //Registration
 "registration.button.title" = "Увійти";
 "registration.square.title" = "Вхід";
-"registration.button.check-in" = "2204\nCheck in";
+"registration.button.check-in" = "2204\nCheck-In";
 "registration.error.title" = "Неправильний email або пароль";
 "registration.textfield.email.description" = "Email або id";
 "registration.textfield.password.description" = "Пароль";

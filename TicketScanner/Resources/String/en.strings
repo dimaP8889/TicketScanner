@@ -20,7 +20,7 @@
 //Registration
 "registration.button.title" = "Log In";
 "registration.square.title" = "Login";
-"registration.button.check-in" = "2204\nCheck in";
+"registration.button.check-in" = "2204\nCheck-In";
 "registration.error.title" = "Incorrect email or password";
 "registration.textfield.email.description" = "Email or id";
 "registration.textfield.password.description" = "Password";
