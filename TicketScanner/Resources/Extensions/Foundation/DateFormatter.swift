@@ -19,7 +19,7 @@ extension DateFormatter {
         case "ua":
             dateFormatter.locale = Locale(identifier: "uk_UA")
         default:
-            dateFormatter.locale = Locale(identifier: "uk_UA")
+            dateFormatter.locale = Locale(identifier: "en")
         }
         return dateFormatter
     }

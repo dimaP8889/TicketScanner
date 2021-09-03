@@ -95,7 +95,7 @@ private extension Date {
         case "ua":
             return Locale(identifier: "uk_UA")
         default:
-            return Locale(identifier: "uk_UA")
+            return Locale(identifier: "en")
         }
     }
 }

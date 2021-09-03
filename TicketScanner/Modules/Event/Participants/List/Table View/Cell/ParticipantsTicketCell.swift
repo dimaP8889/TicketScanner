@@ -42,6 +42,13 @@ final class ParticipantsTicketCell: UITableViewCell {
     @IBOutlet private var emailTitleLabel: UILabel!
     @IBOutlet private var emailValueLabel: UILabel!
     
+    // Constraints
+    @IBOutlet private var ticketTypeLabelWidth: NSLayoutConstraint!
+    @IBOutlet private var phoneLabelWidth: NSLayoutConstraint!
+    @IBOutlet private var emailLabelWidth: NSLayoutConstraint!
+    
+    @IBOutlet private var mainStackViewBottomConstraint: NSLayoutConstraint!
+    
     var viewModel: ParticipantsTicketViewModel? {
         didSet {
             updateCell()
@@ -65,6 +72,7 @@ private extension ParticipantsTicketCell {
         setLabels()
         setStatusViews()
         setCellColor()
+        setViewAppearances()
     }
     
     @objc func didSelectCell() {
@@ -117,7 +125,6 @@ private extension ParticipantsTicketCell {
     func setLabelsParams() {
         
         participantNameLabel.font = .main(ofSize: 17)
-        participantNameLabel.textColor = UIColor(Color.codGray)
         
         timeLabel.font = .main(ofSize: 14)
         timeLabel.textColor = UIColor(Color.newGray)
@@ -150,7 +157,18 @@ private extension ParticipantsTicketCell {
         
         guard let viewModel = viewModel else { return }
         
-        participantNameLabel.text = viewModel.model.main.name
+        switch viewModel.model.status {
+        case .invalidQR:
+            participantNameLabel.text = localStr("alert.fail")
+            participantNameLabel.textColor = UIColor(Color.newGray)
+        case .success:
+            participantNameLabel.text = viewModel.model.main.name
+            participantNameLabel.textColor = UIColor(Color.codGray)
+        default:
+            participantNameLabel.text = viewModel.model.main.name
+            participantNameLabel.textColor = UIColor(Color.newGray)
+        }
+        
         timeLabel.text = viewModel.model.main.time
         ticketNumberLabel.text = "# " + viewModel.model.main.ticketNumber
         ticketNumberLabel.isHidden = !viewModel.isOpened
@@ -163,6 +181,30 @@ private extension ParticipantsTicketCell {
         
         emailTitleLabel.text = localStr("scan.ticket.email")
         emailValueLabel.text = viewModel.model.secondary.email
+        
+        setStackViewConstraints()
+    }
+    
+    func setStackViewConstraints() {
+        
+        guard let viewModel = viewModel else { return }
+        
+        let typeWidth = localStr("scan.ticket.type").width(constraintedHeight: 20, font: .main(ofSize: 14))
+        let phoneWidth = localStr("scan.ticket.phone").width(constraintedHeight: 20, font: .main(ofSize: 14))
+        let emailWidth = localStr("scan.ticket.email").width(constraintedHeight: 20, font: .main(ofSize: 14))
+        
+        let max = max(typeWidth, phoneWidth, emailWidth)
+        
+        ticketTypeLabelWidth.constant = max
+        phoneLabelWidth.constant = max
+        emailLabelWidth.constant = max
+        
+        switch viewModel.model.status {
+        case .invalidQR where viewModel.isOpened == true:
+            mainStackViewBottomConstraint.constant = 32
+        default:
+            mainStackViewBottomConstraint.constant = 19
+        }
     }
     
     func setStatusViews() {
@@ -200,6 +242,19 @@ private extension ParticipantsTicketCell {
             let vm = WrongEventUIKitViewModel(date: time, festivalName: name)
             wrongEventView.viewModel = vm
             wrongEventView.isHidden = false
+        }
+    }
+    
+    func setViewAppearances() {
+        
+        guard let viewModel = viewModel else { return }
+        
+        switch viewModel.model.status {
+        case .invalidQR:
+            ticketNumberLabel.isHidden = true
+            fullTicketView.isHidden = true
+        default:
+            return
         }
     }
     

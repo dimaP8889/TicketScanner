@@ -157,8 +157,8 @@ extension VisitiorsApiModel {
                 }
             }()
             
-            let num = checkin.buyer?.phone ?? localStr("ticket.status.not_activated.tel.placeholder")
-            let email = checkin.buyer?.email ?? localStr("ticket.status.not_activated.email.placeholder")
+            let num = checkin.buyer?.phone.securedNumber ?? localStr("ticket.status.not_activated.tel.placeholder")
+            let email = checkin.buyer?.email.securedEmail ?? localStr("ticket.status.not_activated.email.placeholder")
             
             let secondary = TicketSecondaryInfoModel(type: ticketType, number: num, email: email)
             
