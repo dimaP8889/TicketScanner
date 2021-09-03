@@ -34,7 +34,7 @@ struct EventsListView: View {
                         Button(
                             action: {
                                 selectedEvent = data
-                                isNavLinkActive = data.isActive
+                                isNavLinkActive = data.isOpened
                             },
                             label: {
                                 EventDataView(model: data)
