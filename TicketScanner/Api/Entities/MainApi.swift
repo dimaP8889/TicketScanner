@@ -66,8 +66,17 @@ extension MainApi : Requestable {
     func formData() -> [String : Any] {
         switch self {
         case let .authorize(user, password):
+            
+            let lineName : String
+            
+            #if DEV
+                lineName = "email"
+            #else
+                lineName = "username"
+            #endif
+            
             return [
-                "username" : user,
+                lineName : user,
                 "password" : password,
                 "expiresIn" : "30 days"
             ]

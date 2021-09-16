@@ -20,7 +20,7 @@ extension VisitiorsApiModel {
             
             case ticketTypeUk = "ticketType_uk"
             case ticketTypeEn = "ticketType_en"
-            case validationString, result, buyer, timestamp
+            case validationString, result, buyer, timestamp, expectedEvent
         }
         
         let ticketTypeUk: String?
@@ -28,6 +28,7 @@ extension VisitiorsApiModel {
         let validationString: String?
         let result: String
         let buyer: Buyer?
+        let expectedEvent : ExpectedEvent?
         let timestamp: Int
         
         init(from decoder: Decoder) throws {
@@ -57,6 +58,12 @@ extension VisitiorsApiModel {
                 self.buyer = buyer
             } else {
                 self.buyer = nil
+            }
+            
+            if let expectedEvent = try? container.decode(ExpectedEvent?.self, forKey: .expectedEvent) {
+                self.expectedEvent = expectedEvent
+            } else {
+                self.expectedEvent = nil
             }
             
             timestamp = try container.decode(Int.self, forKey: .timestamp)
@@ -146,7 +153,21 @@ extension VisitiorsApiModel {
                 case "ticket_was_refunded":
                     return .refunded(time: nil)
                 case "wrong_event":
-                    return .wrongEvent(name: ticketType, time: nil)
+                    guard let expectedEvent = checkin.expectedEvent else {
+                        return .wrongEvent(name: ticketType, time: nil)
+                    }
+                    
+                    let ticketType : String
+                    switch Defaults.shared.getCurrentLang() {
+                    case "en":
+                        ticketType = expectedEvent.titleUk ?? ""
+                    default:
+                        ticketType = expectedEvent.titleEn ?? expectedEvent.titleUk ?? ""
+                    }
+                    
+                    let time = Date(timeIntervalSince1970: TimeInterval(expectedEvent.startDateTime / 1000))
+                    
+                    return .wrongEvent(name: ticketType, time: time.stringDate)
                 case "ok":
                     return .success
                 case "ticket_is_not_preprint_activated", "ticket_orphaned",
@@ -174,5 +195,19 @@ extension VisitiorsApiModel {
         let name: String
         let phone: String
         let email: String
+    }
+    
+    struct ExpectedEvent : Codable {
+        
+        enum CodingKeys : String, CodingKey {
+            
+            case titleUk = "title_uk"
+            case titleEn = "title_en"
+            case startDateTime = "start_date_time"
+        }
+        
+        let titleUk: String?
+        let titleEn: String?
+        let startDateTime: Int
     }
 }
