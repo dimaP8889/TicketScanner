@@ -124,6 +124,8 @@
 		F1DE370E2693B038001D11C0 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE370D2693B038001D11C0 /* FilterView.swift */; };
 		F1DE37112693B822001D11C0 /* ParticipantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE37102693B822001D11C0 /* ParticipantsModel.swift */; };
 		F1DE37132693BC01001D11C0 /* ParticipantsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE37122693BC01001D11C0 /* ParticipantsStore.swift */; };
+		F1E9BCD627273BD1007A5AAE /* MainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E9BCD527273BD1007A5AAE /* MainStore.swift */; };
+		F1E9BCD827274D8D007A5AAE /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E9BCD727274D8D007A5AAE /* App.swift */; };
 		F1FCC331265EF6EB00951F8B /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FCC330265EF6EB00951F8B /* Defaults.swift */; };
 		F1FCC333265EF79C00951F8B /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FCC332265EF79C00951F8B /* Global.swift */; };
 		F1FCC337265EF7DB00951F8B /* ua.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1FCC339265EF7DB00951F8B /* ua.strings */; };
@@ -251,6 +253,8 @@
 		F1DE370D2693B038001D11C0 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		F1DE37102693B822001D11C0 /* ParticipantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsModel.swift; sourceTree = "<group>"; };
 		F1DE37122693BC01001D11C0 /* ParticipantsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsStore.swift; sourceTree = "<group>"; };
+		F1E9BCD527273BD1007A5AAE /* MainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStore.swift; sourceTree = "<group>"; };
+		F1E9BCD727274D8D007A5AAE /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		F1FCC330265EF6EB00951F8B /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		F1FCC332265EF79C00951F8B /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		F1FCC338265EF7DB00951F8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ua.strings; sourceTree = "<group>"; };
@@ -806,6 +810,7 @@
 			children = (
 				F16985D62653101400B26671 /* TicketScannerApp.swift */,
 				F138C4582678DE4200915BC5 /* AppRootView.swift */,
+				F1E9BCD727274D8D007A5AAE /* App.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -985,6 +990,7 @@
 		F198159A26763C1A00E9218F /* Stores */ = {
 			isa = PBXGroup;
 			children = (
+				F1E9BCD427273BC4007A5AAE /* Main */,
 				F138C4532678DB8700915BC5 /* App */,
 				F1A8BA0126AF40B000BD4677 /* EventList */,
 				F172FE8B266562F800FF9569 /* Login */,
@@ -1107,6 +1113,14 @@
 				F1DE37122693BC01001D11C0 /* ParticipantsStore.swift */,
 			);
 			path = Participants;
+			sourceTree = "<group>";
+		};
+		F1E9BCD427273BC4007A5AAE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F1E9BCD527273BD1007A5AAE /* MainStore.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		F1FCC334265EF7BD00951F8B /* String */ = {
@@ -1296,9 +1310,11 @@
 				F1648D7D266EC50A00F1FDC1 /* TabBarModel.swift in Sources */,
 				F110200F267F333400AB420F /* MainApi.swift in Sources */,
 				F19815822674E4E500E9218F /* CheckedInView.swift in Sources */,
+				F1E9BCD827274D8D007A5AAE /* App.swift in Sources */,
 				F1DE37132693BC01001D11C0 /* ParticipantsStore.swift in Sources */,
 				F1648D7A266EBDFD00F1FDC1 /* EventsBackButton.swift in Sources */,
 				F15BD055265DA27F0026B6DD /* CustomTextFieldSwift.swift in Sources */,
+				F1E9BCD627273BD1007A5AAE /* MainStore.swift in Sources */,
 				F11A19E52674DD81001AE455 /* CenteringView.swift in Sources */,
 				F172FE8A26655EAC00FF9569 /* LoginCredentialsModel.swift in Sources */,
 				F198158B26750C4B00E9218F /* AlertContentView.swift in Sources */,
