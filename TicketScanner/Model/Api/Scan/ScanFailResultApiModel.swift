@@ -100,8 +100,8 @@ extension ScanFailResultApiModel {
             ticketType = ticket.ticketTypeUk
         }
         
-        let number = ticket.buyer?.phone ?? localStr("ticket.status.not_activated.tel.placeholder")
-        let email = ticket.buyer?.email ?? localStr("ticket.status.not_activated.email.placeholder")
+        let number = ticket.buyer?.phone.securedNumber ?? localStr("ticket.status.not_activated.tel.placeholder")
+        let email = ticket.buyer?.email.securedEmail ?? localStr("ticket.status.not_activated.email.placeholder")
         let secondary = TicketSecondaryInfoModel(type: ticketType, number: number, email: email)
         
         return FullTicketModel(main: main, status: status, secondary: secondary, timeDouble: date.timeIntervalSinceNow)
