@@ -15,7 +15,7 @@ struct EventsBackButton: View {
     
     var body: some View {
         if subtitle != nil {
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: 0) {
                 Button(action: {
                     backAction()
                 }, label: {
