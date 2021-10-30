@@ -9,7 +9,7 @@ import Combine
 
 struct EventListModel {
     
-    var eventList : [EventModel]
+    var eventList : [EventModel] = []
 }
 
 enum EventListAction {

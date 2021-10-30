@@ -125,7 +125,7 @@
 		F1DE37112693B822001D11C0 /* ParticipantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE37102693B822001D11C0 /* ParticipantsModel.swift */; };
 		F1DE37132693BC01001D11C0 /* ParticipantsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE37122693BC01001D11C0 /* ParticipantsStore.swift */; };
 		F1E9BCD627273BD1007A5AAE /* MainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E9BCD527273BD1007A5AAE /* MainStore.swift */; };
-		F1E9BCD827274D8D007A5AAE /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E9BCD727274D8D007A5AAE /* App.swift */; };
+		F1E9BCD827274D8D007A5AAE /* AppDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E9BCD727274D8D007A5AAE /* AppDataFlow.swift */; };
 		F1FCC331265EF6EB00951F8B /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FCC330265EF6EB00951F8B /* Defaults.swift */; };
 		F1FCC333265EF79C00951F8B /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FCC332265EF79C00951F8B /* Global.swift */; };
 		F1FCC337265EF7DB00951F8B /* ua.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1FCC339265EF7DB00951F8B /* ua.strings */; };
@@ -254,7 +254,7 @@
 		F1DE37102693B822001D11C0 /* ParticipantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsModel.swift; sourceTree = "<group>"; };
 		F1DE37122693BC01001D11C0 /* ParticipantsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsStore.swift; sourceTree = "<group>"; };
 		F1E9BCD527273BD1007A5AAE /* MainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStore.swift; sourceTree = "<group>"; };
-		F1E9BCD727274D8D007A5AAE /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		F1E9BCD727274D8D007A5AAE /* AppDataFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataFlow.swift; sourceTree = "<group>"; };
 		F1FCC330265EF6EB00951F8B /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		F1FCC332265EF79C00951F8B /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		F1FCC338265EF7DB00951F8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ua.strings; sourceTree = "<group>"; };
@@ -810,7 +810,7 @@
 			children = (
 				F16985D62653101400B26671 /* TicketScannerApp.swift */,
 				F138C4582678DE4200915BC5 /* AppRootView.swift */,
-				F1E9BCD727274D8D007A5AAE /* App.swift */,
+				F1E9BCD727274D8D007A5AAE /* AppDataFlow.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -1310,7 +1310,7 @@
 				F1648D7D266EC50A00F1FDC1 /* TabBarModel.swift in Sources */,
 				F110200F267F333400AB420F /* MainApi.swift in Sources */,
 				F19815822674E4E500E9218F /* CheckedInView.swift in Sources */,
-				F1E9BCD827274D8D007A5AAE /* App.swift in Sources */,
+				F1E9BCD827274D8D007A5AAE /* AppDataFlow.swift in Sources */,
 				F1DE37132693BC01001D11C0 /* ParticipantsStore.swift in Sources */,
 				F1648D7A266EBDFD00F1FDC1 /* EventsBackButton.swift in Sources */,
 				F15BD055265DA27F0026B6DD /* CustomTextFieldSwift.swift in Sources */,

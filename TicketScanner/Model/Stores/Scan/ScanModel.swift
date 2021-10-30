@@ -13,7 +13,7 @@ struct ScanModel {
     var isManual : Bool = false
     var alertModel : AlertModel? = nil
     var ticketModel : FullTicketModel? = nil
-    var eventId : String
+    var eventId : String = ""
     
     var isTicketPresented : Bool = false
     

@@ -9,35 +9,31 @@ import Foundation
 import Combine
 import SwiftUI
 
-final class Store<State, Action, Environment>: ObservableObject {
+final class Store<State, Action>: ObservableObject {
     
-    typealias Reducer<State, Action, Environment> = (inout State, Action, Environment) -> AnyPublisher<Action, Never>?
+    typealias Reducer<State, Action> = (inout State, Action) -> AnyPublisher<Action, Never>?
     
     @Published private(set) var state: State
     
-    private let environment: Environment
-    private let reducer : Reducer<State, Action, Environment>
+    private let reducer : Reducer<State, Action>
     private var cancellables: [AnyCancellable] = []
     
     init(
         initialState: State,
-        environment: Environment,
-        reducer: @escaping Reducer<State, Action, Environment>
+        reducer: @escaping Reducer<State, Action>
     ) {
         self.state = initialState
-        self.environment = environment
         self.reducer = reducer
     }
     
     func derived<DerivedState: Equatable, ExtractedAction>(
         deriveState: @escaping (State) -> DerivedState,
         embedAction: @escaping (ExtractedAction) -> Action
-    ) -> Store<DerivedState, ExtractedAction, Environment> {
+    ) -> Store<DerivedState, ExtractedAction> {
         
-        let store = Store<DerivedState, ExtractedAction, Environment>(
+        let store = Store<DerivedState, ExtractedAction>(
             initialState: deriveState(state),
-            environment: environment,
-            reducer: { _, action, _ in
+            reducer: { _, action in
                 self.send(embedAction(action))
                 return Empty().eraseToAnyPublisher()
             }
@@ -52,7 +48,7 @@ final class Store<State, Action, Environment>: ObservableObject {
     
     func send(_ action : Action) {
         
-        guard let effect = reducer(&state, action, environment) else {
+        guard let effect = reducer(&state, action) else {
             return
         }
 
