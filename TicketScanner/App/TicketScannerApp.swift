@@ -12,7 +12,6 @@ struct TicketScannerApp: App {
     
     private let appDataStore = AppDataStore(state: AppData())
     private let appDataStoreCopy = AppStore(initialState: .init(), reducer: mainReducer)
-    //AppDataStore(state: AppData())
     
     var body: some Scene {
         WindowGroup {

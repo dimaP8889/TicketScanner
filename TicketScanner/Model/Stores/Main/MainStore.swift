@@ -40,7 +40,6 @@ final class Store<State, Action>: ObservableObject {
         )
         $state
             .map(deriveState)
-            .removeDuplicates()
             .receive(on: DispatchQueue.main)
             .assign(to: &store.$state)
         return store

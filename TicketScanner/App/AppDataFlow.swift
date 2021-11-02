@@ -26,6 +26,10 @@ struct AppState {
     var participants : ParticipantsModel = .init(eventId: "")
 }
 
+enum ResponseError: Error {
+    case expiredToken
+}
+
 
 // MARK: - Reducers
 
@@ -40,18 +44,42 @@ func mainReducer(state: inout AppState, action: AppAction) -> AnyPublisher<AppAc
     case let .events(action):
         return eventsListReducer(state: &state.event, action: action)?
             .map(AppAction.events)
+            .catch { (error: ResponseError) -> Just<AppAction> in
+                switch error {
+                case .expiredToken:
+                    return Just(AppAction.app(action: .removeToken))
+                }
+            }
             .eraseToAnyPublisher()
     case let .login(action):
         return loginReducer(state: &state.login, action: action)?
             .map(AppAction.login)
+            .catch { (error: ResponseError) -> Just<AppAction> in
+                switch error {
+                case .expiredToken:
+                    return Just(AppAction.app(action: .removeToken))
+                }
+            }
             .eraseToAnyPublisher()
     case let .scan(action):
         return scanReducer(state: &state.scan, action: action)?
             .map(AppAction.scan)
+            .catch { (error: ResponseError) -> Just<AppAction> in
+                switch error {
+                case .expiredToken:
+                    return Just(AppAction.app(action: .removeToken))
+                }
+            }
             .eraseToAnyPublisher()
     case let .participants(action):
         return participantsReducer(state: &state.participants, action: action)?
             .map(AppAction.participants)
+            .catch { (error: ResponseError) -> Just<AppAction> in
+                switch error {
+                case .expiredToken:
+                    return Just(AppAction.app(action: .removeToken))
+                }
+            }
             .eraseToAnyPublisher()
     }
 }
@@ -72,12 +100,13 @@ private func appReducer(state: inout AppData, action: AppDataAction) -> AnyPubli
 
 
 // Event List
-private func eventsListReducer(state: inout EventListModel, action: EventListAction) -> AnyPublisher<EventListAction, Never>? {
+private func eventsListReducer(state: inout EventListModel, action: EventListAction) -> AnyPublisher<EventListAction, ResponseError>? {
     
     switch action {
     case .load:
         return Networking.main?.loadEvents()
             .map { EventListAction.set($0) }
+            .setFailureType(to: ResponseError.self)
             .eraseToAnyPublisher()
     case let .set(response):
         switch response {
@@ -86,7 +115,8 @@ private func eventsListReducer(state: inout EventListModel, action: EventListAct
             events.sort { $0.startDate > $1.startDate }
             state.eventList = events
         case .expiredToken:
-            break//expiredTokenAction?()
+            return Fail(error: ResponseError.expiredToken)
+                .eraseToAnyPublisher()
         default:
             break
         }
@@ -95,7 +125,7 @@ private func eventsListReducer(state: inout EventListModel, action: EventListAct
 }
 
 // Login
-private func loginReducer(state: inout LoginCredentials, action: LoginAction) -> AnyPublisher<LoginAction, Never>? {
+private func loginReducer(state: inout LoginCredentials, action: LoginAction) -> AnyPublisher<LoginAction, ResponseError>? {
     
     switch action {
     case let .changeEmail(email):
@@ -111,7 +141,8 @@ private func loginReducer(state: inout LoginCredentials, action: LoginAction) ->
             Defaults.shared.setCurrentUser(user)
             successAction((model.accessToken))
         case .expiredToken:
-            break//expiredTokenAction?()
+            return Fail(error: ResponseError.expiredToken)
+                .eraseToAnyPublisher()
         default:
             state.isError = true
         }
@@ -119,13 +150,14 @@ private func loginReducer(state: inout LoginCredentials, action: LoginAction) ->
         let user = state.email
         return Networking.main?.signin(username: user, password: state.password)
             .map { LoginAction.setLoginState($0, user, successAction) }
+            .setFailureType(to: ResponseError.self)
             .eraseToAnyPublisher()
     }
     return nil
 }
 
 // Scan
-private func scanReducer(state: inout ScanModel, action: ScanAction) -> AnyPublisher<ScanAction, Never>? {
+private func scanReducer(state: inout ScanModel, action: ScanAction) -> AnyPublisher<ScanAction, ResponseError>? {
     
     switch action {
     case .hideAlert:
@@ -144,6 +176,7 @@ private func scanReducer(state: inout ScanModel, action: ScanAction) -> AnyPubli
     case let .scan(validation):
         return Networking.main?.scan(validation: validation, eventId: state.eventId)
             .map { ScanAction.setScanResult($0, validation) }
+            .setFailureType(to: ResponseError.self)
             .eraseToAnyPublisher()
     case let .setScanResult(response, validation):
         return parseScanResult(response: response, validation: validation, state: &state)
@@ -155,7 +188,7 @@ private func parseScanResult(
     response: Response<ScanSuccessResultApiModel, ScanFailResultApiModel>,
     validation: String,
     state: inout ScanModel
-) -> AnyPublisher<ScanAction, Never>? {
+) -> AnyPublisher<ScanAction, ResponseError>? {
     
     switch response {
     case .success:
@@ -170,13 +203,13 @@ private func parseScanResult(
         print(error)
         return nil
     case .expiredToken:
-        //expiredTokenAction?()
-        return nil
+        return Fail(error: ResponseError.expiredToken)
+            .eraseToAnyPublisher()
     }
 }
 
 // Participants
-private func participantsReducer(state: inout ParticipantsModel, action: ParticipantsAction) -> AnyPublisher<ParticipantsAction, Never>? {
+private func participantsReducer(state: inout ParticipantsModel, action: ParticipantsAction) -> AnyPublisher<ParticipantsAction, ResponseError>? {
     
     switch action {
     case let .changeType(type):
@@ -189,6 +222,7 @@ private func participantsReducer(state: inout ParticipantsModel, action: Partici
     case .loadParticipants:
         return Networking.main?.loadParticipants(with: state.searchText, filter: state.filter.rawValue, eventId: state.eventId)
             .map { data in ParticipantsAction.setParticipants(response: data) }
+            .setFailureType(to: ResponseError.self)
             .eraseToAnyPublisher()
     case let .setParticipants(response):
         switch response {
@@ -202,8 +236,8 @@ private func participantsReducer(state: inout ParticipantsModel, action: Partici
             print(error)
             return nil
         case .expiredToken:
-            //expiredTokenAction?()
-            return nil
+            return Fail(error: ResponseError.expiredToken)
+                .eraseToAnyPublisher()
         }
     case let .openTicket(hash):
         if state.openedTicked == hash {
