@@ -10,7 +10,7 @@ import SwiftUI
 struct FilterView: View {
     
     @EnvironmentObject
-    var participantsStore : ParticipantsStore
+    var participantsStore : Store<ParticipantsModel, ParticipantsAction>
     
     var body: some View {
         HStack(spacing: 8) {
@@ -44,7 +44,7 @@ struct FilterView: View {
                 )
         )
         .onTapGesture {
-            participantsStore.dispatch(action: .changeType(to: .all))
+            participantsStore.send(.changeType(to: .all))
         }
     }
     
@@ -71,7 +71,7 @@ struct FilterView: View {
                 )
         )
         .onTapGesture {
-            participantsStore.dispatch(action: .changeType(to: .success))
+            participantsStore.send(.changeType(to: .success))
         }
     }
     
@@ -98,7 +98,7 @@ struct FilterView: View {
                 )
         )
         .onTapGesture {
-            participantsStore.dispatch(action: .changeType(to: .failure))
+            participantsStore.send(.changeType(to: .failure))
         }
     }
 }
@@ -107,6 +107,5 @@ struct FilterView_Previews: PreviewProvider {
 
     static var previews: some View {
         FilterView()
-            .environmentObject(ParticipantsStore(eventId: ""))
     }
 }

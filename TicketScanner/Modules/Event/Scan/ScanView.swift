@@ -10,8 +10,15 @@ import AVFoundation
 
 struct ScanView: View {
     
-    @EnvironmentObject var scanStore : ScanStore
+    @EnvironmentObject var scanStore : Store<ScanModel, ScanAction>
     @State private var audioPlayer: AVAudioPlayer!
+    
+    @State private var isTicketPresented : Bool = false
+    
+    init() {
+        #warning("NEED TO CHANGE")
+        //isTicketPresented = scanStore.state.isTicketPresented
+    }
     
     var body: some View {
         
@@ -23,7 +30,7 @@ struct ScanView: View {
                 if !scanStore.state.isManual {
                     ShowManualView(tapAction: {
                         withAnimation {
-                            scanStore.dispatch(action: .showManual)
+                            scanStore.send(.showManual)
                         }
                     })
                     .padding(.top, 6)
@@ -31,8 +38,10 @@ struct ScanView: View {
                 }
             }
             NavigationLink(
-                destination: FullTicketView(model: scanStore.ticket),
-                isActive: $scanStore.isTicketPresented
+                destination: FullTicketView(
+                    model: scanStore.state.ticketModel ?? .random
+                ),
+                isActive: $isTicketPresented
             ) { EmptyView() }
             .hidden()
         }

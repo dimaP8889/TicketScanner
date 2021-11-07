@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AppData {
+struct AppData : Equatable {
     
     var isUserAuthorized : Bool = (Keychain.shared.accessToken != nil)
 }

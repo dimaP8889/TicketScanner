@@ -12,7 +12,7 @@ struct EventTabBarView: View {
     @ObservedObject private var data : TabBarModel
     
     @EnvironmentObject
-    var appDataStore: AppDataStore
+    var appDataStore: AppStore
     
     @Environment(\.presentationMode)
     var presentationMode: Binding<PresentationMode>
@@ -22,15 +22,10 @@ struct EventTabBarView: View {
     }
     private var event : EventModel?
     
-    private let scanStore : ScanStore
-    private let participantsStore : ParticipantsStore
-    
     init(event: EventModel?) {
         
         self.event = event
         self.data = TabBarModel()
-        self.scanStore = ScanStore(eventId: event?.id ?? "")
-        self.participantsStore = ParticipantsStore(eventId: event?.id ?? "")
         
         UITabBar.setBar(color: .white)
     }
@@ -39,7 +34,12 @@ struct EventTabBarView: View {
         
         TabView(selection: $data.selection) {
             ScanView()
-                .environmentObject(scanStore)
+                .environmentObject(
+                    appDataStore.derived(
+                        deriveState: \.scan,
+                        embedAction: AppAction.scan
+                    )
+                )
                 .tabItem {
                     Image("ic_scan")
                         .renderingMode(.template)
@@ -49,7 +49,12 @@ struct EventTabBarView: View {
                 .tag(0)
             
             ParticipantsView()
-                .environmentObject(participantsStore)
+                .environmentObject(
+                    appDataStore.derived(
+                        deriveState: \.participants,
+                        embedAction: AppAction.participants
+                    )
+                )
                 .tabItem {
                     Image("ic_participants")
                         .renderingMode(.template)
@@ -69,6 +74,12 @@ struct EventTabBarView: View {
 //                .tag(2)
             
             ProfileView()
+                .environmentObject(
+                    appDataStore.derived(
+                        deriveState: \.app,
+                        embedAction: AppAction.app
+                    )
+                )
                 .tabItem {
                     Image("ic_profile")
                         .renderingMode(.template)
@@ -77,10 +88,6 @@ struct EventTabBarView: View {
                 }
                 .tag(3)
             
-        }
-        .onAppear {
-            scanStore.setExpiredAction { appDataStore.dispatch(action: .removeToken) }
-            participantsStore.setExpiredAction { appDataStore.dispatch(action: .removeToken) }
         }
         .accentColor(.codGray)
         .navigationBarBackButtonHidden(true)

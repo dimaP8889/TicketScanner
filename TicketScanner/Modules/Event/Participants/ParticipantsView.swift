@@ -12,7 +12,7 @@ struct ParticipantsView: View {
     @State var searchText : String = ""
     
     @EnvironmentObject
-    var participantsStore : ParticipantsStore
+    var participantsStore : Store<ParticipantsModel, ParticipantsAction>
     
     var body: some View {
         ZStack {
@@ -28,9 +28,7 @@ struct ParticipantsView: View {
             }
         }
         .onAppear {
-            participantsStore.dispatch(
-                action: .loadParticipants
-            )
+            participantsStore.send(.loadParticipants)
         }
     }
 }

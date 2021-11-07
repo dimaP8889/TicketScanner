@@ -8,26 +8,16 @@
 import SwiftUI
 
 struct AppRootView: View {
-    
-    private let loginStore = LoginStore(state: LoginCredentials(email: "", password: ""))
-    
-    private let eventListStore = EventListStore()
 
-    @EnvironmentObject var appDataStore: AppDataStore
+    @EnvironmentObject var appDataStore: AppStore
     
     var body: some View {
         Group {
-            if !appDataStore.state.isUserAuthorized {
+            if !appDataStore.state.app.isUserAuthorized {
                 RegistrationView()
-                    .environmentObject(loginStore)
             } else {
                 EventsListView()
-                    .environmentObject(eventListStore)
             }
-        }
-        .onAppear {
-            loginStore.setExpiredAction { appDataStore.dispatch(action: .removeToken) }
-            eventListStore.setExpiredAction { appDataStore.dispatch(action: .removeToken) }
         }
     }
 }

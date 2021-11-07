@@ -9,13 +9,13 @@ import SwiftUI
 
 struct ProfileView: View {
     
-    @EnvironmentObject var appDataStore: AppDataStore
+    @EnvironmentObject var appDataStore: Store<AppData, AppDataAction>
     
     var body: some View {
         VStack(spacing: 12) {
             ProfileSquareView()
             LogoutBigButton {
-                appDataStore.dispatch(action: .removeToken)
+                appDataStore.send(.removeToken)
             }
             Spacer()
         }

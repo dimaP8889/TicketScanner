@@ -11,7 +11,7 @@ struct InfoFieldView: View {
     
     var fieldType : FieldType
     
-    @EnvironmentObject private var store: LoginStore
+    @EnvironmentObject private var store: Store<LoginCredentials, LoginAction>
     
     @State private var isHiden = true
     
@@ -64,9 +64,8 @@ private extension InfoFieldView {
                     self.isEditting = isEditting
                 },
                 textDidChange: {
-                    store.dispatch(
-                        action:
-                            fieldType == .password
+                    store.send(
+                        fieldType == .password
                             ? .changePassword(text)
                             : .changeEmail(text)
                     )

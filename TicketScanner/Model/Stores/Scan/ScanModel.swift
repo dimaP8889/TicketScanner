@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-struct ScanModel {
+struct ScanModel : Equatable {
     
     var isManual : Bool = false
     var alertModel : AlertModel? = nil

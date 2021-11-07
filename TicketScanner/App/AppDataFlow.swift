@@ -20,7 +20,7 @@ enum AppAction {
 
 struct AppState {
     var app : AppData = .init()
-    var event : EventListModel = .init()
+    var events : EventListModel = .init()
     var login : LoginCredentials = .init(email: "", password: "")
     var scan : ScanModel = .init()
     var participants : ParticipantsModel = .init(eventId: "")
@@ -42,7 +42,7 @@ func mainReducer(state: inout AppState, action: AppAction) -> AnyPublisher<AppAc
             .map(AppAction.app)
             .eraseToAnyPublisher()
     case let .events(action):
-        return eventsListReducer(state: &state.event, action: action)?
+        return eventsListReducer(state: &state.events, action: action)?
             .map(AppAction.events)
             .catch { (error: ResponseError) -> Just<AppAction> in
                 switch error {

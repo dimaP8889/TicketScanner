@@ -7,7 +7,7 @@
 
 import Combine
 
-struct EventListModel {
+struct EventListModel : Equatable {
     
     var eventList : [EventModel] = []
 }

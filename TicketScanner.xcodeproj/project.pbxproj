@@ -13,7 +13,6 @@
 		F10A0D372655CB7900487FD5 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A0D362655CB7900487FD5 /* Font.swift */; };
 		F10A0D392655CCE700487FD5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A0D382655CCE700487FD5 /* Color.swift */; };
 		F10A0D3D2655D0BF00487FD5 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A0D3C2655D0BF00487FD5 /* CustomTextField.swift */; };
-		F10FAE5C267677FA00B55A28 /* ScanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FAE5B267677FA00B55A28 /* ScanStore.swift */; };
 		F10FAE62267681C600B55A28 /* ManualEnterTextFieldContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FAE61267681C600B55A28 /* ManualEnterTextFieldContainer.swift */; };
 		F10FAE652676836700B55A28 /* ManualEnterTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FAE642676836700B55A28 /* ManualEnterTextField.swift */; };
 		F1102002267E9BC500AB420F /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1102001267E9BC500AB420F /* ApiClient.swift */; };
@@ -34,7 +33,6 @@
 		F11BD1AF26B0B23C00ED352D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BD1AE26B0B23C00ED352D /* Constants.swift */; };
 		F138C44D2677D33700915BC5 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138C44C2677D33700915BC5 /* UINavigationController.swift */; };
 		F138C4502677D67300915BC5 /* TicketBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138C44F2677D67300915BC5 /* TicketBackButton.swift */; };
-		F138C4552678DB9600915BC5 /* AppDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138C4542678DB9600915BC5 /* AppDataStore.swift */; };
 		F138C4572678DBEB00915BC5 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138C4562678DBEB00915BC5 /* AppData.swift */; };
 		F138C4592678DE4200915BC5 /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F138C4582678DE4200915BC5 /* AppRootView.swift */; };
 		F13986F0266D1E5F00AD3199 /* ActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13986EF266D1E5F00AD3199 /* ActiveView.swift */; };
@@ -87,7 +85,6 @@
 		F169860B265322C400B26671 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F169860A265322C400B26671 /* Action.swift */; };
 		F169985F26E245FB005488DA /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = F169985E26E245FB005488DA /* en.strings */; };
 		F172FE8A26655EAC00FF9569 /* LoginCredentialsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F172FE8926655EAC00FF9569 /* LoginCredentialsModel.swift */; };
-		F172FE8D2665631A00FF9569 /* LoginCredentialsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F172FE8C2665631A00FF9569 /* LoginCredentialsStore.swift */; };
 		F198157E2674E4E500E9218F /* FullTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19815722674E4E500E9218F /* FullTicketView.swift */; };
 		F198157F2674E4E500E9218F /* TicketStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19815742674E4E500E9218F /* TicketStatusView.swift */; };
 		F19815802674E4E500E9218F /* OkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19815772674E4E500E9218F /* OkButton.swift */; };
@@ -109,7 +106,6 @@
 		F1A1C24A2659BF7C006F4922 /* LogInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A1C2492659BF7C006F4922 /* LogInButton.swift */; };
 		F1A8B9FF26AF3C7C00BD4677 /* EventListApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8B9FE26AF3C7C00BD4677 /* EventListApiModel.swift */; };
 		F1A8BA0326AF40C900BD4677 /* EventListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8BA0226AF40C900BD4677 /* EventListModel.swift */; };
-		F1A8BA0526AF430700BD4677 /* EventListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8BA0426AF430700BD4677 /* EventListStore.swift */; };
 		F1A8BA0726AF4D6B00BD4677 /* ScanFailResultApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8BA0626AF4D6B00BD4677 /* ScanFailResultApiModel.swift */; };
 		F1A8BA0B26AFFD4D00BD4677 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8BA0A26AFFD4D00BD4677 /* ClearButton.swift */; };
 		F1ADE0F026C814DF00E77360 /* InvalidQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ADE0EF26C814DF00E77360 /* InvalidQRView.swift */; };
@@ -123,7 +119,6 @@
 		F1DE370B2693A583001D11C0 /* SearchFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE370A2693A583001D11C0 /* SearchFieldView.swift */; };
 		F1DE370E2693B038001D11C0 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE370D2693B038001D11C0 /* FilterView.swift */; };
 		F1DE37112693B822001D11C0 /* ParticipantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE37102693B822001D11C0 /* ParticipantsModel.swift */; };
-		F1DE37132693BC01001D11C0 /* ParticipantsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE37122693BC01001D11C0 /* ParticipantsStore.swift */; };
 		F1E9BCD627273BD1007A5AAE /* MainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E9BCD527273BD1007A5AAE /* MainStore.swift */; };
 		F1E9BCD827274D8D007A5AAE /* AppDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E9BCD727274D8D007A5AAE /* AppDataFlow.swift */; };
 		F1FCC331265EF6EB00951F8B /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FCC330265EF6EB00951F8B /* Defaults.swift */; };
@@ -140,7 +135,6 @@
 		F10A0D362655CB7900487FD5 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		F10A0D382655CCE700487FD5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		F10A0D3C2655D0BF00487FD5 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		F10FAE5B267677FA00B55A28 /* ScanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanStore.swift; sourceTree = "<group>"; };
 		F10FAE61267681C600B55A28 /* ManualEnterTextFieldContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualEnterTextFieldContainer.swift; sourceTree = "<group>"; };
 		F10FAE642676836700B55A28 /* ManualEnterTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualEnterTextField.swift; sourceTree = "<group>"; };
 		F1102001267E9BC500AB420F /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -162,7 +156,6 @@
 		F13288E32669416C009F2C48 /* EventsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListView.swift; sourceTree = "<group>"; };
 		F138C44C2677D33700915BC5 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		F138C44F2677D67300915BC5 /* TicketBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketBackButton.swift; sourceTree = "<group>"; };
-		F138C4542678DB9600915BC5 /* AppDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataStore.swift; sourceTree = "<group>"; };
 		F138C4562678DBEB00915BC5 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		F138C4582678DE4200915BC5 /* AppRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootView.swift; sourceTree = "<group>"; };
 		F13986EF266D1E5F00AD3199 /* ActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveView.swift; sourceTree = "<group>"; };
@@ -217,7 +210,6 @@
 		F169860A265322C400B26671 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		F169985E26E245FB005488DA /* en.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = en.strings; sourceTree = "<group>"; };
 		F172FE8926655EAC00FF9569 /* LoginCredentialsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCredentialsModel.swift; sourceTree = "<group>"; };
-		F172FE8C2665631A00FF9569 /* LoginCredentialsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCredentialsStore.swift; sourceTree = "<group>"; };
 		F19815722674E4E500E9218F /* FullTicketView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullTicketView.swift; sourceTree = "<group>"; };
 		F19815742674E4E500E9218F /* TicketStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketStatusView.swift; sourceTree = "<group>"; };
 		F19815772674E4E500E9218F /* OkButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OkButton.swift; sourceTree = "<group>"; };
@@ -238,7 +230,6 @@
 		F1A1C2492659BF7C006F4922 /* LogInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInButton.swift; sourceTree = "<group>"; };
 		F1A8B9FE26AF3C7C00BD4677 /* EventListApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListApiModel.swift; sourceTree = "<group>"; };
 		F1A8BA0226AF40C900BD4677 /* EventListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListModel.swift; sourceTree = "<group>"; };
-		F1A8BA0426AF430700BD4677 /* EventListStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListStore.swift; sourceTree = "<group>"; };
 		F1A8BA0626AF4D6B00BD4677 /* ScanFailResultApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanFailResultApiModel.swift; sourceTree = "<group>"; };
 		F1A8BA0A26AFFD4D00BD4677 /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		F1ADE0EF26C814DF00E77360 /* InvalidQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidQRView.swift; sourceTree = "<group>"; };
@@ -252,7 +243,6 @@
 		F1DE370A2693A583001D11C0 /* SearchFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldView.swift; sourceTree = "<group>"; };
 		F1DE370D2693B038001D11C0 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		F1DE37102693B822001D11C0 /* ParticipantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsModel.swift; sourceTree = "<group>"; };
-		F1DE37122693BC01001D11C0 /* ParticipantsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsStore.swift; sourceTree = "<group>"; };
 		F1E9BCD527273BD1007A5AAE /* MainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStore.swift; sourceTree = "<group>"; };
 		F1E9BCD727274D8D007A5AAE /* AppDataFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataFlow.swift; sourceTree = "<group>"; };
 		F1FCC330265EF6EB00951F8B /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
@@ -442,7 +432,6 @@
 		F138C4532678DB8700915BC5 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				F138C4542678DB9600915BC5 /* AppDataStore.swift */,
 				F138C4562678DBEB00915BC5 /* AppData.swift */,
 			);
 			path = App;
@@ -907,7 +896,6 @@
 			isa = PBXGroup;
 			children = (
 				F172FE8926655EAC00FF9569 /* LoginCredentialsModel.swift */,
-				F172FE8C2665631A00FF9569 /* LoginCredentialsStore.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1022,7 +1010,6 @@
 			isa = PBXGroup;
 			children = (
 				F19815A82676698800E9218F /* ScanModel.swift */,
-				F10FAE5B267677FA00B55A28 /* ScanStore.swift */,
 			);
 			path = Scan;
 			sourceTree = "<group>";
@@ -1051,7 +1038,6 @@
 			isa = PBXGroup;
 			children = (
 				F1A8BA0226AF40C900BD4677 /* EventListModel.swift */,
-				F1A8BA0426AF430700BD4677 /* EventListStore.swift */,
 			);
 			path = EventList;
 			sourceTree = "<group>";
@@ -1110,7 +1096,6 @@
 			isa = PBXGroup;
 			children = (
 				F1DE37102693B822001D11C0 /* ParticipantsModel.swift */,
-				F1DE37122693BC01001D11C0 /* ParticipantsStore.swift */,
 			);
 			path = Participants;
 			sourceTree = "<group>";
@@ -1231,11 +1216,9 @@
 				F14BB49B26AC9FB3004CA680 /* LogoutBigButton.swift in Sources */,
 				F1102009267EA4D200AB420F /* Keychain.swift in Sources */,
 				F10A0D302655C76600487FD5 /* InfoFieldView.swift in Sources */,
-				F10FAE5C267677FA00B55A28 /* ScanStore.swift in Sources */,
 				F1FCC331265EF6EB00951F8B /* Defaults.swift in Sources */,
 				F1FEC09C2659B862003B9235 /* SquareView.swift in Sources */,
 				F138C44D2677D33700915BC5 /* UINavigationController.swift in Sources */,
-				F1A8BA0526AF430700BD4677 /* EventListStore.swift in Sources */,
 				F1B73CF226D6E00600620CCF /* TimeHeader.swift in Sources */,
 				F1648D64266D55CA00F1FDC1 /* DateFormatter.swift in Sources */,
 				F1A8B9FF26AF3C7C00BD4677 /* EventListApiModel.swift in Sources */,
@@ -1273,7 +1256,6 @@
 				F11A19DE2674D44E001AE455 /* Text.swift in Sources */,
 				F157283B266D14AD00F6BE64 /* EventDataView.swift in Sources */,
 				F10FAE652676836700B55A28 /* ManualEnterTextField.swift in Sources */,
-				F138C4552678DB9600915BC5 /* AppDataStore.swift in Sources */,
 				F11A19E22674DD32001AE455 /* CenteringColumnPreferenceKey.swift in Sources */,
 				F161848026D5585800C97FD9 /* UIFont.swift in Sources */,
 				F138C4572678DBEB00915BC5 /* AppData.swift in Sources */,
@@ -1294,7 +1276,6 @@
 				F110200C267EA51400AB420F /* AccessToken.swift in Sources */,
 				F1DE370E2693B038001D11C0 /* FilterView.swift in Sources */,
 				F1B73CED26D6DEA400620CCF /* ParticipantsTableView.swift in Sources */,
-				F172FE8D2665631A00FF9569 /* LoginCredentialsStore.swift in Sources */,
 				F14BB48226AC42A2004CA680 /* ParticipantsInfoModel.swift in Sources */,
 				F10FAE62267681C600B55A28 /* ManualEnterTextFieldContainer.swift in Sources */,
 				F1DE370B2693A583001D11C0 /* SearchFieldView.swift in Sources */,
@@ -1311,7 +1292,6 @@
 				F110200F267F333400AB420F /* MainApi.swift in Sources */,
 				F19815822674E4E500E9218F /* CheckedInView.swift in Sources */,
 				F1E9BCD827274D8D007A5AAE /* AppDataFlow.swift in Sources */,
-				F1DE37132693BC01001D11C0 /* ParticipantsStore.swift in Sources */,
 				F1648D7A266EBDFD00F1FDC1 /* EventsBackButton.swift in Sources */,
 				F15BD055265DA27F0026B6DD /* CustomTextFieldSwift.swift in Sources */,
 				F1E9BCD627273BD1007A5AAE /* MainStore.swift in Sources */,

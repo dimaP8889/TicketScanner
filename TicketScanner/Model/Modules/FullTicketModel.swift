@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FullTicketModel : Identifiable {
+struct FullTicketModel : Identifiable, Equatable {
     
     let id = UUID()
     
@@ -32,14 +32,14 @@ struct FullTicketModel : Identifiable {
     }
 }
 
-struct TicketMainInfoModel {
+struct TicketMainInfoModel : Equatable {
     
     let name : String
     let time : String
     let ticketNumber : String
 }
 
-enum TicketStatus {
+enum TicketStatus : Equatable {
     
     case success
     case invalidQR
@@ -48,7 +48,7 @@ enum TicketStatus {
     case wrongEvent(name: String, time: String?)
 }
 
-struct TicketSecondaryInfoModel {
+struct TicketSecondaryInfoModel : Equatable {
     
     let type : String
     let number : String

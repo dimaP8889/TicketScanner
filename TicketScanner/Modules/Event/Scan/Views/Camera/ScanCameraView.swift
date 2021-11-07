@@ -11,7 +11,7 @@ import CodeScanner
 
 struct ScanCameraView: View {
     
-    @EnvironmentObject private var scanStore : ScanStore
+    @EnvironmentObject var scanStore : Store<ScanModel, ScanAction>
     
     @State private var radius : CGFloat = 0
     @State private var startTime = Date()
@@ -63,16 +63,16 @@ struct ScanCameraView: View {
                 .foregroundColor(Color.newGray)
         )
         .showPopup(
-            alertModel: scanStore.alertModel,
+            alertModel: scanStore.state.alertModel,
             swipeAction: {
                 withAnimation {
-                    scanStore.dispatch(action: .hideAlert)
+                    scanStore.send(.hideAlert)
                 }
             }, tapAction: {
-                scanStore.dispatch(action: .showTicket)
+                scanStore.send(.showTicket)
             }, tapWrongQrAction: {
                 withAnimation {
-                    scanStore.dispatch(action: .showManual)
+                    scanStore.send(.showManual)
                 }
             }
         )
@@ -85,7 +85,7 @@ private extension ScanCameraView {
         
         switch result {
         case let .success(code):
-            scanStore.dispatch(action: .scan(validation: code))
+            scanStore.send(.scan(validation: code))
         case .failure:
             return
         }
@@ -105,13 +105,13 @@ private extension ScanCameraView {
         
         if scanStore.state.alertModel != nil {
             withAnimation {
-                scanStore.dispatch(action: .hideAlert)
+                scanStore.send(.hideAlert)
             }
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             withAnimation {
-                scanStore.dispatch(action: .showAlert(model))
+                scanStore.send(.showAlert(model))
             }
         }
     }

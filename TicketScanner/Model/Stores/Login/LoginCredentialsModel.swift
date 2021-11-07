@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-struct LoginCredentials {
+struct LoginCredentials : Equatable {
     
     var email : String {
         didSet { setValid() }

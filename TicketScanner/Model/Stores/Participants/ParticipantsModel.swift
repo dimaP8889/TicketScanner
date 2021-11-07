@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-struct ParticipantsModel {
+struct ParticipantsModel : Equatable {
     
     var eventId : String
     var filter : FilterType
@@ -16,6 +16,17 @@ struct ParticipantsModel {
     var searchText : String
     
     var openedTicked : Int?
+    
+    var participants : [ParticipantsInfoModel] {
+        let sorted = participantsInfo.sortByTime()
+        return sorted.map { (hour, model) in
+            return ParticipantsInfoModel(
+                timeNum: Double((hour + 1) * 3600),
+                tickets: model.adaptToFullTicketModel()
+            )
+        }
+        .sorted { $0.timeNum > $1.timeNum }
+    }
     
     init(eventId : String) {
         
@@ -30,7 +41,7 @@ struct ParticipantsModel {
 // MARK: - Model
 extension ParticipantsModel {
     
-    enum FilterType : String {
+    enum FilterType : String, Equatable {
         
         case all = "all"
         case success = "ok"

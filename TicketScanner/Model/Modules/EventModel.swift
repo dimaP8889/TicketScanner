@@ -8,7 +8,7 @@
 import SwiftUI
 import Foundation
 
-struct EventModel : Identifiable {
+struct EventModel : Identifiable, Equatable {
     
     let id : String
     

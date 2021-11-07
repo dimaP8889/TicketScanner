@@ -42,6 +42,7 @@ final class Store<State, Action>: ObservableObject {
             .map(deriveState)
             .receive(on: DispatchQueue.main)
             .assign(to: &store.$state)
+        
         return store
     }
     

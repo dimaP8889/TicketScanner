@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct VisitiorsApiModel : Codable {
+struct VisitiorsApiModel : Codable, Equatable {
     
     let checkins : [Checkins]
 }
 
 extension VisitiorsApiModel {
     
-    struct Checkins : Codable {
+    struct Checkins : Codable, Equatable {
         
         enum CodingKeys : String, CodingKey {
             
@@ -190,14 +190,14 @@ extension VisitiorsApiModel {
 
 extension VisitiorsApiModel {
     
-    struct Buyer : Codable {
+    struct Buyer : Codable, Equatable {
         
         let name: String
         let phone: String
         let email: String
     }
     
-    struct ExpectedEvent : Codable {
+    struct ExpectedEvent : Codable, Equatable {
         
         enum CodingKeys : String, CodingKey {
             

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CredentialsView: View {
     
-    @EnvironmentObject private var store: LoginStore
+    @EnvironmentObject private var store: Store<LoginCredentials, LoginAction>
     
     private var isNeedShowError : Bool {
         store.state.isError

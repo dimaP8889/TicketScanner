@@ -11,7 +11,7 @@ struct ManualEnterView: View {
     
     @State private var text: String = ""
     
-    @EnvironmentObject var scanStore : ScanStore
+    @EnvironmentObject var scanStore : Store<ScanModel, ScanAction>
     
     var body: some View {
         
@@ -26,7 +26,7 @@ struct ManualEnterView: View {
                     Spacer()
                     ManualEnterTextField(text: $text, textDidChange: {
                         if text.count == Constants.codeLength {
-                            scanStore.dispatch(action: .scan(validation: text))
+                            scanStore.send(.scan(validation: text))
                         }
                         text = String(text.prefix(Constants.codeLength))
                     })
@@ -47,7 +47,7 @@ struct ManualEnterView: View {
             HStack {
                 ShowCameraView() {
                     withAnimation {
-                        scanStore.dispatch(action: .hideManual)
+                        scanStore.send(.hideManual)
                     }
                 }
                 Spacer()

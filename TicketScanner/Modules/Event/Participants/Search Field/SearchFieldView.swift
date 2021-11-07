@@ -12,7 +12,7 @@ struct SearchFieldView: View {
     @Binding private var text : String
     
     @EnvironmentObject
-    var participantsStore : ParticipantsStore
+    var participantsStore : Store<ParticipantsModel, ParticipantsAction>
     
     init(text: Binding<String>) {
         self._text = text
@@ -29,7 +29,7 @@ struct SearchFieldView: View {
                     .font(.main(size: 17))
                     .modifier(ClearButton(text: $text))
                     .onChange(of: text) { value in
-                        participantsStore.dispatch(action: .changeSearch(text: text))
+                        participantsStore.send(.changeSearch(text: text))
                     }
                 Spacer(minLength: 3)
             }

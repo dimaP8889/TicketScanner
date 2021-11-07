@@ -10,7 +10,7 @@ import SwiftUI
 struct ParticipantsListView: View {
     
     @EnvironmentObject
-    var participantsStore : ParticipantsStore
+    var participantsStore : Store<ParticipantsModel, ParticipantsAction>
     
     init() {
         UIScrollView.appearance().keyboardDismissMode = .onDrag
@@ -18,10 +18,10 @@ struct ParticipantsListView: View {
     
     var body: some View {
         ParticipantsTableView(
-            participants: participantsStore.participants,
-            openedTicket: participantsStore.openedTicket
+            participants: participantsStore.state.participants,
+            openedTicket: participantsStore.state.openedTicked
         ) { id in
-            participantsStore.dispatch(action: .openTicket(hash: id))
+            participantsStore.send(.openTicket(hash: id))
         }
         .background(Color.white)
     }

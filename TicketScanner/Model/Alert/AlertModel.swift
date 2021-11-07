@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct AlertModel : Identifiable {
-    
+struct AlertModel : Identifiable, Equatable {
+
     let id = UUID()
     
     let time : String
@@ -52,7 +52,8 @@ extension AlertSubviewModel {
 
 extension AlertModel {
     
-    enum AlertType {
+    enum AlertType : Equatable {
+        
         case success
         case invalidQR
         case checkedIn(time: String, ticket: FullTicketModel)

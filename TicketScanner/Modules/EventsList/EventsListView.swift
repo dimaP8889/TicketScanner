@@ -9,14 +9,13 @@ import SwiftUI
 
 struct EventsListView: View {
     
-    @EnvironmentObject var appDataStore: AppDataStore
-    @EnvironmentObject var eventListStore: EventListStore
+    @EnvironmentObject var appDataStore: AppStore
     
     @State private var isNavLinkActive : Bool = false
     @State private var selectedEvent : EventModel?
     
     var models : [EventModel] {
-        eventListStore.events
+        appDataStore.state.events.eventList
     }
     
     init() {
@@ -64,7 +63,7 @@ struct EventsListView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     HStack {
                         LogoutButton {
-                            appDataStore.dispatch(action: .removeToken)
+                            appDataStore.send(.app(action: .removeToken))
                         }
                         Spacer(minLength: 0)
                     }
@@ -74,7 +73,7 @@ struct EventsListView: View {
             .accentColor(.codGray)
         }
         .onAppear {
-            eventListStore.dispatch(action: .load)
+            appDataStore.send(.events(action: .load))
         }
     }
 }
