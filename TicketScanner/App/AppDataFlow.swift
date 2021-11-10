@@ -180,6 +180,8 @@ private func scanReducer(state: inout ScanModel, action: ScanAction) -> AnyPubli
             .eraseToAnyPublisher()
     case let .setScanResult(response, validation):
         return parseScanResult(response: response, validation: validation, state: &state)
+    case let .setEvent(id):
+        state.eventId = id
     }
     return nil
 }
@@ -228,13 +230,10 @@ private func participantsReducer(state: inout ParticipantsModel, action: Partici
         switch response {
         case let .success(data):
             state.participantsInfo = data
-            return nil
         case let .backend(error):
             print(error)
-            return nil
         case let .system(error):
             print(error)
-            return nil
         case .expiredToken:
             return Fail(error: ResponseError.expiredToken)
                 .eraseToAnyPublisher()
@@ -245,9 +244,10 @@ private func participantsReducer(state: inout ParticipantsModel, action: Partici
         } else {
             state.openedTicked = hash
         }
-        return nil
     case .closeTicket:
         state.openedTicked = nil
-        return nil
+    case let .setEvent(id):
+        state.eventId = id
     }
+    return nil
 }

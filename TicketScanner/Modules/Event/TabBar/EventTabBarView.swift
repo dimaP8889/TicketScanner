@@ -102,6 +102,11 @@ struct EventTabBarView: View {
                 )
             }
         }
+        .onAppear {
+            let eventId = event?.id ?? ""
+            appDataStore.send(.participants(action: .setEvent(id: eventId)))
+            appDataStore.send(.scan(action: .setEvent(id: eventId)))
+        }
     }
 }
 
