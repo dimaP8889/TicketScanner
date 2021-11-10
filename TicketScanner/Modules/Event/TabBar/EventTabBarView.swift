@@ -9,6 +9,7 @@ import SwiftUI
 
 struct EventTabBarView: View {
     
+    #warning("Move this to app store")
     @ObservedObject private var data : TabBarModel
     
     @EnvironmentObject
@@ -25,6 +26,7 @@ struct EventTabBarView: View {
     init(event: EventModel?) {
         
         self.event = event
+        #warning("Need to fix reloading tab bar model")
         self.data = TabBarModel()
         
         UITabBar.setBar(color: .white)
@@ -89,6 +91,11 @@ struct EventTabBarView: View {
                 .tag(3)
             
         }
+        .onAppear {
+            let eventId = event?.id ?? ""
+            appDataStore.send(.participants(action: .setEvent(id: eventId)))
+            appDataStore.send(.scan(action: .setEvent(id: eventId)))
+        }
         .accentColor(.codGray)
         .navigationBarBackButtonHidden(true)
         .toolbar {
@@ -101,11 +108,6 @@ struct EventTabBarView: View {
                     subtitle: $data.buttonSubtitle
                 )
             }
-        }
-        .onAppear {
-            let eventId = event?.id ?? ""
-            appDataStore.send(.participants(action: .setEvent(id: eventId)))
-            appDataStore.send(.scan(action: .setEvent(id: eventId)))
         }
     }
 }
