@@ -1,4 +1,4 @@
-/* 
+/*
   ua.strings
   TicketScanner
 
@@ -20,11 +20,11 @@
 //Registration
 "registration.button.title" = "Увійти";
 "registration.square.title" = "Вхід";
-"registration.button.check-in" = "2204\nCheck-In";
+"registration.button.check-in" = "2204\nCheck in";
 "registration.error.title" = "Неправильний email або пароль";
-"registration.textfield.email.description" = "Email";
+"registration.textfield.email.description" = "Email або id";
 "registration.textfield.password.description" = "Пароль";
-"registration.textfield.email.placeholder" = "введіть свій email";
+"registration.textfield.email.placeholder" = "введіть свій email або id";
 "registration.textfield.password.placeholder" = "введіть свій пароль";
 
 //Events
@@ -38,17 +38,17 @@
 
 //Tab Bar
 "events.item.scan" = "Сканувати";
-"events.item.participants" = "Відвідувачі";
+"events.item.participants" = "Чекіни";
 "events.item.contacts" = "Контакти";
 "events.item.profile" = "Профіль";
 
 //Scan
 "scan.enter.number.title" = "Ввести номер";
-"scan.error.refunded" = "This ticket has been refunded";
-"scan.error.invalidQR" = "Invalid QR code";
-"scan.error.wrong_event" = "Wrong event";
-"scan.error.wrong_event.secondary" = "This ticket is for event:";
-"scan.error.checked_in" = "Already checked-in";
+"scan.error.refunded" = "Квиток було повернено";
+"scan.error.invalidQR" = "Недійсний QR код";
+"scan.error.wrong_event" = "Неправильна подія";
+"scan.error.wrong_event.secondary" = "Це квиток на подію:";
+"scan.error.checked_in" = "Квиток вже відскановано";
 "scan.ticket.type" = "Тип квитка";
 "scan.ticket.phone" = "Тел. покупця";
 "scan.ticket.email" = "Email";
@@ -56,13 +56,13 @@
 "scan.camera.title" = "Сканер";
 
 //Alert
-"alert.sucess" = "Success";
-"alert.fail" = "Failed";
-"alert.title.success" = "Checked-in suсcessfully";
-"alert.title.invalidQR" = "Invalid QR code";
-"alert.title.checked" = "Already checked-in";
-"alert.title.refunded" = "This ticket has been refunded";
-"alert.title.wrong" = "Wrong event";
+"alert.sucess" = "Успішно";
+"alert.fail" = "Неуспішно";
+"alert.title.success" = "Вдалий чекін";
+"alert.title.invalidQR" = "Недійсний QR код";
+"alert.title.checked" = "Квиток вже відскановано";
+"alert.title.refunded" = "Квиток було повернено";
+"alert.title.wrong" = "Неправильна подія";
 "alert.subtitle.visited" = "Відвідувач зайшов о ";
 "alert.subtitle.enter_number" = "Спробуйте ввести номер квитка";
 "alert.ticket.name" = "Квиток︎︎︎ ↗︎︎";
@@ -79,6 +79,6 @@
 "profile.controller" = "Контролер";
 
 //Ticket
-"ticket.status.not_activated.name.placeholder" = "Pre-printed ticket";
-"ticket.status.not_activated.tel.placeholder" = "No buyer info";
-"ticket.status.not_activated.email.placeholder" = "No buyer info";
+"ticket.status.not_activated.name.placeholder" = "Друкований квиток";
+"ticket.status.not_activated.tel.placeholder" = "Немає інфо про покупця";
+"ticket.status.not_activated.email.placeholder" = "Немає інфо про покупця";
