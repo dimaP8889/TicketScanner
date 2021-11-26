@@ -22,9 +22,9 @@
 "registration.square.title" = "Login";
 "registration.button.check-in" = "2204\nCheck-In";
 "registration.error.title" = "Incorrect email or password";
-"registration.textfield.email.description" = "Email or id";
+"registration.textfield.email.description" = "Email";
 "registration.textfield.password.description" = "Password";
-"registration.textfield.email.placeholder" = "enter your email or id";
+"registration.textfield.email.placeholder" = "enter your email";
 "registration.textfield.password.placeholder" = "enter your password";
 
 //Events

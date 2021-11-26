@@ -22,9 +22,9 @@
 "registration.square.title" = "Вхід";
 "registration.button.check-in" = "2204\nCheck-In";
 "registration.error.title" = "Неправильний email або пароль";
-"registration.textfield.email.description" = "Email або id";
+"registration.textfield.email.description" = "Email";
 "registration.textfield.password.description" = "Пароль";
-"registration.textfield.email.placeholder" = "введіть свій email або id";
+"registration.textfield.email.placeholder" = "введіть свій email";
 "registration.textfield.password.placeholder" = "введіть свій пароль";
 
 //Events
