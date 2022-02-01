@@ -39,12 +39,12 @@ struct EventModel : Identifiable, Equatable {
         
         if isFinished {
             self.timeToStart = localStr("events.future.ended")
-            self.isOpened = false
-            self.isActive = false
+            self.isOpened = true
+            self.isActive = true
         } else {
             self.timeToStart = startTime
             self.isOpened = true
-            self.isActive = isStarted
+            self.isActive = true
         }
     }
 }

@@ -9,8 +9,7 @@ import SwiftUI
 
 struct EventTabBarView: View {
     
-    #warning("Move this to app store")
-    @ObservedObject private var data : TabBarModel
+    @StateObject private var data = TabBarModel()
     
     @EnvironmentObject
     var appDataStore: AppStore
@@ -26,9 +25,6 @@ struct EventTabBarView: View {
     init(event: EventModel?) {
         
         self.event = event
-        #warning("Need to fix reloading tab bar model")
-        self.data = TabBarModel()
-        
         UITabBar.setBar(color: .white)
     }
     
